@@ -10,6 +10,16 @@
     "eom": ""
   },
   {
+    "version": "1.139.0",
+    "url_download_runtime": "https://github.com/UI5/openui5/releases/download/1.139.0/openui5-runtime-1.139.0.zip",
+    "url_download_sdk": "https://github.com/UI5/openui5/releases/download/1.139.0/openui5-sdk-1.139.0.zip",
+    "url_download_mobile": "https://github.com/UI5/openui5/releases/download/1.139.0/openui5-runtime-mobile-1.139.0.zip",
+    "url_demokit": "https://sdk.openui5.org/1.139.0/#/topic/99ac68a5b1c3416ab5c84c99fefa250d",
+    "url_releasenotes": "https://sdk.openui5.org/1.139.0/#releasenotes.html",
+    "release_date": "06.08.2025",
+    "eom": ""
+  },
+  {
     "version": "1.136.6",
     "url_download_runtime": "https://github.com/UI5/openui5/releases/download/1.136.6/openui5-runtime-1.136.6.zip",
     "url_download_sdk": "https://github.com/UI5/openui5/releases/download/1.136.6/openui5-sdk-1.136.6.zip",
@@ -50,13 +60,13 @@
     "eom": "Q4/2026"
   },
   {
-    "version": "1.84.51",
-    "url_download_runtime": "https://github.com/UI5/openui5/releases/download/1.84.51/openui5-runtime-1.84.51.zip",
-    "url_download_sdk": "https://github.com/UI5/openui5/releases/download/1.84.51/openui5-sdk-1.84.51.zip",
-    "url_download_mobile": "https://github.com/UI5/openui5/releases/download/1.84.51/openui5-runtime-mobile-1.84.51.zip",
-    "url_demokit": "https://sdk.openui5.org/1.84.51/#/topic/99ac68a5b1c3416ab5c84c99fefa250d",
-    "url_releasenotes": "https://sdk.openui5.org/1.84.51/#releasenotes.html",
-    "release_date": "30.06.2025",
+    "version": "1.84.52",
+    "url_download_runtime": "https://github.com/UI5/openui5/releases/download/1.84.52/openui5-runtime-1.84.52.zip",
+    "url_download_sdk": "https://github.com/UI5/openui5/releases/download/1.84.52/openui5-sdk-1.84.52.zip",
+    "url_download_mobile": "https://github.com/UI5/openui5/releases/download/1.84.52/openui5-runtime-mobile-1.84.52.zip",
+    "url_demokit": "https://sdk.openui5.org/1.84.52/#/topic/99ac68a5b1c3416ab5c84c99fefa250d",
+    "url_releasenotes": "https://sdk.openui5.org/1.84.52/#releasenotes.html",
+    "release_date": "03.09.2025",
     "eom": "Q4/2025"
   },
   {
