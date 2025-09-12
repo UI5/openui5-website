@@ -39,7 +39,7 @@
     "gatsby-remark-copy-linked-files": "^2.9.0",
     "gatsby-source-filesystem": "^2.11.1",
     "gatsby-transformer-json": "^2.10.0",
-    "gatsby-transformer-remark": "^2.16.1",
+    "gatsby-transformer-remark": "^6.15.0",
     "gatsby-transformer-sharp": "^2.12.1",
     "lodash": "^4.17.21",
     "node-fetch": "2.6.7",
