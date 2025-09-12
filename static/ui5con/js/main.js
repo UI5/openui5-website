@@ -212,22 +212,17 @@ var main = new Vue({
     formattedSpeakers: [],
     expertCornerLineup: {},
     expertCornerLineupUnsorted: [],
+    proposalLineupJson: proposalLineupJson,
+    speakerLineupJson: speakerLineupJson
    }
   },
   mounted() {
-    Promise.all([
-      axios.get('https://ui5con.cfapps.eu12.hana.ondemand.com/api/speaker/lineup'),
-      axios.get('https://ui5con.cfapps.eu12.hana.ondemand.com/api/proposal/lineup')
-    ])
-    .then(([speakersResponse, lineupResponse]) => {
-      this.speakers = speakersResponse.data;
-      this.lineup = lineupResponse;
-      this.formattedLineup = this.formatLineup();
+    this.speakers = speakerLineupJson;
+    this.lineup = proposalLineupJson;
+    this.formattedLineup = this.formatLineup();
 
-      this.formattedSpeakers = this.formatSpeakers(this.formattedLineup, this.speakers);
-      this.groupExpertCornerTopics();
-    })
-
+    this.formattedSpeakers = this.formatSpeakers(this.formattedLineup, this.speakers);
+    this.groupExpertCornerTopics();
   },
   methods: {
     openSpeakerInfoModal(speakers, id) {
@@ -384,7 +379,7 @@ var main = new Vue({
       this.formattedLineup = this.formatLineup();
     },
     formatLineup() {
-      const tempLineUp = this.lineup.data.map((session) => {
+      const tempLineUp = this.lineup.map((session) => {
         session.speakers.map((speaker) => {
           if(speaker.twitterHandle) {
             speaker.twitterHandle = this.formatTwitterLink(speaker.twitterHandle);

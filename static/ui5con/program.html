@@ -149,7 +149,7 @@
 											<button v-if="speaker.hasPhoto"
 												:id="`btn-${speaker.firstName}-${speaker.lastName}-${event.id}`"
 												@click="openSpeakerInfoModal(event.speakers, `btn-${speaker.firstName}-${speaker.lastName}-${event.id}`)">
-												<img :src="`https://ui5con.cfapps.eu12.hana.ondemand.com${speaker.photoUrl}`"
+												<img :src="`images/speakers/${speaker.photoUrl}.jpg`"
 													:alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`" />
 											</button>
 											<button v-else
@@ -217,7 +217,7 @@
 							<figure>
 								<img
 									v-if="speaker.hasPhoto"
-									:src="`https://ui5con.cfapps.eu12.hana.ondemand.com${speaker.photoUrl}`"
+									:src="`images/speakers/${speaker.photoUrl}.jpg`"
 									:alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`" />
 
 								<div
@@ -338,12 +338,13 @@
 		<footer-section></footer-section>
 	</footer>
 
-	<script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
 	<script src="./js/luxon.min.js"></script>
 	<script src="./components/calendar-link.component.js"></script>
 	<script src="./components/nav-section.component.js"></script>
 	<script src="./components/nav-section-mobile.component.js"></script>
 	<script src="./components/footer-section.component.js"></script>
+	<script src="./js/proposal-lineup.js"></script>
+	<script src="./js/speaker-lineup.js"></script>
 	<script src="./js/main.js"></script>
 
 </body>

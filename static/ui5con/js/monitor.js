@@ -7,39 +7,36 @@ function createLineupApp(mountElementId, roomFilterFn) {
       return {
         lineup: [],
         formattedLineup: [],
+        proposalLineupJson: proposalLineupJson,
       }
     },
     mounted() {
-      axios
-        .get('https://ui5con.cfapps.eu12.hana.ondemand.com/api/proposal/lineup')
-        .then(response => {
-          this.lineup = response.data.filter(roomFilterFn); // Filter by room
-          this.formattedLineup = this.formatLineup();
-        });
+      this.lineup = proposalLineupJson.filter(roomFilterFn); // Filter by room
+      this.formattedLineup = this.formatLineup();
 
-    this.updateLiveSession();
-    let interval;
+      this.updateLiveSession();
+      let interval;
 
-    let timeNow = new Date().toISOString();
+      let timeNow = new Date().toISOString();
 
-    const startCounterTime = new Date(
-      "2025-07-08T00:50:00.000+02:00"
-    ).toISOString();
+      const startCounterTime = new Date(
+        "2025-07-08T00:50:00.000+02:00"
+      ).toISOString();
 
-    const endCounterTime = new Date(
-      "2025-07-08T18:10:00.000+02:00"
-    ).toISOString();
+      const endCounterTime = new Date(
+        "2025-07-08T18:10:00.000+02:00"
+      ).toISOString();
 
-    if (timeNow > startCounterTime && timeNow <= endCounterTime) {
-      interval = setInterval(() => {
-        timeNow = new Date().toISOString();
-        if (timeNow > endCounterTime) {
-          clearInterval(interval);
-          return;
-        }
-        this.updateLiveSession();
-      }, 30000);
-    }
+      if (timeNow > startCounterTime && timeNow <= endCounterTime) {
+        interval = setInterval(() => {
+          timeNow = new Date().toISOString();
+          if (timeNow > endCounterTime) {
+            clearInterval(interval);
+            return;
+          }
+          this.updateLiveSession();
+        }, 30000);
+      }
     },
     methods: {
       formatLineup() {
