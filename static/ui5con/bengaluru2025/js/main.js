@@ -183,7 +183,7 @@ var main = new Vue({
 				{
 					name: 'Freddy Jetty Johnson',
 					location: 'freddy.jetty.johnson@sap.com',
-					image: 'images/team/placeholder.jpg',
+					image: 'images/team/Freddy-Jetty-Johnson.jpg',
 					email: 'freddy.jetty.johnson@sap.com'
 				}
 			],
