@@ -171,13 +171,13 @@ var main = new Vue({
 				{
 					name: 'Rounak Roy',
 					location: 'rounak.roy@sap.com',
-					image: 'images/team/placeholder.jpg',
+					image: 'images/team/Rounak-Roy.jpg',
 					email: 'rounak.roy@sap.com'
 				},
 				{
 					name: 'Reshma Remesh',
 					location: 'r.remesh@sap.com',
-					image: 'images/team/placeholder.jpg',
+					image: 'images/team/Reshma-Remesh.jpg',
 					email: 'r.remesh@sap.com'
 				},
 				{
@@ -185,6 +185,12 @@ var main = new Vue({
 					location: 'freddy.jetty.johnson@sap.com',
 					image: 'images/team/Freddy-Jetty-Johnson.jpg',
 					email: 'freddy.jetty.johnson@sap.com'
+				},
+				{
+					name: 'Harshitha S',
+					location: 'harshitha.s@sap.com',
+					image: 'images/team/Harshitha-S.jpg',
+					email: 'harshitha.s@sap.com'
 				}
 			],
 			committee: [
@@ -192,26 +198,6 @@ var main = new Vue({
 					name: "Klaudia Laag",
 					role: "UI5 Expert",
 					image: "images/committee/klaudia-laag.jpg",
-				},
-				{
-					name: "Catrin Kupfer",
-					role: "UI5 Expert",
-					image: "images/committee/catrin-kupfer.jpg",
-				},
-				{
-					name: "Ilia Klopkov",
-					role: "UI5 Expert",
-					image: "images/committee/ilia-klopkov.jpg",
-				},
-				{
-					name: "Jacek Woźniczak",
-					role: "UI5 Expert",
-					image: "images/committee/jacek-woźniczak.jpg",
-				},
-				{
-					name: "Simon Coen",
-					role: "UI5 Expert",
-					image: "images/committee/simon-coen.jpg",
 				}
 			]
 		}
