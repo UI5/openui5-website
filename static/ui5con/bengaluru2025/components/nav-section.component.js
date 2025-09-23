@@ -1,19 +1,19 @@
 'use strict';
 Vue.component("nav-section", {
-  data: function () {
-    return {
-      currentPage: ''
-    }
-  },
-  methods: {
-    isActive: function (name) {
-      return this.currentPage.includes(name);
-    }
-  },
-  mounted() {
-    this.currentPage = window.location.href;
-  },
-  template: `<ul>
+    data: function () {
+        return {
+            currentPage: ''
+        }
+    },
+    methods: {
+        isActive: function (name) {
+            return this.currentPage.includes(name);
+        }
+    },
+    mounted() {
+        this.currentPage = window.location.href;
+    },
+    template: `<ul>
         <li>
             <a href="index.html" class="" :aria-current="isActive('index')" aria-label="Home">
                 <span class="sr-only">Link to Home Page</span>
@@ -37,9 +37,7 @@ Vue.component("nav-section", {
         <li>
             <a href="location.html" class="nav-link-contrast nav-link-color" :class="{ active: isActive('location') }" :aria-current="isActive('location')">Participants</a>
         </li>
-        <li>
-            <a href="sponsors.html"  class="nav-link-contrast nav-link-color" :class="{ active: isActive('sponsors') }" :aria-current="isActive('sponsors')">Sponsors</a>
-        </li>
+        
         <li>
             <a href="about.html" class="nav-link-contrast nav-link-color" :class="{ active: isActive('about') }" :aria-current="isActive('about')">About</a>
         </li>
@@ -52,6 +50,9 @@ Vue.component("nav-section", {
 
 {/*
 
+    <li>
+            <a href="sponsors.html"  class="nav-link-contrast nav-link-color" :class="{ active: isActive('sponsors') }" :aria-current="isActive('sponsors')">Sponsors</a>
+        </li>
  <li>
             <a href="faq.html" :class="{ active: isActive('faq') }" :aria-current="isActive('faq')">FAQ</a>
         </li> */}

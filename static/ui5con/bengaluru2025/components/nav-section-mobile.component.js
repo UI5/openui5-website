@@ -46,9 +46,7 @@ Vue.component("nav-section-mobile", {
         <li>
             <a href="location.html"  class="nav-link-contrast nav-link-color" :class="{ active: isActive('location') }" :aria-current="isActive('location')">Participants</a>
         </li>
-        <li>
-            <a href="sponsors.html"  class="nav-link-contrast nav-link-color" :class="{ active: isActive('sponsors') }" :aria-current="isActive('sponsors')">Sponsors</a>
-        </li>
+        
         <li>
             <a href="about.html"  class="nav-link-contrast nav-link-color" :class="{ active: isActive('about') }" :aria-current="isActive('about')">About</a>
         </li>
@@ -65,4 +63,8 @@ Vue.component("nav-section-mobile", {
 
 <li>
 <a href="faq.html" :class="{ active: isActive('faq') }" :aria-current="isActive('faq')">FAQ</a>
-</li> */}
+</li> 
+
+<li>
+            <a href="sponsors.html"  class="nav-link-contrast nav-link-color" :class="{ active: isActive('sponsors') }" :aria-current="isActive('sponsors')">Sponsors</a>
+        </li>*/}
