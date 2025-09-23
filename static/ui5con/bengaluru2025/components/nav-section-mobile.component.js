@@ -44,17 +44,17 @@ Vue.component("nav-section-mobile", {
             <a href="speakerinfo.html" :class="{ active: isActive('speakerinfo') }" :aria-current="isActive('speakerinfo')">Speakers</a>
         </li>
         <li>
-            <a href="location.html"  class="nav-link-color-themeb nav-link-color" :class="{ active: isActive('location') }" :aria-current="isActive('location')">Participants</a>
+            <a href="location.html"  class="nav-link-contrast nav-link-color" :class="{ active: isActive('location') }" :aria-current="isActive('location')">Participants</a>
         </li>
         <li>
-            <a href="sponsors.html"  class="nav-link-color-themeb nav-link-color" :class="{ active: isActive('sponsors') }" :aria-current="isActive('sponsors')">Sponsors</a>
+            <a href="sponsors.html"  class="nav-link-contrast nav-link-color" :class="{ active: isActive('sponsors') }" :aria-current="isActive('sponsors')">Sponsors</a>
         </li>
         <li>
-            <a href="about.html"  class="nav-link-color-themeb nav-link-color" :class="{ active: isActive('about') }" :aria-current="isActive('about')">About</a>
+            <a href="about.html"  class="nav-link-contrast nav-link-color" :class="{ active: isActive('about') }" :aria-current="isActive('about')">About</a>
         </li>
-       
+
         <li>
-            <a href="archive.html"  class="nav-link-color-themeb nav-link-color" :class="{ active: isActive('archive') }" :aria-current="isActive('archive')">Archive</a>
+            <a href="archive.html"  class="nav-link-contrast nav-link-color" :class="{ active: isActive('archive') }" :aria-current="isActive('archive')">Archive</a>
         </li>
     </ul>
   </div>

@@ -19,10 +19,11 @@
 .people-member img {
 	max-width: 100%;
 	inline-size: 100%;
-	aspect-ratio: 1/1.25;
+	aspect-ratio: 1/1;
 	object-fit: cover;
 	display: block;
 	margin-block-end: .5rem;
+	border-radius: 0.5rem;;
 }
 
 .people-member .placeholder {
