@@ -308,7 +308,7 @@
 		</section> -->
 
 		<!-- CODE CONNECT SECTION-->
-		<section style="padding-top: 20px;">
+		<section>
 			<div class="wrap section-blr-normal-bg2 section-bg-solid">
 
 				<h2 class="section-heading section-blr-color2">
@@ -648,7 +648,7 @@
 		function updateSVGTheme() {
 			const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 			console.log('Theme preference:', prefersDark ? 'dark' : 'light');
-			
+
 			// Target all theme-aware elements
 			const svgElements = document.querySelectorAll('.theme-aware-svg .theme-aware-text, .theme-aware-svg *[fill="white"], .theme-aware-svg rect[fill="white"]');
 			console.log('Found SVG elements:', svgElements.length);
