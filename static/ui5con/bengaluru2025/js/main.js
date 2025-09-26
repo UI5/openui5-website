@@ -165,7 +165,7 @@ var main = new Vue({
 				{
 					name: 'Gaurav Rawat',
 					location: 'gaurav.rawat@sap.com',
-					image: 'images/team/placeholder.svg',
+					image: 'images/team/Gaurav.jpeg',
 					email: 'gaurav.rawat@sap.com'
 				},
 				{

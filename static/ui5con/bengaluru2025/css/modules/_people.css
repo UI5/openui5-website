@@ -19,7 +19,7 @@
 .people-member img {
 	max-width: 100%;
 	inline-size: 100%;
-	aspect-ratio: 1/1;
+	aspect-ratio: 3/4;
 	object-fit: cover;
 	display: block;
 	margin-block-end: .5rem;
@@ -29,7 +29,7 @@
 .people-member .placeholder {
 	max-width: 100%;
 	inline-size: 100%;
-	aspect-ratio: 1/1.25;
+	aspect-ratio: 3/4;
 	background: transparent url(../../images/committee/placeholder.svg) no-repeat 50% 50%;
 	background-size: 60%;
 }

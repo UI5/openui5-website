@@ -10,7 +10,7 @@ Vue.component("footer-section", {
               </svg>
           </div>
 
-          <div class="links-container ">
+          <div class="links-container">
               <a href="https://www.sap.com/impressum" rel="noopener noreferrer" target="_blank"
                   hreflang="en">Legal Disclaimer</a>
               <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener noreferrer" target="_blank"
@@ -22,9 +22,8 @@ Vue.component("footer-section", {
               <a href="https://www.sap.com/trademark" rel="noopener noreferrer" target="_blank"
                   hreflang="en">Trademark</a>
               <a href="codeofconduct.html" hreflang="en">Code of Conduct</a>
+              <p class="copyright"><small>© 2025 SAP SE or an SAP affiliate company. All rights reserved. This site is hosted by GitHub Pages.</small></p>
           </div>
-
-          <p class="copyright"><small>© 2025 SAP SE or an SAP affiliate company. All rights reserved. This site is hosted by GitHub Pages.</small></p>
       </div>
   </div>`
 });
