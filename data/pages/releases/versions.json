@@ -30,13 +30,13 @@
     "eom": "Q3/2026"
   },
   {
-    "version": "1.120.36",
-    "url_download_runtime": "https://github.com/UI5/openui5/releases/download/1.120.36/openui5-runtime-1.120.36.zip",
-    "url_download_sdk": "https://github.com/UI5/openui5/releases/download/1.120.36/openui5-sdk-1.120.36.zip",
-    "url_download_mobile": "https://github.com/UI5/openui5/releases/download/1.120.36/openui5-runtime-mobile-1.120.36.zip",
-    "url_demokit": "https://sdk.openui5.org/1.120.36/#/topic/99ac68a5b1c3416ab5c84c99fefa250d",
-    "url_releasenotes": "https://sdk.openui5.org/1.120.36/#releasenotes.html",
-    "release_date": "23.09.2025",
+    "version": "1.120.37",
+    "url_download_runtime": "https://github.com/UI5/openui5/releases/download/1.120.37/openui5-runtime-1.120.37.zip",
+    "url_download_sdk": "https://github.com/UI5/openui5/releases/download/1.120.37/openui5-sdk-1.120.37.zip",
+    "url_download_mobile": "https://github.com/UI5/openui5/releases/download/1.120.37/openui5-runtime-mobile-1.120.37.zip",
+    "url_demokit": "https://sdk.openui5.org/1.120.37/#/topic/99ac68a5b1c3416ab5c84c99fefa250d",
+    "url_releasenotes": "https://sdk.openui5.org/1.120.37/#releasenotes.html",
+    "release_date": "30.09.2025",
     "eom": "Q4/2030"
   },
   {
@@ -70,13 +70,13 @@
     "eom": "Q4/2025"
   },
   {
-    "version": "1.71.72",
-    "url_download_runtime": "https://github.com/UI5/openui5/releases/download/1.71.72/openui5-runtime-1.71.72.zip",
-    "url_download_sdk": "https://github.com/UI5/openui5/releases/download/1.71.72/openui5-sdk-1.71.72.zip",
-    "url_download_mobile": "https://github.com/UI5/openui5/releases/download/1.71.72/openui5-runtime-mobile-1.71.72.zip",
-    "url_demokit": "https://sdk.openui5.org/1.71.72/#/topic/99ac68a5b1c3416ab5c84c99fefa250d",
-    "url_releasenotes": "https://sdk.openui5.org/1.71.72/#releasenotes.html",
-    "release_date": "22.07.2025",
+    "version": "1.71.73",
+    "url_download_runtime": "https://github.com/UI5/openui5/releases/download/1.71.73/openui5-runtime-1.71.73.zip",
+    "url_download_sdk": "https://github.com/UI5/openui5/releases/download/1.71.73/openui5-sdk-1.71.73.zip",
+    "url_download_mobile": "https://github.com/UI5/openui5/releases/download/1.71.73/openui5-runtime-mobile-1.71.73.zip",
+    "url_demokit": "https://sdk.openui5.org/1.71.73/#/topic/99ac68a5b1c3416ab5c84c99fefa250d",
+    "url_releasenotes": "https://sdk.openui5.org/1.71.73/#releasenotes.html",
+    "release_date": "25.09.2025",
     "eom": "Q4/2030"
   },
   {
