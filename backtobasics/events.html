@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>OpenUI5 - Events</title>
+	<meta name="description"
+		content="OpenUI5" />
+	<meta name="keywords"
+		content="webstandards, web standards, html, css, JavaScript, Accessibility, framework, frontendframework, javascriptframework, WCAG, OpenUI5, DevOps, SAPUI5, UI5con, UI5 Web Components, Web Components, Webcomponents, Open Source" />
+	<meta name="robots" content="index, follow" />
+	<meta name="author" content="SAP SE" />
+	<meta property="twitter:card" content="summary" />
+	<meta property="twitter:url" content="https://openui5.org/" />
+	<meta property="twitter:title" content="OpenUI5" />
+	<meta property="twitter:description"
+
+		content="" />
+	<meta property="twitter:image" content="https://openui5.org/" />
+	<meta property="og:title" content="OpenUI5" />
+	<meta property="og:description"
+
+		content="" />
+
+	<meta name="theme-color" content="#0f9be6">
+
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+	<link rel="icon" type="image/svg+xml" href="images/icon.svg" />
+	<link rel="icon" sizes="any" href="images/android-chrome-192x192.png" />
+
+	<link rel="stylesheet" href="./css/common.css" />
+	<link rel="stylesheet" href="./css/modules.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+</head>
+
+<body>
+
+
+	<header class="head head--collapsed" id="header">
+
+		<nav class="nav" aria-label="Main navigation" id="nav">
+			<nav-section v-if="!showMobileNav"></nav-section>
+			<nav-section-mobile v-else></nav-section-mobile>
+		</nav>
+
+	</header>
+
+	<main id="main">
+
+		<section class="">
+			<div class="wrap">
+
+				<h1 class="section-heading">
+					<span>Upcoming Events</span>
+				</h1>
+
+				<ol class="timezone">
+					<li>
+						<a href="#" class="active"><span>Your time</span><small>(UTC+2)</small></a>
+					</li>
+					<li>
+						<a href=""><span>Berlin time</span><small>(UTC+2)</small></a>
+					</li>
+				</ol>
+
+				<ul class="event-list" role="list">
+					<li class="latest-event" role="listitem">
+						<button href="#" popovertarget="my-popover" popovertargetaction="show">
+							<div class="event-head">
+								<div>
+									<h3 class="event-title">
+										UI5'ers live
+									</h3>
+									<p class="event-desc">
+										45 minute interactive webcast
+									</p>
+								</div>
+								<img src="images/events/ui5ers.svg" alt="Event logo">
+							</div>
+
+							<div class="event-details">
+								<time datetime="">September 11, 15:15 <span class="event-countdown">15 days, 06:23:58</span></time>
+								<p class="event-platform">via Zoom</p>
+							</div>
+						</button>
+
+						<div class="event-cal">
+							Calendar blockers
+						</div>
+
+					</li>
+					<li class="submit-event" role="listitem">
+						<a href="mailto:openui5@sap.com?subject=Add%20event%20to%20openui5.org&body=Title:%0DDate:%0DLocation:%0DURL:">
+							<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 512 512">
+								<path fill="currentColor" d="M32 240q0-7 5-11.5t11-4.5h176V48q0-7 5-11.5t11-4.5h32q16 0 16 16v176h176q16 0 16 16v32q0 16-16 16H288v176q0 16-16 16h-32q-6 0-11-4.5t-5-11.5V288H48q-6 0-11-4.5T32 272v-32z"/>
+							</svg>
+							<h3>Add Event</h3>
+							<p>Are you or someone you know speaking about UI5 at an upcoming meetup or conference? Let us know.</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="">
+			<div class="wrap">
+				<h2>Past events</h2>
+
+				<h3>2025</h3>
+
+				<ol class="event-list event-list--past" role="list">
+					<li class="latest-event" role="listitem">
+						<button>
+							<div class="event-head">
+								<div>
+									<h3 class="event-title">
+										UI5'ers live
+									</h3>
+									<p class="event-desc">
+										45 minute interactive webcast
+									</p>
+								</div>
+								<img src="images/events/ui5ers.svg" alt="Event logo">
+							</div>
+
+							<div class="event-details">
+								<time datetime="">September 11, 15:15</time>
+								<p class="event-platform">via Zoom</p>
+							</div>
+						</button>
+					</li>
+					<li class="latest-event" role="listitem">
+						<a href="https://www.ui5con.org" hreflang="en" rel="external follow" target="_blank">
+							<div class="event-head">
+								<div>
+									<h3 class="event-title">
+										UI5con 2025
+									</h3>
+									<p class="event-desc">
+										Free community conference for UI5 enthusiasts
+									</p>
+								</div>
+								<img src="images/events/ui5con.svg" alt="Event logo">
+							</div>
+
+							<div class="event-details">
+								<time datetime="">July 8</time>
+								<p class="event-platform">St. Leon-Rot/BW/Germany</p>
+							</div>
+						</a>
+					</li>
+					<li class="latest-event" role="listitem">
+						<button>
+							<div class="event-head">
+								<div>
+									<h3 class="event-title">
+										UI5'ers live
+									</h3>
+									<p class="event-desc">
+										45 minute interactive webcast
+									</p>
+								</div>
+								<img src="images/events/ui5ers.svg" alt="Event logo">
+							</div>
+
+							<div class="event-details">
+								<time datetime="">September 11, 15:15</time>
+								<p class="event-platform">via Zoom</p>
+							</div>
+						</button>
+					</li>
+				</ol>
+			</div>
+		</section>
+
+		<div id="my-popover" popover>
+			<button class="btn-dialog" popovertarget="my-popover" popovertargetaction="hide">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+					<path fill="currentColor" d="m86 109 22-23q5-5 12-5 6 0 11 5l124 125L380 86q5-5 11-5 7 0 12 5l22 23q12 11 0 23L301 256l124 125q11 11 0 22l-22 23q-8 5-12 5-3 0-11-5L255 301 131 426q-5 5-11 5-4 0-12-5l-22-23q-11-11 0-22l124-125L86 132q-12-12 0-23z"/>
+				</svg>
+				<span class="sr-only">Close dialog</span>
+			</button>
+
+			<div class="event-summary">
+				<div class="event-head">
+					<div>
+						<h3 class="event-title">
+							UI5'ers live
+						</h3>
+						<p class="event-desc">
+							45 minute interactive webcast
+						</p>
+					</div>
+					<img src="images/events/ui5ers.svg" alt="Event logo">
+				</div>
+
+				<div class="event-details">
+					<time datetime="">September 11, 15:15</time>
+					<p class="event-platform">via Zoom</p>
+				</div>
+
+				<p>Next time: Explore the latest enhancements in the Adaptation Project Editor. Plus, dive into advanced OpenUI5 filtering techniques.</p>
+
+				<p>If you want to showcase your UI5-related work or have an idea for a topic, let us know either via <a href="mailto:openui5@sap.com?subject=UI5ers%20live">e-mail</a> or in the
+					<a href="https://openui5.slack.com/archives/C01CP60AAN7">#UI5ers_live</a> channel of the <a href="https://ui5-slack-invite.cfapps.eu10.hana.ondemand.com/">OpenUI5 Slack</a>!
+				</p>
+
+				<div class="event-cal">
+					Calendar blockers
+				</div>
+			</div>
+			<div class="event-speakers">
+				<h3>Speakers</h3>
+
+				<ul class="event-speaker-list">
+					<li>
+						<div class="speaker-image">
+							<img src="" alt="">
+						</div>
+						<p>
+							<strong>Mariana Naboka</strong>
+							<em>SAP</em>
+						</p>
+						<div class="speaker-socials">
+							<a href="" hreflang="en" rel="external nofollow" target="_blank">
+								<svg aria-hidden="true" class="icon">
+									<use xlink:href="images/icons/sprite.svg#bluesky"></use>
+								</svg>
+							</a>
+							<a href="" hreflang="en" rel="external nofollow" target="_blank">
+								<svg aria-hidden="true" class="icon">
+									<use xlink:href="images/icons/sprite.svg#twitter"></use>
+								</svg>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div class="speaker-image">
+							<img src="https://openui5.org/static/2dfeff89f21316aa1ac8b3829550e14c/viktor-sperling.png" alt="">
+						</div>
+						<p>
+							<strong>Viktor Sperling</strong>
+							<em>SAP</em>
+						</p>
+						<div class="speaker-socials">
+							<a href="" hreflang="en" rel="external nofollow" target="_blank">
+								<svg aria-hidden="true" class="icon">
+									<use xlink:href="images/icons/sprite.svg#youtube"></use>
+								</svg>
+							</a>
+							<a href="" hreflang="en" rel="external nofollow" target="_blank">
+								<svg aria-hidden="true" class="icon">
+									<use xlink:href="images/icons/sprite.svg#github"></use>
+								</svg>
+							</a>
+						</div>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+	</main>
+
+	<footer id="footer">
+		<footer-section></footer-section>
+	</footer>
+
+	<script src="./components/nav-section.component.js"></script>
+	<script src="./components/nav-section-mobile.component.js"></script>
+	<script src="./components/footer-section.component.js"></script>
+
+	<script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+	<script src="./js/luxon.min.js"></script>
+	<script src="./js/main.js"></script>
+
+</body>
+</html>
