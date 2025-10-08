@@ -60,13 +60,13 @@
     "eom": "Q4/2026"
   },
   {
-    "version": "1.84.52",
-    "url_download_runtime": "https://github.com/UI5/openui5/releases/download/1.84.52/openui5-runtime-1.84.52.zip",
-    "url_download_sdk": "https://github.com/UI5/openui5/releases/download/1.84.52/openui5-sdk-1.84.52.zip",
-    "url_download_mobile": "https://github.com/UI5/openui5/releases/download/1.84.52/openui5-runtime-mobile-1.84.52.zip",
-    "url_demokit": "https://sdk.openui5.org/1.84.52/#/topic/99ac68a5b1c3416ab5c84c99fefa250d",
-    "url_releasenotes": "https://sdk.openui5.org/1.84.52/#releasenotes.html",
-    "release_date": "03.09.2025",
+    "version": "1.84.53",
+    "url_download_runtime": "https://github.com/UI5/openui5/releases/download/1.84.53/openui5-runtime-1.84.53.zip",
+    "url_download_sdk": "https://github.com/UI5/openui5/releases/download/1.84.53/openui5-sdk-1.84.53.zip",
+    "url_download_mobile": "https://github.com/UI5/openui5/releases/download/1.84.53/openui5-runtime-mobile-1.84.53.zip",
+    "url_demokit": "https://sdk.openui5.org/1.84.53/#/topic/99ac68a5b1c3416ab5c84c99fefa250d",
+    "url_releasenotes": "https://sdk.openui5.org/1.84.53/#releasenotes.html",
+    "release_date": "08.10.2025",
     "eom": "Q4/2025"
   },
   {
