@@ -639,6 +639,33 @@ article {
 	}
 }
 
+/* --------------------------- Navigation ---------------------------  */
+.nav ul.anchor-nav {
+	display: flex;
+}
+
+.nav div.mobile-nav {
+	display: none;
+}
+
+@media (width < 780px) {
+	.nav ul.anchor-nav {
+		display: none;
+	}
+
+	.nav div.mobile-nav {
+		display: inline;
+	}
+}
+
+.mobile-nav ul.mobile-nav-menu {
+	display: none;
+}
+
+.mobile-nav ul.mobile-nav-menu.hamburgerMenuVisible {
+	display: flex;
+}
+
 /* --------------------------- Main Contents ---------------------------  */
 .head {
 	position: relative;
