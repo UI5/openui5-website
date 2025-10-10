@@ -1,0 +1,14 @@
+{
+  "name": "openui5-website",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "browser-sync start --server --serveStatic ./backtobasics --files \"./**/*\" --single"
+  },
+  "keywords": [],
+  "author": "OpenUI5 Team",
+  "license": "Apache-2.0",
+  "description": "The OpenUI5 website",
+  "devDependencies": {
+    "browser-sync": "^3.0.4"
+  }
+}
