@@ -1324,9 +1324,9 @@ main#main {
 /* --------------------------- Main Contents ---------------------------  */
 .top {
 	position: relative;
-	background: url(../images/Dark_background_image.svg) no-repeat center center,
+	background: url(../images/background_image.svg) no-repeat center center,
 		/* BACKGROUND */
-		url(../images/Dark-Theme.svg) no-repeat;
+		url(../images/Theme.svg) no-repeat;
 	/* FOREGROUND */
 	background-size: cover, var(--building-size);
 	background-position: var(--background-building-position), var(--building-position);
