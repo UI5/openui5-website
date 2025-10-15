@@ -941,9 +941,8 @@ main {
 
 /* Adjust main section top spacing */
 main#main {
-    position: relative;
-    margin-top: 0;
-    padding-top: 70px;
+	position: relative;
+	margin-top: 0;
 }
 
 @media (prefers-color-scheme: light) {
@@ -971,7 +970,6 @@ main#main {
 	padding-left: 2rem;
 	padding-right: 2rem;
 	transform: translateY(50%);
-    margin-bottom: -70px;
 	justify-items: center;
 }
 
@@ -1374,7 +1372,6 @@ main#main {
 
 @media only screen and (min-width: 760px) {
 	.counter-wrapper {
-        margin-bottom: -70px;
         width: calc(100% - 2rem);
     }
 
@@ -2090,7 +2087,6 @@ dd {
 
 	.counter-wrapper {
 		transform: translateY(50%);
-		margin-bottom: -80px;
 	}
 	.counter-value {
 		font-size: 24px;
@@ -2104,9 +2100,6 @@ dd {
 	.first-sec-padding {
 		padding-top: 150px;
 	}
-	main#main {
-        padding-top: 80px;
-    }
 }
 
 @media only screen and (min-width: 800px) {
