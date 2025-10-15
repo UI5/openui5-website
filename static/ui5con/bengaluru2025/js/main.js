@@ -38,7 +38,7 @@ var header = new Vue({
 	data() {
 		return {
 			isCalendarsVisible: false,
-			eventDate: new Date("September 26, 2025 00:00:00").getTime(),
+			eventDate: new Date("December 13, 2025 00:00:00").getTime(),
 			days: 0,
 			hours: 0,
 			minutes: 0,
@@ -48,6 +48,7 @@ var header = new Vue({
 		};
 	},
 	mounted() {
+		this.toggleNewsBanner();
 		this.startCountdown();
 	},
 	beforeUnmount() {
@@ -59,8 +60,8 @@ var header = new Vue({
 		},
 		createCalendars() {
 
-			let newStartTime = "2025-07-08T00:00:00.000";
-			let newEndTime = "2025-07-09T00:00:00.000";
+			let newStartTime = "2025-12-13T00:00:00.000";
+			let newEndTime = "2025-12-14T00:00:00.000";
 
 			let calendarStartDate = new Date(newStartTime).toISOString().replace(/-|:|\.\d+/g, '');
 			let calendarEndDate = new Date(newEndTime).toISOString().replace(/-|:|\.\d+/g, '');
@@ -153,6 +154,22 @@ var header = new Vue({
 			this.hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 			this.minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
 			this.seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+		},
+		toggleNewsBanner() {
+			const wasClosed = localStorage.getItem('newsBannerClosed');
+			if (wasClosed === 'true') {
+				const banner = document.getElementById('news-banner');
+				if (banner) {
+					banner.style.display = 'none';
+				}
+			}
+		},
+		closeNewsBanner() {
+			const banner = document.getElementById('news-banner');
+			if (banner) {
+				banner.style.display = 'none';
+				localStorage.setItem('newsBannerClosed', 'true');
+			}
 		}
 	}
 });

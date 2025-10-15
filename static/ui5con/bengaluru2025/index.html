@@ -46,6 +46,17 @@
 
 		<header class="head" id="header">
 
+			<div class="news-banner" id="news-banner">
+				<div class="news-banner-content">
+					<span class="news-banner-text">Call for Proposals is now open. Visit the <a href="speakerInfo.html"> Speakers </a> Section to learn more.</span>
+				</div>
+				<button class="news-banner-close" v-on:click="closeNewsBanner" aria-label="Close announcement">
+					<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M13 1L1 13M1 1L13 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+				</button>
+			</div>
+
 			<div class="wrap">
 
 				<div class="head-banner">
@@ -68,14 +79,14 @@
 							</clipPath>
 						</defs>
 					</svg>
-					<time datetime="2025-07-08" class="head-detail"><span class="location-icon"></span><small>BLR05, SAP
+					<time datetime="2025-12-13" class="head-detail"><span class="location-icon"></span><small>BLR13, SAP
 							Labs India</small></time>
 				</div>
 
 				<div class="head-container">
 
 					<div class="header-container-content">
-						<h1>Join us on <span class="header-container-date header-date-accent">December 2025!</span></h1>
+						<h1>Join us on <span class="header-container-date header-date-accent">13th December 2025!</span></h1>
 
 						<p style="text-align: justify;">
 							Where UI5 enthusiasts from across the world unite to share and enhance their knowledge.
@@ -85,19 +96,51 @@
 						</p>
 					</div>
 				</div>
-			</div>
-	</div>
 
-	</div>
+			</div>
+			<div class="counter-wrapper" id="counter-section">
+					<div class="counter-container counter-themeb">
+						<div class="counter-icon-themeb clock-icon">
+							<svg viewBox="0 0 24 24" width="38" height="38">
+								<circle cx="12" cy="12" r="10" stroke="#333" stroke-width="2" fill="none" stroke-dasharray="5,3" />
+								<line x1="12" y1="7" x2="12" y2="12" stroke="#333" stroke-width="2" />
+								<line x1="12" y1="12" x2="16" y2="16" stroke="#333" stroke-width="2" />
+							</svg>
+						</div>
+						<div class="counter-items-container" v-if="!eventStarted">
+							<div class="counter-item">
+								<div class="counter-value counter-value-themea">{{ days }}</div>
+								<div class="counter-label counter-label-themeb">Days</div>
+							</div>
+							<div class="counter-item">
+								<div class="counter-value counter-value-themeb">{{ hours }}</div>
+								<div class="counter-label counter-label-themeb">Hours</div>
+							</div>
+							<div class="counter-item">
+								<div class="counter-value counter-value-themeb">{{ minutes }}</div>
+								<div class="counter-label counter-label-themeb">Minutes</div>
+							</div>
+							<div class="counter-item">
+								<div class="counter-value counter-value-themeb">{{ seconds }}</div>
+								<div class="counter-label counter-label-themeb">Seconds</div>
+							</div>
+						</div>
+						<div v-else class="counter-expired">
+							Event has started!
+						</div>
+					</div>
+				</div>
+		</div>
+
 	</header>
 	</div>
 
 	<main id="main">
 		<!-- LATEST NEWS SECTION -->
-		<section class="alternate section-bg-gradient">
+		<section class="alternate section-bg-gradient first-sec-padding">
 			<div class="wrap">
 
-				<h2 class="section-heading section-blr-color2">
+				<h2 class="section-heading section-blr-color2 first-sec-header">
 					<span>Call for Proposals now open!</span>
 				</h2>
 

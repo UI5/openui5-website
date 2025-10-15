@@ -49,6 +49,51 @@
 	}
 }
 
+.news-banner {
+	padding: 0.5rem 0.5rem 0.5rem 0;
+	background-color: #FF5A37;
+	display: flex;
+}
+
+.news-banner-content {
+	width: 100%;
+	color: white;
+	text-align: center;
+	font-weight: 600;
+	font-size: 1rem;
+}
+
+.news-banner-content a {
+	color: white;
+}
+
+.news-banner-content a:focus,
+.news-banner-content a:hover {
+	color: white !important;
+	text-decoration-color: white !important;
+	text-decoration: underline;
+}
+
+.news-banner-close {
+	background: none;
+	border: none;
+	color: rgba(255, 255, 255, 0.6);
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: color 0.2s ease;
+	flex-shrink: 0;
+}
+
+.news-banner-close:hover {
+	color: rgba(255, 255, 255, 1);
+}
+
+.news-banner-close:active {
+	color: rgba(255, 255, 255, 0.8);
+}
+
 /* SVG theme-aware styling */
 .theme-aware-svg .theme-aware-text {
 	fill: var(--svg-fill-primary);
@@ -894,6 +939,13 @@ main {
 	padding-top: 50px;
 }
 
+/* Adjust main section top spacing */
+main#main {
+    position: relative;
+    margin-top: 0;
+    padding-top: 70px;
+}
+
 @media (prefers-color-scheme: light) {
 	.links-container a{
 		color: var(--text-color);
@@ -916,7 +968,11 @@ main {
 	width: fit-content;
 	max-width: 1146px;
 	margin: 0 auto;
-	bottom: -3.7rem;
+	padding-left: 2rem;
+	padding-right: 2rem;
+	transform: translateY(50%);
+    margin-bottom: -70px;
+	justify-items: center;
 }
 
 .counter-container {
@@ -1029,18 +1085,18 @@ main {
 	}
 
 	.counter-value {
-		font-size: 18px;
+		font-size: 28px;
 		color: #ff8a00;
 		font-weight: bold;
 	}
 
 	.counter-label {
-		font-size: 14px;
+		font-size: 20px;
 		color: #222222;
 	}
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
 	.counter-container {
 		flex-direction: column;
 		gap: 15px;
@@ -1313,9 +1369,27 @@ main {
 		padding-inline: 2rem;
 		padding-block-end: 2.5rem;
 	}
+
 }
 
 @media only screen and (min-width: 760px) {
+	.counter-wrapper {
+        margin-bottom: -70px;
+        width: calc(100% - 2rem);
+    }
+
+    .counter-container {
+        padding: 20px;
+    }
+
+    .first-sec-padding {
+        padding-top: 50px;
+    }
+
+    /* Improve mobile counter layout */
+    .counter-items-container {
+        gap: 15px;
+    }
 
 	.lines {
 		background-size: 1075px auto;
@@ -1526,10 +1600,6 @@ main {
 	line-height: 1.5;
 	margin-bottom: 0.75rem;
 }
-
-/* ------------------------------ Teaser -------------------------------  */
-
-.teaser {}
 
 /* ------------------------ Newsletter section -------------------------  */
 .social-links {
@@ -1930,7 +2000,7 @@ dd {
 
 .counter-number {
 	font-family: 'Poppins', sans-serif;
-	font-weight: 600;
+	font-weight: 700;
 	font-size: 32px;
 	line-height: 40px;
 	color: #000;
@@ -1938,8 +2008,8 @@ dd {
 
 .counter-label {
 	font-family: 'Poppins', sans-serif;
-	font-weight: 400;
-	font-size: 14px;
+	font-weight: 700;
+	font-size: 20px;
 	text-align: left;
 	color: #4F4F4F;
 }
@@ -1987,13 +2057,10 @@ dd {
 		text-align: center;
 	}
 
-	.counter-wrapper {
-		height: 7rem;
+	.first-sec-padding {
+		padding-top: 180px;
 	}
 
-	.first-sec-padding {
-		padding-top: 90px;
-	}
 }
 
 @media only screen and (min-width: 375px) {
@@ -2006,14 +2073,6 @@ dd {
 
 	.head-cta {
 		text-align: center;
-	}
-
-	.counter-wrapper {
-		height: 7rem;
-	}
-
-	.first-sec-padding {
-		padding-top: 90px;
 	}
 }
 
@@ -2030,15 +2089,27 @@ dd {
 	}
 
 	.counter-wrapper {
-		height: 7rem;
+		transform: translateY(50%);
+		margin-bottom: -80px;
+	}
+	.counter-value {
+		font-size: 24px;
+	}
+
+	.counter-label {
+		font-size: 16px;
+
 	}
 
 	.first-sec-padding {
-		padding-top: 90px;
+		padding-top: 150px;
 	}
+	main#main {
+        padding-top: 80px;
+    }
 }
 
-@media only screen and (min-width: 760px) {
+@media only screen and (min-width: 800px) {
 	:root {
 		--building-size: 70rem 70rem;
 		--building-position: calc(100% + 46rem) 53%;
@@ -2147,6 +2218,23 @@ dd {
 	.sponsors-logo-section {
 		background: #161616;
 	}
+	.counter-themeb {
+		background: #222222;
+		box-shadow: 0px 0px 20px 4px rgba(0, 0, 0, 0.5);
+	}
+
+	.counter-label-themeb {
+		color: #FFFFFF;
+	}
+
+	.counter-icon-themeb {
+		display: flex;
+		color: #FFFFFF;
+	}
+	.counter-icon-themeb svg>* {
+		stroke: #FFFFFF;
+	}
+
 
 	.alternate-background {
 		background: #532C25;
