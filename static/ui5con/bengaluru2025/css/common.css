@@ -28,6 +28,7 @@
 	--building-size: 60rem 70rem;
 	--building-position: calc(100% + 28rem) -2%;
 	--background-building-position: calc(100%) -2%;
+	 --building-position-y: -2%;
 
 	--type-0: clamp(1rem, 0.9286rem + 0.3571vw, 1.1rem);
 	--type-1: clamp(1.2rem, 1.0964rem + 0.5179vw, 1.5625rem);
@@ -971,6 +972,8 @@ main#main {
 	padding-right: 2rem;
 	transform: translateY(50%);
 	justify-items: center;
+	height: 11rem;
+	align-content: center;
 }
 
 .counter-container {
@@ -981,6 +984,7 @@ main#main {
 	padding: 30px 40px;
 	background: white;
 	box-shadow: 0px 0px 20px 10px rgba(187, 187, 187, 0.5);
+	height: 60%;
 }
 
 .counter-icon {
@@ -1009,7 +1013,6 @@ main#main {
 }
 
 .counter-value {
-	font-size: 28px;
 	font-weight: 700;
 	min-width: 40px;
 	/* Prevent shifting when numbers change */
@@ -1018,7 +1021,6 @@ main#main {
 }
 
 .counter-label {
-	font-size: 20px;
 	font-weight: 700;
 	color: #222222;
 }
@@ -1056,9 +1058,9 @@ main#main {
 		flex-direction: row;
 		justify-content: center;
 		align-items: center;
-		gap: 20px;
 		max-width: 100%;
 		flex-wrap: wrap;
+		height: 60%;
 	}
 
 	.counter-icon-container {
@@ -1083,21 +1085,26 @@ main#main {
 	}
 
 	.counter-value {
-		font-size: 28px;
+		font-size: 24px;
 		color: #ff8a00;
 		font-weight: bold;
 	}
 
 	.counter-label {
-		font-size: 20px;
+		font-size: 16px;
 		color: #222222;
 	}
 }
 
-@media (max-width: 650px) {
+@media (max-width: 670px) {
 	.counter-container {
 		flex-direction: column;
 		gap: 15px;
+		height: 85%;
+	}
+	.counter-wrapper {
+		transform: translateY(50%);
+		height: 22rem;
 	}
 
 	.counter-items-container {
@@ -1368,12 +1375,10 @@ main#main {
 		padding-block-end: 2.5rem;
 	}
 
+
 }
 
 @media only screen and (min-width: 760px) {
-	.counter-wrapper {
-        width: calc(100% - 2rem);
-    }
 
     .counter-container {
         padding: 20px;
@@ -1385,7 +1390,7 @@ main#main {
 
     /* Improve mobile counter layout */
     .counter-items-container {
-        gap: 15px;
+        gap: 60px;
     }
 
 	.lines {
@@ -1866,6 +1871,7 @@ footer {
 
 	:root {
 		--building-position: calc(100% + 33rem) -5%;
+		--building-position-y: -2%;
 	}
 }
 
@@ -2016,6 +2022,26 @@ dd {
 		grid-template-columns: repeat(2, 1fr);
 	}
 }
+@media only screen and (max-width: 425px) {
+	:root {
+		--building-size: 0;
+		--building-position: calc(100% + 42rem) -40%;
+		--header-banner-width: 19rem;
+		--header-container-width: 100%;
+	}
+	.counter-container {
+		flex-direction: column;
+		gap: 10px;
+		height: 95%;
+	}
+	.counter-wrapper {
+		height: 24rem;
+	}
+
+	.counter-item {
+		justify-content: center;
+	}
+}
 
 @media only screen and (max-width: 480px) {
 	.counters {
@@ -2081,13 +2107,11 @@ dd {
 		--header-container-width: 100%;
 	}
 
+
 	.head-cta {
 		text-align: center;
 	}
 
-	.counter-wrapper {
-		transform: translateY(50%);
-	}
 	.counter-value {
 		font-size: 24px;
 	}
@@ -2100,12 +2124,13 @@ dd {
 	.first-sec-padding {
 		padding-top: 150px;
 	}
+
 }
 
 @media only screen and (min-width: 800px) {
 	:root {
-		--building-size: 70rem 70rem;
-		--building-position: calc(100% + 46rem) 53%;
+		--building-size: 70rem 78rem;
+		--building-position: calc(100% + 44rem) 0%;
 		--header-container-width: 50%;
 	}
 
@@ -2116,28 +2141,44 @@ dd {
 	.first-sec-padding {
 		padding-top: 50px;
 	}
+	.counter-wrapper {
+		transform: translateY(50%);
+		height: 11rem;
+	}
 }
 
 @media only screen and (min-width: 1024px) {
 	:root {
-		--building-size: 70rem 70rem;
-		--building-position: calc(100% + 37rem) 43%;
+		--building-size: 70rem 78rem;
+		--building-position: calc(100% + 36rem) 0%;
 	}
 }
 
 
 @media only screen and (min-width: 1200px) {
 	:root {
-		--building-size: 70rem 70rem;
-		--building-position: calc(100% + 31rem) 33%;
+		--building-size: 70rem 78rem;
+		--building-position: calc(100% + 30rem) 0%;
 
 	}
 }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1480px) {
+	:root {
+		--building-size: 70rem 72rem;
+		--building-position: calc(100% + 23rem) 0%;
+	}
+
+	.wrap {
+		padding-block: 6rem;
+		padding-inline: 11rem;
+		/* Original padding for large screens */
+	}
+}
+@media only screen and (min-width: 1520px) {
 	:root {
 		--building-size: 70rem 70rem;
-		--building-position: calc(100% + 22rem) 30%;
+		--building-position: calc(100% + 19rem) 0%;
 	}
 
 	.wrap {
@@ -2149,7 +2190,7 @@ dd {
 @media only screen and (min-width: 1800px) {
 	:root {
 		--building-size: 70rem 70rem;
-		--building-position: calc(100% + 10rem) 20%;
+		--building-position: calc(100% + 11rem) 0%;
 	}
 
 	.wrap {
@@ -2162,7 +2203,7 @@ dd {
 @media only screen and (min-width: 2560px) {
 	:root {
 		--building-size: 70rem 70rem;
-		--building-position: calc(100% + 0rem) 22%;
+		--building-position: calc(100% + 0rem) 0%;
 	}
 }
 
