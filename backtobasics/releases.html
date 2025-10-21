@@ -32,7 +32,7 @@
 	<link rel="stylesheet" href="./css/common.css" />
 	<link rel="stylesheet" href="./css/modules.css" />
 
-	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+	<script src="js/common.js"></script>
 </head>
 
 <body>
@@ -41,8 +41,8 @@
 	<header class="head head--collapsed" id="header">
 
 		<nav class="nav" aria-label="Main navigation" id="nav">
-			<nav-section v-if="!showMobileNav"></nav-section>
-			<nav-section-mobile v-else></nav-section-mobile>
+			<nav-section></nav-section>
+			<nav-section-mobile></nav-section-mobile>
 		</nav>
 
 	</header>
@@ -216,14 +216,6 @@
 	<footer id="footer">
 		<footer-section></footer-section>
 	</footer>
-
-	<script src="./components/nav-section.component.js"></script>
-	<script src="./components/nav-section-mobile.component.js"></script>
-	<script src="./components/footer-section.component.js"></script>
-
-	<script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
-	<script src="./js/luxon.min.js"></script>
-	<script src="./js/main.js"></script>
 
 </body>
 </html>
