@@ -1331,12 +1331,9 @@ main#main {
 /* --------------------------- Main Contents ---------------------------  */
 .top {
 	position: relative;
-	background: url(../images/background_image.svg) no-repeat center center,
-		/* BACKGROUND */
-		url(../images/Theme.svg) no-repeat;
-	/* FOREGROUND */
-	background-size: cover, var(--building-size);
-	background-position: var(--background-building-position), var(--building-position);
+	background: url(../images/Theme.svg) no-repeat, url(../images/background_image.svg) no-repeat center center;
+	background-size: var(--building-size), cover;
+	background-position: var(--building-position), var(--background-building-position);
 }
 
 .lines {
@@ -1379,11 +1376,6 @@ main#main {
 }
 
 @media only screen and (min-width: 760px) {
-
-    .counter-container {
-        padding: 20px;
-    }
-
     .first-sec-padding {
         padding-top: 50px;
     }
