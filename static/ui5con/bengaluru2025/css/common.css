@@ -981,7 +981,7 @@ main#main {
 	width: fit-content;
 	align-items: center;
 	border-radius: 16px;
-	padding: 30px 40px;
+	padding: 30px 30px;
 	background: white;
 	box-shadow: 0px 0px 20px 10px rgba(187, 187, 187, 0.5);
 	height: 60%;
@@ -1496,7 +1496,6 @@ main#main {
 	gap: 3rem;
 	align-items: center;
 	width: var(--header-container-width);
-	padding-bottom: 3rem;
 }
 
 .head-container h1 {
