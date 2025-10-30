@@ -212,9 +212,19 @@ var main = new Vue({
 			],
 			committee: [
 				{
-					name: "Klaudia Laag",
-					role: "UI5 Expert",
-					image: "images/committee/klaudia-laag.jpg",
+					name: "Andreas Kunz",
+					role: "Lead Architect - SAP SE",
+					image: "images/committee/Andreas.jpg",
+				},
+				/* {
+					name: "Rohith Deraje",
+					role: "Product Manager - SAP Labs India",
+					image: "images/committee/Rohith.jpg",
+				}, */
+				{
+					name: "Sandeep R S",
+					role: "Product Manager - SAP Labs India",
+					image: "images/committee/Sandeep.jpg",
 				}
 			]
 		}

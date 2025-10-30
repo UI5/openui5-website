@@ -183,6 +183,27 @@
 
 				</div>
 			</section>
+            <section style="padding-top: 10px;">
+                <div class="wrap section-blr-normal-bg2 alternate-background">
+                    <h2 class="sub-section-heading section-blr-color2">
+                        <span>Jury</span>
+                    </h2>
+                    <ul class="people-list people-list--team" role="list">
+                        <li role="listitem" class="people-list-item" v-for="member in committee" :key="member.name">
+                            <figure class="people-member">
+                                <a :href="`mailto:${member.email}`">
+                                    <img :src="member.image" :href="`mailto:${member.email}`"
+                                        :alt="`Portrait of ${member.name}`">
+                                </a>
+                                <figcaption>
+                                    <p class="people-name">{{member.name}}</p>
+									<p class="people-role">{{member.role}}</p>
+                                </figcaption>
+                            </figure>
+                        </li>
+                    </ul>
+                </div>
+            </section>
 		</article>
 
 	</main>
