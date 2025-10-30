@@ -216,11 +216,11 @@ var main = new Vue({
 					role: "Lead Architect - SAP SE",
 					image: "images/committee/Andreas.jpg",
 				},
-				/* {
+				{
 					name: "Rohith Deraje",
-					role: "Product Manager - SAP Labs India",
+					role: "Lead Product Manager - SAP Labs India",
 					image: "images/committee/Rohith.jpg",
-				}, */
+				},
 				{
 					name: "Sandeep R S",
 					role: "Product Manager - SAP Labs India",
