@@ -234,7 +234,7 @@ var main = new Vue({
 				},
 				{
 					name: "Shrinivasan Neelamegam",
-					role: "Developer Advocate - SAP Labs India",
+					role: "Developer Advocate - SAP",
 					image: "images/committee/Shrinivasan.jpg",
 				}
 			]

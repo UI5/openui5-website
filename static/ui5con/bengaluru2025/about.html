@@ -126,8 +126,8 @@
 				<ul class="people-list people-list--team" role="list">
 					<li role="listitem" class="people-list-item" v-for="member in team" :key="member.name">
 						<figure class="people-member">
-							<a :href="`mailto:${member.email}`">
-								<img :src="member.image" :href="`mailto:${member.email}`"
+							<a>
+								<img :src="member.image"
 									:alt="`Portrait of ${member.name}`">
 							</a>
 							<figcaption>
