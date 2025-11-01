@@ -111,6 +111,9 @@
 .theme-aware-svg path[fill="white"] {
 	fill: var(--svg-fill-primary);
 }
+.logo-container {
+    display: flex;
+}
 
 /* Fallback for browsers that don't support CSS custom properties */
 @supports not (color: var(--svg-fill-primary)) {

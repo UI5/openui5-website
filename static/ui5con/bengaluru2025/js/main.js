@@ -208,7 +208,13 @@ var main = new Vue({
 					location: 'harshitha.s@sap.com',
 					image: 'images/team/Harshitha-S.jpg',
 					email: 'harshitha.s@sap.com'
-				}
+				}/* ,
+				{
+					name: 'Aman Singh',
+					location: 'aman.singh09@sap.com',
+					image: 'images/team/Aman.jpg',
+					email: 'aman.singh09@sap.com'
+				} */
 			],
 			committee: [
 				{
