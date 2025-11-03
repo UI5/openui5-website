@@ -20,6 +20,3 @@ On top of that, we will showcase how the SAP Fiori tools' Project Accelerator us
 By simply inputting an image, watch as the tool autonomously builds an application complete with data models, services, and sample data within a CAP project. 
 As we explore this tool's capabilities, we will examine a variety of user input examples, highlighting how this knowledge can be adopted to save time and effort in the 
 development of new SAPUI5 applications.
-
-If you want to showcase your UI5-related work or have an idea for a topic, let us know either via [e-mail](mailto:openui5@sap.com?subject=UI5ers live) or in the 
-[#UI5ers_live](https://openui5.slack.com/archives/C01CP60AAN7) channel of the [OpenUI5 Slack](https://ui5-slack-invite.cfapps.eu10.hana.ondemand.com/)!
