@@ -185,7 +185,37 @@
 	opacity: .7;
 }
 
-@media (width >= 700px) {
+.year-separator {
+	list-style: none;
+	grid-column: 1 / -1;
+	margin-block-start: 4rem;
+	margin-block-end: .5rem;
+	padding: 0;
+	display: block;
+}
+
+.year-separator-inner {
+	display: flex;
+	align-items: center;
+}
+
+.year-label {
+	font-size: 2rem;
+	font-weight: 700;
+	color: var(--brand-color);
+	line-height: 1;
+}
+
+/* Optional subtle divider line after the label */
+.year-separator-inner::after {
+	content: "";
+	flex: 1;
+	height: 2px;
+	background: var(--background-color-alternate);
+	margin-inline-start: 1rem;
+}
+
+@media (width >=700px) {
 
 	.event-list--past {
 		grid-template-columns: 1fr 1fr;
@@ -201,4 +231,12 @@
 	.event-list--past {
 		grid-template-columns: 1fr 1fr 1fr;
 	}
+}
+
+.event-dialog::part(content) {
+	padding: 0; /* Remove default padding, which is too much */
+}
+
+.event-dialog::part(header) {
+	display: none; /* Hide default header, as it serves no purpose and gets an ugly blue focus border */
 }
