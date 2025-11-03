@@ -10,6 +10,7 @@ speakers:
 - Marco Beier
 - Nikolay Kolarov
 url: https://sap-se.zoom.com/j/94833714827
+recordingUrl: https://youtu.be/RqtmVPHBJNE
 ---
 
 This episode will cover two key aspects of OpenUI5 development: the manifest.json file and accessibility. First, we will explore the crucial role of the manifest.json file as the central configuration point for OpenUI5 applications. We'll explore version dependencies, common pitfalls encountered when schema versions and runtime versions are mismatched, and best practices for maintaining a healthy manifest file.  Real-world examples will illustrate these challenges and demonstrate solutions to ensure compatibility and avoid unexpected issues. 
