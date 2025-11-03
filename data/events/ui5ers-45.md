@@ -22,6 +22,3 @@ Furthermore, we will shift focus to the practical aspects of previewing an appli
 Learn about the latest advancements in local app preview via the VSCode with the SAP Fiori Tools extension, and how the transition 
 from local files to virtual routes can reduce maintenance efforts for developers. Additionally, we will introduce the first version 
 of a converter designed to help transition existing applications to this new approach.
-
-If you want to showcase your UI5-related work or have an idea for a topic, let us know either via [e-mail](mailto:openui5@sap.com?subject=UI5ers live) or in the 
-[#UI5ers_live](https://openui5.slack.com/archives/C01CP60AAN7) channel of the [OpenUI5 Slack](https://ui5-slack-invite.cfapps.eu10.hana.ondemand.com/)!

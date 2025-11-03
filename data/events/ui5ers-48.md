@@ -22,6 +22,3 @@ OpenUI5 and SAPUI5 versions effectively: ui5-task-check-eocp, check-outdated-ui5
 Through live demonstrations, we'll illustrate the purpose and functionality of each tool, providing additional context to help you 
 understand their benefits. We'll conclude with a comparative discussion of these solutions, providing insights to help you determine 
 the best approach for your specific projects.
-
-If you want to showcase your UI5-related work or have an idea for a topic, let us know either via [e-mail](mailto:openui5@sap.com?subject=UI5ers live) or in the 
-[#UI5ers_live](https://openui5.slack.com/archives/C01CP60AAN7) channel of the [OpenUI5 Slack](https://ui5-slack-invite.cfapps.eu10.hana.ondemand.com/)!
