@@ -19,6 +19,3 @@ Additionally, we'll clarify the best ways to instantiate components. We'll provi
 OpenUI5, complete with clear guidance on when to use each one. Through practical code samples, you'll learn not only the "how" but also the "why." 
 We'll cover crucial topics like migrating from outdated patterns to modern approaches and mastering asynchronous content creation with features 
 like `IAsyncContentCreation`.
-
-If you want to showcase your UI5-related work or have an idea for a topic, let us know either via [e-mail](mailto:openui5@sap.com?subject=UI5ers live) or in the 
-[#UI5ers_live](https://openui5.slack.com/archives/C01CP60AAN7) channel of the [OpenUI5 Slack](https://ui5-slack-invite.cfapps.eu10.hana.ondemand.com/)!
