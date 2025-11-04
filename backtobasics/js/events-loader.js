@@ -110,17 +110,28 @@
         }
         return { ts: guess, isDateOnly: false };
       } catch (e) {
-        console.warn('[events-loader] timezone parse fallback used for', str, e);
+        console.error('[events-loader] ERROR: Failed to parse date/time with timezone:', str, 'Error:', e.message);
         // Fallback: treat provided wall time as local browser time (may be wrong but better than NaN)
-        return { ts: new Date(+y, +mo - 1, +d, +h, +mi, 0).getTime(), isDateOnly: false };
+        const fallbackTs = new Date(+y, +mo - 1, +d, +h, +mi, 0).getTime();
+        if (isNaN(fallbackTs)) {
+          console.error('[events-loader] ERROR: Fallback date parsing also failed for:', str);
+          return { ts: NaN, isDateOnly: false };
+        }
+        console.warn('[events-loader] WARNING: Using fallback local time for:', str);
+        return { ts: fallbackTs, isDateOnly: false };
       }
     }
     m = DATE_ONLY_RE.exec(trimmed);
     if (m) {
       const [_, y, mo, d] = m;
-      return { ts: new Date(+y, +mo - 1, +d, 0, 0, 0).getTime(), isDateOnly: true };
+      const ts = new Date(+y, +mo - 1, +d, 0, 0, 0).getTime();
+      if (isNaN(ts)) {
+        console.error('[events-loader] ERROR: Failed to parse date-only format:', str);
+        return { ts: NaN, isDateOnly: true };
+      }
+      return { ts: ts, isDateOnly: true };
     }
-    console.warn('Date format unsupported', str);
+    console.error('[events-loader] ERROR: Date format not recognized:', str, '(Expected formats: "YYYY-MM-DD HH:MM TZ" or "YYYY-MM-DD")');
     return { ts: NaN, isDateOnly: false };
   }
 
@@ -128,31 +139,82 @@
     const personsMap = {};
     personsRaw.forEach(p => { if (p.id) personsMap[p.id] = p; });
 
-    const events = eventsRaw
-      .filter(e => e.id && e.start && e.end && e.title)
-      .map(e => {
-        const start = parseDateFlexible(e.start);
-        const end = parseDateFlexible(e.end);
-        return {
-          id: e.id,
-          title: e.title,
-          subTitle: e.subTitle || '',
-          start: e.start,
-          end: e.end,
-          startTs: start.ts,
-          endTs: end.ts,
-          isDateOnly: start.isDateOnly && end.isDateOnly,
-          location: e.location || '',
-          logo: e.logo || '',
-          external: !!e.external,
-          url: e.url || '',
-          recordingUrl: e.recordingUrl || '',
-          speakers: Array.isArray(e.speakers) ? e.speakers : [],
-          body: e.body || ''
-        };
-      });
+    const validEvents = [];
+    let ignoredCount = 0;
 
-    return { events, personsMap };
+    eventsRaw.forEach(e => {
+      // Check for required fields
+      if (!e.id) {
+        console.error('[events-loader] ERROR: Event ignored - missing required field "id". Event data:', e);
+        ignoredCount++;
+        return;
+      }
+      if (!e.title) {
+        console.error('[events-loader] ERROR: Event ignored - missing required field "title". Event ID:', e.id);
+        ignoredCount++;
+        return;
+      }
+      if (!e.start) {
+        console.error('[events-loader] ERROR: Event ignored - missing required field "start". Event:', e.id, '-', e.title);
+        ignoredCount++;
+        return;
+      }
+      if (!e.end) {
+        console.error('[events-loader] ERROR: Event ignored - missing required field "end". Event:', e.id, '-', e.title);
+        ignoredCount++;
+        return;
+      }
+
+      // Parse dates
+      const start = parseDateFlexible(e.start);
+      const end = parseDateFlexible(e.end);
+
+      // Validate parsed dates
+      if (isNaN(start.ts)) {
+        console.error('[events-loader] ERROR: Event ignored - start date/time could not be parsed. Event:', e.id, '-', e.title, '| Start value:', e.start);
+        ignoredCount++;
+        return;
+      }
+      if (isNaN(end.ts)) {
+        console.error('[events-loader] ERROR: Event ignored - end date/time could not be parsed. Event:', e.id, '-', e.title, '| End value:', e.end);
+        ignoredCount++;
+        return;
+      }
+
+      // Date validation: end should not be before start
+      if (end.ts < start.ts) {
+        console.error('[events-loader] ERROR: Event ignored - end date/time is before start date/time. Event:', e.id, '-', e.title, '| Start:', e.start, '| End:', e.end);
+        ignoredCount++;
+        return;
+      }
+
+      // Event is valid, add to list
+      validEvents.push({
+        id: e.id,
+        title: e.title,
+        subTitle: e.subTitle || '',
+        start: e.start,
+        end: e.end,
+        startTs: start.ts,
+        endTs: end.ts,
+        isDateOnly: start.isDateOnly && end.isDateOnly,
+        location: e.location || '',
+        logo: e.logo || '',
+        external: !!e.external,
+        url: e.url || '',
+        recordingUrl: e.recordingUrl || '',
+        speakers: Array.isArray(e.speakers) ? e.speakers : [],
+        body: e.body || ''
+      });
+    });
+
+    if (ignoredCount > 0) {
+      console.warn(`[events-loader] WARNING: ${ignoredCount} event(s) were ignored due to missing or invalid data. Check console errors above for details.`);
+    }
+
+    console.log(`[events-loader] Successfully loaded ${validEvents.length} event(s)`);
+
+    return { events: validEvents, personsMap };
   }
 
   /***********************
@@ -297,6 +359,34 @@
       } else {
         interactiveRoot.dataset.eventId = ev.id;
         interactiveRoot.addEventListener('click', () => openDialog(ev));
+      }
+    }
+
+    // Add calendar button for upcoming events (placed after event-details, not inside it)
+    if (!isPast) {
+      const calendarBtn = document.createElement('button');
+      calendarBtn.type = 'button';
+      calendarBtn.className = 'add-to-calendar-btn';
+      calendarBtn.textContent = '+ Add to calendar';
+      calendarBtn.id = `calbtn-${ev.id}`;
+      calendarBtn.setAttribute('aria-haspopup', 'menu');
+      calendarBtn.setAttribute('aria-controls', 'calendar-popover');
+      calendarBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        e.preventDefault(); // Prevent external link navigation
+        populateAndShowCalendarPopover(ev, calendarBtn);
+      });
+      
+      // For external events, insert after the anchor; for regular events, append to button content
+      if (ev.external && ev.url) {
+        // External event card: append button after the anchor element
+        node.appendChild(calendarBtn);
+      } else {
+        // Regular event card: append button to the button element
+        const cardBtn = node.querySelector('.event-card-btn');
+        if (cardBtn) {
+          cardBtn.appendChild(calendarBtn);
+        }
       }
     }
 
@@ -541,6 +631,135 @@
     function pad(n) { return n.toString().padStart(2, '0'); }
     update();
     setInterval(update, 1000);
+  }
+
+  /***********************
+   * Calendar Popover
+   ***********************/
+  function buildCalendarEvent(ev) {
+    // Convert event data to format expected by calendar generator
+    let startDate, endDate;
+    
+    if (ev.isDateOnly) {
+      // Format as YYYY/MM/DD for date-only events
+      const startD = new Date(ev.startTs);
+      const endD = new Date(ev.endTs);
+      startDate = `${startD.getFullYear()}/${String(startD.getMonth() + 1).padStart(2, '0')}/${String(startD.getDate()).padStart(2, '0')}`;
+      endDate = `${endD.getFullYear()}/${String(endD.getMonth() + 1).padStart(2, '0')}/${String(endD.getDate()).padStart(2, '0')}`;
+    } else {
+      // Use ISO string for timed events
+      startDate = new Date(ev.startTs).toISOString();
+      endDate = new Date(ev.endTs).toISOString();
+    }
+
+    // Build description
+    let description = '';
+    if (ev.body) {
+      // Strip basic markdown and HTML
+      const bodyText = ev.body.replace(/<[^>]*>/g, '').replace(/[#*_`]/g, '').trim();
+      if (bodyText) {
+        description = bodyText;
+      }
+    } else if (ev.subTitle) {
+      description = ev.subTitle;
+    } else {
+      description = ev.title;
+    }
+
+    return {
+      id: ev.id,
+      title: ev.title,
+      description: description,
+      startDate: startDate,
+      endDate: endDate,
+      location: ev.location || '',
+      url: ev.url || 'https://openui5.org/events'
+    };
+  }
+
+  function populateAndShowCalendarPopover(ev, button) {
+    const popover = document.getElementById('calendar-popover');
+    if (!popover) return;
+
+    // Check if calendar generator is available
+    if (typeof window.calendarGenerate !== 'function') {
+      console.warn('Calendar generator not available');
+      return;
+    }
+
+    const calEvent = buildCalendarEvent(ev);
+    
+    // Generate calendar links
+    const googleLink = window.calendarGenerate('google', calEvent);
+    const office365Link = window.calendarGenerate('office365', calEvent);
+    const icsLink = window.calendarGenerate('ics', calEvent);
+    
+    // Update the href and download attributes of existing links
+    const googleEl = document.getElementById('cal-google');
+    const office365El = document.getElementById('cal-office365');
+    const icalEl = document.getElementById('cal-ical');
+    const outlookEl = document.getElementById('cal-outlook');
+    
+    const downloadFilename = `${ev.title.replace(/[^a-zA-Z0-9]/g, '_')}.ics`;
+    
+    if (googleEl) googleEl.setAttribute('href', googleLink);
+    if (office365El) office365El.setAttribute('href', office365Link);
+    if (icalEl) {
+      icalEl.setAttribute('href', icsLink);
+      icalEl.setAttribute('download', downloadFilename);
+    }
+    if (outlookEl) {
+      outlookEl.setAttribute('href', icsLink);
+      outlookEl.setAttribute('download', downloadFilename);
+    }
+
+    // Position popover relative to button using anchor positioning if supported
+    if (CSS.supports('anchor-name', 'button')) {
+      popover.style.positionAnchor = `#${button.id}`;
+    } else {
+      // Fallback positioning
+      const rect = button.getBoundingClientRect();
+      popover.style.left = `${rect.left + rect.width / 2}px`;
+      popover.style.top = `${rect.bottom + 8}px`;
+      popover.style.transform = 'translateX(-50%)';
+    }
+
+    // Show popover
+    popover.showPopover();
+
+    // Focus first link for accessibility
+    const firstLink = popover.querySelector('a');
+    if (firstLink) {
+      setTimeout(() => firstLink.focus(), 0);
+    }
+
+    // Add keyboard navigation
+    const handleKeyNav = (e) => {
+      const links = Array.from(popover.querySelectorAll('a'));
+      const current = document.activeElement;
+      const index = links.indexOf(current);
+      
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        const next = links[(index + 1) % links.length];
+        if (next) next.focus();
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        const prev = links[(index - 1 + links.length) % links.length];
+        if (prev) prev.focus();
+      } else if (e.key === 'Escape') {
+        popover.hidePopover();
+      }
+    };
+
+    popover.addEventListener('keydown', handleKeyNav);
+    
+    // Clean up event listener when popover closes
+    const cleanup = () => {
+      popover.removeEventListener('keydown', handleKeyNav);
+      popover.removeEventListener('toggle', cleanup);
+    };
+    popover.addEventListener('toggle', cleanup);
   }
 
   /***********************

@@ -89,6 +89,16 @@
 
 	<ui5-dialog id="eventDialog" class="event-dialog" resizable preventInitialFocus></ui5-dialog>
 
+<!-- Calendar popover -->
+<div id="calendar-popover" popover class="calendar-popover" role="menu" aria-label="Add to calendar">
+	<ul>
+		<li><a id="cal-google" href="#" target="_blank" role="menuitem" class="cal-google">Google</a></li>
+		<li><a id="cal-office365" href="#" target="_blank" role="menuitem" class="cal-office365">Office 365</a></li>
+		<li><a id="cal-ical" download="" href="#" role="menuitem" class="cal-ical">iCal (.ics)</a></li>
+		<li><a id="cal-outlook" download="" href="#" role="menuitem" class="cal-outlook">Outlook</a></li>
+	</ul>
+</div>
+
 </main>
 
 <footer id="footer">
@@ -176,6 +186,7 @@
 <script src="https://cdn.jsdelivr.net/npm/marked@12/marked.min.js"></script>
 <!-- Use bundled UI5 Web Components build -->
 <script type="module" src="https://ui5-community.github.io/ui5-webcomponents-bundle/assets/bundle.esm.js"></script>
+<script src="js/calendar-generator.js"></script>
 <script src="js/events-loader.js"></script>
 </body>
 

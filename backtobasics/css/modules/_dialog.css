@@ -2,7 +2,7 @@
 	height: 100vh;
 	width: 100vw;
 	max-width: 58rem;
-	padding: 2.5rem;
+	padding: 0.5rem;
 	background: var(--background-color);
 	border: none;
 	box-shadow: 0 1.25rem 5rem 0 rgba(0, 0, 0, .3);
@@ -13,8 +13,7 @@
 	transition-behavior: allow-discrete;
 
 	&::backdrop {
-		background: #000;
-		opacity: .7;
+		background-color: rgba(0, 0, 0, 0.5);
 	}
 }
 
