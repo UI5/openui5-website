@@ -1,5 +1,5 @@
 [popover] {
-	height: 100vh;
+	max-height: 90vh;
 	width: 100vw;
 	max-width: 58rem;
 	padding: 0.5rem;
@@ -11,6 +11,8 @@
 	transition-property: opacity, transform, overlay, display;
 	transition-duration: 0.4s;
 	transition-behavior: allow-discrete;
+	overflow: hidden;
+	display: flex;
 
 	&::backdrop {
 		background-color: rgba(0, 0, 0, 0.5);
@@ -29,10 +31,10 @@
 	}
 }
 
-@media (width >= 700px) {
+@media (width >=700px) {
 
 	[popover] {
-		height: fit-content;
+		max-height: 85vh;
 		width: fit-content;
 		border-radius: 1rem;
 	}
@@ -42,6 +44,9 @@
 	background: var(--background-color-alternate);
 	padding: 2.5rem;
 	border-radius: .8rem;
+	flex: 1 1 auto;
+	overflow-y: auto;
+	max-height: 100%;
 
 	.event-title {
 		font-size: var(--type-2);
@@ -56,7 +61,6 @@
 	}
 
 	.event-head {
-
 		img {
 			max-width: 150px;
 		}
@@ -141,16 +145,22 @@
 	overflow: hidden;
 	flex: 0 0 auto;
 	box-shadow: 0 0 0 2px var(--background-color), 0 0 0 4px var(--background-color-alternate);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
 
-	&:has( > img[src=""]) {
-		background-image: url(../../images/user.svg);
-		background-position: 50% 50%;
-		background-size: 50%;
-		background-repeat: no-repeat;
+	/* Display initials when data-initials attribute is present */
+	&[data-initials]::before {
+		content: attr(data-initials);
+		font-size: 1rem;
+		font-weight: 600;
+		color: var(--text-color);
 	}
 
 	img {
-		max-width: 100%;
+		width: 100%;
+		height: 100%;
 		object-fit: cover;
 	}
 }

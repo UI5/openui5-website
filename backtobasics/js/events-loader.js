@@ -220,6 +220,14 @@
   /***********************
    * Formatting Helpers
    ***********************/
+  function isEventPast(ev) {
+    // Determine if an event has ended.
+    // For date-only events, extend the effective end by one full day.
+    const now = Date.now();
+    const eventEndCutoff = ev.endTs + (ev.isDateOnly ? 86400000 : 0);
+    return now > eventEndCutoff;
+  }
+
   function formatDate(ts, tz) {
     if (isNaN(ts)) return '';
     const opts = {
@@ -303,8 +311,7 @@
   }
 
   function renderEventCard(ev, isPast) {
-    const tplId = ev.external && ev.url ? 'tpl-event-card-external' : 'tpl-event-card';
-    const node = cloneTpl(tplId);
+    const node = cloneTpl('tpl-event-card');
     if (!node) return null;
 
     const titleEl = node.querySelector('.event-title');
@@ -312,7 +319,7 @@
     const logoEl = node.querySelector('.event-logo');
     const timeEl = node.querySelector('.event-time');
     const platformEl = node.querySelector('.event-platform');
-    const interactiveRoot = node.querySelector(ev.external ? '.event-link' : '.event-card-btn');
+    const linkEl = node.querySelector('.event-card-link');
 
     if (titleEl) titleEl.textContent = ev.title;
     if (descEl) {
@@ -331,20 +338,22 @@
       }
     }
     if (timeEl) {
+      const countdownSpan = timeEl.querySelector('.event-countdown');
       if (isPast) {
         // Past events: show month and day(s), e.g. "July 7" or "July 7-8" for multi-day events
-        timeEl.textContent = formatPastEventDate(ev, currentTimeZone);
+        timeEl.childNodes[0].textContent = formatPastEventDate(ev, currentTimeZone);
         timeEl.setAttribute('datetime', new Date(ev.startTs).toISOString());
+        // Hide countdown for past events
+        if (countdownSpan) countdownSpan.style.display = 'none';
       } else {
-        timeEl.textContent = formatEventDateRange(ev, currentTimeZone);
+        timeEl.childNodes[0].textContent = formatEventDateRange(ev, currentTimeZone);
         timeEl.setAttribute('datetime', new Date(ev.startTs).toISOString());
-        // Countdown (upcoming only)
-        if (!ev.isDateOnly && ev.startTs > Date.now()) {
-          const countdownSpan = document.createElement('span');
-            countdownSpan.className = 'event-countdown';
-            countdownSpan.dataset.countdown = String(ev.startTs);
-            timeEl.appendChild(document.createTextNode(' '));
-            timeEl.appendChild(countdownSpan);
+        // Show countdown for upcoming timed events
+        if (countdownSpan && !ev.isDateOnly && ev.startTs > Date.now()) {
+          countdownSpan.dataset.countdown = String(ev.startTs);
+          countdownSpan.style.display = '';
+        } else if (countdownSpan) {
+          countdownSpan.style.display = 'none';
         }
       }
     }
@@ -353,40 +362,35 @@
       if (!ev.location) platformEl.style.display = 'none';
     }
 
-    if (interactiveRoot) {
+    if (linkEl) {
       if (ev.external && ev.url) {
-        interactiveRoot.setAttribute('href', ev.url);
+        // External event: set href and external link attributes
+        linkEl.setAttribute('href', ev.url);
+        linkEl.setAttribute('target', '_blank');
+        linkEl.setAttribute('rel', 'external nofollow');
       } else {
-        interactiveRoot.dataset.eventId = ev.id;
-        interactiveRoot.addEventListener('click', () => openDialog(ev));
+        // Internal event: use href="#" and open dialog on click
+        linkEl.setAttribute('href', '#');
+        linkEl.addEventListener('click', (e) => {
+          e.preventDefault();
+          openDialog(ev);
+        });
       }
     }
 
-    // Add calendar button for upcoming events (placed after event-details, not inside it)
-    if (!isPast) {
-      const calendarBtn = document.createElement('button');
-      calendarBtn.type = 'button';
-      calendarBtn.className = 'add-to-calendar-btn';
-      calendarBtn.textContent = '+ Add to calendar';
-      calendarBtn.id = `calbtn-${ev.id}`;
-      calendarBtn.setAttribute('aria-haspopup', 'menu');
-      calendarBtn.setAttribute('aria-controls', 'calendar-popover');
-      calendarBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        e.preventDefault(); // Prevent external link navigation
-        populateAndShowCalendarPopover(ev, calendarBtn);
-      });
-      
-      // For external events, insert after the anchor; for regular events, append to button content
-      if (ev.external && ev.url) {
-        // External event card: append button after the anchor element
-        node.appendChild(calendarBtn);
+    // Configure calendar button for upcoming events
+    const calendarBtn = node.querySelector('.add-to-calendar-btn');
+    if (calendarBtn) {
+      if (!isPast) {
+        calendarBtn.id = `calbtn-${ev.id}`;
+        calendarBtn.style.display = '';
+        calendarBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          e.preventDefault(); // Prevent external link navigation
+          populateAndShowCalendarPopover(ev, calendarBtn);
+        });
       } else {
-        // Regular event card: append button to the button element
-        const cardBtn = node.querySelector('.event-card-btn');
-        if (cardBtn) {
-          cardBtn.appendChild(calendarBtn);
-        }
+        calendarBtn.style.display = 'none';
       }
     }
 
@@ -398,9 +402,8 @@
     const pastContainer = document.getElementById('past-events');
     if (!upcomingContainer || !pastContainer) return;
 
-    const now = Date.now();
-    const upcoming = model.events.filter(e => e.startTs >= now).sort((a, b) => a.startTs - b.startTs);
-    const past = model.events.filter(e => e.startTs < now).sort((a, b) => b.startTs - a.startTs);
+    const upcoming = model.events.filter(e => !isEventPast(e)).sort((a, b) => a.startTs - b.startTs);
+    const past = model.events.filter(e => isEventPast(e)).sort((a, b) => b.startTs - a.startTs);
 
     // Preserve "Add Event" item
     const submitItem = upcomingContainer.querySelector('.submit-event');
@@ -426,11 +429,12 @@
       const y = new Date(ev.startTs).getFullYear();
       if (y !== currentYear) {
         currentYear = y;
-        const sep = document.createElement('li');
-        sep.className = 'year-separator';
-        sep.setAttribute('aria-hidden', 'true');
-        sep.innerHTML = `<div class="year-separator-inner"><span class="year-label">${y}</span></div>`;
-        pastContainer.appendChild(sep);
+        const sep = cloneTpl('tpl-year-separator');
+        if (sep) {
+          const yearLabel = sep.querySelector('.year-label');
+          if (yearLabel) yearLabel.textContent = y;
+          pastContainer.appendChild(sep);
+        }
       }
       const card = renderEventCard(ev, true);
       if (card) pastContainer.appendChild(card);
@@ -441,8 +445,7 @@
     const node = cloneTpl('tpl-speaker-item');
     if (!node) return null;
 
-    const avatar = node.querySelector('ui5-avatar');
-    const avatarImage = node.querySelector('ui5-avatar .speaker-photo');
+    const avatarImage = node.querySelector('.speaker-photo');
     const nameEl = node.querySelector('.speaker-name');
     const companyEl = node.querySelector('.speaker-company');
     const socialsEl = node.querySelector('.speaker-socials');
@@ -450,16 +453,22 @@
     if (nameEl) nameEl.textContent = person.name || '';
     if (companyEl) companyEl.textContent = person.company || '';
 
-    if (avatar) {
+    if (avatarImage) {
       if (person.photo && person.photo !== "./") {
         avatarImage.setAttribute('src', person.photo);
       } else {
-        avatar.setAttribute('initials', initials(person.name));
+        // For speakers without photos, use initials as data attribute
+        avatarImage.style.display = 'none';
+        const speakerImageDiv = avatarImage.parentElement;
+        if (speakerImageDiv) {
+          speakerImageDiv.setAttribute('data-initials', initials(person.name));
+        }
       }
     }
 
     if (socialsEl) {
-      socialsEl.innerHTML = buildSocialLinks(person);
+      socialsEl.innerHTML = '';
+      socialsEl.appendChild(buildSocialLinks(person));
     }
     return node;
   }
@@ -471,17 +480,76 @@
       ['linkedin', p.linkedin, h => `https://www.linkedin.com/in/${h}`, 'linkedin'],
       ['bluesky', p.bluesky, h => `https://bsky.app/profile/${h}.bsky.social`, 'bluesky']
     ];
-    return defs
-      .filter(([_, handle]) => !!handle)
-      .map(([icon, handle, fn, sprite]) =>
-        `<a href="${fn(handle)}" target="_blank" rel="external nofollow" aria-label="${icon}">
-          <svg aria-hidden="true" class="icon"><use xlink:href="images/icons/sprite.svg#${sprite}"></use></svg>
-        </a>`
-      ).join('');
+    const fragment = document.createDocumentFragment();
+    defs.forEach(([icon, handle, fn, sprite]) => {
+      if (!handle) return;
+      const link = cloneTpl('tpl-social-link');
+      if (link) {
+        link.setAttribute('href', fn(handle));
+        link.setAttribute('aria-label', icon);
+        const use = link.querySelector('use');
+        if (use) use.setAttribute('xlink:href', `images/icons/sprite.svg#${sprite}`);
+        fragment.appendChild(link);
+      }
+    });
+    return fragment;
   }
 
   function initials(name = '') {
     return name.split(/\s+/).filter(Boolean).slice(0, 2).map(p => p[0].toUpperCase()).join('');
+  }
+
+  /**
+   * Normalizes a string by removing punctuation and extra whitespace.
+   * Used for fuzzy name matching.
+   * 
+   * @param {string} str - String to normalize
+   * @returns {string} Normalized string
+   */
+  function normalizeString(str) {
+    return str.replace(/[^a-z0-9]+/g, ' ').trim();
+  }
+
+  /**
+   * Resolves a speaker reference to a person object.
+   * Attempts multiple strategies in order of precision:
+   * 1. Direct ID lookup
+   * 2. Case-insensitive name match
+   * 3. Normalized name match (removes punctuation, handles partial matches)
+   * 
+   * @param {string} speakerRef - Speaker ID or name from event data
+   * @param {Object} personsMap - Map of person IDs to person objects
+   * @returns {Object|null} Person object if found, null otherwise
+   */
+  function resolveSpeaker(speakerRef, personsMap) {
+    if (!speakerRef) return null;
+    
+    // Strategy 1: Direct ID lookup (fastest, most reliable)
+    if (personsMap[speakerRef]) {
+      return personsMap[speakerRef];
+    }
+    
+    // For fallback strategies, we need to search through all persons
+    const personsArray = Object.values(personsMap);
+    
+    // Strategy 2: Case-insensitive exact name match
+    const lowerRef = String(speakerRef).toLowerCase();
+    const exactMatch = personsArray.find(person => 
+      String(person.name).toLowerCase() === lowerRef
+    );
+    if (exactMatch) {
+      return exactMatch;
+    }
+    
+    // Strategy 3: Normalized fuzzy match
+    // Handles variations in punctuation/spacing and partial name matches
+    const normalizedRef = normalizeString(lowerRef);
+    const fuzzyMatch = personsArray.find(person => {
+      const normalizedName = normalizeString(String(person.name).toLowerCase());
+      return normalizedName === normalizedRef || normalizedName.startsWith(normalizedRef);
+    });
+    
+    return fuzzyMatch || null;
   }
 
   /***********************
@@ -514,7 +582,7 @@
     }
     if (logoEl) {
       if (ev.logo) {
-        logoEl.src = ev.logo.replace('./logos/', 'images/events/');
+        logoEl.src = ev.logo;
       } else {
         logoEl.style.display = 'none';
       }
@@ -541,29 +609,16 @@
     if (speakersList) {
       speakersList.innerHTML = '';
       if (Array.isArray(ev.speakers) && ev.speakers.length) {
-        // Speakers can be defined either by person id (preferred) or by full name.
-        // Older event data uses display names which don't match ids, causing lookup failure.
-        // Fallback: if direct id lookup fails, attempt case-insensitive name match across persons.
-        const personsArr = Object.values(personsMap || {});
-        ev.speakers.forEach(ref => {
-          let person = personsMap[ref];
-          if (!person) {
-            const lower = String(ref).toLowerCase();
-            person = personsArr.find(p => String(p.name).toLowerCase() === lower);
-          }
-          if (!person) {
-            // Attempt loose matching by removing punctuation and comparing startsWith for multi-part names
-            const norm = String(ref).toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
-            person = personsArr.find(p => {
-              const pname = String(p.name).toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
-              return pname === norm || pname.startsWith(norm);
-            });
-          }
+        ev.speakers.forEach(speakerRef => {
+          const person = resolveSpeaker(speakerRef, personsMap);
+          
           if (person) {
-            const item = buildSpeakerItem(person);
-            if (item) speakersList.appendChild(item);
+            const speakerItem = buildSpeakerItem(person);
+            if (speakerItem) {
+              speakersList.appendChild(speakerItem);
+            }
           } else {
-            console.warn('[events-loader] Speaker reference not resolved:', ref);
+            console.warn('[events-loader] Speaker not found:', speakerRef);
           }
         });
       } else {
@@ -571,40 +626,44 @@
       }
     }
     if (linksEl) {
-      const parts = [];
+      linksEl.innerHTML = '';
+      const links = [];
+      
       if (ev.recordingUrl) {
-        parts.push(`<a href="${ev.recordingUrl}" target="_blank" rel="external nofollow">Recording</a>`);
+        const recordingLink = cloneTpl('tpl-dialog-link-recording');
+        if (recordingLink) {
+          recordingLink.setAttribute('href', ev.recordingUrl);
+          links.push(recordingLink);
+        }
       }
-      if (ev.url && !ev.external) {
-        parts.push(`<a href="${ev.url}" target="_blank" rel="external nofollow">Join / More Info</a>`);
+      
+      if (!isEventPast(ev) && ev.url && !ev.external) {
+        const joinLink = cloneTpl('tpl-dialog-link-join');
+        if (joinLink) {
+          joinLink.setAttribute('href', ev.url);
+          links.push(joinLink);
+        }
       }
-      linksEl.innerHTML = parts.join(' | ');
-      if (!parts.length) linksEl.style.display = 'none';
+      
+      if (links.length > 0) {
+        links.forEach((link, index) => {
+          linksEl.appendChild(link);
+          if (index < links.length - 1) {
+            linksEl.appendChild(document.createTextNode(' | '));
+          }
+        });
+      } else {
+        linksEl.style.display = 'none';
+      }
     }
-    
-    // Close on block layer click (element lives inside shadow DOM of static area)
-    // We use a capturing listener and inspect the composed path for an element with class 'ui5-block-layer'.
-    const handleBlockLayerClick = (e) => {
-      // Only act if dialog currently open
-      if (!dialog.open) return;
-      const path = e.composedPath ? e.composedPath() : [];
-      if (path.some(el => el && el.classList && el.classList.contains('ui5-block-layer'))) {
-        dialog.open = false;
-      }
-    };
-    // Attach once per open; remove after close to avoid stacking listeners
-    document.addEventListener('click', handleBlockLayerClick, true);
-    const cleanup = () => {
-      document.removeEventListener('click', handleBlockLayerClick, true);
-      dialog.removeEventListener('afterClose', cleanup);
-    };
-    dialog.addEventListener('afterClose', cleanup);
 
     // Clear previous dynamic content safely
     dialog.innerHTML = '';
     dialog.appendChild(wrapper);
-    dialog.setAttribute('accessible-name', ev.title || 'Event details');
-    dialog.open = true;
+    dialog.setAttribute('aria-label', ev.title || 'Event details');
+    
+    // Show popover - native API handles backdrop clicks and ESC key automatically
+    dialog.showPopover();
   }
 
   /***********************
@@ -713,16 +772,19 @@
       outlookEl.setAttribute('download', downloadFilename);
     }
 
-    // Position popover relative to button using anchor positioning if supported
-    if (CSS.supports('anchor-name', 'button')) {
-      popover.style.positionAnchor = `#${button.id}`;
-    } else {
-      // Fallback positioning
-      const rect = button.getBoundingClientRect();
-      popover.style.left = `${rect.left + rect.width / 2}px`;
-      popover.style.top = `${rect.bottom + 8}px`;
-      popover.style.transform = 'translateX(-50%)';
-    }
+    // Position popover relative to button
+    // CSS anchor positioning is not yet widely supported, so we use manual positioning
+    const rect = button.getBoundingClientRect();
+    
+    // Calculate position: centered below button
+    const left = rect.left + (rect.width / 2);
+    const top = rect.bottom + 8;
+    
+    popover.style.position = 'fixed';
+    popover.style.left = `${left}px`;
+    popover.style.top = `${top}px`;
+    popover.style.transform = 'translateX(-50%)';
+    popover.style.margin = '0';
 
     // Show popover
     popover.showPopover();
