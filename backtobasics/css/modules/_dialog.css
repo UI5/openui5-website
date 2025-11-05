@@ -2,7 +2,7 @@
 	max-height: 90vh;
 	width: 100vw;
 	max-width: 58rem;
-	padding: 0.5rem;
+	padding: 2.5rem;
 	background: var(--background-color);
 	border: none;
 	box-shadow: 0 1.25rem 5rem 0 rgba(0, 0, 0, .3);
@@ -15,7 +15,8 @@
 	display: flex;
 
 	&::backdrop {
-		background-color: rgba(0, 0, 0, 0.5);
+		background: #000;
+		opacity: .7;
 	}
 }
 
@@ -94,7 +95,6 @@
 	gap: 1rem;
 
 	li {
-		/* Compact pill-like card */
 		display: flex;
 		align-items: center;
 		gap: .75rem;
@@ -109,7 +109,7 @@
 
 	p {
 		margin: 0;
-		line-height: 1.15;
+		line-height: 1.1;
 
 		strong {
 			display: block;
@@ -139,9 +139,9 @@
 
 .speaker-image {
 	border-radius: 50%;
-	height: 2.75rem;
+	height: 3rem;
 	aspect-ratio: 1/1;
-	background: var(--brand-color-contrast);
+	background: var(--brand-color);
 	overflow: hidden;
 	flex: 0 0 auto;
 	box-shadow: 0 0 0 2px var(--background-color), 0 0 0 4px var(--background-color-alternate);

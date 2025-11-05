@@ -212,14 +212,14 @@
 	margin-inline-start: 1rem;
 }
 
-@media (width >=700px) {
+@media (width >= 700px) {
 
 	.event-list--past {
 		grid-template-columns: 1fr 1fr;
 	}
 }
 
-@media (width >=900px) {
+@media (width >= 900px) {
 
 	.event-list {
 		grid-template-columns: 1fr 1fr;
@@ -308,13 +308,6 @@
 		&:is(:hover, :focus) {
 			background-color: var(--background-color-alternate);
 			outline: none;
-		}
-
-		/* Icon placeholder */
-		&::before {
-			content: url("data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMzMuMzczIDQwIiB3aWR0aD0iMzMuMzczIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Im0yMS40ODMgMGMtLjA1IDAtMjEuNDQzIDguMDI2LTIxLjQ3MiA4LjA1Ni0uMDExLjAxLS4wMTEgNS40MjItLjAxMSAxMi4wMjVsLjAxNCAxMi4wMDYgMi42NjctMS4wNDMgMy42MzQtMS40MjQuOTY3LS4zNzl2LTkuNzc0YzAtNi43NDEuMDE0LTkuNzgyLjA0Ny05LjguMDgxLS4wNSAxNC4xMDctMy4zOTIgMTQuMTQzLTMuMzcxcy4wNDQgMjguNzE4IDAgMjguNzQ1Yy0uMDE4LjAxMS00LjgtLjYzOC0xMC42MzQtMS40NHMtMTAuNjE2LTEuNDU5LTEwLjYzMi0xLjQ1MyA0LjczMiAxLjc3NCAxMC41NTcgMy45MyAxMC42MzcgMy45MjIgMTAuNjk4IDMuOTIyIDIuNzY3LS43MzEgNi4wMTItMS42MjhsNS45LTEuNjMyLS4wMTEtMTYuNjY0LS4wMTEtMTYuNjY1LTUuOTEyLTEuNzA1Yy0zLjI1LS45MzgtNS45MzEtMS43MDYtNS45NTYtMS43MDZ6IiBmaWxsPSIjZWIzYzAwIi8+PC9zdmc+");
-			margin-inline-end: 0.5rem;
-			font-size: 1rem;
 		}
 	}
 
