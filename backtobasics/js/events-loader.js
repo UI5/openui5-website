@@ -3,7 +3,6 @@
  * Events Loader (Separation: Data vs Presentation)
  * - Phase 1: Fetch + Parse fenced YAML blocks into plain JS objects (no DOM work)
  * - Phase 2: Render using HTML <template> elements (cards, dialog, speakers)
- * - Dialog uses UI5 Web Components bundle (dialog.open())
  */
 
 (function () {
