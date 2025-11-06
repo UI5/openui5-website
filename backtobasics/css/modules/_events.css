@@ -48,6 +48,22 @@
 		&:is(:focus) {
 			outline: none;
 		}
+
+		&:hover[href*="https"]::before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: -18px;
+			right: -18px;
+			height: 36px;
+			width: 36px;
+			border-radius: 50%;
+			background: var(--brand-color);
+			background-image: url(../../images/arrow.svg);
+			background-position: 50% 50%;
+			background-repeat: no-repeat;
+			background-size: 50%;
+		}
 	}
 
 	[role="listitem"] {
@@ -57,7 +73,6 @@
 		height: 100%;
 		border-radius: 1rem;
 		border: 2px solid var(--brand-color);
-		padding: 24px;
 		color: var(--text-color);
 		transition: all .2s ease-in-out;
 
@@ -70,12 +85,9 @@
 		}
 	}
 
-	button {
-		appearance: none;
-		border: 0;
-		background: transparent;
-		padding: 0;
-		text-align: left;
+	.event-card-link,
+	.submit-event a {
+		padding: 24px;
 		cursor: pointer;
 
 		&:is(:focus) {
@@ -96,6 +108,7 @@
 	.submit-event {
 		text-wrap: pretty;
 		text-align: center;
+		justify-content: center;
 
 		a {
 			align-items: center;
@@ -109,31 +122,17 @@
 			margin-block-end: 1rem;
 		}
 	}
+
+	.btn-lite {
+		margin-inline: 24px auto;
+		margin-block: -24px 24px;
+	}
 }
 
 .event-list--past {
 
 	[role="listitem"] {
 		border-color: var(--background-color-alternate);
-	}
-
-	a {
-
-		&:hover[href*="https"]::before {
-			content: "";
-			display: block;
-			position: absolute;
-			top: -18px;
-			right: -18px;
-			height: 36px;
-			width: 36px;
-			border-radius: 50%;
-			background: var(--brand-color);
-			background-image: url(../../images/arrow.svg);
-			background-position: 50% 50%;
-			background-repeat: no-repeat;
-			background-size: 50%;
-		}
 	}
 
 	.event-details {
@@ -183,6 +182,35 @@
 .event-platform {
 	color: var(--dark-brand-color);
 	opacity: .7;
+}
+
+.year-separator {
+	list-style: none;
+	grid-column: 1 / -1;
+	margin-block-start: 4rem;
+	margin-block-end: .5rem;
+	padding: 0;
+	display: block;
+}
+
+.year-separator-inner {
+	display: flex;
+	align-items: center;
+}
+
+.year-label {
+	font-size: 2rem;
+	font-weight: 700;
+	color: var(--brand-color);
+	line-height: 1;
+}
+
+.year-separator-inner::after {
+	content: '';
+	flex: 1;
+	height: 2px;
+	background: var(--background-color-alternate);
+	margin-inline-start: 1rem;
 }
 
 @media (width >= 700px) {
