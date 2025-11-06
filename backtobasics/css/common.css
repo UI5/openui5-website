@@ -538,10 +538,17 @@ a {
 .btn-lite {
 	border-color: var(--brand-color-contrast);
 	padding: .7rem 1rem;
-	color: var(--brand-color-contrast);
+	background: var(--background-color-alternate);
+	color: var(--brand-color);
 
 	&:is(:hover, :focus) {
 		background-color: var(--brand-color-contrast);
+		color: var(--brand-color);
+	}
+
+	&:is(:focus-within) {
+		outline: 2px solid currentColor;
+		outline-offset: -4px;
 	}
 }
 
@@ -557,6 +564,13 @@ a {
 	background: var(--background-color-alternate);
 	border: 0;
 	cursor: pointer;
+}
+
+@media (prefers-color-scheme: dark) {
+	.btn-lite {
+		background-color: var(--background-color-alternate);
+		color: var(--text-color);
+	}
 }
 
 /* ----------------------- Structure Contents ---------------------------  */

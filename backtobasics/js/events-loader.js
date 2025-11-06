@@ -501,7 +501,7 @@
   /**
    * Normalizes a string by removing punctuation and extra whitespace.
    * Used for fuzzy name matching.
-   * 
+   *
    * @param {string} str - String to normalize
    * @returns {string} Normalized string
    */
@@ -515,31 +515,31 @@
    * 1. Direct ID lookup
    * 2. Case-insensitive name match
    * 3. Normalized name match (removes punctuation, handles partial matches)
-   * 
+   *
    * @param {string} speakerRef - Speaker ID or name from event data
    * @param {Object} personsMap - Map of person IDs to person objects
    * @returns {Object|null} Person object if found, null otherwise
    */
   function resolveSpeaker(speakerRef, personsMap) {
     if (!speakerRef) return null;
-    
+
     // Strategy 1: Direct ID lookup (fastest, most reliable)
     if (personsMap[speakerRef]) {
       return personsMap[speakerRef];
     }
-    
+
     // For fallback strategies, we need to search through all persons
     const personsArray = Object.values(personsMap);
-    
+
     // Strategy 2: Case-insensitive exact name match
     const lowerRef = String(speakerRef).toLowerCase();
-    const exactMatch = personsArray.find(person => 
+    const exactMatch = personsArray.find(person =>
       String(person.name).toLowerCase() === lowerRef
     );
     if (exactMatch) {
       return exactMatch;
     }
-    
+
     // Strategy 3: Normalized fuzzy match
     // Handles variations in punctuation/spacing and partial name matches
     const normalizedRef = normalizeString(lowerRef);
@@ -547,7 +547,7 @@
       const normalizedName = normalizeString(String(person.name).toLowerCase());
       return normalizedName === normalizedRef || normalizedName.startsWith(normalizedRef);
     });
-    
+
     return fuzzyMatch || null;
   }
 
@@ -610,7 +610,7 @@
       if (Array.isArray(ev.speakers) && ev.speakers.length) {
         ev.speakers.forEach(speakerRef => {
           const person = resolveSpeaker(speakerRef, personsMap);
-          
+
           if (person) {
             const speakerItem = buildSpeakerItem(person);
             if (speakerItem) {
@@ -627,7 +627,7 @@
     if (linksEl) {
       linksEl.innerHTML = '';
       const links = [];
-      
+
       if (ev.recordingUrl) {
         const recordingLink = cloneTpl('tpl-dialog-link-recording');
         if (recordingLink) {
@@ -635,7 +635,7 @@
           links.push(recordingLink);
         }
       }
-      
+
       if (!isEventPast(ev) && ev.url && !ev.external) {
         const joinLink = cloneTpl('tpl-dialog-link-join');
         if (joinLink) {
@@ -643,7 +643,7 @@
           links.push(joinLink);
         }
       }
-      
+
       if (links.length > 0) {
         links.forEach((link, index) => {
           linksEl.appendChild(link);
@@ -660,7 +660,7 @@
     dialog.innerHTML = '';
     dialog.appendChild(wrapper);
     dialog.setAttribute('aria-label', ev.title || 'Event details');
-    
+
     // Show popover - native API handles backdrop clicks and ESC key automatically
     dialog.showPopover();
   }
@@ -697,7 +697,7 @@
   function buildCalendarEvent(ev) {
     // Convert event data to format expected by calendar generator
     let startDate, endDate;
-    
+
     if (ev.isDateOnly) {
       // Format as YYYY/MM/DD for date-only events
       const startD = new Date(ev.startTs);
@@ -746,20 +746,20 @@
     }
 
     const calEvent = buildCalendarEvent(ev);
-    
+
     // Generate calendar links
     const googleLink = window.calendarGenerate('google', calEvent);
     const office365Link = window.calendarGenerate('office365', calEvent);
     const icsLink = window.calendarGenerate('ics', calEvent);
-    
+
     // Update the href and download attributes of existing links
     const googleEl = document.getElementById('cal-google');
     const office365El = document.getElementById('cal-office365');
     const icalEl = document.getElementById('cal-ical');
     const outlookEl = document.getElementById('cal-outlook');
-    
+
     const downloadFilename = `${ev.title.replace(/[^a-zA-Z0-9]/g, '_')}.ics`;
-    
+
     if (googleEl) googleEl.setAttribute('href', googleLink);
     if (office365El) office365El.setAttribute('href', office365Link);
     if (icalEl) {
@@ -774,11 +774,11 @@
     // Position popover relative to button
     // CSS anchor positioning is not yet widely supported, so we use manual positioning
     const rect = button.getBoundingClientRect();
-    
+
     // Calculate position: centered below button
-    const left = rect.left + (rect.width / 2);
+    const left = rect.left + (rect.width + 20);
     const top = rect.bottom + 8;
-    
+
     popover.style.position = 'fixed';
     popover.style.left = `${left}px`;
     popover.style.top = `${top}px`;
@@ -799,7 +799,7 @@
       const links = Array.from(popover.querySelectorAll('a'));
       const current = document.activeElement;
       const index = links.indexOf(current);
-      
+
       if (e.key === 'ArrowDown') {
         e.preventDefault();
         const next = links[(index + 1) % links.length];
@@ -814,7 +814,7 @@
     };
 
     popover.addEventListener('keydown', handleKeyNav);
-    
+
     // Clean up event listener when popover closes
     const cleanup = () => {
       popover.removeEventListener('keydown', handleKeyNav);
