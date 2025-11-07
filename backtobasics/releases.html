@@ -33,6 +33,7 @@
 	<link rel="stylesheet" href="./css/modules.css" />
 
 	<script src="js/common.js"></script>
+	<script src="js/releases.js"></script>
 </head>
 
 <body>
@@ -66,7 +67,7 @@
 					<span>Download the latest releases</span>
 				</h2>
 
-				<a class="btn btn-shape" href="https://sdk.openui5.org/" rel="follow external" hreflang="en">Download Stable Release (1.136.5)</a>
+				<a id="stable-release-btn" class="btn btn-shape" href="https://sdk.openui5.org/" rel="follow external" hreflang="en" style="display: none;">Download Stable Release</a>
 
 				<a class="btn btn-shape" href="https://openui5nightly.hana.ondemand.com/" rel="follow external" hreflang="en">Browse Nightly Demo Kit</a>
 
@@ -166,48 +167,29 @@
 							<th scope="col">Release Date</th>
 						</tr>
 					</thead>
-					<tbody>
-						<tr>
-							<th scope="row">1.139.0</th>
-							<td>
-								<a href="https://github.com/UI5/openui5/releases/download/1.139.0/openui5-sdk-1.139.0.zip" rel="noopener noreferrer">SDK</a>
-								<a href="https://github.com/UI5/openui5/releases/download/1.139.0/openui5-runtime-1.139.0.zip" rel="noopener noreferrer">Runtime</a>
-								<a href="https://github.com/UI5/openui5/releases/download/1.139.0/openui5-runtime-mobile-1.139.0.zip" rel="noopener noreferrer">Runtime Mobile</a>
-							</td>
-							<td>
-								<a href="https://sdk.openui5.org/1.139.0/#/topic/99ac68a5b1c3416ab5c84c99fefa250d" rel="noopener noreferrer">Demo Kit</a>
-								<a class="styles-module--Link--2Mexu" href="https://sdk.openui5.org/1.139.0/#releasenotes.html" rel="noopener noreferrer">Release Notes</a>
-							</td>
-							<td>06.08.2025</td>
-						</tr>
-						<tr>
-							<th scope="row">1.139.0</th>
-							<td>
-								<a href="https://github.com/UI5/openui5/releases/download/1.139.0/openui5-sdk-1.139.0.zip" rel="noopener noreferrer">SDK</a>
-								<a href="https://github.com/UI5/openui5/releases/download/1.139.0/openui5-runtime-1.139.0.zip" rel="noopener noreferrer">Runtime</a>
-								<a href="https://github.com/UI5/openui5/releases/download/1.139.0/openui5-runtime-mobile-1.139.0.zip" rel="noopener noreferrer">Runtime Mobile</a>
-							</td>
-							<td>
-								<a href="https://sdk.openui5.org/1.139.0/#/topic/99ac68a5b1c3416ab5c84c99fefa250d" rel="noopener noreferrer">Demo Kit</a>
-								<a class="styles-module--Link--2Mexu" href="https://sdk.openui5.org/1.139.0/#releasenotes.html" rel="noopener noreferrer">Release Notes</a>
-							</td>
-							<td>06.08.2025</td>
-						</tr>
-						<tr>
-							<th scope="row">1.139.0</th>
-							<td>
-								<a href="https://github.com/UI5/openui5/releases/download/1.139.0/openui5-sdk-1.139.0.zip" rel="noopener noreferrer">SDK</a>
-								<a href="https://github.com/UI5/openui5/releases/download/1.139.0/openui5-runtime-1.139.0.zip" rel="noopener noreferrer">Runtime</a>
-								<a href="https://github.com/UI5/openui5/releases/download/1.139.0/openui5-runtime-mobile-1.139.0.zip" rel="noopener noreferrer">Runtime Mobile</a>
-							</td>
-							<td>
-								<a href="https://sdk.openui5.org/1.139.0/#/topic/99ac68a5b1c3416ab5c84c99fefa250d" rel="noopener noreferrer">Demo Kit</a>
-								<a class="styles-module--Link--2Mexu" href="https://sdk.openui5.org/1.139.0/#releasenotes.html" rel="noopener noreferrer">Release Notes</a>
-							</td>
-							<td>06.08.2025</td>
+					<tbody id="releases-tbody">
+						<tr id="releases-loading">
+							<td colspan="4" style="text-align: center; padding: 2rem;">Loading releases...</td>
 						</tr>
 					</tbody>
 				</table>
+
+				<!-- Template for release row (designers can modify this structure) -->
+				<template id="tpl-release-row">
+					<tr>
+						<th scope="row" class="release-version"></th>
+						<td class="release-downloads">
+							<a class="release-sdk" rel="noopener noreferrer">SDK</a>
+							<a class="release-runtime" rel="noopener noreferrer">Runtime</a>
+							<a class="release-mobile" rel="noopener noreferrer">Runtime Mobile</a>
+						</td>
+						<td class="release-docs">
+							<a class="release-demokit" rel="noopener noreferrer">Demo Kit</a>
+							<a class="release-notes" rel="noopener noreferrer">Release Notes</a>
+						</td>
+						<td class="release-date"></td>
+					</tr>
+				</template>
 			</div>
 		</section>
 
