@@ -234,16 +234,16 @@
     if (!tbody) return;
 
     tbody.innerHTML = '';
-    const errorRow = document.createElement('tr');
-    errorRow.id = 'releases-error';
-    const errorCell = document.createElement('td');
-    errorCell.setAttribute('colspan', '4');
-    errorCell.style.textAlign = 'center';
-    errorCell.style.padding = '2rem';
-    errorCell.style.color = '#d32f2f';
-    errorCell.textContent = message;
-    errorRow.appendChild(errorCell);
-    tbody.appendChild(errorRow);
+    
+    // Use template for error message
+    const errorRow = cloneTpl('tpl-error-row');
+    if (errorRow) {
+      const messageEl = errorRow.querySelector('.error-message');
+      if (messageEl) {
+        messageEl.textContent = message;
+      }
+      tbody.appendChild(errorRow);
+    }
 
     // Hide the stable release button when there's an error
     const btn = document.getElementById('stable-release-btn');
