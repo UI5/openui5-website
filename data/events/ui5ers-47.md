@@ -9,6 +9,7 @@ speakers:
 - Dominik Schreiber
 - Vinay Hospete
 url: https://sap-se.zoom.com/j/94833714827
+recordingUrl: https://youtu.be/KjSUuWWD61I
 ---
 This episode will teach you how to use the UI theme designer to migrate a theme to a new one while also constructing 'Theme Families' (e.g light, dark, high-contrast), 
 providing a unified experience. We will illustrate the automated steps in theme migration and also walk you through hands-on theme migration for a more 
