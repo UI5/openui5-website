@@ -241,6 +241,11 @@ var main = new Vue({
 					name: "Rohit Kumar",
 					role: "Program Lead - SAP Labs India",
 					image: "images/committee/Rohit.jpg",
+				},
+				{
+					name: "Mohan Babu Perumalla",
+					role: "SAP UI5 Architect - Mindset",
+					image: "images/committee/Mohan.jpg",
 				}
 			]
 		}
