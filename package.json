@@ -1,14 +1,26 @@
 {
   "name": "openui5-website",
+  "description": "The OpenUI5 website",
   "version": "1.0.0",
+  "private": true,
+  "author": "OpenUI5 Team",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:UI5/openui5-website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/UI5/openui5-website/issues"
+  },
   "scripts": {
     "start": "browser-sync start --server --serveStatic ./static --files \"./**/*\""
   },
   "keywords": [],
-  "author": "OpenUI5 Team",
-  "license": "Apache-2.0",
-  "description": "The OpenUI5 website",
   "devDependencies": {
     "browser-sync": "^3.0.4"
-  }
+  },
+  "engines": {
+    "node": "^14"
+  },
+  "dependencies": {}
 }
