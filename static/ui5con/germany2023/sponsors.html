@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UI5con Germany in July 2023 - Our sponsors</title>
+  <meta name="description" content="If you want to learn more about UI5, you can't miss UI5con 2023. A day of inspiration, learning, and networking with like-minded people. Inspiring talks. Endless learning. July 6. Frontend, Framework, SAPUI5, OpenUI5, UI5con, SAP">
+  <meta name="keywords" content="webstandards, web standards, html, css, JavaScript, Accessibility, Barrierefreiheit, WCAG, OpenUI5, DevOps, SAPUI5, UI5con, UI5 Web Components, Web Components, Webcomponents, Open Source">
+  <meta name="robots" content="index, follow">
+
+  <meta name="author" content="SAP SE">
+
+  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:url" content="https://openui5.org/ui5con/germany2023">
+  <meta property="twitter:title" content="UI5con Germany in July 2023"/>
+  <meta property="twitter:description" content="If you want to learn more about UI5, you can't miss UI5con 2023. A day of inspiration, learning, and networking with like-minded people. Inspiring talks. Endless learning. July 6."/>
+  <meta property="twitter:image" content="https://openui5.org/ui5con/germany2023/images/share.png?2"/>
+
+  <meta property="og:title" content="UI5con Germany in July 2023"/>
+  <meta property="og:description" content="If you want to learn more about UI5, you can't miss UI5con 2023. A day of inspiration, learning, and networking with like-minded people. Inspiring talks. Endless learning. July 6."/>
+  <meta property="og:image" content="https://openui5.org/ui5con/germany2023/images/share.png?2"/>
+
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png"/>
+  <link rel="icon" type="image/svg+xml" href="images/icon.svg"/>
+  <link rel="icon" sizes="any" href="images/android-chrome-192x192.png"/>
+
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/sponsors.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+  <script src="./js/svgs.js"></script>
+
+</head>
+
+<body class="ui5con-sponsors">
+  <header id="sponsorsHeader" class="ui5con-header-section">
+    <header-section></header-section>
+  </header>
+  <main id="sponsors" class="ui5con-sponsors-main">
+      <section class="ui5con-sponsors-section">
+        <header class="ui5con-sponsors-heading">
+          <h2>Sponsorship <span>Packages</span></h2>
+        </header>
+
+        <div class="ui5con-sponsors-table-container">
+          <table class="ui5con-sponsors-table">
+            <caption class="sr-only">Sponsorship packages details</caption>
+            <thead>
+              <tr>
+                <th scope="col">Sponsorship Levels and Benefits</th>
+                <th scope="col">Diamond</th>
+                <th scope="col">Platinum</th>
+                <th scope="col">Gold</th>
+                <th scope="col">Silver</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="pack in packages">
+                <th scope="row">{{pack.package}}</th>
+                <td class="sold">{{pack.diamond}}</td>
+                <td v-html="pack.platinum"></td>
+                <td v-html="pack.gold"></td>
+                <td>{{pack.silver}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="ui5con-sponsors-section">
+        <header class="ui5con-sponsors-heading">
+          <h2>Meet our <span>sponsors</span></h2>
+        </header>
+
+        <ul class="ui5con-sponsors-list">
+          <li v-for="sponsor in sponsors" class="ui5con-sponsors-item" :class="[sponsor.package]">
+            <div class="ui5con-sponsors-socials-container">
+              <span class="ui5con-sponsors-badge" :class="[sponsor.package]">{{sponsor.package}}</span>
+              <span v-html="sponsor.logo"></span>
+              <ul class="ui5con-sponsors-socials">
+                <li v-if="sponsor.website">
+                  <a :href="sponsor.website" :aria-label="`Website of ${sponsor.name}`" rel="nofollow" target="_blank" v-html="svgs.website">
+                  </a>
+                </li>
+                <li v-if="sponsor.twitter">
+                  <a :href="sponsor.twitter" :aria-label="`Twitter profile of ${sponsor.name}`" rel="nofollow" target="_blank" v-html="svgs.twitter">
+                  </a>
+                </li>
+                <li v-if="sponsor.linkedin">
+                  <a :href="sponsor.linkedin" :aria-label="`Linkedin profile of ${sponsor.name}`" rel="nofollow" target="_blank" v-html="svgs.linkedin">
+                  </a>
+                </li>
+                <li v-if="sponsor.facebook">
+                  <a :href="sponsor.facebook" :aria-label="`Facebook page of ${sponsor.name}`" rel="nofollow" target="_blank" v-html="svgs.facebook">
+                  </a>
+                </li>
+                <li v-if="sponsor.instagram">
+                  <a :href="sponsor.instagram" :aria-label="`Instagram profile of ${sponsor.name}`" rel="nofollow" target="_blank" v-html="svgs.instagram">
+                  </a>
+                </li>
+                <li v-if="sponsor.youtube">
+                  <a :href="sponsor.youtube" :aria-label="`Youtube page of ${sponsor.name}`" rel="nofollow" target="_blank" v-html="svgs.youtube">
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <p class="ui5con-sponsors-info" v-html="sponsor.info"></p>
+          </li>
+        </ul>
+      </section>
+      <footer-section></footer-section>
+  </main>
+
+  <script src="./components/header-section.component.js"></script>
+  <script src="./components/social-link.component.js"></script>
+  <script src="./components/social-links-section.component.js"></script>
+  <script src="./components/footer-section.component.js"></script>
+  <script src="./js/sponsors.js"></script>
+</body>
+
+</html>

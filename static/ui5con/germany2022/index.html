@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UI5con Hybrid in July 2022</title>
+  <meta name="description" content="If you want to learn more about UI5, you can't miss UI5con 2022. 2 days of inspiration, learning, and networking with like-minded people. Inspiring talks. Endless learning. July 7-8, online & free. Frontend, Framework, SAPUI5, OpenUI5, UI5con, SAP">
+  <meta name="keywords" content="webstandards, web standards, html, css, JavaScript, Accessibility, Barrierefreiheit, WCAG, OpenUI5, DevOps, SAPUI5, UI5con, UI5 Web Components, Web Components, Webcomponents, Open Source">
+  <meta name="robots" content="index, follow">
+
+  <meta name="author" content="SAP SE">
+
+  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:url" content="https://openui5.org/ui5con/germany2022">
+  <meta property="twitter:title" content="UI5con Hybrid in July 2022"/>
+  <meta property="twitter:description" content="If you want to learn more about UI5, you can't miss UI5con 2022. 2 days of inspiration, learning, and networking with like-minded people. Inspiring talks. Endless learning. July 7-8, online & free."/>
+  <meta property="twitter:image" content="https://openui5.org/ui5con/germany2022/images/share.png?2"/>
+
+  <meta property="og:title" content="UI5con Hybrid in July 2022"/>
+  <meta property="og:description" content="If you want to learn more about UI5, you can't miss UI5con 2022. 2 days of inspiration, learning, and networking with like-minded people. Inspiring talks. Endless learning. July 7-8, online & free."/>
+  <meta property="og:image" content="https://openui5.org/ui5con/germany2022/images/share.png?2"/>
+
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png"/>
+  <link rel="icon" type="image/svg+xml" href="images/icon.svg"/>
+  <link rel="icon" sizes="any" href="images/android-chrome-192x192.png"/>
+
+  <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/committee.css">
+  <link rel="stylesheet" href="./css/newsletter.css">
+  <link rel="stylesheet" href="./css/agenda.css">
+  <link rel="stylesheet" href="./css/agendaModal.css">
+  <link rel="stylesheet" href="./css/countdown.css">
+  <link rel="stylesheet" href="./css/gallery.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+  <script src="./js/svgs.js"></script>
+  <script src="./js/agenda.js"></script>
+</head>
+<body>
+  <header class="ui5con-header" id="header">
+    <nav class="ui5con-header_nav">
+      <a href="#agenda">Agenda</a>
+      <a href="about-the-team.html" target="_blank">Our Team</a>
+      <a href="sponsors.html" target="_blank">Sponsors</a>
+      <a href="https://openui5.org/ui5con/" hreflang="en">Previous Events</a>
+    </nav>
+    <div class="ui5con-header__container">
+      <span v-html="svgs.logo"></span>
+      <h1
+        class="ui5con-header__live-now"
+        aria-label="Thank you for joining UI5Con Hybrid" v-cloak>
+        <span class="ui5con-header__live" aria-hidden="true">Thank you</span>
+        <span class="ui5con-header__date" aria-hidden="true">for joining</span>
+      </h1>
+      <div class="ui5con-date">
+        <a href="https://photos.app.goo.gl/oeBcc8PKdNbcPRoJA" target="_blank"  class="ui5con-date-summary">ON-SITE EVENT RECAP</a>
+      </div>
+      <div class="ui5con-header__thank-you" >
+        <svg viewBox="0 0 88 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M5.06066 4.93566C4.15195 5.84437 3.5 7.3041 3.5 9.5V57C3.5 60.1672 5.82407 62.4846 9 62.4846H16.0625L13.3331 76.8123C12.9325 78.9157 15.4089 80.3454 17.0301 78.9467L36.1115 62.4846H79C80.9044 62.4846 82.2389 61.8628 83.1016 60.9575C83.9755 60.0404 84.5 58.69 84.5 57V49.5C84.5 48.6716 85.1716 48 86 48C86.8284 48 87.5 48.6716 87.5 49.5V57C87.5 59.31 86.7745 61.4519 85.2734 63.0271C83.7611 64.6142 81.5956 65.4846 79 65.4846H37.2267L18.9898 81.2182C15.2168 84.4733 9.45364 81.146 10.3861 76.2509L12.4371 65.4846H9C4.17593 65.4846 0.5 61.8328 0.5 57V9.5C0.5 6.6959 1.34805 4.40563 2.93934 2.81434C4.52612 1.22756 6.68817 0.5 9 0.5H78.5C81.3041 0.5 83.5944 1.34805 85.1857 2.93934C86.7724 4.52612 87.5 6.68817 87.5 9V16.5C87.5 17.3284 86.8284 18 86 18C85.1716 18 84.5 17.3284 84.5 16.5V9C84.5 7.31183 83.9776 5.97388 83.0643 5.06066C82.1556 4.15195 80.6959 3.5 78.5 3.5H9C7.31183 3.5 5.97388 4.02244 5.06066 4.93566Z" fill="#FFA42C"/>
+          </svg>
+        <p>All session recordings are now available</p>
+      </div>
+      <banner-one></banner-one>
+      <banner-two></banner-two>
+    </div>
+
+    <div class="ui5con-header_socials">
+      <p>Share</p>
+      <ul class="ui5con-header_social-list">
+        <li v-for="social in socialLinks" key="social.text">
+          <a :href="social.link" target="_blank" rel="noopener noreferrer">
+            <span v-html="social.svg"></span>
+            <span class="sr-only">{{social.text}}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="ui5con-container--bright">
+      <h2 class="ui5con-section-title">UI5con is going <span>hybrid</span> in 2022</h2>
+
+      <div class="ui5con-container--details">
+        <detail :svg="svgs.how" header="how">
+          <p>The number of participants is unlimited online and limited on-site. On-site spots are gone, but you can join the waitlist.</p>
+        </detail>
+
+        <detail :svg="svgs.where" header="where">
+          <p>SAP SE (Building ROT03) <br>
+            SAP-Allee 27<br>
+            68789 St. Leon-Rot, Germany <br>
+          </p>
+        </detail>
+
+        <detail :svg="svgs.when" header="when">
+          <p>2 half-days<br>
+          <b>July 7th:</b> from 14:00 till 19:00 (UTC+2)<br>
+          <b>July 8th:</b>  from 10:00 till 15:00 (UTC+2)</p>
+        </detail>
+      </div>
+
+    </section>
+
+    <section class="ui5con-container--dark ui5con-container--video">
+      <h2 class="sr-only">Our UI5con Hybrid 2022 Promo Video</h2>
+
+
+
+      <div class="video-container">
+
+        <banner-five></banner-five>
+
+        <banner-six></banner-six>
+
+        <iframe width="720" height="405" src="https://www.youtube-nocookie.com/embed/1oELfH4ay_o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      </div>
+    </section>
+
+    <section class="ui5con-container ui5con-container--agenda" id="agenda" ref="agenda">
+      <header class="ui5con-tab-container">
+        <fieldset class="ui5con-agenda-toggle">
+          <legend>Event day</legend>
+          <div class="ui5con-agenda-toggle__element">
+            <input
+              type="radio"
+              id="day1"
+              name="event-day"
+              value="day1"
+              checked
+              ref="toggleDay"
+              v-on:keydown.tab.prevent="focusTabs"
+              @change="onDayChange($event)">
+            <label for="day1">Day 1<time datetime="2022-07-07T00:00">July 7</time></label>
+          </div>
+          <div class="ui5con-agenda-toggle__element">
+            <input
+              type="radio"
+              id="day2"
+              name="event-day"
+              value="day2"
+              v-on:keydown.tab.prevent="focusTabs"
+              @change="onDayChange($event)">
+            <label for="day2">Day 2<time datetime="2022-07-08T00:00">July 8</time></label>
+          </div>
+        </fieldset>
+
+        <div class="ui5con-tabs" role="tablist" aria-label="UI5con Schedule">
+          <button
+            type="button"
+            role="tab"
+            :aria-selected="(activeTab === 'talks-tab').toString()"
+            aria-controls="talks-tab"
+            :tabindex="activeTab === 'talks-tab' ? 0 : -1"
+            id="talks"
+            v-on:keydown.tab.prevent="focusToggleTimezone"
+            v-on:keyup="handleArrowKeys"
+            @click="setActive('talks-tab')">
+            Talks
+          </button>
+          <button
+           type="button"
+           role="tab"
+           :aria-selected="(activeTab === 'workshops-tab').toString()"
+           aria-controls="workshops-tab"
+           :tabindex="activeTab === 'workshops-tab' ? 0 : -1"
+           id="workshops"
+           v-on:keydown.tab.prevent="focusToggleTimezone"
+           v-on:keyup="handleArrowKeys"
+           @click="setActive('workshops-tab')">
+           Workshops
+          </button>
+        </div>
+
+        <fieldset class="ui5con-agenda-toggle ui5con-agenda-toggle--timezone" v-if="'UTC '+getLocalTimeZone() !== 'UTC +2'">
+          <legend>Time zone</legend>
+          <div class="ui5con-agenda-toggle__element">
+            <input type="radio" id="timezone1" name="event-time" value="event" @change="onTimeChange($event)" checked>
+            <label for="timezone1">Event time<time datetime="2022-07-07T00:00">(UTC +2)</time></label>
+          </div>
+          <div class="ui5con-agenda-toggle__element">
+            <input type="radio" id="timezone2" name="event-time" value="local" @change="onTimeChange($event)">
+            <label for="timezone2">Your time<time datetime="2022-07-08T00:00">(UTC {{getLocalTimeZone()}})</time></label>
+          </div>
+        </fieldset>
+      </header>
+
+      <div class="ui5con-tabpanel" tabindex="0" role="tabpanel" id="talks-tab" aria-labelledby="Talks" v-if="activeTab==='talks-tab'">
+
+        <p class="ui5con-sessiontype">
+          <span class="ui5con-session__talk">Talk</span>
+          <em class="sr-only">or</em>
+          <span class="ui5con-session__general">General</span>
+        </p>
+
+        <div class="ui5con-agenda" v-if="displayedSchedule">
+          <ul class="ui5con-agenda-schedule ui5con-agenda-schedule--talk">
+
+            <li class="ui5con-agenda-schedule__row" v-for="event in displayedSchedule" :key="event.id" v-cloak>
+              <div class="ui5con-agenda-schedule__hour">
+                {{event.startTime | convertTime(eventTime) | hours}}
+              </div>
+              <div class="ui5con-agenda-schedule__card-container">
+                <div class="ui5con-agenda-schedule__slot">
+                  {{event.startTime | convertTime(eventTime) | minutes}}
+                </div>
+
+                <div class="ui5con-agenda-schedule__card" :class="{'general' : event.type != 'presentation_long' && event.type != 'presentation_short'}">
+                  <div class="ui5con-agenda-schedule__header">
+                    <div>
+                      <ul v-if="event.speakers.length > 0" class="ui5con-agenda-schedule__images">
+                        <li v-for="speaker in event.speakers" :key="speaker.firstName + speaker.lastName">
+                          <button
+                            @click="openSpeakerInfoModal(event.speakers, `btn-${speaker.firstName}-${speaker.lastName}-${event.id}`)"
+                            :id="`btn-${speaker.firstName}-${speaker.lastName}-${event.id}`">
+                            <img :src="`${speaker.photoUrl}.jpeg`" :alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`">
+                          </button>
+                        </li>
+                      </ul>
+
+                      <break-icon v-if="event.type.includes('break')"></break-icon>
+                      <party-icon v-if="event.type==='after-party'"></party-icon>
+                      <closing-icon v-if="event.type==='other'"></closing-icon>
+                    </div>
+
+                    <div class="ui5con-agenda-schedule__header-wrapper">
+                      <h3 class="ui5con-agenda-schedule__title" :class="{'ui5con-agenda-schedule__title--live': event.liveNow}">{{event.title | formatText}}</h3>
+                      <div class="ui5con-agenda-schedule__header-container">
+                        <div class="ui5con-agenda-schedule__time">
+                          {{event.startTime | convertTime(eventTime) | trimTime}} -
+                          {{event.endTime | convertTime(eventTime) | trimTime}}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <ul class="ui5con-agenda-schedule__speakers" v-if="event.speakers.length > 0">
+                    <li class="ui5con-agenda-schedule__speaker" v-for="speaker in event.speakers" :key="speaker.firstName">
+                      <p class="ui5con-agenda-schedule__speaker-name">{{speaker.firstName}} {{speaker.lastName}}</p>
+                      <p class="ui5con-agenda-schedule__speaker-company">{{speaker.company | formatText}}</p>
+                    </li>
+                  </ul>
+                  <template v-if="event.description">
+                    <p class="ui5con-agenda-schedule__info" v-if="event.description.length<550">{{event.description}}
+                    </p>
+                    <template v-else>
+                      <p ui5con-container--bright-alternate>
+                        <span class="ui5con-agenda-schedule__info">{{event.readMoreActivated ? event.description : `${event.description.slice(0, 550)}... `}}</span>
+
+                        <button
+                          class="ui5con-agenda-schedule__more"
+                          :aria-expanded="event.readMoreActivated ? 'true' : 'false'" :aria-describedby="`showMoreLess ${event.title}`"
+                          @click="event.readMoreActivated = !event.readMoreActivated">
+                          {{event.readMoreActivated ? 'Less' : 'More'}}
+                        </button>
+                      </p>
+
+                      <p :id="`showMoreLess ${event.title}`" class="sr-only">show and hide more information about the event</p>
+                    </template>
+                  </template>
+
+                  <!-- Links and Add To Calendar -->
+                  <ul class="ui5con-agenda-schedule__links">
+                    <li v-for="link in event.presentationLinks" :key="link._id">
+                      <a
+                        v-if="link.linkType && link.url"
+                        class="ui5con-agenda-schedule__link"
+                        target="_blank"
+                        rel="noreferrer"
+                        :href="link.url">
+                        {{link.linkType}}
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="ui5con-tabpanels"
+        tabindex="0"
+        role="tabpanel"
+        id="workshops-tab"
+        aria-labelledby="Workshops"
+        v-if="activeTab==='workshops-tab'">
+        <p class="ui5con-sessiontype">
+          <span class="ui5con-session--workshop">Workshop</span>
+          <span class="sr-only">or</span>
+          <span class="ui5con-session__general">General</span>
+        </p>
+        <div class="ui5con-agenda">
+          <ul class="ui5con-agenda-schedule ui5con-agenda-schedule--workshop">
+            <li class="ui5con-agenda-schedule__row" v-for="event in displayedSchedule" :key="event.id" v-cloak>
+              <div class="ui5con-agenda-schedule__hour">
+                {{event.startTime | convertTime(eventTime) | hours}}
+              </div>
+              <div class="ui5con-agenda-schedule__card-container">
+                <div class="ui5con-agenda-schedule__slot">
+                  {{event.startTime | convertTime(eventTime) | minutes}}
+                </div>
+                <div class="ui5con-agenda-schedule__card" :class="{'general' : event.type !== 'handson'}">
+                  <div class="ui5con-agenda-schedule__header">
+                    <div>
+                      <ul class="ui5con-agenda-schedule__images" v-if="event.speakers.length > 0">
+                        <li v-for="speaker in event.speakers" :key="speaker.firstName + speaker.lastName">
+                          <button
+                            @click="openSpeakerInfoModal(event.speakers, `btn-${speaker.firstName}-${speaker.lastName}-${event.id}`)"
+                            :id="`btn-${speaker.firstName}-${speaker.lastName}-${event.id}`">
+                            <img :src="`${speaker.photoUrl}.jpeg`" :alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`">
+                          </button>
+                        </li>
+                      </ul>
+                      <break-icon v-if="event.type.includes('break')"></break-icon>
+                    </div>
+                    <div class="ui5con-agenda-schedule__header-wrapper">
+                      <h3 class="ui5con-agenda-schedule__title" :class="{'ui5con-agenda-schedule__title--live': event.liveNow}">{{event.title | formatText}}</h3>
+                      <div class="ui5con-agenda-schedule__header-container">
+                        <div class="ui5con-agenda-schedule__time">
+                          {{event.startTime | convertTime(eventTime) | trimTime}} -
+                          {{event.endTime | convertTime(eventTime) | trimTime}}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <ul class="ui5con-agenda-schedule__speakers" v-if="event.speakers.length>0">
+                    <li class="ui5con-agenda-schedule__speaker" v-for="speaker in event.speakers" :key="speaker.firstName">
+                      <p class="ui5con-agenda-schedule__speaker-name">{{speaker.firstName}} {{speaker.lastName}}</p>
+                      <p class="ui5con-agenda-schedule__speaker-company">{{speaker.company | formatText}}</p>
+                    </li>
+                  </ul>
+                  <template v-if="event.description">
+                    <p class="ui5con-agenda-schedule__info">{{event.description}}
+                    </p>
+                  </template>
+
+                  <ul class="ui5con-agenda-schedule__links">
+                    <li v-for="link in event.presentationLinks" :key="link._id">
+                      <a
+                        v-if="link.linkType && link.url"
+                        class="ui5con-agenda-schedule__link"
+                        target="_blank"
+                        rel="noreferrer"
+                        :href="link.url">
+                        {{link.linkType}}
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        id="speaker-modal"
+        ref="speakerModal"
+        aria-hidden="true"
+        tabindex="-1"
+        aria-modal="true"
+        class="ui5con-agenda-modal-backdrop"
+        style="display: none;"
+        @keydown.esc="closeSpeakerInfoModal"
+        @click.self="closeSpeakerInfoModal"
+        v-cloak>
+
+        <div class="ui5con-agenda-modal" role="document" aria-labelledby="speaker-dialog-title" aria-describedby="speaker-dialog-description" tabindex="-1" ref="speakerModalContent">
+
+          <h2 class="sr-only" id="speaker-dialog-title">Detailed Info about
+            <template v-for="speaker in activeSpeakers">{{speaker.firstName}} {{speaker.lastName}} </template>
+          </h2>
+
+          <p class="sr-only" id="speaker-dialog-description">
+            <template v-for="speaker in activeSpeakers">
+              Speaker's name: {{speaker.firstName}} {{speaker.lastName}}
+              <span v-if="speaker.company">Speaker's company: {{speaker.company}}</span>
+              Speaker's bio: {{speaker.bio | formatText}}
+            </template>
+          </p>
+
+          <button
+            aria-label="Close Dialog"
+            @click="closeSpeakerInfoModal"
+            ref="close"
+            v-on:keydown.tab.prevent="focusTrapModal($event)">
+            ✕
+          </button>
+
+          <div v-for="(speaker, index) in activeSpeakers"  class="ui5con-agenda-modal__container" :key="index">
+            <figure>
+              <img :src="`${speaker.photoUrl}.jpeg`" :alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`">
+            </figure>
+            <article>
+              <header>
+                  <div>
+                    <h3 class="ui5con-agenda-modal__speaker-name">{{speaker.firstName}} {{speaker.lastName}}</h3>
+                    <p class="ui5con-agenda-modal__speaker-company" v-if="speaker.company">{{speaker.company | formatText}}</p>
+                  </div>
+
+                  <ul v-if="speaker.twitterHandle || speaker.linkedInUrl || speaker.githubUrl" class="ui5con-agenda-modal__speaker-links">
+                    <li v-if="speaker.twitterHandle">
+                      <a :href="speaker.twitterHandle" :aria-label="`Twitter Profile of ${speaker.firstName} ${speaker.lastName}`" rel="nofollow" target="_blank" v-html="svgs.twitter" :ref="`twitter ${speaker.firstName} ${speaker.lastName}`" v-on:keydown.tab.prevent="focusTrapModal($event)">
+                      </a>
+                    </li>
+                    <li v-if="speaker.githubUrl">
+                      <a :href="speaker.githubUrl" :aria-label="`Github Profile of ${speaker.firstName} ${speaker.lastName}`" rel="nofollow" target="_blank" v-html="svgs.github" :ref="`github ${speaker.firstName} ${speaker.lastName}`" v-on:keydown.tab.prevent="focusTrapModal($event)">
+                      </a>
+                    </li>
+                    <li v-if="speaker.linkedInUrl">
+                      <a :href="speaker.linkedInUrl" :aria-label="`LinkedIn Profile of ${speaker.firstName} ${speaker.lastName}`" rel="nofollow" target="_blank"  v-html="svgs.linkedin" :ref="`linkedin ${speaker.firstName} ${speaker.lastName}`" v-on:keydown.tab.prevent="focusTrapModal($event)">
+                      </a>
+                    </li>
+                  </ul>
+              </header>
+              <p class="ui5con-agenda-modal__speaker-bio" v-if="speaker.bio">{{speaker.bio | formatText }}</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ui5con-container ui5con-container--committee">
+      <h2>Meet our <span>Content Committee</span></h2>
+
+      <button class="ui5con-button--dark" :aria-expanded="isExpanded ? 'true' : 'false'" aria-describedby="infotext" @click="handleShowHideCommitteeSection">{{isExpanded ? 'Hide' : 'Show'}}</button>
+
+      <p id="infotext" class="sr-only">Expand and collapse the committee section.</p>
+
+      <banner-three></banner-three>
+
+      <Transition name="expand">
+        <ul class="ui5con-committee-list" v-if="isExpanded">
+          <committee-member v-for="member in committee" :member="member"></committee-member>
+        </ul>
+      </Transition>
+    </section>
+
+    <section class="ui5con-container--bright">
+      <div class="ui5con-container--details">
+        <detail :svg="svgs.learn" header="learn.">
+          <p>At UI5con rookies, experienced, and expert developers are gathering to learn more about the framework and its features from each other.</p>
+        </detail>
+        <detail :svg="svgs.explore" header="explore.">
+          <p>UI5con is a free of charge event for UI5 enthusiasts to meet in person and find out what’s happening in the UI5 world.</p>
+        </detail>
+        <detail :svg="svgs.connect" header="connect.">
+          <p>UI5con is meant to connect all the geeks out there — have a common platform to get to know each other, discuss innovations and find solutions.</p>
+        </detail>
+      </div>
+      <banner-four></banner-four>
+    </section>
+
+    <!-- <section class="ui5con-container ui5con-container--carousel">
+    </section> -->
+
+
+    <section class="ui5con-container ui5con-container--gallery">
+      <h2 class="sr-only">On-site image gallery of <span>UI5con 2022</span></h2>
+
+      <div class="ui5con-gallery">
+
+        <figure class="ui5con-gallery-item">
+          <img src="images/gallery/_DSC7801.webp" alt="UI5con attendees sitting on a bench outside">
+          <figcaption class="sr-only">UI5con attendees sitting on a bench outside</figcaption>
+        </figure>
+
+        <figure class="ui5con-gallery-item">
+          <img src="images/gallery/_DSC7831.webp" alt="UI5con audience asking question with a catch box microphone">
+          <figcaption class="sr-only">UI5con audience asking question with a catch box microphone</figcaption>
+        </figure>
+
+        <figure class="ui5con-gallery-item">
+          <img src="images/gallery/_DSC7835.webp" alt="UI5con attendees sitting in the Audimax">
+          <figcaption class="sr-only">UI5con attendees sitting in the Audimax</figcaption>
+        </figure>
+
+        <figure class="ui5con-gallery-item">
+          <img src="images/gallery/DSC03115.webp" alt="Peter Muessig, Marian Zeis, Marco Beier, Volker Buzek on stage">
+          <figcaption class="sr-only">Peter Muessig, Marian Zeis, Marco Beier, Volker Buzek on stage</figcaption>
+        </figure>
+
+        <figure class="ui5con-gallery-item">
+          <img src="images/gallery/_DSC7837.webp" alt="UI5con stage at the Discussion Panel with the big screen in the background">
+          <figcaption class="sr-only">UI5con stage at the Discussion Panel with the big screen in the background</figcaption>
+        </figure>
+
+        <figure class="ui5con-gallery-item">
+          <img src="images/gallery/_DSC7398.webp" alt="UI5con on-site orga team and Margot Wollny discussing">
+          <figcaption class="sr-only">UI5con on-site orga team and Margot Wollny discussing</figcaption>
+        </figure>
+
+        <figure class="ui5con-gallery-item">
+          <img src="images/gallery/DSC02798.webp" alt="Malte Wedel, Frederic and Johannes Gluch">
+          <figcaption class="sr-only">Malte Wedel, Frederic and Johannes Gluch</figcaption>
+        </figure>
+
+        <figure class="ui5con-gallery-item">
+          <img src="images/gallery/DSC02820.webp" alt="Stefan Beck and Peter Muessig on Stage">
+          <figcaption class="sr-only">Stefan Beck and Peter Muessig on Stage</figcaption>
+        </figure>
+
+        <figure class="ui5con-gallery-item">
+          <img src="images/gallery/DSC02834.webp" alt="Wouter Lemaire, Jonas Vanderkelen, Jérémy Coppey, Tobias Hofmann and Martin Fischer">
+          <figcaption class="sr-only">Wouter Lemaire, Jonas Vanderkelen, Jérémy Coppey, Tobias Hofmann and Martin Fischer</figcaption>
+        </figure>
+
+        <figure class="ui5con-gallery-item">
+          <img src="images/gallery/_DSC7560.webp" alt="Workshop time with Volker Buzek">
+          <figcaption class="sr-only">Workshop time with Volker Buzek</figcaption>
+        </figure>
+
+        <figure class="ui5con-gallery-item">
+          <img src="images/gallery/DSC02890.webp" alt="Daniel Rose, Georg Bischoff and Mehmet Bakan">
+          <figcaption class="sr-only">Daniel Rose, Georg Bischoff and Mehmet Bakan</figcaption>
+        </figure>
+
+        <figure class="ui5con-gallery-item">
+          <img src="images/gallery/_DSC7600.webp" alt="Attendee asking a question with the famous catch box microphone">
+          <figcaption class="sr-only">Attendee asking a question with the famous catch box microphone</figcaption>
+        </figure>
+
+        <figure class="ui5con-gallery-item">
+          <img src="images/gallery/DSC02916.webp" alt="Catch box microphone being thrown mid air in a Q&A session">
+          <figcaption class="sr-only">Catch box microphone being thrown mid air in a Q&A session</figcaption>
+        </figure>
+
+      </div>
+    </section>
+
+    <section class="ui5con-container--bright ui5con-container--bright-alternate ui5con-container--socials">
+      <h2>Stay in the loop on latest news from UI5con</h2>
+
+      <p class="ui5con-section-text">Subscribe to our email newsletter to receive updates on upcoming events and community engagement opportunities. We only send out updates a few times per year, so no need to worry about us cluttering your inbox.</p>
+
+      <div id="newsletter-subscription" @keypress.enter="javascript:CloseWin()">
+        <button class="ui5con-button--light" @click="showSubscribeModal" data-a11y-dialog-show="sendinblue-dialog">
+          Subscribe
+        </button>
+
+        <div id="sendinblue-dialog" class="ui5con-newsletter__modal-backdrop" aria-hidden="true">
+          <div class="ui5con-newsletter__modal sib-form-container" id="sib-form-container" role="document" aria-labelledby="dialog-title" aria-describedby="dialog-description" tabindex="-1">
+            <h2 class="sr-only" id="dialog-title">Subscribe to our Newsletter</h2>
+
+            <!-- SendinBlue Mail Template -->
+            <sendin-blue></sendin-blue>
+          </div>
+        </div>
+      </div>
+
+      <div class="ui5con-container--links">
+        <social-link link="https://twitter.com/ui5con" :svg="svgs.twitter2" header="Stay updated"></social-link>
+        <social-link link="https://www.youtube.com/c/openui5videos/playlists" :svg="svgs.youtube" header="See past events"></social-link>
+        <social-link link="mailto:openui5@sap.com?subject=[UI5con 2022] Question" :svg="svgs.mail" header="Reach out to us"></social-link>
+      </div>
+
+      <banner-three></banner-three>
+    </section>
+
+    <section class="ui5con-container ui5con-container--sponsors">
+      <h2>Thanks to our <span>Sponsors</span></h2>
+
+      <ul class="sponsors-list">
+        <li>
+          <a href="https://www.neptune-software.com/" rel="external nofollow" aria-label="Neptune Software" hreflang="de" target="_blank">
+            <img src="images/sponsors/neptune-software-logo.svg" alt="Neptune Software Logo">
+          </a>
+        </li>
+        <li>
+          <a href="https://www.advades.com/" rel="external nofollow" aria-label="Advades" hreflang="de" target="_blank">
+            <img src="images/sponsors/advades_logo.svg" class="advades" alt="Advades Logo">
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <footer-section></footer-section>
+  </main>
+
+
+  <script src="./components/banner-one.component.js"></script>
+  <script src="./components/banner-two.component.js"></script>
+  <script src="./components/banner-three.component.js"></script>
+  <script src="./components/banner-four.component.js"></script>
+  <script src="./components/banner-five.component.js"></script>
+  <script src="./components/banner-six.component.js"></script>
+  <script src="./components/sendin-blue.component.js"></script>
+  <script src="./components/detail.component.js"></script>
+  <script src="./components/social-link.component.js"></script>
+  <script src="./components/committee-member.component.js"></script>
+  <script src="./components/footer.component.js"></script>
+  <script src="./components/break-icon.component.js"></script>
+  <script src="./components/party-icon.component.js"></script>
+  <script src="./components/closing-icon.component.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="./js/luxon.min.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/sendinblue.js"></script>
+  <script src="./js/a11y-dialog.min.js"></script>
+
+
+  <script>
+    var dialogEl = document.getElementById('sendinblue-dialog');
+    var dialog = new A11yDialog(dialogEl);
+
+    window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "The email provided is invalid. Please review the field format and try again.";
+    window.REQUIRED_ERROR_MESSAGE = "The email field cannot be left blank. Please try again. ";
+    window.GENERIC_INVALID_MESSAGE = "The email provided is invalid. Please review the field format and try again.";
+  </script>
+
+</body>
+
+</html>

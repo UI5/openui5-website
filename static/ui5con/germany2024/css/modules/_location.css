@@ -1,0 +1,106 @@
+.ui5con-location .ui5con-location-header h2 {
+  padding-block-start: 4rem;
+  color: var(--brand-color-alt);
+}
+
+.ui5con-location .ui5con-location-header {
+  background: linear-gradient(to bottom, var(--white) 20%, rgba(255, 255, 255, .0));
+}
+
+.ui5con-location .ui5con-location-header h2 span {
+  z-index: 5;
+  position: relative;
+  display: inline-block;
+}
+
+.ui5con-location .ui5con-location-header h2 span::before {
+  top: 68%;
+  z-index: -1;
+  opacity: .8;
+  content: "";
+  height: 0.6rem;
+  left: -0.125rem;
+  right: -0.125rem;
+  position: absolute;
+  background: var(--brand-color);
+}
+
+.ui5con-location .ui5con-box li::marker {
+  color: var(--brand-color-alt);
+}
+
+.ui5con-location .ui5con-location-address {
+  max-width: 100%;
+  margin-block: 2rem;
+  margin-inline: auto;
+}
+
+.ui5con-location .ui5con-location-address img {
+  max-width: 100%;
+}
+
+.ui5con-location .ui5con-location-address a:is(:focus) img,
+.ui5con-location .ui5con-location-address:is(:hover) img {
+  outline-offset: 0.5rem;
+  outline: 0.125rem solid var(--brand-color-alt);
+}
+
+.ui5con-location .ui5con-location-car {
+  gap: 6rem;
+  display: flex;
+}
+
+.ui5con-location .ui5con-location-car h3 {
+  font-size: var(--type-0);
+}
+
+.ui5con-location .ui5con-location-parking,
+.ui5con-location .ui5con-location-transportation {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.ui5con-location .ui5con-location-parking .contents {
+  flex-basis: 100%;
+}
+
+.ui5con-location .ui5con-location-car img {
+  display: none;
+  min-width: clamp(20rem, 20vw, 10rem);
+}
+
+.ui5con-location .ui5con-location-parking img {
+  display: none;
+  max-width: 30%;
+  align-self: end;
+}
+
+.ui5con-location .ui5con-location-transportation img {
+  display: none;
+  max-width: fit-content;
+  margin-inline-start: -2rem;
+}
+
+@media only screen and (min-width: 1021px) {
+  .ui5con-location .ui5con-location-address {
+    max-width: 90%;
+    text-align: left;
+    margin-block: 4rem;
+  }
+
+  .ui5con-location .ui5con-location-parking {
+    padding-block-end: 0;
+  }
+
+.ui5con-location .ui5con-location-parking p,
+.ui5con-location .ui5con-location-transportation p {
+  margin-block-start: 0;
+}
+
+  .ui5con-location .ui5con-location-car img,
+  .ui5con-location .ui5con-location-parking img,
+  .ui5con-location .ui5con-location-transportation img {
+    display: block;
+  }
+}

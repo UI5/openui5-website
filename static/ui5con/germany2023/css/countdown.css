@@ -1,0 +1,124 @@
+.ui5con-countdown {
+  display: flex;
+  gap: 5%;
+  justify-content: center;
+  margin: 2rem 0 4rem 0;
+}
+
+.ui5con-countdown__block {
+  display: flex;
+  flex-direction: column;
+}
+
+.ui5con-countdown__digit {
+  line-height: 1.2;
+  font-weight: 900;
+  font-size: 3.5rem;
+}
+
+.ui5con-countdown__text {
+  line-height: 1.2;
+  color: #FFDCC1;
+  font-weight: 700;
+}
+
+.ui5con-countdown__block.days .ui5con-countdown__digit {
+  display: block;
+  -webkit-text-stroke: 0;
+  background: linear-gradient(
+    130deg,
+    var(--ui5BrandAltColor),
+    var(--ui5BrandColor),
+    var(--ui5TextColor),
+    var(--ui5BrandColor)
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 5s linear infinite alternate;
+}
+
+.ui5con-countdown__block.hours .ui5con-countdown__digit {
+  display: block;
+  -webkit-text-stroke: 0;
+  background: linear-gradient(
+    130deg,
+    var(--ui5BrandAltColor),
+    var(--ui5BrandColor),
+    var(--ui5TextColor),
+    var(--ui5BrandColor)
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 5s linear infinite alternate;
+}
+
+.ui5con-countdown__block.minutes .ui5con-countdown__digit {
+  display: block;
+  -webkit-text-stroke: 0;
+  background: linear-gradient(
+    130deg,
+    var(--ui5BrandAltColor),
+    var(--ui5BrandColor),
+    var(--ui5TextColor),
+    var(--ui5BrandColor)
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 5s linear infinite alternate;
+}
+
+@keyframes textclip {
+  0% {
+    background-position: 10% 0%;
+  }
+  50% {
+    background-position: 91% 100%;
+  }
+  100% {
+    background-position: 10% 0%;
+  }
+}
+
+.ui5con-countdown__block.days.solid .ui5con-countdown__digit,
+.ui5con-countdown__block.hours.solid .ui5con-countdown__digit,
+.ui5con-countdown__block.minutes.solid .ui5con-countdown__digit {
+  -webkit-text-fill-color: #FFDCC1;
+}
+
+@media only screen and (min-width: 768px) {
+  .ui5con-countdown__digit {
+    font-size: 5rem;
+  }
+  
+  .ui5con-countdown__text {
+    font-size: 1.25rem;
+  }
+
+}
+
+@media only screen and (min-width: 1200px) {
+  .ui5con-countdown {
+    justify-content: flex-start;
+    margin: 2rem 0 5rem 0;
+  }
+
+  .ui5con-countdown__digit {
+    font-size: 9rem;
+  }
+  
+  .ui5con-countdown__text {
+    font-size: 1.625rem;
+  }
+}

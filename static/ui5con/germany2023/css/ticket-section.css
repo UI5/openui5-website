@@ -1,0 +1,329 @@
+.ui5con-ticket-section,
+.ui5con-teaser-section {
+  gap: 3rem;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  padding: 5rem 1.25rem 0 1.25rem;
+}
+
+.ui5con-teaser-section {
+  gap: 0;
+}
+
+.ui5con-ticket-waiting-list {
+  max-width: 800px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+}
+
+.ui5con-ticket-heading {
+  margin: 0;
+  font-size: 2.5rem;
+  line-height: 2.875rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--ui5TextColor);
+}
+
+.ui5con-ticket-heading span {
+  display: inline-block;
+  -webkit-text-stroke: 0;
+  background: linear-gradient(
+    258.68deg,
+    var(--ui5TextColor) -1.05%,
+    var(--ui5BrandColor) 55.25%,
+    var(--ui5BrandAltColor) 107.04%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 10s linear infinite alternate;
+}
+
+#tickets {
+  scroll-behavior: smooth;
+  scroll-margin-top: 4em;
+}
+
+.ui5con-ticket-alternate {
+  font-size: 1.125rem;
+  margin-top: -3rem;
+}
+
+.ui5con-ticket-alternate a {
+  color: var(--ui5BrandColor);
+}
+
+.ui5con-ticket-alternate a:hover,
+.ui5con-ticket-alternate a:focus {
+  text-decoration: none;
+}
+
+.ui5con-ticket-section .tito-widget {
+  margin: 0;
+  font-family: "72", Arial, Helvetica, sans-serif;
+  color: var(--sapTextColor);
+  justify-content: flex-start;
+}
+
+.ui5con-ticket-section .tito-widget-form {
+  border-color: var(--ui5BrandAltColor);
+  border-width: 0;
+  padding: 1rem 0 1rem 0;
+  background: transparent;
+}
+
+.ui5con-ticket-section .tito-widget .tito-widget-form .tito-release {
+  border-color: #fff;
+  padding-top: 1.563rem;
+  padding-bottom: 1.563rem;
+}
+
+.ui5con-ticket-section .tito-widget .tito-widget-form .tito-release .tito-release--title {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--ui5TextAccentTextColor);
+}
+
+.ui5con-ticket-section .tito-widget .tito-widget-form .tito-release .tito-release-description .tito-release-description--description p {
+  color: var(--sapTextColor);
+  font-size: 1rem;
+}
+
+.ui5con-ticket-section .tito-price {
+  color: var(--sapTextColor);
+}
+
+.ui5con-ticket-section .tito-widget .tito-widget-form .tito-release .tito-release--status {
+  background: transparent;
+  border-color: #fff;
+  color: var(--sapTextColor);
+  font-size: 1.5rem;
+  text-transform: none;
+  line-height: 2;
+}
+
+.ui5con-ticket-section .tito-widget .tito-widget-form .tito-release .tito-release--status span {
+  font-size: 1rem;
+}
+
+.ui5con-ticket-section input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  margin: 0;
+  cursor: pointer;
+  font: inherit;
+  color: var(--ui5BrandColor);
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid #fff;
+  border-radius: 0.15em;
+  display: grid;
+  place-content: center;
+}
+
+.ui5con-ticket-section input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(0);
+  transform-origin: bottom left;
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--ui5BrandColor);
+  background-color: CanvasText;
+}
+
+.ui5con-ticket-section input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+.ui5con-ticket-section input[type="checkbox"]:focus {
+  outline: max(2px, 0.15em) solid var(--ui5BrandAltColor);
+  outline-offset: max(2px, 0.15em);
+}
+
+.ui5con-ticket-section .tito-widget .tito-form-actions .tito-submit {
+  background: var(--ui5BrandColor);
+  border-color: var(--ui5BrandColor);
+  font-size: 1.25rem;
+  height: auto;
+}
+
+.ui5con-ticket-section .tito-widget .tito-form-actions .tito-submit:hover,
+.ui5con-ticket-section .tito-widget .tito-form-actions .tito-submit:focus {
+  background: var(--ui5BrandAltColor);
+  border-color: var(--ui5BrandAltColor);
+}
+
+.ui5con-ticket-section .tito-widget .tito-widget-form .tito-release .tito-quantity .tito-choose-waiting-list-button {
+  background: var(--ui5BrandAltColor);
+  border-color: var(--ui5BrandAltColor);
+  font-size: 1.125rem;
+  color: #fff;
+  height: auto;
+  letter-spacing: normal;
+  line-height: auto;
+  text-transform: normal;
+  padding: .5rem 1rem;
+}
+
+.ui5con-ticket-section .tito-widget .tito-widget-form .tito-release .tito-quantity .tito-choose-waiting-list-button:hover,
+.ui5con-ticket-section .tito-widget .tito-widget-form .tito-release .tito-quantity .tito-choose-waiting-list-button:focus {
+  background: var(--ui5BrandColor);
+  border-color: var(--ui5BrandColor);
+}
+
+.ui5con-facts {
+  list-style: none;
+  text-align: center;
+  margin: 0 auto 3rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.ui5con-facts-item {
+  flex: 0 0 25%;
+  display: block;
+  color: var(--ui5TextAccentTextColor);
+  font-size: 1.3rem;
+  font-weight: 900;
+  opacity: 0;
+  animation: fadein 1s ease-in forwards;
+  animation-play-state: paused;
+  will-change: opacity;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.ui5con-facts-item-1 {
+  animation-delay: 1s;
+  animation-play-state: running;
+}
+
+.ui5con-facts-item-2 {
+  animation-delay: 1.5s;
+  animation-play-state: running;
+}
+
+.ui5con-facts-item-3 {
+  animation-delay: 2s;
+  animation-play-state: running;
+}
+
+.ui5con-facts-item-4 {
+  animation-delay: 2.5s;
+  animation-play-state: running;
+}
+
+.ui5con-facts-item-5 {
+  animation-delay: 3s;
+  animation-play-state: running;
+}
+
+.ui5con-facts-number {
+  display: block;
+  -webkit-text-stroke: 0;
+  background: linear-gradient(
+    90deg,
+    var(--ui5BrandColor) 0%,
+    var(--ui5BrandAltColor) 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* animation: textclip 10s linear infinite alternate; */
+  font-size: 4rem;
+}
+
+.ui5con-facts-text {
+  color: var(--ui5BrandColor);
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  opacity: 0;
+  animation: fadein 1s ease-in forwards;
+  animation-play-state: paused;
+  will-change: opacity;
+}
+
+.ui5con-facts:has(li.ui5con-facts-item-5) + .ui5con-facts-text {
+  animation-delay: 3.5s;
+  animation-play-state: running;
+}
+
+@media only screen and (min-width: 768px) {
+  .ui5con-ticket-section,
+  .ui5con-teaser-section {
+    padding: 7.5rem 4rem 3.75rem 4rem;
+  }
+
+  .ui5con-ticket-heading {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+
+  .ui5con-facts-item {
+    font-size: 1.7rem;
+    font-weight: 900;
+  }
+
+  .ui5con-facts-number {
+    font-size: 7rem;
+  }
+
+  .ui5con-facts-text {
+    font-size: 1.3rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .ui5con-ticket-section,
+  .ui5con-teaser-section {
+    gap: 6rem;
+    padding: 10.75rem 6rem 7rem;
+  }
+
+  .ui5con-teaser-section {
+    gap: 0;
+  }
+
+  .ui5con-teaser-section + .ui5con-ticket-section {
+    padding-top: 5rem;
+  }
+
+  .ui5con-ticket-heading {
+    font-size: 5rem;
+    line-height: 5.75rem;
+    text-align: left;
+  }
+
+  .ui5con-facts-item {
+    flex: 0 0 30%;
+    font-size: 3rem;
+    font-weight: 900;
+    height: 18rem;
+  }
+
+  .ui5con-facts-number {
+    font-size: 10rem;
+  }
+
+  .ui5con-facts-text {
+    font-size: 1.5rem;
+  }
+}

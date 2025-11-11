@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UI5con Germany in July 2023 - The people behind the scenes</title>
+  <meta name="description" content="If you want to learn more about UI5, you can't miss UI5con 2023. A day of inspiration, learning, and networking with like-minded people. Inspiring talks. Endless learning. July 6. Frontend, Framework, SAPUI5, OpenUI5, UI5con, SAP">
+  <meta name="keywords" content="webstandards, web standards, html, css, JavaScript, Accessibility, Barrierefreiheit, WCAG, OpenUI5, DevOps, SAPUI5, UI5con, UI5 Web Components, Web Components, Webcomponents, Open Source">
+  <meta name="robots" content="index, follow">
+
+  <meta name="author" content="SAP SE">
+
+  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:url" content="https://openui5.org/ui5con/germany2023">
+  <meta property="twitter:title" content="UI5con Germany in July 2023"/>
+  <meta property="twitter:description" content="If you want to learn more about UI5, you can't miss UI5con 2023. A day of inspiration, learning, and networking with like-minded people. Inspiring talks. Endless learning. July 6."/>
+  <meta property="twitter:image" content="https://openui5.org/ui5con/germany2023/images/share.png?2"/>
+
+  <meta property="og:title" content="UI5con Germany in July 2023"/>
+  <meta property="og:description" content="If you want to learn more about UI5, you can't miss UI5con 2023. A day of inspiration, learning, and networking with like-minded people. Inspiring talks. Endless learning. July 6."/>
+  <meta property="og:image" content="https://openui5.org/ui5con/germany2023/images/share.png?2"/>
+
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png"/>
+  <link rel="icon" type="image/svg+xml" href="images/icon.svg"/>
+  <link rel="icon" sizes="any" href="images/android-chrome-192x192.png"/>
+
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/people.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+  <script src="./js/svgs.js"></script>
+</head>
+<body class="ui5con-subpage">
+  <header id="teamHeader" class="ui5con-header-section">
+    <header-section></header-section>
+  </header>
+  <main id="team">
+    <h1 class="ui5con-people-main-heading sr-only">Meet the Faces Behind UI5con</h1>
+    <section class="ui5con-people-section">
+      <header class="ui5con-people-heading">
+        <h2>Our <span>team</span></h2>
+      </header>
+      <div class="ui5con-content-container">
+        <ul class="ui5con-people-list ui5con-people-list--team" role="list">
+          <li class="ui5con-people-list-item" v-for="member in team" :key="member.name" role="listitem">
+            <figure class="ui5con-people-member">
+              <div class="frame">
+                <img :src="member.picture" :alt="`Portrait of ${member.name}`">
+              </div>
+              <figcaption>
+                <h3 class="ui5con-people-name">{{member.name}}</h3>
+                <p class="ui5con-people-country">{{member.city}}</p>
+
+                <ul class="ui5con-people-socials" v-if="member.twitter || member.github || member.linkedin" :aria-label="`Links to ${member.name}'s social media accounts`">
+                  <li v-if="member.twitter">
+                    <a :href="member.twitter" :aria-label="`Twitter Profile of ${member.name}`" rel="nofollow" target="_blank" class="ui5con-people-socials-item" v-html="svgs.twitter">
+                    </a>
+                  </li>
+                  <li v-if="member.github">
+                    <a :href="member.github" :aria-label="`Github Profile of ${member.name}`"  rel="nofollow" target="_blank" class="ui5con-people-socials-item" v-html="svgs.github">
+                    </a>
+                  </li>
+                  <li v-if="member.linkedin">
+                    <a :href="member.linkedin" :aria-label="`LinkedIn Profile of ${member.name}`" rel="nofollow" target="_blank" class="ui5con-people-socials-item"  v-html="svgs.linkedin">
+                    </a>
+                  </li>
+                </ul>
+              </figcaption>
+            </figure>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="ui5con-people-section" id="ui5con-committee-section">
+      <header class="ui5con-people-heading">
+        <h2>Our <span>committee</span></h2>
+      </header>
+      <div class="ui5con-content-container">
+        <ul class="ui5con-people-list ui5con-people-list--committee" role="list">
+          <committee-member v-for="member in committee" :member="member"></committee-member>
+        </ul>
+      </div>
+    </section>
+    <footer-section></footer-section>
+  </main>
+
+  <script src="./components/header-section.component.js"></script>
+  <script src="./components/social-link.component.js"></script>
+  <script src="./components/social-links-section.component.js"></script>
+  <script src="./components/committee-member.component.js"></script>
+  <script src="./components/footer-section.component.js"></script>
+  <script src="./js/team.js"></script>
+</body>
+</html>

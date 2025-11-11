@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>UI5con powered by Flexso Digital | February 14, 2020 @ SAP Belgium</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<script>
+		function open(id) {
+			var oAgendaElement = document.getElementById(id);
+			var oButton = document.getElementById("hideButton");
+			if (oAgendaElement.className.indexOf("collapsed") > 0) {
+				oAgendaElement.className = oAgendaElement.className.replace("collapsed", "expanded");
+				oButton.className = oButton.className.replace("more", "less");
+			} else {
+				oAgendaElement.className = oAgendaElement.className.replace("expanded", "collapsed");
+				oButton.className = oButton.className.replace("less", "more");
+			}
+			return;
+		}
+	</script>
+	<button onclick="scrollToTop()" id="navTopButton" class="b-floatButton" title="Go to top"></button>
+	<div class="b-page">
+		<div class="b-header">
+			<div class="b-bar"></div>
+			<div class="b-section">
+				<div class="b-list mod_mainmenu">
+					<div class="b-list__item">
+						<div class="b-font size_18"><a href="./" class="active">INFO</a></div>
+					</div>
+					<div class="b-list__item">
+						<div class="b-font size_18 color_yellow"><a href="agenda.html?view=tracks">AGENDA</a></div>
+					</div>
+					<div class="b-list__item">
+						<div class="b-font size_18 color_yellow"><a href="../">UI5con</a></div>
+					</div>
+				</div>
+			</div>
+			<div class="b-header__logo" onclick="location.href='index.html'"></div>
+			<div class="b-header__delimiter"></div>
+			<div class="b-ui align_center">
+				<div class="b-font size_32 color_yellow weight_light">
+					<!-- <div class="b-font size_32 color_yellow weight_light">SAVE THE DATE</div> -->
+					<!-- <b>February 14TH 2020</b> -->
+					<!-- <div class="b-font size_14">Tickets now available via: <a href="https://www.eventbrite.co.uk/e/ui5con-powered-by-flexso-digital-tickets-73588710815" target="_blank">Eventbrite</a></div> -->
+				</div>
+			</div>
+			<!-- <a href="https://www.eventbrite.co.uk/e/ui5con-powered-by-flexso-digital-tickets-73588710815" target="_blank">
+				<div class="b-header__sticker"></div>
+			</a> -->
+
+			<div id="section-info" class="b-header__footer">
+				<div class="b-section">
+					<div class="b-section-h">
+						<div class="b-list mod_general">
+							<div class="b-font size_36 b-ui align_center color_white grid-col--12">
+								Thanks for joining us!
+							</div>
+							<div class="b-font size_36 b-ui align_center color_white margin_20_0_30 grid-col--12">
+								<button id="sessions" class="b-list__button b-font size_18 color_yellow" title="Sessions">
+									<a href="./agenda.html?view=sessions">
+			          		Discover all the sessions and material
+									</a>
+			          </button>
+							</div>
+							<!-- <div class="b-list__item">
+								<svg class="b-list__icon" x="0px" y="0px" viewBox="0 0 80 80" xml:space="preserve">
+									<path class="st0"
+										d="M42.9,2.2c3.6,0.3,7.1,1.3,10.3,3c3.1,1.6,6,3.8,8.4,6.4c2.4,2.6,4.3,5.7,5.6,9c1.3,3.4,2,7.1,2,10.7c-0.1,1.9-0.5,3.7-1.2,5.4c-0.9,2.4-2,4.8-3.3,7.1c-1.4,2.5-2.9,5.2-4.6,7.9c-1.7,2.7-3.5,5.5-5.3,8.2c-4.3,6.3-9.1,13-14.5,20.1c-5.6-7-10.5-13.7-14.8-20c-1.8-2.6-3.6-5.3-5.4-8.1s-3.4-5.5-4.7-8.1c-1.2-2.3-2.4-4.7-3.4-7.2c-0.8-1.7-1.2-3.5-1.3-5.4c0-3.9,0.7-7.8,2.3-11.5c3-7,8.5-12.6,15.5-15.5C32.1,2.8,35.9,2,39.9,2h1.6C42,2,42.5,2.1,42.9,2.2z M40.2,71.9c3-4.1,6-8.3,8.9-12.6s5.5-8.2,7.7-11.9s4-7,5.4-9.8s2.1-5,2.1-6.4c0-3.1-0.6-6.1-1.7-8.9C61.5,19.6,60,17,58,14.8c-1.9-2.2-4.3-4-6.9-5.4c-2.7-1.4-5.6-2.3-8.7-2.6h-2.7c-3.2,0-6.4,0.6-9.4,1.9c-2.8,1.3-5.4,3.1-7.6,5.3s-4,4.9-5.3,7.8c-1.3,3-1.9,6.2-1.9,9.4c0,1.5,0.8,3.8,2.3,6.9c1.8,3.5,3.7,6.9,5.9,10.2c2.4,3.8,5,7.7,7.9,11.9C34.5,64.4,37.3,68.3,40.2,71.9zM39.9,16.6c8.1,0,14.6,6.6,14.6,14.7c0,3.9-1.5,7.6-4.3,10.3c-5.7,5.7-15,5.7-20.7,0s-5.7-15,0-20.7C32.2,18.1,36,16.5,39.9,16.6zM39.9,41c2.6,0.1,5.1-1,6.9-2.9c3.8-3.8,3.8-10,0-13.8s-10-3.8-13.8,0s-3.8,10,0.1,13.8C34.9,40,37.3,41,39.9,41L39.9,41z" />
+								</svg>
+								<div class="b-font size_18 weight_bold color_yellow">Evere, Brussels - Belgium</div>
+								<div class="b-font size_13 weight_light color_yellow">SAP Belgium Office</div>
+							</div>
+							<div class="b-list__item">
+								<svg class="b-list__icon" x="0px" y="0px" viewBox="0 0 80 80" xml:space="preserve">
+									<path
+										d="M70.1,6.7c2.6-0.1,4.7,1.9,4.8,4.4c0,0.1,0,0.3,0,0.4v62.7c0.1,2.6-1.9,4.7-4.5,4.8c-0.1,0-0.2,0-0.4,0H12.2c-1.3,0-2.5-0.5-3.4-1.4s-1.5-2.2-1.4-3.5V11.5c0-1.3,0.5-2.6,1.4-3.5s2.1-1.4,3.4-1.4h9.6V1.8h4.8v4.8h28.9V1.8h4.8v4.8L70.1,6.7zM70.1,21.1H12.2v53H70L70.1,21.1L70.1,21.1z M21.9,40.4c-2.6-0.1-4.6-2.3-4.4-4.8c0.1-2.6,2.3-4.6,4.8-4.4c2.6,0.1,4.6,2.3,4.4,4.8c0,1.2-0.5,2.3-1.4,3.1C24.4,40,23.1,40.4,21.9,40.4z M21.9,59.7c-2.6-0.1-4.6-2.3-4.4-4.8c0.1-2.6,2.3-4.6,4.8-4.4c2.6,0.1,4.6,2.3,4.4,4.8c0,1.2-0.5,2.3-1.4,3.1C24.4,59.2,23.1,59.7,21.9,59.7z M21.9,16.3h4.8v-4.8h-4.8C21.9,11.5,21.9,16.3,21.9,16.3z M41.1,40.4c-2.6-0.1-4.6-2.3-4.4-4.8c0.1-2.6,2.3-4.6,4.8-4.4s4.6,2.3,4.4,4.8c0,1.2-0.5,2.3-1.4,3.1C43.7,40,42.4,40.4,41.1,40.4z M41.1,59.7c-2.6-0.1-4.6-2.3-4.4-4.8c0.1-2.6,2.3-4.6,4.8-4.4s4.6,2.3,4.4,4.8c0,1.2-0.5,2.3-1.4,3.1C43.7,59.2,42.4,59.7,41.1,59.7z M55.6,16.3h4.8v-4.8h-4.8V16.3z M60.4,40.4c-2.6-0.1-4.6-2.3-4.4-4.8c0.1-2.6,2.3-4.6,4.8-4.4c2.6,0.1,4.6,2.3,4.4,4.8c0,1.2-0.5,2.3-1.4,3.1C63,40,61.7,40.4,60.4,40.4z M60.4,59.7c-2.6-0.1-4.6-2.3-4.4-4.8c0.1-2.6,2.3-4.6,4.8-4.4c2.6,0.1,4.6,2.3,4.4,4.8c0,1.2-0.5,2.3-1.4,3.1C63,59.2,61.7,59.7,60.4,59.7z" />
+								</svg>
+								<div class="b-font size_18 weight_bold color_yellow">14TH</div>
+								<div class="b-font size_13 weight_light color_yellow">February 2020</div>
+							</div>
+							<div class="b-list__item">
+								<svg class="b-list__icon" x="0px" y="0px" viewBox="0 0 80 80" xml:space="preserve">
+									<path
+										d="M41.4,1.9c5.1,0,10.1,1,14.8,3c9.2,3.9,16.4,11.2,20.3,20.3c4,9.5,4,20.2,0,29.6C72.6,64,65.3,71.3,56.2,75.1c-4.7,2-9.7,3-14.8,3c-10.1,0-19.9-4-27-11.2c-3.4-3.5-6.2-7.6-8.1-12.1c-4-9.5-4-20.2,0-29.6c1.9-4.5,4.7-8.6,8.1-12.1C21.5,5.9,31.3,1.8,41.4,1.9z M41.4,73.4c4.5,0,8.9-0.9,13-2.6c8-3.4,14.4-9.7,17.8-17.7c3.5-8.3,3.5-17.7,0-26c-3.4-8-9.8-14.4-17.8-17.8c-8.3-3.5-17.7-3.5-26,0c-8,3.4-14.3,9.8-17.7,17.8c-3.5,8.3-3.5,17.7,0,26c3.4,8,9.8,14.3,17.7,17.7C32.5,72.5,36.9,73.4,41.4,73.4z M62.8,40c0.6,0,1.2,0.3,1.6,0.7c0.9,0.9,1,2.4,0.1,3.3l-0.1,0.1c-0.4,0.4-1,0.7-1.6,0.7H36.6V23.4c-0.2-1.1,0.6-2.2,1.8-2.4c0.2,0,0.4,0,0.6,0c0.6,0,1.2,0.3,1.6,0.7c0.5,0.4,0.8,1.1,0.7,1.7V40H62.8z" />
+								</svg>
+								<div class="b-font size_18 weight_bold color_yellow">9AM &mdash; 6PM</div>
+								<div class="b-font size_13 weight_light color_yellow">+ EVENING SPECIAL</div>
+							</div>
+							<div class="b-list__item">
+								<svg class="b-list__icon" x="0px" y="0px" viewBox="0 0 80 80" xml:space="preserve">
+									<path
+										d="M31.4,45.5c2.6,0,5.3,0.5,7.7,1.5c4.7,2,8.4,5.8,10.4,10.4c1,2.4,1.5,5.1,1.5,7.7V80H1.8V65.2c0-2.6,0.5-5.3,1.5-7.7c1-2.3,2.4-4.5,4.3-6.3s4-3.2,6.3-4.3c2.4-1,5-1.5,7.6-1.5H31.4L31.4,45.5z M46.2,65.2c0-8.1-6.5-14.8-14.7-14.8h-0.1h-9.8c-1.9,0-4,0.4-5.7,1.1c-1.7,0.8-3.3,1.8-4.7,3.1C9.8,56,8.7,57.6,8,59.3c-0.8,1.8-1.2,3.7-1.1,5.8v9.8h39.4L46.2,65.2z M41.2,30.7c0,8.1-6.5,14.8-14.7,14.8h-0.1c-8.2,0-14.8-6.7-14.8-14.8c0-4,1.5-7.7,4.4-10.4c5.8-5.8,15.1-5.8,21,0C39.7,23,41.3,26.8,41.2,30.7z M26.4,40.6c2.6,0.1,5.2-1,7-2.9c3.8-3.8,3.8-10.1,0-14s-10.1-3.8-14,0s-3.8,10.1,0,14C21.2,39.5,23.8,40.6,26.4,40.6z M70.8,13.5c0.1,3.2-1.2,6.4-3.5,8.7c-4.7,5-12.5,5.2-17.4,0.5s-5.2-12.5-0.5-17.4c0.1-0.2,0.3-0.3,0.4-0.4C54.6,0,62.4,0,67.2,4.7l0,0C69.6,7.1,70.8,10.2,70.8,13.5z M60.9,25.8c2.6,0,5.3,0.5,7.7,1.5c4.7,2,8.4,5.8,10.4,10.4c1,2.4,1.5,5.1,1.5,7.7v9.8H56.1v-5h19.5v-5c0-8.1-6.5-14.8-14.7-14.8c-0.1,0-0.1,0-0.2,0h-4.9c-3.6-0.1-7.2,1.3-9.8,3.8v-6c2.9-1.8,6.4-2.8,9.8-2.7h5V25.8z M58.4,20.8c4.1,0,7.4-3.3,7.3-7.4c-0.1-4.1-3.3-7.4-7.4-7.3c-4.1,0-7.4,3.3-7.3,7.4c0,1.9,0.8,3.8,2.1,5.2C54.6,20.1,56.5,21,58.4,20.8L58.4,20.8z" />
+								</svg>
+								<div class="b-font size_18 weight_bold color_yellow">60</div>
+								<div class="b-font size_13 weight_light color_yellow">ATTENDEES</div>
+							</div>
+							<div class="b-list__item">
+								<svg class="b-list__icon" x="0px" y="0px" viewBox="0 0 80 80" xml:space="preserve">
+									<path class="st0"
+										d="M60.1,47.4c-0.5,0.3-0.7,0.8-0.4,1.3l11,29.7c0.2,0.4,0.1,0.9-0.1,1.2c-0.3,0.3-0.6,0.4-1,0.4c-0.2,0-0.4,0-0.6-0.1L42.2,61c-0.2-0.1-0.4-0.2-0.6-0.1c-0.3,0-0.5,0-0.7,0.1L13.8,80c-0.2,0.1-0.4,0.2-0.6,0.1c-0.4,0-0.8-0.2-1-0.4c-0.3-0.3-0.4-0.8-0.1-1.2l11-29.6c0.2-0.5,0-1.1-0.4-1.3l-20-14.2c-0.5-0.2-0.7-0.8-0.4-1.3C2.5,31.4,3,31,3.5,31.1h25.2c0.5,0,1-0.3,1.2-0.7L40.3,2.5c0.1-0.4,0.6-0.7,1.1-0.7c0.5,0,0.9,0.3,1,0.7l10.3,27.9c0.2,0.5,0.7,0.8,1.2,0.7h25.4c0.5,0,0.9,0.3,1,0.8c0.2,0.5,0,1-0.4,1.3L60.1,47.4z M55.1,50.5c-0.5-1.2-0.5-2.7-0.1-3.9c0.4-1.2,1.2-2.4,2.3-3.1l10.6-7.3H54c-2.7,0.2-5-1.4-5.9-4l-6.7-18.5l-6.9,18.5c-0.8,2.5-3.2,4.1-5.9,4H15.1l10.4,7.3c1.1,0.7,1.9,1.9,2.3,3.1c0.4,1.2,0.3,2.7-0.1,3.9l-6.9,18.7L37.9,57c1-0.7,2.3-1.1,3.5-1c1.2,0,2.4,0.3,3.4,0.9L62,69.2L55.1,50.5z" />
+								</svg>
+								<div class="b-font size_18 weight_bold color_yellow">UNLIMITED</div>
+								<div class="b-font size_13 weight_light color_yellow">POSSIBILITIES</div>
+							</div> -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="b-section mod_agenda">
+			<div class="b-font size_36 b-ui align_center color_white margin_20_0_30 grid-col--12">
+				This was #UI5conBE 2020
+			</div>
+		</div>
+
+		<div class="b-section mod_info">
+			<div class="b-section-h">
+					<div class="b-list mod_info">
+						<div class="b-list__item">
+							<img src="./data/img/fd_team.jpg" width="100%"/>
+							<div class="b-font size_18">The Flexso Digital team preparing the location for our UI5 friends.</div>
+						</div>
+						<div class="b-list__item">
+							<img src="./data/img/keynote.jpg" width="100%"/>
+							<div class="b-font size_18">Stefan and Peter kicking off with a keynote putting UI5 in the Spotlight!</div>
+						</div>
+						<div class="b-list__item">
+							<img src="./data/img/margot_and_fred.jpg" width="100%"/>
+							<div class="b-font size_18">Margot and Fred discussing and sharing experiences.</div>
+						</div>
+					</div>
+					<div class="b-list mod_info b-ui margin_20_0_30">
+						<div class="b-list__item">
+							<img src="./data/img/peter_going_live.jpg" width="100%"/>
+							<div class="b-font size_18">Peter stepping in for a sick colleague and sharing live some tips and tricks without lots op preparation.</div>
+						</div>
+						<div class="b-list__item">
+							<img src="./data/img/firebase_and_ui5.jpg" width="100%"/>
+							<div class="b-font size_18">Dries presenting how to integrate Firebase with UI5 technology.</div>
+						</div>
+						<div class="b-list__item">
+							<img src="./data/img/logo.png" width="100%"/>
+							<div class="b-font size_18">Check out more on Twitter under <a href="https://twitter.com/hashtag/UI5conBE?f=live" target="_blank">#UI5conBE</a>.</div>
+						</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="b-section mod_agenda">
+			<div class="b-section-h">
+				<div id="section-poweredby" class="b-font size_36 b-ui align_center color_white margin_20_0_30 grid-col--12">
+					POWERED BY
+				</div>
+				<div class="b-section__content">
+					<div class="b-ui b-list mod_sponsors">
+						<div class="b-list__item mod_sponsor">
+							<a href="https://www.flexsodigital.be/en/events/ui5con-powered-by-flexso-4603/" target="_blank">
+								<img class="b-list__logo" src="./data/sponsors/FlexsoDigitalWhite.png" />
+							</a>
+						</div>
+						<div class="b-list__item mod_sponsor">
+							<img class="b-list__logo" src="./data/sponsors/SAP.png">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="b-section mod_footer">
+			<div class="b-section-h">
+				<div class="b-ui align_center">
+					<div class="b-ui margin_10">&copy; SAP SE, made available under Apache License 2.0</div>
+					<a class="b-footerlink" href="http://openui5.org/impressum.html">Legal Disclosure/Impressum</a>
+					<a class="b-footerlink" href="http://global.sap.com/corporate-en/legal/privacy.epx">Privacy</a>
+					<a class="b-footerlink" href="http://www.sap.com/germany/about/legal/privacy.html">Datenschutz</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="core.js"></script>
+</body>
+
+</html>

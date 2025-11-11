@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 5044 412">
+
+  <style>
+    .draw {
+        opacity: .15;
+        stroke-dasharray: 4000;
+        stroke-dashoffset: 50;
+        animation: dash 10s linear infinite;
+    }
+    @keyframes dash {
+      from {stroke-dashoffset: 4000;}
+      to {stroke-dashoffset: -4000;}
+    }
+
+    .draw2 {
+        opacity: .10;
+        stroke-dasharray: 2000;
+        stroke-dashoffset: 50;
+        animation: dash2 15s linear infinite;
+    }
+
+    @keyframes dash2 {
+      from {stroke-dashoffset: -2000;}
+      to {stroke-dashoffset: 2000;}
+    }
+
+    .draw3 {
+        opacity: .2;
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 50;
+        animation: dash3 17s linear infinite;
+    }
+
+    @keyframes dash3 {
+      from {stroke-dashoffset: -1000;}
+      to {stroke-dashoffset: 1000;}
+    }
+  </style>
+
+  <path stroke="#F16A36" stroke-width="20" d="M0 402h1777c43.08 0 78-34.922 78-78V115.543c0-44.182 35.82-80 80-80h1229.67c16.59 0 30.42 12.698 31.83 29.229 1.41 16.53 15.24 29.228 31.84 29.228H5044"/>
+  <path class="draw" stroke="white" stroke-width="20" d="M0 402h1777c43.08 0 78-34.922 78-78V115.543c0-44.182 35.82-80 80-80h1229.67c16.59 0 30.42 12.698 31.83 29.229 1.41 16.53 15.24 29.228 31.84 29.228H5044"/>
+
+  <path stroke="#8838EC" stroke-width="20" d="M1911 0v264c0 44.183-35.82 80-80 80H0"/>
+  <path class="draw3" stroke="red" stroke-width="20" d="M1911 0v264c0 44.183-35.82 80-80 80H0"/>
+
+  <path stroke="#F79B36" stroke-width="20" d="M0 315h1823.78c33.14 0 60-26.863 60-60V123c0-33.137 26.87-60 60-60H5044"/>
+  <path class="draw2" stroke="black" stroke-width="20" d="M0 315h1823.78c33.14 0 60-26.863 60-60V123c0-33.137 26.87-60 60-60H5044"/>
+
+  <path stroke="#D9D100" stroke-width="20" d="M1940 0v182c0 44.183-35.82 80-80 80H0"/>
+</svg>

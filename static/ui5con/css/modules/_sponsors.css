@@ -1,0 +1,248 @@
+/* ------------------------- Sponsors Section -------------------------  */
+
+.sponsors-logos {
+	display: flex;
+	gap: 4rem;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	margin-block-end: 2rem;
+	list-style-type: none;
+	margin: 5rem 0 2rem;
+	padding: 0;
+}
+
+.sponsors-logos a {
+	display: block;
+	filter: grayscale(1);
+	opacity: .85;
+}
+
+.sponsors-logos a:is(:hover, :focus) {
+	filter: none;
+	opacity: 1;
+	transition: all .2s ease-in-out;
+}
+
+.sponsors-logos svg {
+	width: 12rem;
+	fill: var(--logo-color);
+	color: var(--logo-color);
+	display: block;
+	height: auto;
+}
+
+/* ------------------------- Sponsors Page -------------------------  */
+
+.sponsors-list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.sponsors-list > li {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	margin-block-end: 1rem;
+	padding-block: 1rem;
+	gap: clamp(1rem, 5vw, 2rem);
+	border-bottom: 4px solid var(--background-color);
+}
+
+.sponsors-list li:last-child {
+	border-bottom: none;
+}
+
+.sponsors-list li div:first-child {
+	gap: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	flex: 1 0 auto;
+}
+
+.sponsors-logo {
+	display: block;
+}
+
+.sponsors-logo svg {
+	width: 15rem;
+	height: auto;
+}
+
+.sponsors-badge {
+	display: inline-block;
+	border-radius: 4px;
+	padding: .1rem .5rem;
+	margin-block-end: .3rem;
+}
+
+.sponsors-badge.diamond {
+	background: linear-gradient(to top, #9ac5db, #b8d8e7);
+}
+
+.sponsors-badge.platinum {
+	background: linear-gradient(to bottom, #E5E4E2, #aab9c4);
+}
+
+.sponsors-badge.gold {
+	background-color: gold;
+}
+
+.sponsors-badge.silver {
+	background-color: #c0c0c0;
+}
+
+.sponsors-socials {
+	list-style-type: none;
+	padding: 0;
+}
+
+.sponsors-socials li {
+	display: inline-block;
+}
+
+.sponsors-socials .icon {
+	width: 1.4rem;
+	height: 1.4rem;
+	display: inline-block;
+	margin-inline-end: .5rem;
+	transform: translateY(-1px);
+	color: inherit;
+	transition: all 0.3s ease-in-out;
+}
+
+.sponsors-socials a:is(:focus) {
+	.icon {
+		transform: scale(1.3);
+		color: var(--brand-color);
+	}
+}
+
+@media only screen and (min-width: 800px) {
+	.sponsors-list > li {
+		flex-direction: row;
+	}
+
+	.sponsors-list li div:first-child {
+		align-items: center;
+		margin-block-end: 2rem;
+		flex: 0 0 15rem;
+	}
+
+	.sponsors-logo {
+		margin-block-start: 2rem;
+	}
+}
+
+/* Sponsor specific */
+
+svg.asbrucon {
+	fill: #000;
+}
+
+svg.brandeis text {
+	fill: #0C3C60;
+}
+
+svg.cbs {
+	color: #000;
+}
+
+svg.js-soft {
+	color: #183248;
+}
+
+svg.uniorg {
+	color: #11232d;
+	max-width: 85%;
+}
+
+svg.advades {
+	color: #00bf1c;
+	max-width: 85%;
+}
+
+svg.revtrac {
+	max-width: 85%;
+}
+
+svg.neptune {
+	color: #38102A;
+}
+
+svg.blackwyse {
+	color: #05102D;
+}
+
+svg.fiftyhertz {
+	max-width: 90%;
+	color: #3c4c52;
+}
+
+svg.sovanta {
+	color: #686868;
+	max-width: 85%;
+}
+
+@media (prefers-color-scheme: dark) {
+
+	.sponsors-logos {
+		filter: none;
+		opacity: 1;
+	}
+
+	.sponsors-badge.diamond,
+	.sponsors-badge.platinum,
+	.sponsors-badge.gold,
+	.sponsors-badge.silver {
+		color: var(--btn-bg-color);
+	}
+
+	svg.asbrucon {
+		fill: var(--logo-color);
+	}
+
+	svg.brandeis text {
+		fill: #fff;
+	}
+
+	svg.cbs {
+		color: #fff;
+	}
+
+	svg.js-soft {
+		color: #FFB174;
+
+		path:nth-child(2) {
+			fill: #fff;
+		}
+	}
+
+	svg.uniorg {
+		color: #fff;
+	}
+
+	svg.advades {
+		color: #00bf1c;
+	}
+
+	svg.neptune {
+		color: #fff;
+	}
+
+	svg.blackwyse {
+		color: #fff;
+	}
+
+	svg.fiftyhertz {
+		color: #fff;
+	}
+
+	svg.sovanta {
+		color: #fff;
+	}
+
+}

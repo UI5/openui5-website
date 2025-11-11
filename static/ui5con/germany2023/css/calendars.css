@@ -1,0 +1,132 @@
+.ui5con-calendars-container {
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.ui5con-calendars {
+  width: 100%;
+}
+
+.ui5con-calendar-list {
+  gap: 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ui5con-calendars-list {
+  z-index: 5;
+  gap: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ui5con-calendar-list.is-calendar {
+  gap: 0 1.2rem;
+}
+
+.ui5con-calendars-link {
+  gap: 0.75rem;
+  display: flex;
+  padding: 0.5rem;
+  cursor: pointer;
+  box-shadow: none;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 0.8rem;
+  transition: all 0.7s ease;
+}
+
+.ui5con-calendars-link.is-calendar {
+  gap: 0.35rem;
+  padding: 0.5rem 0;
+}
+
+.ui5con-calendars-link.is-calendar span {
+  font-size: 0.875rem;
+}
+
+.ui5con-calendars-link span {
+  position: relative;
+  transition: all 0.7s ease;
+  color: var(--ui5SocialLinksColor);
+  font-size: var(--ui5TextFontSize);
+  line-height: var(--ui5TextLineHeight);
+}
+
+.ui5con-calendars-link span::after {
+  left: 0;
+  bottom: 0;
+  opacity: 1;
+  content: "";
+  width: 100%;
+  height: 0.1em;
+  position: absolute;
+  transform: scale(0);
+  transform-origin: center;
+  transition: opacity 300ms, transform 300ms;
+  background-color: var(--ui5SocialLinksColorHover);
+}
+
+.ui5con-calendars-link.is-calendar span::after {
+  background-color: #FFB778;
+}
+
+.ui5con-calendars-link:hover span {
+  color: var(--ui5SocialLinksColorHover);
+}
+
+.ui5con-calendars-link.is-calendar:hover span,
+.ui5con-calendars-link.is-calendar:focus span {
+  color: #FFB778;
+}
+
+.ui5con-calendars-link:focus {
+  outline: none;
+}
+
+.ui5con-calendars-link:focus span::after {
+  transform: scale(1);
+}
+
+.v-enter-active, .v-leave-active {
+  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.v-enter, .v-leave-to {
+  transform: translateX(10px);
+  opacity: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .ui5con-calendars-link span {
+    color: #FFDBCF;
+    position: relative;
+    transition: all 0.7s ease;
+    font-size: var(--ui5TextFontSizeL);
+    line-height: var(--ui5TextLineHeightL);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .ui5con-calendars {
+    left: 0;
+    width: 100%;
+    transform: translateX(0);
+  }
+
+  .ui5con-calendars-list {
+    justify-content: flex-start;
+  }  
+
+  .v-enter-active, .v-leave-active {
+    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  }
+  
+  .v-enter, .v-leave-to {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+}
+

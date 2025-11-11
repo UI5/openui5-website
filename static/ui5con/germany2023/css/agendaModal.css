@@ -1,0 +1,240 @@
+[v-cloak] { display: none; }
+
+.ui5con-agenda-modal-backdrop {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  position: fixed;
+  transition: all 0.3s;
+  background-color: rgba(25, 23, 23, 0.8);
+}
+
+.ui5con-agenda-modal {
+  top: 50%;
+  left: 50%;
+  width: 75vw;
+  max-height: 90vh;
+  overflow-y: scroll;
+  max-width: 1100px;
+  position: absolute;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  transform: translate(-50%, -50%);
+  background: rgba(62, 43, 36, 0.9);
+  backdrop-filter: blur(2px);
+  border-radius: 0.5rem;
+}
+
+.ui5con-agenda-modal::-webkit-scrollbar {
+  display: none;
+}
+
+.ui5con-agenda-modal:focus {
+  outline: none;
+}
+
+.ui5con-agenda-modal__container {
+  gap: 1.5rem;
+  display: flex;
+  padding: 3rem;
+  padding-top: 0.375rem;
+  margin-bottom: 2rem;
+}
+
+.ui5con-agenda-modal__container:last-child {
+  margin-bottom: 0;
+}
+
+.ui5con-agenda-modal button {
+  top: 0;
+  left: 100%;
+  display: flex;
+  width: 3rem;
+  cursor: pointer;
+  position: sticky;
+  height: 3rem;
+  background: none;
+  font-size: 1.5rem;
+  min-width: 3rem;
+  max-width: 3rem;
+  font-weight: 400;
+  align-items: center;
+  min-height: 3rem;
+  max-height: 3rem;
+  border-radius: 0.25rem;
+  justify-content: center;
+  transition: all .3s ease;
+  color: #D8C2BC;
+  border: none;
+}
+
+.ui5con-agenda-modal button:hover {
+  font-weight: 700;
+  color: #FFB778;
+}
+
+.ui5con-agenda-modal button:focus {
+  outline: none;
+  color: #FFB778;
+  transform: scale(1.2);
+}
+
+.ui5con-agenda-modal figure {
+  margin: 0;
+  padding: 0;
+  height: fit-content;
+  width: fit-content;
+}
+
+.ui5con-agenda-modal article {
+  width: 100%;
+}
+
+.ui5con-agenda-modal img {
+  border-radius: 0.5rem;
+  max-width: 5.5rem;
+  min-width: 5.5rem;
+  max-height: 6.5rem;
+  min-height: 6.5rem;
+  width: 5.5rem;
+  height: 6.5rem;
+  object-fit: cover;
+}
+
+.ui5con-agenda-modal header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.ui5con-agenda-modal__speaker-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  margin-top: 2rem;
+}
+
+.ui5con-agenda-modal__speaker-links a {
+  outline-offset: 0.75rem;
+  color: #F5DED8;
+  transition: all 0.5s ease-in-out;
+}
+
+.ui5con-agenda-modal__speaker-links a:focus {
+  outline: none;
+}
+
+.ui5con-agenda-modal__speaker-links a:focus svg {
+  color: #FFB778;
+  transform: scale(1.2);
+}
+
+.ui5con-agenda-modal__speaker-links a:hover svg {
+  color: #FFB778;
+}
+
+.ui5con-agenda-modal__speaker-links a svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: all .25s ease-in-out;
+}
+
+.ui5con-agenda-modal__speaker-name {
+  font-size: 1.75rem;
+  margin: 0;
+  margin-bottom: 0.25rem;
+}
+
+.ui5con-agenda-modal__speaker-company {
+  font-size: 1.25rem;
+  color: #FFB778;
+  margin: 0;
+}
+
+.ui5con-agenda-modal__speaker-bio {
+  margin: 0;
+  margin-top: 1rem;
+}
+
+@media screen and (max-width: 800px) {
+  .ui5con-agenda-modal {
+    width: 94vw;
+  }
+
+  .ui5con-agenda-modal__container {
+    padding: 2rem;
+    flex-direction: column;
+  }
+
+  .ui5con-agenda-modal__speaker-name {
+    font-size: 1.25rem;
+  }
+
+  .ui5con-agenda-modal header {
+    flex-direction: column;
+  }
+
+  .ui5con-agenda-modal__speaker-links {
+    padding: 0;
+    margin-top: 2rem;
+  }
+
+  .ui5con-agenda-modal__speaker-company {
+    font-size: 1rem;
+  }
+
+}
+
+/**
+ * 1. Make the dialog container, and its child overlay spread across
+ *    the entire window.
+ */
+ .dialog-container,
+ .dialog-overlay {
+   position: fixed; /* 1 */
+   top: 0; /* 1 */
+   right: 0; /* 1 */
+   bottom: 0; /* 1 */
+   left: 0; /* 1 */
+ }
+ 
+ /**
+  * 1. Make sure the dialog container and all its descendants sits on
+  *    top of the rest of the page.
+  * 2. Make the dialog container a flex container to easily center the
+  *    dialog.
+  */
+ .dialog-container {
+   z-index: 2; /* 1 */
+   display: flex; /* 2 */
+ }
+ 
+ /**
+  * 1. Make sure the dialog container and all its descendants are not
+  *    visible and not focusable when it is hidden.
+  */
+ .dialog-container[aria-hidden='true'] {
+   display: none; /* 1 */
+ }
+ 
+ /**
+  * 1. Make the overlay look like an overlay.
+  */
+ .dialog-overlay {
+   background-color: rgba(43, 46, 56, 0.9); /* 1 */
+ }
+ 
+ /**
+  * 1. Vertically and horizontally center the dialog in the page.
+  * 2. Make sure the dialog sits on top of the overlay.
+  * 3. Make sure the dialog has an opaque background.
+  */
+ .dialog-content {
+   margin: auto; /* 1 */
+   z-index: 2; /* 2 */
+   position: relative; /* 2 */
+   background-color: white; /* 3 */
+ }

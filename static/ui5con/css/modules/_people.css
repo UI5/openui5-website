@@ -1,0 +1,104 @@
+.people-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+	justify-content: center;
+	gap: 1rem;
+}
+
+.people-list > li:is(:hover, :focus-within) .people-portrait {
+	transform: scale(1.07);
+}
+
+.people-member {
+	margin: 0;
+	position: relative;
+}
+
+.people-member img {
+	max-width: 100%;
+	inline-size: 100%;
+	aspect-ratio: 1/1.25;
+	object-fit: cover;
+	display: block;
+	margin-block-end: .5rem;
+}
+
+.people-member .placeholder {
+	max-width: 100%;
+	inline-size: 100%;
+	aspect-ratio: 1/1.25;
+	background: transparent url(../../images/committee/placeholder.svg) no-repeat 50% 50%;
+	background-size: 60%;
+}
+
+@media (prefers-color-scheme: dark) {
+	.people-member .placeholder {
+		filter: invert(.8);
+	}
+}
+
+.people-name {
+	font-weight: 600;
+	margin-block-start: .3rem;
+	margin-block-end: 0;
+}
+
+@media only screen and (min-width: 768px) {
+
+	.people-list {
+		grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+	}
+}
+
+.people-topic {
+	opacity: 0;
+	display: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	inline-size: 100%;
+	aspect-ratio: 1/1.25;
+	color: #fff;
+	font-size: 1.15rem;
+	font-weight: 600;
+	font-style: italic;
+	padding: .8rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	z-index: 1;
+	transition: all .3s allow-discrete;
+	background: var(--w1);
+
+	@starting-style {
+		opacity: 0;
+		display: none;
+	}
+}
+
+.people-topic.w1 {
+	background: var(--w1);
+}
+
+.people-topic.w3 {
+	background: var(--w3);
+}
+
+.people-topic.audimax {
+	background: var(--audimax);
+	color: var(--text-color);
+}
+
+.people-member:is(:hover, :focus) {
+	outline: none;
+
+	.people-topic {
+		opacity: 1;
+		display: flex;
+	}
+}

@@ -1,0 +1,27 @@
+.ui5con-container--gallery {
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+
+.ui5con-gallery {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.ui5con-gallery-item {
+  margin: 0;
+  padding: 0;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  max-height: 600px;
+  max-width: 100vw;
+}
+
+.ui5con-gallery-item img {
+  display: block;
+  max-height: 100%;
+  max-width: 100vw;
+}

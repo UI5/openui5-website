@@ -1,0 +1,74 @@
+.ui5con-people-list,
+.ui5con-people-socials {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ui5con-people-list > li {
+  background: var(--white);
+  padding-block: 2rem;
+  padding-inline: 2rem;
+  border-radius: 2rem;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, .2);
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.ui5con-people-list > li:is(:hover, :focus-within) .ui5con-people-portrait {
+  transform: scale(1.07);
+}
+
+.ui5con-people-portrait-wrap {
+  width: 9.5rem;
+  height: 9.5rem;
+  border-radius: 1.875rem;
+  overflow: hidden;
+  aspect-ratio: 1/1;
+  flex: 0 0 auto;
+}
+
+.ui5con-people-portrait-wrap:not(:has(img)) {
+  background: transparent url(../../images/avatar-female.svg) 50% 50% no-repeat;
+  background-size: contain;
+}
+
+.ui5con-people-portrait {
+  border-radius: 1.875rem;
+  width: 9.5rem;
+  height: 9.5rem;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+  transition: all .2s ease-in-out;
+}
+
+.ui5con-people-content {
+  max-height: 9.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ui5con-people-content h3 {
+  font-size: var(--type-2);
+  color: var(--brand-color-alt);
+  line-height: 1.1;
+  margin-block-end: 0;
+}
+
+.ui5con-people-content p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+
+.ui5con-people-socials .icon {
+  width: 1.675rem;
+  height: 1.675rem;
+}
+
+.ui5con-people-socials li {
+  display: inline-block;
+  margin-inline-end: .5rem;
+}

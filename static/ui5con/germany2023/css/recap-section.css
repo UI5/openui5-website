@@ -1,0 +1,87 @@
+.ui5con-recap-section {
+
+  text-align: center;
+  background: linear-gradient(180deg, rgba(24, 14, 10, 0) 0%, #0E0A18 19.59%, #0E0A18 84.62%, #180E0A 100% );
+  padding: 10rem 1.25rem 5.75rem;
+}
+
+.ui5con-recap-section .ui5con-subscription-heading {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.ui5con-recap-section .ui5con-subscription-heading span {
+  background-image: var(--reCapBackgroundGradient);
+}
+
+.ui5con-recap-section p {
+  width: 80%;
+  margin: 0 auto 3rem auto;
+  font-weight: 400;
+  font-size: var(--ui5TextFontSize);
+  line-height: var(--ui5TextLineHeightL);
+}
+
+.ui5con-recap-section p span {
+  font-weight: 600;
+  color: #00C8E8;
+}
+
+.ui5con-recap-section p a {
+  font-weight: 600;
+  position: relative;
+  text-decoration: none;
+  color: #0090DA;
+  transition: all 0.5s ease-in-out;
+}
+
+.ui5con-recap-section p a::after {
+  left: 0;
+  bottom: 0;
+  opacity: 1;
+  content: "";
+  width: 100%;
+  height: 0.1em;
+  position: absolute;
+  transform: scale(0);
+  transform-origin: center;
+  transition: opacity 300ms, transform 300ms;
+  background-color: #0090DA;
+}
+
+.ui5con-recap-section p a:hover::after {
+  transform: scale(1);
+  color: #0090DA;
+}
+
+.ui5con-recap-section p a:focus {
+  outline: none;
+  color: #0090DA;
+}
+
+.ui5con-recap-section p a:focus::after {
+  transform: scale(1);
+}
+
+.ui5con-recap-section svg {
+  max-width: 250px;
+  display: block;
+  margin: auto;
+}
+
+.ui5con-recap-section svg .cls-3 {fill:#0073b8}
+.ui5con-recap-section svg .cls-4 {fill:#0090da}
+.ui5con-recap-section svg .cls-6 {fill:#13b9e1}
+
+@media only screen and (min-width: 768px) {
+  .ui5con-recap-section p {
+    font-size: 1.25rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .ui5con-recap-section p {
+    width: 60%;
+    margin: 0 auto 8rem auto;
+  }
+}

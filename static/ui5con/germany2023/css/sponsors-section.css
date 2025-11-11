@@ -1,0 +1,105 @@
+.ui5con-sponsors-section {
+  text-align: center;
+  padding: 8rem 1.25rem 0 1.25rem;
+  background: linear-gradient(186deg, rgba(255,255,255,0) 20%, rgba(249,93,17,.6) 40%, rgba(255,255,255,0) 60%);
+}
+
+#sponsors .ui5con-sponsors-section{
+  background: transparent;
+}
+
+.ui5con-sponsors-section .ui5con-button {
+  margin-top: 3rem;
+}
+
+.ui5con-sponsors-heading {
+  margin: 0;
+  font-weight: 700;
+  font-size: 2.5rem;
+  text-align: center;
+  line-height: 2.875rem;
+  color: var(--ui5TextColor);
+}
+
+.ui5con-sponsors-heading span {
+  display: inline-block;
+  -webkit-text-stroke: 0;
+  background: linear-gradient(
+    258.68deg,
+    var(--ui5TextColor) -1.05%,
+    var(--ui5BrandColor) 55.25%,
+    var(--ui5BrandAltColor) 107.04%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 10s linear infinite alternate;
+}
+
+.ui5con-sponsors-logos {
+  gap: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 4rem;
+  justify-content: center;
+}
+
+.ui5con-sponsors-logos li {
+  align-self: center;
+}
+
+.ui5con-sponsors-logos a {
+  outline: none;
+  display: block;
+}
+
+.ui5con-sponsors-logos a:focus {
+  outline: none;
+}
+
+.ui5con-sponsors-logos a:hover svg,
+.ui5con-sponsors-logos a:focus svg {
+  transform: scale(1.05);
+}
+
+.ui5con-sponsors-logos svg {
+  width: 20rem;
+  transition: all 0.5s ease-in-out;
+}
+
+.ui5con-sponsors-logos.platinum svg {
+  width: 15rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .ui5con-sponsors-section {
+    padding: 7.5rem 4rem 3.75rem 4rem;
+  }
+
+  .ui5con-sponsors-heading {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .ui5con-sponsors-section {
+    gap: 6rem;
+    flex-direction: row;
+    align-items: flex-end;
+    padding: 10.75rem 6rem 7rem;
+  }
+
+  .ui5con-sponsors-heading {
+    font-size: 5rem;
+    line-height: 5.75rem;
+  }
+
+  .ui5con-sponsors-section .ui5con-button {
+    margin-top: 8rem;
+  }
+}
+

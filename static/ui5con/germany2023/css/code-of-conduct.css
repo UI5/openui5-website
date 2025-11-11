@@ -1,0 +1,136 @@
+.ui5con-CoC {
+  min-height: 100vh;
+  position: relative;
+  background-color: var(--ui5BackgroundColor);
+}
+
+.ui5con-CoC::before {
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: var(--ui5ButtonBackgroundGradient3), var(--ui5ButtonBackgroundGradient4);
+}
+
+.ui5con-CoC-main {
+  background: transparent;
+}
+
+.ui5con-CoC-article-section {
+  padding: 4rem 1.625rem;
+}
+
+.ui5con-CoC-article-section h1 {
+  font-size: 2.5rem;
+  line-height: 2.875rem;
+  font-weight: 700;
+  display: inline-block;
+  color: #FFB778;
+  margin-bottom: 4rem;
+}
+
+.ui5con-CoC-article-section h3 {
+  margin: 1rem 0;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+}
+
+.ui5con-CoC-article-section p,
+.ui5con-CoC-article-section li {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #fffbff;
+}
+
+.ui5con-CoC-article-section ul {
+  list-style: inside;
+  margin: 1rem;
+}
+
+.ui5con-CoC-article-section a {
+  padding: 0.3rem 0;
+  position: relative;
+  text-decoration: none;
+  color: var(--ui5LinksColorHover);
+  transition: all 0.5s ease-in-out;
+  line-height: var(--ui5FooterTextLineHeight);
+}
+
+.ui5con-CoC-article-section a::after {
+  left: 0;
+  bottom: 0;
+  opacity: 1;
+  content: "";
+  width: 100%;
+  height: 0.1em;
+  position: absolute;
+  transform: scale(0);
+  transform-origin: center;
+  background-color: var(--ui5LinksColorHover);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.ui5con-CoC-article-section a:hover {
+  color: var(--ui5LinksColorHover);
+}
+
+.ui5con-CoC-article-section a:hover::after {
+  transform: scale(1);
+}
+
+.ui5con-CoC-article-section a:focus {
+  outline: none;
+  color: var(--ui5LinksColorHover);
+}
+
+.ui5con-CoC-article-section a:focus::after {
+  transform: scale(1);
+}
+
+@media only screen and (min-width: 768px) {
+  .ui5con-header-section {
+    padding: 2rem 4rem;
+  }
+
+  .ui5con-CoC-article-section {
+    padding: 4rem;
+  }
+
+  .ui5con-CoC-article-section h1 {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+
+  .ui5con-CoC-article-section h3 {
+    margin: 1.6rem 0;
+    font-size: 2rem;
+    line-height: 2.25rem;
+  }
+
+  .ui5con-CoC-article-section p,
+  .ui5con-CoC-article-section li {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .ui5con-header-section {
+    padding: 2rem 6rem;
+  }
+
+  .ui5con-CoC-article-section {
+    padding: 6rem;
+  }
+
+  .ui5con-CoC-article-section h1 {
+    font-size: 4rem;
+    line-height: 5.75rem;
+  }
+
+  .ui5con-CoC-article-section h3 {
+    margin: 2rem 0;
+  }
+}

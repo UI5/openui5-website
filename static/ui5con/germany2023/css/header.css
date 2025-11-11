@@ -1,0 +1,406 @@
+/* HEADER */
+.ui5con-header {
+  height: auto;
+  display: flex;
+  min-width: 100vw;
+  height: auto;
+  position: relative;
+  flex-direction: column;
+  padding: 2rem 1.625rem 0 1.625rem;
+  background: var(--ui5ButtonBackgroundGradient3), var(--ui5ButtonBackgroundGradient4);
+}
+
+.ui5con-header .ui5con-header-section {
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.ui5con-header-nav ul {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ui5con-header-nav-container {
+  gap: 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ui5con-header-nav a {
+  padding: 0.3rem 0;
+  position: relative;
+  text-decoration: none;
+  color: var(--ui5LinksColor);
+  transition: all 0.2s ease-in-out;
+  font-size: var(--ui5LinksFontSize);
+  line-height: var(--ui5LinksLineHeight);
+}
+
+.ui5con-header-nav a::after {
+  left: 0;
+  bottom: 0;
+  opacity: 1;
+  content: "";
+  width: 100%;
+  height: 0.1em;
+  position: absolute;
+  transform: scale(0);
+  transform-origin: center;
+  background-color: var(--ui5LinksColorHover);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.ui5con-header-nav a:hover {
+  color: var(--ui5LinksColorHover);
+}
+
+.ui5con-header-nav a:focus {
+  outline: none;
+  color: var(--ui5LinksColorHover);
+}
+
+.ui5con-header-nav a:focus::after {
+  transform: scale(1);
+}
+
+.ui5con-header-nav a.active {
+  padding: .5rem .7rem;
+  margin-left: auto;
+  white-space: nowrap;
+  -webkit-text-stroke: 0;
+  background: linear-gradient(
+    130deg,
+    var(--ui5BrandAltColor),
+    var(--ui5BrandColor),
+    var(--ui5BrandAltColor)
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 10s linear infinite alternate;
+}
+
+.ui5con-header-nav a.active:after,
+.ui5con-header-nav a.active:hover:after,
+.ui5con-header-nav a.active:focus:after {
+  display: none;
+}
+
+.ui5con-header-nav a.active:hover,
+.ui5con-header-nav a.active:focus {
+  color: var(--ui5LinksColorHover);
+}
+
+.ui5con-header-section {
+  padding: 1rem 1.625rem;
+}
+
+.ui5con-header-link {
+  margin: 0 !important;
+}
+
+.ui5con-header-link:focus::after {
+  transform: scale(0) !important;
+}
+
+.ui5con-header__logo {
+  width: 8rem;
+  display: inline-block;
+}
+
+.ui5con-header-icon svg {
+  animation: rotate 8s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+      transform: rotate(0deg);
+      color: #FFFFFF;
+  }
+
+  25% {
+    color: #FF961E;
+  }
+
+  50% {
+    color: #FF5D17;
+  }
+
+  75% {
+    color: #FF961E;
+  }
+
+  100% {
+      transform: rotate(360deg);
+      color: #FFFFFF;
+  }
+}
+
+.ui5con-header-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* ANNONCE */
+.ui5con-annonce-container {
+  text-align: center;
+  margin-top: 5rem;
+  flex-grow: 1;
+  margin-bottom: 3rem;
+}
+
+.ui5con-annonce-container p {
+  font-weight: bold;
+  margin: 2.5rem 0;
+  color: var(--ui5TextAccentTextColor);
+  font-size: var(--ui5AnnonceTextFontSize);
+  line-height: var(--ui5AnnonceTextLineHeight);
+}
+
+.ui5con-annonce-container .ui5con-annonce-location {
+  font-size: 0.875rem;
+  line-height: 1rem;
+  margin-bottom: 6.5rem;
+}
+
+.ui5con-annonce-container .ui5con-primary-button {
+  margin-bottom: 6.5rem;
+}
+
+.ui5con-annonce {
+  font-weight: 900;
+  text-align: center;
+  font-size: 1.8rem;
+  line-height: 1.2;
+  font-size: var(--ui5AnnonceFontSize);
+  line-height: var(--ui5AnnonceLineHeight);
+  margin-bottom: .4rem;
+  display: block;
+  -webkit-text-stroke: 0;
+  background: linear-gradient(
+    130deg,
+    var(--ui5BrandAltColor),
+    var(--ui5BrandColor),
+    var(--ui5TextColor),
+    var(--ui5BrandColor),
+    var(--ui5BrandAltColor)
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 10s linear infinite alternate;
+}
+
+@keyframes textclip {
+  0% {
+    background-position: 10% 0%;
+  }
+  50% {
+    background-position: 91% 100%;
+  }
+  100% {
+    background-position: 10% 0%;
+  }
+}
+
+
+@media only screen and (min-width: 768px) {
+  .ui5con-header {
+    padding: 3.5rem 4rem 0 4rem;
+  }
+
+  .ui5con-annonce {
+    /* font-size: 2.25rem;
+    line-height: 1.2; */
+
+    font-size: var(--ui5AnnonceFontSizeL);
+    line-height: 1.2;
+  }
+
+  .ui5con-header-nav ul {
+    flex-direction: row;
+  }
+
+  .ui5con-header-nav-item {
+    flex: 1;
+  }
+
+  .ui5con-header-nav-container {
+    flex-direction: row;
+  }
+
+  .ui5con-header-nav a {
+    font-size: 1.25rem;
+    line-height: var(--ui5LinksLineHeightL);
+  }
+
+  .ui5con-annonce-container {
+    margin-top: 8rem;
+  }
+
+  .ui5con-annonce-container p {
+    font-size: var(--ui5AnnonceTextFontSizeL);
+    line-height: var(--ui5AnnonceTextLineHeightL);
+  }
+
+  .ui5con-annonce-container .ui5con-annonce-location {
+    font-size: 1rem;
+    line-height: 1.2rem;
+  }
+
+  .ui5con-header__logo {
+    width: 8rem;
+  }
+
+  .ui5con-header-section {
+    padding: 3.5rem 4rem 2rem 4rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .ui5con-header {
+    height: 100vh;
+    min-height: 50rem;
+    flex-direction: column;
+    padding: 2rem 6rem 0 6rem;
+  }
+
+  .ui5con-header-nav a {
+    font-size: 1.3125rem;
+    line-height: 1.5rem;
+  }
+
+  .ui5con-header-container {
+    flex-direction: row;
+  }
+
+  .ui5con-annonce-container {
+    margin-top: 12rem;
+    margin-bottom: 0;
+  }
+
+  .ui5con-annonce-container,
+  .ui5con-annonce {
+    text-align: left;
+  }
+
+  .ui5con-header-section {
+    padding: 2rem 6rem;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .ui5con-annonce {
+    /* font-size: 2.25rem;
+    line-height: 1.2; */
+
+    font-size: 7.5rem;
+    line-height: 1.2;
+  }
+}
+
+/* ONLY WORKS IN CHROME AND EDGE */
+
+@supports (background: paint(something)) {
+
+  @property --pos1x {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 70%;
+  }
+
+  @property --pos1y {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: -50%;
+  }
+
+  @property --pos2x {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 0%;
+  }
+
+  @property --pos2y {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 50%;
+  }
+
+  .ui5con-header {
+    background: radial-gradient(circle at var(--pos1x) var(--pos1y), rgba(168, 57, 0, .6) 0%, rgba(0,0,0,0) 50% ),
+                radial-gradient(circle at var(--pos2x) var(--pos2y), rgba(168, 57, 0, .3) 0%, rgba(0,0,0,0) 23% );
+                animation: bubbleblur 20s infinite alternate;
+                animation-timing-function: ease-in-out;
+  }
+
+  @keyframes bubbleblur {
+
+    0% {
+      --pos1x: 70%;
+      --pos1y: -50%;
+      --pos2x: 10%;
+      --pos2y: 40%;
+    }
+
+    50% {
+      --pos1x: 100%;
+      --pos1y: -10%;
+      --pos2x: 25%;
+      --pos2y: 70%;
+    }
+
+    100% {
+      --pos1x: 70%;
+      --pos1y: 20%;
+      --pos2x: 10%;
+      --pos2y: 60%;
+    }
+  }
+}
+
+.ui5con-content-header-container {
+  margin-bottom: 6rem;
+}
+
+.ui5con-content-header-container h1 {
+  text-align: center;
+  font-weight: 900;
+  font-size: var(--ui5AnnonceFontSize);
+  line-height: var(--ui5AnnonceLineHeight);
+  -webkit-text-stroke: 0;
+  background: linear-gradient(
+    130deg,
+    var(--ui5BrandAltColor),
+    var(--ui5BrandColor),
+    var(--ui5TextColor),
+    var(--ui5BrandAltColor)
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 10s linear infinite alternate;
+}
+
+@media only screen and (min-width: 1024px) {
+
+  .ui5con-content-header-container h1 {
+    text-align: left;
+    font-size: var(--ui5AnnonceFontSizeL);
+    line-height: var(--ui5AnnonceLineHeightL);
+  }
+}

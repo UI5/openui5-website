@@ -1,0 +1,136 @@
+
+.ui5con-tickets .ui5con-ticket-link {
+  margin-block-start: 1rem;
+  margin-block-end: 0;
+}
+
+.ui5con-tickets .tito-widget {
+  margin: 0;
+  font-family: "72", Arial, Helvetica, sans-serif;
+  color: var(--text-color);
+  justify-content: center;
+}
+
+.ui5con-tickets .tito-widget-form {
+  border-color: var(--brand-color-alt);
+  border-width: 0;
+  background: transparent;
+  padding-inline: 0;
+}
+
+.ui5con-tickets .tito-widget .tito-widget-form .tito-release {
+  border-color: transparent;
+  padding-block-start: 1rem;
+  padding-block-end: 1rem;
+}
+
+.ui5con-tickets .tito-widget .tito-widget-form .tito-release .tito-release--title {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--brand-color-alt);
+}
+
+.ui5con-tickets .tito-widget .tito-widget-form .tito-release .tito-release-description .tito-release-description--description p {
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.ui5con-tickets .tito-price {
+  color: var(--text-color);
+}
+
+.ui5con-tickets .tito-widget .tito-widget-form .tito-release .tito-release--status {
+  background: transparent;
+  border-color: #fff;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  text-transform: none;
+  line-height: 2;
+  letter-spacing: normal;
+}
+
+.ui5con-tickets .tito-widget .tito-widget-form .tito-release .tito-release--status span {
+  font-size: 1rem;
+}
+
+.ui5con-tickets input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  margin: 0;
+  cursor: pointer;
+  font: inherit;
+  color: var(--brand-color-alt);
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid var(--brand-color-alt);
+  border-radius: 0.15em;
+  display: grid;
+  place-content: center;
+}
+
+.ui5con-tickets input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(0);
+  transform-origin: bottom left;
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--brand-color);
+  background-color: CanvasText;
+}
+
+.ui5con-tickets input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+.ui5con-tickets input[type="checkbox"]:focus {
+  outline: max(2px, 0.15em) solid var(--brand-color);
+  outline-offset: max(2px, 0.15em);
+}
+
+.ui5con-tickets .tito-widget .tito-form-actions .tito-submit {
+  background-image: linear-gradient(45deg, var(--brand-color-alt), var(--brand-color));
+  border-color: transparent;
+  border-width: 0;
+  border-radius: 2rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  height: auto;
+}
+
+.ui5con-tickets .tito-widget .tito-form-actions .tito-submit:hover,
+.ui5con-tickets .tito-widget .tito-form-actions .tito-submit:focus {
+  background-image: linear-gradient(15deg, var(--brand-color-alt), var(--brand-color));
+  border-color: transparent;
+}
+
+.ui5con-tickets .tito-widget .tito-widget-form .tito-release .tito-quantity .tito-choose-waiting-list-button {
+  background-image: linear-gradient(45deg, var(--brand-color-alt), var(--brand-color));
+  border-color: transparent;
+  border-width: 0;
+  border-radius: 2rem;
+  font-size: 1.125rem;
+  color: #fff;
+  height: auto;
+  letter-spacing: normal;
+  line-height: 1.5;
+  text-transform: none;
+  padding: .5rem 1rem;
+}
+
+.ui5con-tickets .tito-widget .tito-widget-form .tito-release .tito-quantity .tito-choose-waiting-list-button:hover,
+.ui5con-tickets .tito-widget .tito-widget-form .tito-release .tito-quantity .tito-choose-waiting-list-button:focus {
+  background-image: linear-gradient(15deg, var(--brand-color-alt), var(--brand-color));
+  border-color: transparent;
+}
+
+.ui5con-tickets .tito-widget .tito-locked-ticket-message {
+  margin-block-start: 0;
+  margin-block-end: 1rem;
+}
+
+.ui5con-tickets .tito-widget .tito-locked-ticket-message p {
+  margin-block-start: 0;
+}

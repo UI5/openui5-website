@@ -1,0 +1,174 @@
+.ui5con-location {
+  min-height: 100vh;
+  position: relative;
+  background-color: var(--ui5BackgroundColor);
+}
+
+.ui5con-location::before {
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: var(--ui5ButtonBackgroundGradient3), var(--ui5ButtonBackgroundGradient4);
+}
+
+.ui5con-location-main {
+  background: transparent;
+}
+
+.ui5con-location-header {
+  padding: 1rem 1.625rem;
+}
+
+.ui5con-header-link {
+  margin: 0 !important;
+}
+
+.ui5con-header-link:focus::after {
+  transform: scale(0) !important;
+}
+
+.ui5con-location-section {
+  padding: 1rem 1.625rem;
+}
+
+.ui5con-location-heading h2 {
+  margin: 0 0 2.25rem;
+  font-weight: 700;
+  font-size: 2.5rem;
+  text-align: center;
+  line-height: 2.875rem;
+  color: var(--ui5TextColor);
+  text-align: left;
+}
+
+.ui5con-location-heading h2 span {
+  display: inline-block;
+  -webkit-text-stroke: 0;
+  background: linear-gradient(
+    258.68deg,
+    var(--ui5TextColor) -1.05%,
+    var(--ui5BrandColor) 55.25%,
+    var(--ui5BrandAltColor) 107.04%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 10s linear infinite alternate;
+}
+
+.ui5con-location-section img {
+  max-width: 100%;
+  border-radius: .8rem;
+}
+
+.ui5con-location-section h3 {
+  margin: 1rem 0;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  clear: both;
+}
+
+.ui5con-location-section h4 {
+  margin: 1rem 0;
+  font-size: 1.4rem;
+  line-height: 1.75rem;
+}
+
+.maps {
+  display: inline-block;
+  padding: .5rem;
+  border: 1px solid transparent;
+  border-radius: 1rem;
+}
+
+.maps:hover,
+.maps:focus {
+  border: 1px solid var(--ui5BrandAltColor);
+}
+
+.maps img {
+  display: block;
+}
+
+.ui5con-location-section p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #fffbff;
+  margin: 0rem 0 2rem 0;
+}
+
+.ui5con-location-section ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+.ui5con-location-section li::marker {
+  color: var(--ui5BrandColor);
+}
+
+.ui5con-location-section a {
+  color: var(--ui5BrandAltColor);
+}
+
+@media only screen and (min-width: 768px) {
+  .ui5con-location-header {
+    padding: 2rem 4rem;
+  }
+
+  .ui5con-location-section {
+    padding: 4rem;
+  }
+
+  .ui5con-location-section h1 {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+
+  .ui5con-location-heading h2 {
+    font-size: 3rem;
+    text-align: left;
+    line-height: 3.5rem;
+  }
+
+  .ui5con-location-section h3 {
+    margin: 1.6rem 0;
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+
+  .ui5con-location-section p,
+  .ui5con-location-section li {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .ui5con-location-section p {
+    margin-top: 1rem;
+  }
+
+  .ui5con-location-section img {
+    max-width: 70vw;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .ui5con-location-header {
+    padding: 2rem 6rem;
+  }
+
+  .ui5con-location-section {
+    padding: 6rem;
+  }
+
+  .ui5con-location-heading h2 {
+    font-size: 5rem;
+    margin-bottom: 4rem;
+    line-height: 5.75rem;
+  }
+}

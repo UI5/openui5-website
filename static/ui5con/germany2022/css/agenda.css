@@ -1,0 +1,655 @@
+.ui5con-tabpanels {
+  outline: none;
+}
+
+.ui5con-container--agenda {
+  display: block;
+  padding: 8rem 0;
+  padding-bottom: 4rem;
+  background: var(--dark-brand-color);
+}
+
+.ui5con-tab-container {
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 2rem;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.ui5con-agenda-toggle {
+  margin: 0;
+  padding: 0;
+  border: none;
+  display: flex;
+  position: relative;
+  width: fit-content;
+  border-radius: 2.5rem;
+  background-color: #171717;
+}
+
+.ui5con-agenda-toggle legend {
+  top: -1.75rem;
+  left: 0.5rem;
+  position: absolute;
+  font-size: 0.875rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: var(--sapTextSecondaryColor);
+}
+
+.ui5con-agenda-toggle__element input {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  position: absolute;
+}
+
+.ui5con-agenda-toggle__element:focus-within label{
+  outline: none;
+  box-shadow: 0 0 0 0.125rem var(--brand-color-alt);
+}
+
+.ui5con-agenda-toggle__element label {
+  display: flex;
+  cursor: pointer;
+  font-size: 0.875rem;
+  align-items: center;
+  border-radius: 2.5rem;
+  flex-direction: column;
+  padding: 0.5rem 1.5rem;
+  text-transform: uppercase;
+  transition: border 0.5s ease;
+  border: 0.0625rem solid transparent;
+}
+
+.ui5con-agenda-toggle__element input[type="radio"]:checked + label {
+  border-color: var(--brand-color-alt);
+}
+
+.ui5con-agenda-toggle__element label time {
+  font-size: 0.75rem;
+  font-weight: normal;
+  text-transform: capitalize;
+  color: var(--sapTextSecondaryColor);
+}
+
+.ui5con-tabs {
+  order: 1;
+  flex: 1 0 100%;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.ui5con-tabpanel {
+  outline: none;
+}
+
+.ui5con-tabs button {
+  border: none;
+  cursor: pointer;
+  background: none;
+  font-weight: 800;
+  margin: 0 1rem;
+  font-size: 1.5rem;
+  position: relative;
+  padding: 0.3rem 0px;
+  display: inline-block;
+  outline-offset: 1.25rem;
+  text-transform: uppercase;
+  color: var(--sapTextColor);
+  transition: all 0.5s ease-in-out;
+  outline: 0.25rem solid transparent;
+  font-family: "72", Arial, Helvetica, sans-serif;
+}
+
+.ui5con-tabs button:focus {
+  transform: scale(1.07);
+}
+
+.ui5con-tabs button::after {
+  left: 0;
+  bottom: 0;
+  opacity: 1;
+  content: "";
+  width: 100%;
+  height: 0.0625rem;
+  position: absolute;
+  transform: scale(0);
+  transform-origin: center;
+  background-color: currentColor;
+  transition: opacity 300ms, transform 300ms;
+}
+
+.ui5con-tabs button:focus::after {
+  height: 0.125rem;
+}
+
+.ui5con-tabs button:hover::after,
+.ui5con-tabs button:focus::after,
+.ui5con-tabs button[aria-selected="true"]::after {
+  transform: scale(1);
+}
+
+.ui5con-tabs button[aria-selected="true"]:first-child {
+  color: var(--brand-color-alt);
+}
+
+.ui5con-tabs button[aria-selected="true"]:last-child {
+  color: var(--brand-color);
+}
+
+.is-hidden {
+  display: none;
+}
+
+.ui5con-sessiontype span {
+  position: relative;
+  margin-right: 2rem;
+  font-size: 0.875rem;
+  display: inline-block;
+  text-transform: uppercase;
+  color: var(--sapTextSecondaryColor);
+}
+
+.ui5con-sessiontype {
+  margin-top: 2rem;
+  padding-left: 29rem;
+}
+
+@media screen and (max-width: 768px) {
+  .ui5con-tabs button {
+    margin: 0 0.5rem;
+  }
+
+  .ui5con-sessiontype {
+    margin: 2rem 1rem;
+    padding-left: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .ui5con-tab-container {
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .ui5con-agenda-toggle--timezone {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+  }
+
+  .ui5con-agenda-toggle legend {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .ui5con-tabs {
+    order: 0;
+    flex-basis: auto;
+    margin-top: 0rem;
+  }
+
+  .ui5con-tab-container {
+    padding: 0;
+    max-width: 80vw;
+  }
+}
+
+.ui5con-sessiontype span::after {
+  top: 1px;
+  content: "";
+  width: 12px;
+  height: 12px;
+  margin: 0 0.5rem;
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+.ui5con-session__talk::after {
+  background: var(--brand-color-alt);
+}
+
+.ui5con-session__general::after {
+  background: linear-gradient( -45deg, var(--brand-color-alt) 50%, var(--brand-color) 50% );
+}
+
+.ui5con-session--workshop::after {
+  background: var(--brand-color);
+}
+
+.ui5con-agenda-schedule {
+  padding: 0;
+  list-style-type: none;
+  margin: 2rem 12vw 4rem 20rem;
+}
+
+.ui5con-agenda-schedule ul {
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+
+.ui5con-agenda-schedule__row {
+  position: relative;
+  transition: height .5s linear;
+}
+
+.ui5con-agenda-schedule__card-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.ui5con-agenda-schedule__slot {
+  font-size: 5rem;
+  min-width: 6rem;
+  font-weight: 800;
+  margin-right: 3rem;
+  color: var(--brand-color-alt);
+  font-feature-settings: 'pnum' on, 'lnum' on;
+}
+
+.ui5con-agenda-schedule--workshop .ui5con-agenda-schedule__slot {
+  color: var(--brand-color);
+}
+
+.ui5con-agenda-schedule__hour {
+  width: 15rem;
+  left: -17rem;
+  opacity: 0.5;
+  line-height: 1;
+  font-size: 17rem;
+  text-align: right;
+  font-weight: 800;
+  position: absolute;
+  letter-spacing: -1rem;
+  top: calc(50% - 1rem);
+  transform: translateY(-50%);
+  color: rgba(255,255,255,0);
+  -ms-transform: translateY(-50%);
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  -webkit-text-stroke: 1px var(--brand-color-alt);
+}
+
+.ui5con-agenda-schedule--workshop .ui5con-agenda-schedule__hour {
+  -webkit-text-stroke: 1px var(--brand-color);
+}
+
+.ui5con-agenda-schedule__card {
+  width: 100%;
+  display: flex;
+  max-width: 65vw;
+  font-size: 1rem;
+  overflow: hidden;
+  min-height: 12rem;
+  position: relative;
+  font-weight: normal;
+  flex-direction: column;
+  border-radius: 1.25rem;
+  transition: all .3s ease;
+  background-color: var(--dark-brand-color);
+  padding: 1.5rem 2rem 1.5rem;
+  transition: height .5s linear;
+  border: 0.0625rem solid var(--brand-color-alt);
+}
+
+.ui5con-agenda-schedule__card::before {
+  top: 0;
+  left: -1px;
+  content: '';
+  height: 100%;
+  width: 0.55rem;
+  position: absolute;
+  background: var(--brand-color-alt);
+}
+
+.ui5con-agenda-schedule--workshop .ui5con-agenda-schedule__card {
+  border: 0.0625rem solid var(--brand-color);
+}
+
+.ui5con-agenda-schedule--workshop .ui5con-agenda-schedule__card::before {
+  background: var(--brand-color);
+}
+
+.ui5con-agenda-schedule__more {
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  background: none;
+  width: auto;
+  align-self: center;
+  padding: 0.1rem 0.5rem;
+  border-radius: 1.25rem;
+  transition: all .3s ease;
+  color: var(--brand-color);
+  border: 0.0625rem solid transparent;
+}
+
+.ui5con-agenda-schedule__more:hover {
+  color: var(--brand-color-alt);
+}
+
+.ui5con-agenda-schedule__more:focus {
+  outline: none;
+  color: var(--brand-color);
+  border-color: 0.0625rem solid var(--brand-color-alt);
+}
+
+.ui5con-agenda-schedule__card.general {
+  border: 0.0625rem solid var(--brand-color-alt);
+}
+
+.ui5con-agenda-schedule__card.general::before {
+  background: linear-gradient(to bottom, var(--brand-color), var(--brand-color-alt));
+}
+
+.ui5con-agenda-schedule--workshop .ui5con-agenda-schedule__card.general {
+  border: 0.0625rem solid var(--brand-color);
+}
+
+.ui5con-agenda-schedule__header {
+  gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.ui5con-agenda-schedule__header-wrapper {
+  flex: 1;
+  gap: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ui5con-agenda-schedule__images {
+  gap: 0.5rem !important;
+  flex-wrap: nowrap !important;
+}
+
+.ui5con-agenda-schedule__images li button {
+  display: block;
+  padding: 0;
+  border: none;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  position: relative;
+  transition: all .3s ease;
+  background-color: grey;
+  border-radius: 0.6875rem;
+}
+
+.ui5con-agenda-schedule__images li button::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 100%;
+  opacity: 0.25;
+  background: transparent;
+  border-radius: 0.6875rem;
+  transition: all .3s ease;
+}
+
+.ui5con-agenda-schedule__images li button:hover::after {
+  background: var(--brand-color);
+}
+
+.ui5con-agenda-schedule__images li button:focus {
+  outline: none;
+  -webkit-box-shadow: 0 0 0 0.125rem var(--brand-color);
+  box-shadow: 0px 0px 0 0.125rem var(--brand-color);
+}
+
+.ui5con-agenda-schedule__images img {
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  border-radius: 0.6875rem;
+  transition: all .3s ease;
+}
+
+/* .ui5con-agenda-schedule__images img:hover {
+  -webkit-box-shadow: 0 0 0.375rem 0.125rem var(--brand-color);
+  box-shadow: 0px 0px 0.375rem 0.125rem var(--brand-color);
+} */
+
+.ui5con-agenda-schedule__icon {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ui5con-agenda-schedule__title {
+  margin: 0;
+  width: 100%;
+  min-width: 10rem;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  font-weight: normal;
+}
+
+.ui5con-agenda-schedule__header-container {
+  display: flex;
+}
+
+.ui5con-agenda-schedule__title--live {
+  font-weight: bold;
+  color: var(--brand-color);
+}
+
+.ui5con-agenda-schedule__live-now {
+  white-space: nowrap;
+  height: fit-content;
+  padding-right: 0.5rem;
+  margin-right: 0.25rem;
+  color: var(--brand-color);
+  border-right: 0.0625rem solid var(--brand-color);
+}
+
+.ui5con-agenda-schedule__time {
+  min-width: 6rem;
+  margin-left: auto;
+  text-align: right;
+}
+
+.ui5con-agenda-schedule__speaker-name {
+  margin: 0;
+  font-weight: bold;
+}
+
+.ui5con-agenda-schedule__speaker-company {
+  margin: 0;
+  color: var(--brand-color);
+}
+
+.ui5con-agenda-schedule__info {
+  margin: 2rem 0;
+  line-height: 1.3;
+  white-space: pre-wrap;
+  transition: all .3s ease;
+}
+
+.ui5con-agenda-schedule__link {
+  gap: 0.5rem;
+  display: flex;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1.2;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 1.25rem;
+  padding: 0.5rem 0.875rem;
+  transition: all .3s ease;
+  color: var(--sapTextColor);
+  box-shadow: 0 0 0 0.0625rem transparent;
+  border: 0.0625rem solid var(--brand-color-alt);
+}
+
+.ui5con-agenda-schedule__link:hover {
+  color: var(--brand-color-alt);
+}
+
+.ui5con-agenda-schedule__link:focus {
+  outline: none;
+  transition: all .3s ease;
+  box-shadow: 0 0 0 0.0625rem var(--brand-color-alt);
+}
+
+.ui5con-agenda-schedule--workshop .ui5con-agenda-schedule__link {
+  border: 0.0625rem solid var(--brand-color);
+}
+
+.ui5con-agenda-schedule--workshop .ui5con-agenda-schedule__link:hover {
+  color: var(--brand-color);
+}
+
+.ui5con-agenda-schedule--workshop .ui5con-agenda-schedule__link:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.0625rem var(--brand-color);
+}
+
+.ui5con-agenda-schedule__link--primary {
+  border: none;
+  font-weight: bold;
+  background: #7E340A;
+}
+
+.ui5con-agenda-schedule__link--primary:hover {
+  color: #7E340A;
+  background: #FFFFFF;
+}
+
+.ui5con-agenda-schedule__link--primary:hover .ui5con-agenda-schedule__link-icon {
+  background: #7E340A;
+  box-shadow: 0 0 0 0.125rem #7E340A, inset 0 0 0 0.125rem #FFFFFF;
+}
+
+.ui5con-agenda-schedule__link--primary:focus {
+  outline: none;
+  box-shadow: inset 0 0 0 0.125rem #242424, 0 0 0 0.0625rem var(--brand-color-alt);
+}
+
+.ui5con-agenda-schedule--workshop .ui5con-agenda-schedule__link--primary {
+  border: none;
+  background: #7F4E00;
+}
+
+.ui5con-agenda-schedule--workshop .ui5con-agenda-schedule__link--primary:hover {
+  color: #7F4E00;
+  background: #FFFFFF;
+}
+
+.ui5con-agenda-schedule--workshop .ui5con-agenda-schedule__link--primary:hover .ui5con-agenda-schedule__link-icon {
+  background: #7F4E00;
+  box-shadow: 0 0 0 0.125rem #7F4E00, inset 0 0 0 0.125rem #FFFFFF;
+}
+
+.ui5con-agenda-schedule--workshop .ui5con-agenda-schedule__link--primary:focus {
+  outline: none;
+  box-shadow: inset 0 0 0 0.125rem #242424, 0 0 0 0.0625rem var(--brand-color);
+}
+
+.ui5con-agenda-schedule__cal-container {
+  margin-top: 1rem !important;
+}
+
+.ui5con-agenda-schedule__cal-container li{
+  gap: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.ui5con-agenda-schedule__cal-link {
+  gap: 0.35rem;
+  display: flex;
+  font-size: 1rem;
+  line-height: 1.2;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 1.25rem;
+  transition: all 1s ease;
+  color: var(--sapTextColor);
+  border: 0.0625rem solid transparent;
+}
+
+.ui5con-agenda-schedule__cal-link:hover {
+  color: var(--brand-color);
+  text-decoration: underline;
+}
+
+.ui5con-agenda-schedule__cal-link:focus {
+  outline: none;
+  color: var(--sapTextColor);
+  border-color: var(--brand-color);
+}
+
+.ui5con-agenda-schedule__link-icon {
+  width: 0.875rem;
+  height: 0.875rem;
+  line-height: 1.2;
+  border-radius: 50%;
+  display: inline-block;
+  background: #fff;
+  box-shadow: 0 0 0 0.125rem #fff, inset 0 0 0 0.125rem #7E340A;
+}
+
+@media screen and (max-width: 1025px) {
+
+  .ui5con-agenda-schedule {
+    margin: 2rem;
+  }
+
+  .ui5con-agenda-schedule__slot,
+  .ui5con-agenda-schedule__hour {
+    display: none;
+  }
+
+  .ui5con-agenda-schedule__card {
+    max-width: 100%;
+  }
+
+  .ui5con-agenda-schedule__card {
+    min-height: auto;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .ui5con-agenda-schedule {
+    margin: 1rem;
+  }
+
+  .ui5con-agenda-schedule__card {
+    max-width: 100%;
+  }
+
+  .ui5con-agenda-schedule__header-container {
+    flex-direction: column;
+  }
+
+  .ui5con-agenda-schedule__live-now {
+    margin-right: 0;
+    padding-right: 0;
+    text-align: center;
+    border-right: none;
+  }
+}
+
+
+[v-cloak] { display: none !important; }

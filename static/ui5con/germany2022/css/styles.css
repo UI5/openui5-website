@@ -1,0 +1,515 @@
+/*
+ * ====================================  Navbar ====================================
+ */
+.navbar {
+  background-color: rgba(25, 23, 23, .8);
+  padding: .5rem 1rem 1rem 3rem;
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  backdrop-filter: blur(2px);
+}
+
+.navbar-brand svg {
+  max-width: 15rem;
+}
+
+/*
+ * ====================================  Details Section ====================================
+ */
+
+.ui5con-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  background: var(--sapBackgroundContrastColor);
+}
+
+.ui5con-container--details {
+  margin: auto;
+  display: grid;
+  grid-gap: 2rem;
+  padding: 0 10%;
+  position: relative;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  grid-template-columns: 1fr;
+}
+
+.ui5con-detail {
+  text-align: center;
+  color: var(--sapTextColor);
+  z-index: 1;
+  line-height: 1.8;
+}
+
+.ui5con-detail h3 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.ui5con-detail p {
+  line-height: 1.5;
+}
+
+.ui5con-detail__icon {
+  width: 3rem;
+  fill: var(--sapTextColor);
+}
+
+@media screen and (min-width: 768px) {
+  .ui5con-container--details {
+    grid-gap: 2rem;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .ui5con-container--details {
+    padding: 3rem 20%;
+  }
+}
+
+/*
+ * ==================================  Orange Brand Color Sections ==================================
+ */
+
+.ui5con-container--bright {
+  position: relative;
+  background-image: linear-gradient(208deg, var(--brand-color), var(--brand-color-alt));
+  text-align: center;
+  padding: 3rem 0 4rem;
+}
+
+.ui5con-container--socials {
+  padding: 6rem 0 4rem;
+}
+
+.ui5con-container--bright-alternate {
+  background-image: linear-gradient(30deg, var(--brand-color), var(--brand-color-alt));
+}
+
+.ui5con-container--bright .ui5con-container--details {
+  background: none;
+}
+
+.ui5con-container--bright h2 {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.ui5con-container--bright h2 span {
+  color: var(--button-alternate-textColor);
+}
+
+.ui5con-section-text {
+  padding: 0 20vw;
+  line-height: 1.5;
+  margin: 2rem 0 3rem;
+}
+
+.ui5con-button--dark,
+.ui5con-button--light {
+  display: inline-block;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 800;
+  border: none;
+  box-shadow: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  border-radius: 2rem;
+  transition: all .1s linear;
+  text-decoration: none;
+  box-shadow: 0 0.25rem 0.25rem rgba(0,0,0,.25);
+}
+
+.ui5con-button--light {
+  background-color: var(--sapBackgroundContrastColor);
+  color: var(--button-alternate-textColor);
+}
+
+.ui5con-button--dark {
+  background-color: var(--sapGreyColor);
+  color: var(--textColor);
+}
+
+.ui5con-button--light:hover {
+  background: var(--button-alternate-textColor);
+  color: var(--textColor);
+}
+
+.ui5con-button--light:focus {
+  outline: 0.125rem solid var(--sapGreyColor);
+  outline-offset: 0.125rem;
+}
+
+.ui5con-button--dark:hover {
+  background: var(--button-alternate-textColor);
+  color: #fff;
+}
+
+.ui5con-button--dark:focus {
+  outline: 0.125rem solid var(--brand-color-alt);
+  outline-offset: 0.125rem;
+}
+
+.ui5con-button--dark:active,
+.ui5con-button--light:active {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+/*
+ * ==================================  Carousel Section ==================================
+ */
+/* .ui5con-container--carousel {
+  width: 100vw;
+  height: 400px;
+  position: relative;
+  background-size: cover;
+  background-repeat: repeat-x;
+  animation: slide 150s linear infinite;
+  background-image: url("../images/past_events.jpg");
+} */
+
+@keyframes slide {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 100% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/*
+ * ====================================  Links Section ====================================
+ */
+
+.ui5con-container--links {
+  position: relative;
+  display: flex;
+  gap: 10vw;
+  padding: 3rem 0 2rem;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 800px) {
+  .ui5con-container--links {
+    padding: 3rem 0;
+  }
+}
+
+.ui5con__link {
+  display: flex;
+  padding: 0 0.5rem;
+  text-align: center;
+  align-items: center;
+  animation: 10s linear;
+  text-decoration: none;
+  flex-direction: column;
+  outline-offset: 1.25rem;
+  transition: all 0.5s ease-in-out;
+  outline: 0.25rem solid transparent;
+  color: var(--sapTextColor);
+}
+
+.ui5con__link:hover svg {
+  transform: rotateY(180deg);
+}
+
+.ui5con__link:focus {
+  outline-offset: 0.25rem;
+  outline-color: var(--dark-brand-color);
+}
+
+.ui5con__link:not(:focus) {
+  transition-duration: 0s;
+}
+
+.ui5con-dark-bgrd__link {
+  padding: 0 0.5rem;
+  text-align: center;
+  align-items: center;
+  animation: 10s linear;
+  text-decoration: none;
+  flex-direction: column;
+  outline-offset: 1.25rem;
+  transition: all 0.5s ease-in-out;
+  outline: 0.25rem solid transparent;
+  color: var(--sapLinkColor);
+}
+
+.ui5con__link svg {
+  width: 2rem;
+  height: 2rem;
+  transition: .5s;
+  margin-bottom: 0.75rem;
+  fill: var(--sapTextColor);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ui5con__link:hover svg {
+    transform: none;
+  }
+}
+
+.ui5con__banner-3 {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: -28rem;
+  max-width: 600px;
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+.ui5con__banner-4 {
+  position: absolute;
+  bottom: 0;
+  left: -28rem;
+  max-width: 600px;
+  transform: translateY(50%);
+  z-index: 0;
+}
+
+.ui5con__banner-3 path {
+  fill: var(--brand-color);
+}
+
+@media screen and (min-width: 800px) {
+  .ui5con__banner-3 {
+    display: block;
+  }
+}
+
+/*
+ * ====================================  Footer ====================================
+ */
+
+.ui5con-container--footer {
+  align-items: center;
+  padding: 1.875rem 5%;
+  justify-content: space-between;
+  color: var(--sapTextColor);
+  background-color: var(--dark-brand-color);
+  position: relative;
+  bottom: 0;
+}
+
+@media screen and (max-width: 800px) {
+  .ui5con-container--footer {
+    gap: 1rem;
+    padding: 2rem 1rem;
+    flex-direction: column;
+  }
+}
+
+.ui5con-container--footer .ui5con-sap-logo {
+  width: 4rem;
+  fill: #008fd3;
+  max-width: 6.25rem;
+}
+
+.ui5con-sap-brand {
+  font-weight: bold;
+}
+
+.ui5con-sap-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.ui5con-sap-links a:link {
+  text-decoration: none;
+  outline-offset: 1.25rem;
+  transition: all 0.5s ease-in-out;
+  color: var(--sapTextColor);
+  outline: 0.25rem solid transparent;
+}
+
+.ui5con-sap-links a:focus {
+  outline-offset: 0.25rem;
+  outline-color: var(--brand-color-alt);
+}
+
+.ui5con-sap-links a:not(:focus) {
+  transition-duration: 0s;
+}
+
+.ui5con-sap-links a:visited {
+  color: var(--sapTextColor);
+}
+
+.ui5con-sap-links a:hover {
+  color: var(--brand-color-alt);
+}
+
+.ui5con-sap-links span {
+  margin-left: 1.875rem;
+}
+
+.ui5con-container--sponsors ~ .ui5con-container--footer {
+  background: var(--sapBackgroundContrastColor);
+  color: var(--dark-brand-color);
+}
+
+.ui5con-container--sponsors ~ .ui5con-container--footer .ui5con-sap-links a {
+  color: var(--dark-brand-color);
+}
+
+.ui5con-container--sponsors ~ .ui5con-container--footer .ui5con-sap-links a:hover,
+.ui5con-container--sponsors ~ .ui5con-container--footer .ui5con-sap-links a:focus {
+  color: var(--brand-color-alt);
+}
+
+/*
+ * ================================ CoC (Code of Conduct) =================================
+ */
+
+.ui5con-content-container {
+  padding: 3rem 10%;
+}
+.ui5con-content-header-container {
+  background-image: linear-gradient(208deg, var(--brand-color), var(--brand-color-alt));
+  padding: 4rem 3rem;
+}
+
+.ui5con-content-header-container h1 {
+  font-weight: 800;
+}
+
+/*
+ * ================================ Video section ========================================
+ */
+
+.ui5con-container--video {
+  overflow: hidden;
+  position: relative;
+  display: block;
+  padding: 0 0;
+  text-align: center;
+  position: relative;
+}
+
+.ui5con-container--video iframe {
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
+.video-container {
+  position: relative;
+  display: inline-block;
+  padding: 1rem;
+  background: var(--dark-brand-color);
+}
+
+.video-container .ui5con__banner-5 {
+  display: none;
+  transform: none;
+  z-index: -1;
+  max-width: 250px;
+  left: -125px;
+  top: -125px;
+}
+
+.video-container .ui5con__banner-6 {
+  display: none;
+  transform: none;
+  z-index: -1;
+  max-width: 250px;
+  right: -125px;
+  bottom: -125px;
+  left: auto;
+}
+
+@media screen and (min-width: 800px) {
+  .ui5con-container--video {
+    padding: 10rem 0 7rem;
+  }
+
+  .video-container {
+    border: 1px solid var(--brand-color-alt);
+  }
+
+  .video-container .ui5con__banner-5,
+  .video-container .ui5con__banner-6 {
+    display: block;
+    position: absolute;
+  }
+}
+
+/*
+ * ================================ Sponsors section ========================================
+ */
+
+.ui5con-container--sponsors {
+  padding: 3rem 0 6rem;
+  display: block;
+  position: relative;
+  z-index: 0;
+}
+
+.ui5con-container--sponsors h2 {
+  text-transform: uppercase;
+  font-weight: 800;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  color: var(--dark-brand-color);
+}
+
+.ui5con-container--sponsors h2 span {
+  color: var(--brand-color);
+}
+
+.sponsors-list {
+  list-style-type: none;
+  text-align: center;
+  margin: 0 auto;
+  padding: 2rem 0;
+  max-width: 80vw;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  justify-content: center;
+}
+
+@media screen and (min-width: 800px) {
+  .sponsors-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.sponsors-list li {
+  align-self: center;
+}
+
+.sponsors-list img {
+  max-height: 90px;
+  min-height: 70px;
+}
+
+img.advades {
+  max-height: 80px;
+}
+
+.sponsors-list a {
+  display: block;
+}
