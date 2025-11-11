@@ -2,7 +2,7 @@
   "name": "openui5-website",
   "version": "1.0.0",
   "scripts": {
-    "start": "browser-sync start --server --serveStatic ./backtobasics --files \"./**/*\" --single"
+    "start": "browser-sync start --server --serveStatic ./static --files \"./**/*\" --single"
   },
   "keywords": [],
   "author": "OpenUI5 Team",
