@@ -1051,4 +1051,11 @@ footer {
 		--logo-color: #f5f5f5;
 		--btn-bg-color: var(--brand-color-alt);
 	}
+
+	.btn-lite {
+
+		&:is(:hover, :focus) {
+			color: var(--white);
+		}
+	}
 }

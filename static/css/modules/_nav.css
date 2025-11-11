@@ -178,12 +178,6 @@
 	}
 }
 
-.nav:has(.mobile-nav) {
-	position: sticky;
-	top: 0;
-	z-index: 9;
-}
-
 .mobile-nav-btn {
 	width: 30px;
 	height: 24px;
@@ -253,6 +247,20 @@
 				top: 20px;
 				left: 1px;
 			}
+		}
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+
+	.mobile-nav-btn {
+
+		span {
+			background: var(--text-color-contrast);
+		}
+
+		&:is(:focus, :focus-within) span {
+			background: var(--text-color-contrast);
 		}
 	}
 }

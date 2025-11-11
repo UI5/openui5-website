@@ -82,7 +82,8 @@
 		}
 	}
 
-	p {
+	p,
+	li {
 		color: var(--text-color);
 	}
 }
