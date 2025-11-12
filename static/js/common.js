@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       <div class="footer-container">
 
-        <p class="copyright">© 2025 SAP SE or an SAP affiliate company. All rights reserved.<br aria-hidden="true"/> This site is hosted by GitHub Pages.</p>
+        <p class="copyright">© 2025 SAP SE or an SAP affiliate company and OpenUI5 contributors <br aria-hidden="true"/> This site is hosted by GitHub Pages.</p>
 
           <div class="links-container">
               <a href="https://www.sap.com/impressum" rel="noopener noreferrer" target="_blank"

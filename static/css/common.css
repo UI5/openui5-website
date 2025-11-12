@@ -1026,7 +1026,7 @@ footer {
 		align-items: flex-start;
 
 		p {
-			flex-basis: 45%;
+			flex-basis: 50%;
 			text-align: left;
 		}
 	}
