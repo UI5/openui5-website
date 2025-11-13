@@ -460,10 +460,20 @@ id: marian-zeis
 ```yaml
 name: Mariana Naboka
 company: SAP
-photo: 
+photo: data/persons/mariana-naboka.jpg
 linkedin:
 github:
 id: mariana-naboka
+```
+
+```yaml
+name: Mario Kernich
+company: SWAN
+photo: data/persons/mario-kernich.jpg
+linkedin: mariokernich
+github: mariokernich
+mastodon: MarioKernich@saptodon.org
+id: mario-kernich
 ```
 
 ```yaml
