@@ -1,13 +1,10 @@
 {
   "name": "openui5-website",
-  "description": "OpenUI5 website",
-  "version": "0.0.1",
+  "description": "The OpenUI5 website",
+  "version": "1.0.0",
   "private": true,
-  "author": "SAP SE",
-  "contributors": [
-    "SAP SE <*@sap.com>"
-  ],
-  "license": "License 2.0",
+  "author": "OpenUI5 Team",
+  "license": "Apache-2.0",
   "repository": {
     "type": "git",
     "url": "git@github.com:UI5/openui5-website.git"
@@ -16,49 +13,12 @@
     "url": "https://github.com/UI5/openui5-website/issues"
   },
   "scripts": {
-    "build": "gatsby build",
-    "start": "gatsby develop",
-    "serve": "gatsby serve",
-    "fetchVersions": "node ./scripts/fetchVersions.js"
+    "start": "browser-sync start --server --serveStatic ./static --files \"./**/*\""
   },
+  "keywords": [],
   "devDependencies": {
-    "@loadable/component": "5.15.0",
-    "@react-hook/media-query": "^1.1.1",
-    "@ui5/webcomponents": "1.0.0-rc.11",
-    "@ui5/webcomponents-react": "0.13.9",
-    "classnames": "^2.3.2",
-    "gatsby": "2.32.13",
-    "gatsby-image": "^3.4.0",
-    "gatsby-plugin-layout": "^4.6.0",
-    "gatsby-plugin-manifest": "^2.12.1",
-    "gatsby-plugin-offline": "^3.10.2",
-    "gatsby-plugin-pathdata": "1.1.0",
-    "gatsby-plugin-postcss": "^3.6.0",
-    "gatsby-plugin-react-helmet": "^3.9.0",
-    "gatsby-plugin-sharp": "^2.14.4",
-    "gatsby-remark-copy-linked-files": "^2.9.0",
-    "gatsby-source-filesystem": "^2.11.1",
-    "gatsby-transformer-json": "^2.10.0",
-    "gatsby-transformer-remark": "^2.16.1",
-    "gatsby-transformer-sharp": "^2.12.1",
-    "lodash": "^4.17.21",
-    "node-fetch": "2.6.7",
-    "normalize.css": "^8.0.1",
-    "postcss-env-function": "^2.0.2",
-    "postcss-nesting": "^7.0.1",
-    "prop-types": "^15.8.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-helmet": "^6.1.0",
-    "react-markdown": "^6.0.2",
-    "rehype-react": "^6.2.0"
+    "browser-sync": "^3.0.4"
   },
-  "browserslist": [
-    ">1%",
-    "last 2 versions",
-    "Firefox ESR",
-    "not ie < 11"
-  ],
   "engines": {
     "node": "^14"
   },
