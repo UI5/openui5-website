@@ -1,4 +1,3 @@
-<!-- Aggregated events file - edit blocks directly. -->
 # Events
 
 ```yaml
@@ -6,11 +5,11 @@ title: UI5con Bengaluru 2025
 subTitle: Free community conference for UI5 enthusiasts
 external: true
 location: Bengaluru/India
-logo: ./logos/UI5con-Bengaluru.svg
+logo: images/events/UI5con-Bengaluru.svg
 url: 'https://openui5.org/ui5con/bengaluru2025/index.html'
 id: ui5con2025-blr
-start: '2025-12-13 10:00 Europe/Berlin:30'
-end: '2025-12-13 18:00 Europe/Berlin:30'
+start: '2025-12-13 10:00 Asia/Kolkata'
+end: '2025-12-13 18:00 Asia/Kolkata'
 ```
 (No description)
 
@@ -18,7 +17,7 @@ end: '2025-12-13 18:00 Europe/Berlin:30'
 title: UI5ers live (Dec '25)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Andreas Kunz
   - Stefan Beck
@@ -45,7 +44,7 @@ We look forward to a great discussion and hearing directly from you!
 title: UI5ers live (Nov '25)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Andreas Kunz
   - Mario Kernich
@@ -65,7 +64,7 @@ If you want to showcase your UI5-related work or have an idea for a topic, let u
 title: UI5ers live (Oct '25)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Andreas Kunz
   - Thorsten Hochreuter
@@ -88,7 +87,7 @@ like `IAsyncContentCreation`.
 title: UI5ers live (Sep '25)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Mariana Naboka
   - Hristo Tsolev
@@ -106,7 +105,7 @@ Additionally, we'll showcase significant enhancements in the SAP Fiori Tools Ada
 title: UI5ers live (Aug '25)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Juliane Dombrowski
   - Martin Broede
@@ -128,7 +127,7 @@ title: UI5con 2025
 subTitle: Free community conference for UI5 enthusiasts
 external: true
 location: St. Leon-Rot/BW/Germany
-logo: ./logos/ui5con.svg
+logo: images/events/ui5con.svg
 url: 'https://ui5con.org/'
 id: ui5con2025
 start: '2025-07-08 08:00 Europe/Berlin'
@@ -140,7 +139,7 @@ end: '2025-07-08 22:00 Europe/Berlin'
 title: UI5ers live (June '25)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Ilia Klopkov
   - Kevin Edinger
@@ -163,7 +162,7 @@ Finally, let's discuss the future of this technology; share your ideas for futur
 title: UI5ers live (May '25)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Peter Muessig
 url: 'https://sap-se.zoom.com/j/94833714827'
@@ -180,7 +179,7 @@ This session is perfect for developers looking to get hands-on with AI in OpenUI
 title: UI5ers live (Apr '25)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Ludwig Stockbauer-Muhr
   - Florian Vogt
@@ -206,7 +205,7 @@ the best approach for your specific projects.
 title: UI5ers live (Mar '25)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Dominik Schreiber
   - Vinay Hospete
@@ -231,7 +230,7 @@ development of new SAPUI5 applications.
 title: UI5ers live (Feb '25)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Peter Muessig
   - Marco Beier
@@ -250,7 +249,7 @@ The second part will focus on recent accessibility advancements in OpenUI5 and U
 title: UI5ers live (Jan '25)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Dominik Heim
   - Katrin Polloczek
@@ -275,7 +274,7 @@ of a converter designed to help transition existing applications to this new app
 title: UI5ers live (Dec '24)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Arnaud Buchholz
   - Peter Muessig
@@ -294,7 +293,7 @@ In this episode, we discuss why we've made this decision, look at alternative so
 title: UI5ers live (Nov '24)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Matthias Oßwald
   - Florian Vogt
@@ -314,7 +313,7 @@ title: Devtoberfest 2024
 subTitle: wdi5 - lost in documentation
 external: false
 location: YouTube
-logo: ./logos/sap.svg
+logo: images/events/sap.svg
 speakers:
   - Simon Coen
   - Volker Buzek
@@ -335,7 +334,7 @@ title: Devtoberfest 2024
 subTitle: What's New in UI5 Web Components 2.0 and UI5 Web Components for React 2.0
 external: true
 location: YouTube
-logo: ./logos/sap.svg
+logo: images/events/sap.svg
 url: >-
   https://community.sap.com/t5/devtoberfest/what-s-new-in-ui5-web-components-2-0-and-ui5-web-components-for-react-2-0/ev-p/13812201
 id: sap-devtober24-03
@@ -350,7 +349,7 @@ how you can start using the new features in your projects. Perfect for developer
 title: Devtoberfest 2024
 subTitle: Get ready for OpenUI5 2.x
 location: YouTube
-logo: ./logos/sap.svg
+logo: images/events/sap.svg
 speakers:
   - Peter Muessig
 url: 'https://youtu.be/JWn2oXb73cA'
@@ -368,7 +367,7 @@ asynchronous programming model, and streamlined API can boost your app’s perfo
 title: UI5ers live (Oct '24)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Ilhan Myumyun
   - Thorsten Hochreuter
@@ -388,7 +387,7 @@ He'll demonstrate how to ensure that your custom components not only fit in but 
 title: Devtoberfest 2024
 subTitle: 'UI5 Freestyle: TypeScript E2E Development - From Zero To Hero in 1hr!'
 location: YouTube
-logo: ./logos/sap.svg
+logo: images/events/sap.svg
 speakers:
   - Peter Muessig
 recordingUrl: 'https://youtu.be/7aAehB4ejHQ'
@@ -407,7 +406,7 @@ title: Devtoberfest 2024
 subTitle: SAP Fiori Tools - preview-middleware
 external: false
 location: YouTube
-logo: ./logos/sap.svg
+logo: images/events/sap.svg
 speakers:
   - Dominik Heim
 url: 'https://youtu.be/ijgPJTOIc08'
@@ -425,7 +424,7 @@ tl;dr: We're going to delete things.
 title: UI5ers live (Sep '24)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Johannes Gluch
   - Peter Muessig
@@ -452,7 +451,7 @@ available CSS Custom Properties, providing developers with a invaluable resource
 title: UI5ers live (Aug '24)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Andreas Kunz
   - Duc Vo Ngoc
@@ -478,7 +477,7 @@ If you want to showcase your UI5-related work or have an idea for a topic, let u
 title: UI5ers live (Jul '24)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Peter Muessig
 recordingUrl: 'https://youtu.be/oeaui4N653c'
@@ -500,7 +499,7 @@ title: UI5con 2024
 subTitle: Free community conference for UI5 enthusiasts
 external: true
 location: St. Leon-Rot/BW/Germany
-logo: ./logos/ui5con.svg
+logo: images/events/ui5con.svg
 url: 'https://openui5.org/ui5con/germany2024/'
 id: ui5con2024
 start: '2024-06-05 08:00 Europe/Berlin'
@@ -512,7 +511,7 @@ end: '2024-06-05 23:00 Europe/Berlin'
 title: UI5ers live (May '24)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Andreas Kunz
   - Christian Voshage
@@ -535,7 +534,7 @@ If you want to showcase your UI5-related work or have an idea for a topic, let u
 title: UI5ers live (Apr '24)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Andreas Kunz
   - Patric Ksinsik
@@ -555,7 +554,7 @@ If you want to showcase your UI5-related work or have an idea for a topic, let u
 title: UI5ers live (Mar '24)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Jens Pflüger
   - Merlin Beutlberger
@@ -575,7 +574,7 @@ If you want to showcase your UI5-related work or have an idea for a topic, let u
 title: UI5ers live (Feb '24)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Mikhail Benderskiy
   - Hristo Tsolev
@@ -597,7 +596,7 @@ We will highlight the unique aspects of this offering and discuss key points to 
 title: UI5ers live (Jan '24)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Volker Buzek
   - Peter Muessig
@@ -620,7 +619,7 @@ So, get ready for an enlightening deep-dive into the dynamic world of UI5.
 title: UI5ers live (Dec '23)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - DJ Adams
   - Christian Braukmüller
@@ -639,7 +638,7 @@ Take a moment to reflect on a decade's worth of OpenUI5 achievements and share y
 title: UI5ers live (Nov '23)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Pieter Janssens
   - Daniel Nanovski
@@ -661,7 +660,7 @@ If you want to showcase your UI5-related work or have an idea for a topic, let u
 title: UI5ers live (Oct '23)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Holger Schäfer
   - Dominik Stork
@@ -681,7 +680,7 @@ If you want to showcase your UI5-related work or have an idea for a topic, let u
 title: UI5ers live (Sep '23)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Peter Muessig
   - Benedikt Schoelch
@@ -705,7 +704,7 @@ If you want to showcase your UI5-related work or have an idea for a topic, let u
 title: UI5ers live (July '23)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Jan Mummenthaler
   - Andreas Kunz
@@ -727,7 +726,7 @@ title: UI5con 2023
 subTitle: Free community conference for UI5 enthusiasts
 external: true
 location: St. Leon-Rot/BW/Germany
-logo: ./logos/ui5con.svg
+logo: images/events/ui5con.svg
 url: 'https://openui5.org/ui5con/germany2023/'
 id: ui5con2023
 start: '2023-07-06 08:00 Europe/Berlin'
@@ -739,7 +738,7 @@ end: '2023-07-06 22:00 Europe/Berlin'
 title: UI5ers live (June '23)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Arnaud Buchholz
   - Alexandar Mitsev
@@ -757,7 +756,7 @@ If you want to showcase your UI5-related work or have an idea for a topic, let u
 title: UI5ers live (May '23)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Mike Zaschka
   - Peter Muessig
@@ -777,7 +776,7 @@ If you want to showcase your UI5-related work or have an idea for a topic, let u
 title: UI5ers live (Apr '23)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Ilhan Myumyun
   - Hubert Drecker
@@ -792,7 +791,7 @@ Let's talk TypeScript! Hubert Drecker will introduce us to odata2ts, a tool that
 title: UI5ers live (Mar '23)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Dominik Feininger
   - Martin Häuser
@@ -814,7 +813,7 @@ If you want to showcase your UI5-related work or have an idea for a topic, let u
 title: UI5ers live (Feb '23)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Kateryna Sergieieva
   - Evgeny Reyzenkind
@@ -837,7 +836,7 @@ If you have an idea for a topic, let us know either via [e-mail](mailto:openui5@
 title: UI5ers live (Jan'23)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Christian Pfisterer
   - Merlin Beutlberger
@@ -858,7 +857,7 @@ If you have an idea for a topic, let us know either via [e-mail](mailto:openui5@
 title: UI5ers live (Dec'22)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Peter Muessig
   - Adrian Marten
@@ -876,7 +875,7 @@ title: Bringing UI to the Next Level with SAPUI5 and UI5 Web Components
 subTitle: SAP TechEd
 external: true
 location: virtual
-logo: ./logos/sap.svg
+logo: images/events/sap.svg
 url: >-
   https://go3.events.sap.com/sapteched/hybrid/2022/reg/flow/sap/saptech2022/sapteched2022catalog/page/catalog/session/1661198040568001ECjN
 id: sap-teched22-01
@@ -889,7 +888,7 @@ end: '2022-11-16 21:55 Europe/Berlin'
 title: UI5ers live (Nov'22)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Peter Muessig
   - Jorge Martins
@@ -907,7 +906,7 @@ title: Improving the Performance of UI5 Applications
 subTitle: Devtoberfest 2022
 external: false
 location: virtual
-logo: ./logos/sap.svg
+logo: images/events/sap.svg
 speakers:
   - Peter Muessig
   - Nico Schoenteich
@@ -925,7 +924,7 @@ title: Testing UI5 Apps with wdi5 - Zero to Hero to Continuous Integration
 subTitle: Devtoberfest 2022
 external: false
 location: virtual
-logo: ./logos/sap.svg
+logo: images/events/sap.svg
 speakers:
   - Volker Buzek
 recordingUrl: 'https://youtu.be/f-0ztSnb2-c'
@@ -940,7 +939,7 @@ title: 'Clean SAPUI5 - More readable, maintainable and testable code'
 subTitle: Devtoberfest 2022
 external: false
 location: virtual
-logo: ./logos/sap.svg
+logo: images/events/sap.svg
 recordingUrl: 'https://youtu.be/rb3_io0OdO0'
 id: sap-devtob22-01
 start: '2022-10-18 09:00 Europe/Berlin'
@@ -954,7 +953,7 @@ The book is written with the intention to help developers utilize the concept of
 title: UI5ers live (Aug '22)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Peter Muessig
 recordingUrl: 'https://youtu.be/H1Tkn6gNiAg'
@@ -968,7 +967,7 @@ Our summer break is just around the corner, but before there are some news to sh
 title: UI5ers live (July '22)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Marcel Schork
   - Ruben Tuider
@@ -987,7 +986,7 @@ title: UI5con ON AIR 2022
 subTitle: Free community conference for UI5 enthusiasts
 external: true
 location: Online
-logo: ./logos/ui5con.svg
+logo: images/events/ui5con.svg
 url: 'https://openui5.org/ui5con/germany2022/'
 id: ui5con2022-germany
 start: '2022-07-07'
@@ -999,7 +998,7 @@ end: '2022-07-08'
 title: UI5ers live (May '22)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Marian Zeis
   - Mathias Uhlmann
@@ -1016,7 +1015,7 @@ As an additional topic, Mathias Uhlmann and Uwe Reeder will demonstrate how data
 title: UI5ers live (April '22)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Mauricio Lauffer
   - Dirk Becker
@@ -1032,7 +1031,7 @@ In this episode, our special panelist is Mauricio Lauffer who is an experienced 
 title: UI5ers live (March '22)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Volker Buzek
   - Peter Muessig
@@ -1051,7 +1050,7 @@ Tobias is in charge of two new features or rather changes in the UI5 framework, 
 title: UI5ers live (February '22)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Marcel Schork
   - Jakob Marius Kjaer
@@ -1094,7 +1093,7 @@ Host: Rolf Smeds, Vaadin
 title: UI5ers live (January '22)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Stefan Beck
   - Peter Muessig
@@ -1113,7 +1112,7 @@ In addition, Peter Muessig and Andreas Kunz will talk about a tutorial for TypeS
 title: UI5 Web Components - The Latest Member of SAP’s UI Open Source Products
 subTitle: SAP Open Source Webinar (1h)
 location: via ZOOM
-logo: ./logos/sap.svg
+logo: images/events/sap.svg
 speakers:
   - Stanislava Baltova
   - Ilhan Myumyun
@@ -1132,7 +1131,7 @@ In case of any questions or to cancel your registration, please contact ospo@sap
 title: UI5ers live (December '21)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Volker Buzek
   - Andreas Kunz
@@ -1149,7 +1148,7 @@ Our second topic is about TypeScript in UI5. Andreas Kunz has been quite busy th
 title: UI5 Web Components - Build Enterprise Ready UIs with your Technology of Choice
 subTitle: SAP Community Call (1h)
 location: via ZOOM
-logo: ./logos/sap.svg
+logo: images/events/sap.svg
 speakers:
   - Stanislava Baltova
   - Ilhan Myumyun
@@ -1165,7 +1164,7 @@ In this session we will explore the UI5 Web Components – the latest SAP UI Ope
 title: UI5ers live (November '21)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Peter Muessig
   - Stanislava Baltova
@@ -1180,7 +1179,7 @@ This time, we’re starting with news about the UI5 Web Components and the upcom
 title: UI5ers live (October '21)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - James Zhang
   - Johannes Gluch
@@ -1197,7 +1196,7 @@ As a further topic, we're going to look at  asychronous loading of XML content. 
 title: UI5ers live (August '21)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Jiawei Cao
   - Peter Muessig
@@ -1214,7 +1213,7 @@ Next up, Peter Muessig will give an update on transitioning the UI controls to u
 title: UI5ers live (July '21)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Sebastian Bender
   - Jay Barbhaiya
@@ -1230,7 +1229,7 @@ title: UI5con ON AIR
 subTitle: Community conference around the UI5 framework
 external: true
 location: Broadcast
-logo: ./logos/ui5con.svg
+logo: images/events/ui5con.svg
 url: 'https://openui5.org/ui5con/onair2021/'
 id: ui5con2021-onair
 start: '2021-06-16'
@@ -1242,7 +1241,7 @@ end: '2021-06-17'
 title: UI5ers live (May '21)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Stefan Beck
   - Tereza Chobanova
@@ -1259,7 +1258,7 @@ Then with Sebastian Bender it is about tables. He brings some latest features wi
 title: Latest Developments in UI5
 subTitle: SAP Community Call (60min)
 location: via ZOOM
-logo: ./logos/sap.svg
+logo: images/events/sap.svg
 speakers:
   - Peter Muessig
 registrationUrl: 'https://sap-se.zoom.us/webinar/register/95894288263?tk'
@@ -1279,7 +1278,7 @@ The UI5 Tooling laid the foundation and now bears fruit in the UI5 community org
 title: UI5ers live (Apr '21)
 subTitle: 45 minute interactive webcast
 location: via ZOOM
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Geert-Jan Klaps
   - Marius Obert
@@ -1296,7 +1295,7 @@ In the second part of our webcast, Andreas talks about the progress of TypeScrip
 title: UI5ers live (Mar '21)
 subTitle: 45 minute interactive webcast
 location: Webinar
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Stefan Beck
   - Jens Ittel
@@ -1319,7 +1318,7 @@ And finally, Peter informs about the progress to retrofit the UI5 Web Components
 title: UI5ers live (Feb '21)
 subTitle: 45 minute interactive webcast
 location: Webinar
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Volker Buzek
   - Marco Beier
@@ -1341,7 +1340,7 @@ As always, there are also news from the UI5 labs led by Stefan. One of the topic
 title: UI5 Tooling – The Build and Development Tooling for UI5
 subTitle: 25 minute breakout session
 location: Webinar
-logo: ./logos/sap.svg
+logo: images/events/sap.svg
 speakers:
   - Peter Muessig
   - Merlin Beutlberger
@@ -1359,7 +1358,7 @@ To access reference materials for this session in advance, go to: https://github
 title: Developing Apps with SAPUI5
 subTitle: 2 hour hands-on workshop
 location: Webinar
-logo: ./logos/sap.svg
+logo: images/events/sap.svg
 speakers:
   - Florian Vogt
   - Martin Häuser
@@ -1377,7 +1376,7 @@ To access the exercises in advance so you can follow the speakers during the ses
 title: UI5ers live (Jan '21)
 subTitle: 45 minute interactive webcast
 location: Webinar
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Stefan Beck
   - Kristian Kralijc
@@ -1398,7 +1397,7 @@ Then we will take a closer look at the recently published full-stack sample app 
 title: UI5ers live (Dec '20)
 subTitle: 45 minute interactive webcast
 location: Webinar
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Margot Wollny
   - Stefan Beck
@@ -1424,7 +1423,7 @@ As this is the last episode for 2020, we want to wrap up with sharing our though
 title: UI5ers live (Nov '20)
 subTitle: 45 minute interactive webcast
 location: Webinar
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Stefan Beck
   - Nikolay Kolarov
@@ -1447,7 +1446,7 @@ To conclude our webcast, we invite all participants to discuss with us topics of
 title: UI5ers live (Oct '20)
 subTitle: 45 minute interactive webcast
 location: Webinar
-logo: ./logos/ui5ers.svg
+logo: images/events/ui5ers.svg
 speakers:
   - Thorsten Hochreuter
   - Alexandar Mitsev
@@ -1472,7 +1471,7 @@ title: UI5con ON AIR
 subTitle: Community conference around the UI5 framework
 external: true
 location: Broadcast
-logo: ./logos/ui5con.svg
+logo: images/events/ui5con.svg
 url: 'https://openui5.org/ui5con/onair2020/'
 id: ui5con2020-onair
 start: '2020-07-09 16:00 Europe/Berlin'
@@ -1484,7 +1483,7 @@ end: '2020-07-10 13:30 Europe/Berlin'
 title: The UI5 Tooling — a modern CLI-based development experience!
 subTitle: SAP Community Call (60min)
 location: Online
-logo: ./logos/sap.svg
+logo: images/events/sap.svg
 speakers:
   - Peter Muessig
 recordingUrl: 'https://youtu.be/v6ImEbZRRlg?list=PLpQebylHrdh5XQts8bKoMUKexpun_YPvU'
@@ -1499,7 +1498,7 @@ title: UI5con Belgium / Valentine's edition
 subTitle: Community conference around the UI5 framework
 external: true
 location: Belgium
-logo: ./logos/ui5con.svg
+logo: images/events/ui5con.svg
 url: 'https://openui5.org/ui5con/belgium2020/'
 id: ui5con2020-belgium
 start: '2020-02-14 09:00 Europe/Berlin'

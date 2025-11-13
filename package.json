@@ -20,7 +20,7 @@
     "browser-sync": "^3.0.4"
   },
   "engines": {
-    "node": "^14"
+    "node": "20.x || 22.x || >=24"
   },
   "dependencies": {}
 }
