@@ -132,7 +132,11 @@
 .event-list--past {
 
 	[role="listitem"] {
-		border-color: var(--background-color-alternate);
+		border-color: var(--brand-color-contrast);
+
+		&:is(:hover, :focus, :focus-within) {
+			border-color: var(--brand-color);
+		}
 	}
 
 	.event-details {
@@ -209,7 +213,7 @@
 	content: '';
 	flex: 1;
 	height: 2px;
-	background: var(--background-color-alternate);
+	background: var(--brand-color-contrast);
 	margin-inline-start: 1rem;
 }
 
