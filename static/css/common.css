@@ -13,7 +13,7 @@
 	--logo-color: #646363;
 
 	--type-0: clamp(1rem, 0.9286rem + 0.3571vw, 1.1rem);
-	--type-1: clamp(1.2rem, 1.0964rem + 0.5179vw, 1.5625rem);
+	--type-1: clamp(1.2rem, 1.0964rem + 0.5179vw, 1.4025rem);
 	--type-2: clamp(1.44rem, 1.2934rem + 0.733vw, 1.9531rem);
 	--type-3: clamp(1.7281rem, 1.5244rem + 1.0188vw, 2.4413rem);
 	--type-4: clamp(2.0738rem, 1.7943rem + 1.3973vw, 3.0519rem);
