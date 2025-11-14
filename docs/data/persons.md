@@ -23,7 +23,6 @@ id: alexandar-mitsev
 name: Andreas Kunz
 company: SAP
 photo: data/persons/andreas-kunz.png
-twitter: aku_dev
 linkedin: andreas-kunz-dev
 github: akudev
 mastodon: akudev@saptodon.org
