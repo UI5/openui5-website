@@ -1,5 +1,6 @@
 [popover] {
 	max-height: 100vh;
+	min-height: 100vh;
 	width: 100vw;
 	max-width: 58rem;
 	padding: 2.5rem;
@@ -40,6 +41,7 @@
 		height: fit-content;
 		width: fit-content;
 		max-height: 90vh;
+		min-height: 90vh; /* Safari */
 		border-radius: 1rem;
 	}
 }
