@@ -13,7 +13,7 @@
     "url": "https://github.com/UI5/openui5-website/issues"
   },
   "scripts": {
-    "start": "browser-sync start --server --serveStatic ./static --files \"./**/*\""
+    "start": "browser-sync start --server --serveStatic ./docs --files \"./**/*\""
   },
   "keywords": [],
   "devDependencies": {

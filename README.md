@@ -1,6 +1,6 @@
 [![REUSE status](https://api.reuse.software/badge/github.com/UI5/openui5-website)](https://api.reuse.software/info/github.com/UI5/openui5-website)
 
-![OpenUI5 logo](./static/images/brand/B_OpenUI5_H.svg)
+![OpenUI5 logo](./docs/images/brand/B_OpenUI5_H.svg)
 
 # OpenUI5 Website
 
