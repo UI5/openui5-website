@@ -180,6 +180,23 @@
 	}
 }
 
+.busy {
+	text-align: center;
+	margin: auto;
+	animation: blink 1s ease-in-out infinite alternate;
+}
+
+@keyframes blink {
+
+	0% {
+		opacity: .2;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
 .event-countdown {
 	display: inline-block;
 	background: var(--brand-color);

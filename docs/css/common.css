@@ -585,13 +585,17 @@ article {
 
 .alternate {
 	background-color: var(--background-color-alternate);
+
+	&:has(> .wrap) {
+		padding-block: 4rem;
+	}
 }
 
 .wrap {
 	max-width: 1240px;
 	margin-block: 0;
 	margin-inline: auto;
-	padding-block: 4rem;
+	padding-block: 2rem 4rem;
 	padding-inline: 3vw;
 }
 

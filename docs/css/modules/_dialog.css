@@ -1,6 +1,6 @@
 [popover] {
 	max-height: 100vh;
-	min-height: 100vh;
+	height: auto;
 	width: 100vw;
 	max-width: 58rem;
 	padding: 2.5rem;
@@ -38,16 +38,14 @@
 @media (width >=700px) {
 
 	[popover] {
-		height: fit-content;
 		width: fit-content;
 		max-height: 90vh;
-		min-height: 90vh; /* Safari */
 		border-radius: 1rem;
 	}
 }
 
 .event-summary {
-	flex: 1 1 auto;
+	flex: 1 0 100%;
 	overflow-y: auto;
 	max-height: 100%;
 
@@ -198,7 +196,8 @@
 	background: var(--background-color);
 	box-shadow: 0 2px 4px -2px var(--dark-brand-color);
 	min-width: 240px;
-	min-height: 0;
+	height: fit-content;
+	width: fit-content;
 	opacity: 0;
 	transform: scale(1);
 	transition: transform 0.2s ease-out,
