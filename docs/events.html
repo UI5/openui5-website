@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>OpenUI5 - Events</title>
+	<meta name="description"
+
+		content="OpenUI5 is an open-source JavaScript framework from SAP for building enterprise-grade web applications. It offers powerful UI controls, MVC architecture, data binding, and responsive design for modern, cross-platform development." />
+
+	<meta name="keywords"
+		content="webstandards, web standards, html, css, JavaScript, Accessibility, framework, frontendframework, javascriptframework, WCAG, OpenUI5, DevOps, SAPUI5, UI5con, UI5 Web Components, Web Components, Webcomponents, Open Source" />
+	<meta name="robots" content="index, follow" />
+	<meta name="author" content="SAP SE" />
+	<meta property="twitter:card" content="summary" />
+	<meta property="twitter:url" content="https://openui5.org/" />
+	<meta property="twitter:title" content="OpenUI5" />
+	<meta property="twitter:description"
+
+		content="Build enterprise-ready web apps with OpenUI5. SAP’s open-source JavaScript framework featuring responsive controls, robust data binding, and a powerful MVC architecture." />
+
+	<meta property="twitter:image" content="https://openui5.org/" />
+	<meta property="og:title" content="OpenUI5" />
+	<meta property="og:description"
+
+		content="Build enterprise-ready web apps with OpenUI5. SAP’s open-source JavaScript framework featuring responsive controls, robust data binding, and a powerful MVC architecture." />
+
+	<meta name="theme-color" content="#0f9be6">
+
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+	<link rel="icon" type="image/svg+xml" href="images/icon.svg" />
+	<link rel="icon" sizes="any" href="images/android-chrome-192x192.png" />
+
+	<link rel="stylesheet" href="./css/common.css" />
+	<link rel="stylesheet" href="./css/modules.css" />
+
+	<script src="js/common.js"></script>
+</head>
+
+<body>
+
+<header class="head head--collapsed" id="header">
+
+	<nav class="nav" aria-label="Main navigation" id="nav">
+		<nav-section></nav-section>
+		<nav-section-mobile></nav-section-mobile>
+	</nav>
+</header>
+
+<main id="main">
+
+	<section>
+		<div class="wrap">
+			<h1 class="section-heading"><span>Upcoming Events</span></h1>
+
+			<ol class="timezone">
+				<li><a href="#" class="active"><span>Your time</span><small>(local)</small></a></li>
+				<li><a href="#"><span>Berlin time</span><small>(Europe/Berlin)</small></a></li>
+			</ol>
+
+			<ul id="upcoming-events" class="event-list" role="list">
+				<li class="latest-event" role="listitem">
+					<p>Loading events…</p>
+				</li>
+				<li class="submit-event" role="listitem">
+					<a
+						href="mailto:openui5@sap.com?subject=Add%20event%20to%20openui5.org&body=Title:%0DDate:%0DLocation:%0DURL:">
+						<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 512 512">
+							<path fill="currentColor"
+								d="M32 240q0-7 5-11.5t11-4.5h176V48q0-7 5-11.5t11-4.5h32q16 0 16 16v176h176q16 0 16 16v32q0 16-16 16H288v176q0 16-16 16h-32q-6 0-11-4.5t-5-11.5V288H48q-6 0-11-4.5T32 272v-32z" />
+						</svg>
+						<h3>Add Event</h3>
+						<p>Are you or someone you know speaking about UI5 at an upcoming meetup or conference? Let us
+							know.</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</section>
+
+	<section>
+		<div class="wrap">
+			<h2>Past events</h2>
+			<ol id="past-events" class="event-list event-list--past" role="list">
+				<li class="latest-event" role="listitem">
+					<p>Loading past events…</p>
+				</li>
+			</ol>
+		</div>
+	</section>
+
+	<div id="eventDialog" popover class="event-dialog"></div>
+
+	<!-- Calendar popover -->
+	<div id="calendar-popover" popover class="calendar-popover" role="menu" aria-label="Add to calendar">
+		<ul>
+			<li><a id="cal-google" href="#" target="_blank" role="menuitem" class="cal-google">Google</a></li>
+			<li><a id="cal-office365" href="#" target="_blank" role="menuitem" class="cal-office365">Office 365</a></li>
+			<li><a id="cal-ical" download="" href="#" role="menuitem" class="cal-ical">iCal (.ics)</a></li>
+			<li><a id="cal-outlook" download="" href="#" role="menuitem" class="cal-outlook">Outlook</a></li>
+		</ul>
+	</div>
+
+	</main>
+
+	<footer id="footer">
+		<footer-section></footer-section>
+	</footer>
+
+	<!-- Templates -->
+
+	<!-- Template for event card -->
+	<template id="tpl-event-card">
+		<li class="latest-event" role="listitem">
+			<a class="event-card-link">
+				<div class="event-head">
+					<div>
+						<h3 class="event-title"></h3>
+						<p class="event-desc"></p>
+					</div>
+					<img class="event-logo" alt="Event logo" />
+				</div>
+				<div class="event-details">
+					<time class="event-time">
+						<span class="event-countdown" data-countdown="" style="display: none;"></span>
+					</time>
+					<p class="event-platform"></p>
+				</div>
+			</a>
+			<button type="button" class="btn btn-lite add-to-calendar-btn" aria-haspopup="menu" aria-controls="calendar-popover" style="display: none;">+ Add to calendar</button>
+		</li>
+	</template>
+
+	<!-- Template for speaker card -->
+	<template id="tpl-speaker-item">
+		<li>
+			<div class="speaker-image">
+				<img class="speaker-photo" alt="Speaker photo" />
+			</div>
+			<p>
+				<strong class="speaker-name"></strong>
+				<em class="speaker-company"></em>
+			</p>
+			<div class="speaker-socials"></div>
+		</li>
+	</template>
+
+	<!-- Template for event popup dialog content -->
+	<template id="tpl-dialog-content">
+		<div class="event-summary">
+
+			<button class="btn-dialog" popovertarget="eventDialog" popovertargetaction="hide">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+					<path fill="currentColor" d="m86 109 22-23q5-5 12-5 6 0 11 5l124 125L380 86q5-5 11-5 7 0 12 5l22 23q12 11 0 23L301 256l124 125q11 11 0 22l-22 23q-8 5-12 5-3 0-11-5L255 301 131 426q-5 5-11 5-4 0-12-5l-22-23q-11-11 0-22l124-125L86 132q-12-12 0-23z"/>
+				</svg>
+				<span class="sr-only">Close dialog</span>
+			</button>
+			<div class="event-wrap">
+				<div class="event-head">
+					<div>
+						<h3 class="event-title"></h3>
+						<p class="event-desc"></p>
+					</div>
+					<img class="event-logo" alt="Event logo" />
+				</div>
+				<div class="event-details">
+					<time class="event-time"></time>
+					<p class="event-platform"></p>
+				</div>
+				<div class="event-body"></div>
+			</div>
+
+			<div class="event-speakers">
+				<h3>Speakers</h3>
+				<ul class="event-speaker-list"></ul>
+			</div>
+			<div class="event-links"></div>
+		</div>
+	</template>
+
+	<!-- Template for year separator -->
+	<template id="tpl-year-separator">
+		<li class="year-separator" aria-hidden="true">
+			<div class="year-separator-inner">
+				<span class="year-label"></span>
+			</div>
+		</li>
+	</template>
+
+	<!-- Template for social link -->
+	<template id="tpl-social-link">
+		<a href="" target="_blank" rel="external nofollow" aria-label="">
+			<svg aria-hidden="true" class="icon"><use xlink:href=""></use></svg>
+		</a>
+	</template>
+
+	<!-- Template for dialog link (recording) -->
+	<template id="tpl-dialog-link-recording">
+		<a href="" target="_blank" rel="external nofollow">Recording</a>
+	</template>
+
+	<!-- Template for dialog link (join) -->
+	<template id="tpl-dialog-link-join">
+		<a href="" target="_blank" rel="external nofollow">Join / More Info</a>
+	</template>
+
+	<!-- External libs for events loader -->
+	<script src="https://cdn.jsdelivr.net/npm/js-yaml@4/dist/js-yaml.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/marked@12/marked.min.js"></script>
+	<script src="js/calendar-generator.js"></script>
+	<script src="js/events-loader.js"></script>
+</body>
+</html>

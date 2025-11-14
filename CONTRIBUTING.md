@@ -1,33 +1,38 @@
 ## Contributing
 
-If you have a proposal you want to share with us, follow the description below. You only need to follow the installation instructions if you want to contribute something.
+If you have an improvement proposal you want to share with us, follow the description below. You only need to follow the installation instructions if you want to preview the page locally before submitting your pull request.
 
-### Requirements
+### TL;DR
+It's just the standard steps: fork and clone the repo, run `npm i` and `npm start`, make your changes and preview them on http://localhost:3000, push to your fork and create a pull request to the `main` branch of this repo. The website itself is located in the `docs` folder.
+
+### Detailed Instructions
+
+#### Requirements
 
 You need to have the following tools installed:
 
-- [Git](https://git-scm.com)
-- [Node.js](https://nodejs.org) 8.x
+- [Git](https://git-scm.com) CLI
+- [Node.js](https://nodejs.org) in a recent version like 20.x/22.x/24.x
 
-### Installation
+#### Installation
 - Fork this repository.
 - [Clone the forked repository](https://help.github.com/articles/cloning-a-repository/) to your local machine.
 - Install project dependencies. In the project folder:
-	- Run `npm install`
+  - Run `npm install`
 - Start the web server:
-	- Run `npm start`
-- Open `http://localhost:3030` (or `http://localhost:3030/index` on Windows)
+  - Run `npm start`
+  - (Your default browser should automatically open, showing the website at `http://localhost:3000`. For any changes done inside the website files, the browser will update automatically.)
 
-### Make Your Changes
+#### Make Your Changes
 - Make sure the `main` branch of your fork is up to date by [syncing your fork](https://help.github.com/articles/syncing-a-fork/). 
 - Create a new feature branch from the latest `main`:
 	- Run `git checkout -b the-feature-name`.
-- Make your changes, and save your files.
+- Make your changes, and save your files. The website files are inside the `docs` folder.
 - Commit and push your changes to the forked repository:
 	- To commit, run `git add -A && git commit -m "Meaningful commit message"`
 	- To push, run `git push`
 
-### Create a Pull Request
+#### Create a Pull Request
 [Create a pull request](https://help.github.com/articles/creating-a-pull-request) from the feature branch of the forked repository to the main branch of the original repository.
 
 We will review your changes and get back to you.

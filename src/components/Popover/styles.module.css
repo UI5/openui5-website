@@ -1,8 +1,0 @@
-.Popover {
-  opacity: 0;
-  transition: opacity 0.1s ease-out;
-
-  &.state_open {
-    opacity: 1;
-  }
-}
