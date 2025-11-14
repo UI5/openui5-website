@@ -3,7 +3,7 @@
 If you have an improvement proposal you want to share with us, follow the description below. You only need to follow the installation instructions if you want to preview the page locally before submitting your pull request.
 
 ### TL;DR
-It's just the standard steps: fork and clone the repo, run `npm i` and `npm start`, make your changes and preview them on http://localhost:3000, push to your fork and create a pull request to the `main` branch of this repo.
+It's just the standard steps: fork and clone the repo, run `npm i` and `npm start`, make your changes and preview them on http://localhost:3000, push to your fork and create a pull request to the `main` branch of this repo. The website itself is located in the `docs` folder.
 
 ### Detailed Instructions
 
@@ -27,7 +27,7 @@ You need to have the following tools installed:
 - Make sure the `main` branch of your fork is up to date by [syncing your fork](https://help.github.com/articles/syncing-a-fork/). 
 - Create a new feature branch from the latest `main`:
 	- Run `git checkout -b the-feature-name`.
-- Make your changes, and save your files.
+- Make your changes, and save your files. The website files are inside the `docs` folder.
 - Commit and push your changes to the forked repository:
 	- To commit, run `git add -A && git commit -m "Meaningful commit message"`
 	- To push, run `git push`

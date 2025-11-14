@@ -11,7 +11,7 @@ SPDX-FileCopyrightText = "2025 SAP SE or an SAP affiliate company and OpenUI5 we
 SPDX-License-Identifier = "Apache-2.0"
 
 [[annotations]]
-path = "static/images/icons/**"
+path = "docs/images/icons/**"
 precedence = "aggregate"
 SPDX-FileCopyrightText = "Copyright (c) 2019-2024 The Bootstrap Authors"
 SPDX-License-Identifier = "MIT"
