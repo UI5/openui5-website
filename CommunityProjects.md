@@ -42,7 +42,7 @@ Name | Owner | Category | Description | License
 You are welcome to share your community project:
 
 1. Fork this repository.
-2. Edit this file located under `docs/CommunityProjects.md`.
+2. Edit this file located under `CommunityProjects.md`.
 3. Add a new entry for your project in alphabetical order.
 4. Commit your changes and make a new pull request.
 5. After review, your project will be listed here on this page.
