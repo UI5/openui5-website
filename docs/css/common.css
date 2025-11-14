@@ -577,6 +577,13 @@ a {
 
 main {
 	position: relative;
+
+	section:first-of-type {
+
+		.wrap {
+			padding-block: 4rem;
+		}
+	}
 }
 
 article {
@@ -586,9 +593,10 @@ article {
 .alternate {
 	background-color: var(--background-color-alternate);
 
-	&:has(> .wrap) {
+	.wrap {
 		padding-block: 4rem;
 	}
+
 }
 
 .wrap {
