@@ -198,6 +198,7 @@
 	background: var(--background-color);
 	box-shadow: 0 2px 4px -2px var(--dark-brand-color);
 	min-width: 240px;
+	min-height: 0;
 	opacity: 0;
 	transform: scale(1);
 	transition: transform 0.2s ease-out,
