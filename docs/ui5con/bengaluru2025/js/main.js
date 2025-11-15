@@ -263,15 +263,29 @@ var main = new Vue({
 			speakerLineupJson: speakerLineupJson
 		}
 	},
-	mounted() {
+	async mounted() {
 		this.speakers = speakerLineupJson;
-		this.lineup = proposalLineupJson;
+		await this.fetchLineup();
 		this.formattedLineup = this.formatLineup();
 
 		this.formattedSpeakers = this.formatSpeakers(this.formattedLineup, this.speakers);
 		this.groupExpertCornerTopics();
 	},
 	  methods: {
+    async fetchLineup() {
+      try {
+        const response = await fetch('https://ui5conindia.cfapps.eu12.hana.ondemand.com/api/proposal/lineup');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        this.lineup = data;
+      } catch (error) {
+        console.error('Error fetching lineup:', error);
+        // Fallback to static data if API call fails
+        this.lineup = proposalLineupJson;
+      }
+    },
     openSpeakerInfoModal(speakers, id) {
       this.activeSpeakers = speakers;
       this.$refs.agenda.ariaHidden = true;
@@ -498,11 +512,11 @@ var main = new Vue({
         );
       } else if (this.filter === "w1") {
         return sortedSchedule.filter((schedule) =>
-          schedule.location.toLowerCase().includes("w1")
+          schedule.location.toLowerCase().includes("track_1")
         );
       } else if (this.filter === "w3") {
         return sortedSchedule.filter((schedule) =>
-          schedule.location.toLowerCase().includes("w3")
+          schedule.location.toLowerCase().includes("track_2")
         );
       } else if (this.filter === "beginner") {
         return sortedSchedule.filter((schedule) =>
@@ -591,9 +605,9 @@ var main = new Vue({
       if (value) {
         if (value.toLowerCase().includes("audimax")) {
           return "Main Stage";
-        } else if (value.toLowerCase().includes("w1") || value.toLowerCase().includes("w2")) {
+        } else if (value.toLowerCase().includes("track_1") || value.toLowerCase().includes("w2")) {
           return "Demo Pod 1";
-        } else if (value.toLowerCase().includes("w3")) {
+        } else if (value.toLowerCase().includes("track_2")) {
           return "Demo Pod 2"
         } else if (value.toLowerCase().includes("expert")) {
           return "Audi"
