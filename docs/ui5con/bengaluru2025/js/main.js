@@ -1,5 +1,28 @@
 'use strict';
-
+var internalSession = [{
+    id: "A-1",
+    title: "KeyNote",
+    type: "catering",
+    description: "Welcome Note from MD SAP Labs India",
+    location: "expert",
+    startTime: "9:30",
+    endTime: "10:30",
+    speakers: [],
+    presentationLinks: [],
+  },
+  {
+    id: "C-1",
+    title: "Lunch",
+    type: "catering",
+    description: "Lunch time!",
+    location: "canteen",
+    startTime: "12:15",
+    endTime: "13:00",
+    speakers: [
+    ],
+    presentationLinks: [],
+  } 
+];
 var nav = new Vue({
 	el: '#nav',
 	data() {
@@ -279,6 +302,7 @@ var main = new Vue({
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
+        data.push(...internalSession);
         this.lineup = data;
       } catch (error) {
         console.error('Error fetching lineup:', error);
