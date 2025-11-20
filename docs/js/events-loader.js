@@ -558,6 +558,11 @@
     const dialog = document.getElementById('eventDialog');
     if (!dialog) return;
 
+    // update URL hash without triggering page reload
+    if (ev.id) {
+      history.pushState(null, '', `#id=${ev.id}`);
+    }
+
     const wrapper = cloneTpl('tpl-dialog-content');
     if (!wrapper) return;
 
@@ -663,6 +668,80 @@
 
     // Show popover - native API handles backdrop clicks and ESC key automatically
     dialog.showPopover();
+  }
+
+  /**
+   * Parse URL hash and extract event ID
+   * Expected format: #id=EVENT_ID
+   * @returns {string|null} Event ID or null if not found
+   */
+  function getEventIdFromHash() {
+    const hash = window.location.hash;
+    if (!hash) return null;
+    
+    const match = hash.match(/^#id=([^&]+)/);
+    return match ? decodeURIComponent(match[1]) : null;
+  }
+
+  /**
+   * Open dialog for event specified in URL hash
+   * @param {Object} model - The events model containing all events
+   */
+  function openDialogFromHash(model) {
+    const eventId = getEventIdFromHash();
+    if (!eventId) return;
+
+    const event = model.events.find(ev => ev.id === eventId);
+    if (event) {
+      openDialog(event);
+    } else {
+      console.warn(`[events-loader] Event not found for hash: ${eventId}`);
+    }
+  }
+
+  /**
+   * Setup dialog close event listener
+   */
+  function setupDialogCloseListener() {
+    const dialog = document.getElementById('eventDialog');
+    if (!dialog) return;
+
+    // Listen for the toggle event to detect when dialog closes
+    dialog.addEventListener('toggle', (e) => {
+      // When dialog closes (newState is 'closed'), clear the URL hash
+      if (e.newState === 'closed') {
+        const currentEventId = getEventIdFromHash();
+        // Only clear hash if there's an event ID in the hash
+        if (currentEventId) {
+          // Use replaceState to update current history entry without creating a new one
+          history.replaceState(null, '', window.location.pathname + window.location.search);
+        }
+      }
+    });
+  }
+
+  /**
+   * Setup browser back/forward button handling
+   * @param {Object} model - The events model containing all events
+   */
+  function setupPopstateListener(model) {
+    window.addEventListener('popstate', () => {
+      const eventId = getEventIdFromHash();
+      const dialog = document.getElementById('eventDialog');
+      
+      if (eventId) {
+        // Hash present: open dialog for this event
+        const event = model.events.find(ev => ev.id === eventId);
+        if (event) {
+          openDialog(event);
+        }
+      } else {
+        // No hash: close dialog if it's open
+        if (dialog && dialog.matches(':popover-open')) {
+          dialog.hidePopover();
+        }
+      }
+    });
   }
 
   /***********************
@@ -841,6 +920,15 @@
 
       renderEventsList(model);
       startCountdowns();
+
+      // setup dialog close listener to clear URL hash
+      setupDialogCloseListener();
+
+      // setup browser back/forward button handling
+      setupPopstateListener(model);
+
+      // check if URL hash contains an event ID and open dialog if so
+      openDialogFromHash(model);
 
       // Time zone switcher: toggle between local time ("Your time") and Europe/Berlin
       const tzSwitcher = document.querySelector('.timezone');
