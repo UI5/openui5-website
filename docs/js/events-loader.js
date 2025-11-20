@@ -602,7 +602,13 @@
     if (bodyEl) {
       if (ev.body) {
         try {
-          bodyEl.innerHTML = marked.parse(ev.body);
+          // Preprocess markdown: encode spaces in mailto: URLs inside link parentheses so Marked can parse them.
+          // Example: [Contact](mailto:team@example.com?subject=Hello World) → spaces become %20.
+          const preprocessedBody = ev.body.replace(/\(mailto:[^)]+?\)/g, (m) => {
+            const inner = m.slice(1, -1).replace(/ /g, '%20'); // replace literal spaces only
+            return '(' + inner + ')';
+          });
+          bodyEl.innerHTML = marked.parse(preprocessedBody);
         } catch {
           bodyEl.textContent = ev.body;
         }
