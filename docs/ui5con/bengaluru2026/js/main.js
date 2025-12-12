@@ -61,7 +61,7 @@ var header = new Vue({
 	data() {
 		return {
 			isCalendarsVisible: false,
-			eventDate: new Date("December 13, 2025 00:00:00").getTime(),
+			eventDate: new Date("January 24, 2026 00:00:00").getTime(),
 			days: 0,
 			hours: 0,
 			minutes: 0,
@@ -83,8 +83,8 @@ var header = new Vue({
 		},
 		createCalendars() {
 
-			let newStartTime = "2025-12-13T00:00:00.000";
-			let newEndTime = "2025-12-14T00:00:00.000";
+			let newStartTime = "2026-01-24T09:00:00.000";
+			let newEndTime = "2026-01-24T17:00:00.000";
 
 			let calendarStartDate = new Date(newStartTime).toISOString().replace(/-|:|\.\d+/g, '');
 			let calendarEndDate = new Date(newEndTime).toISOString().replace(/-|:|\.\d+/g, '');
@@ -111,7 +111,7 @@ var header = new Vue({
 
 
 
-			let description = "Join us for UI5con 2025, the community event organized by the developers of the OpenUI5 framework. This event brings together the UI5 community to meet, learn from each other, and have fun. The event will take place on July 8, 2025, in SAP-Allee 27, St.Leon-Rot, Germany. For those unable to attend in person, parts of the event will be live-streamed on the UI5 YouTube channel, allowing everyone to participate and engage with the community. \n\nEvent Details: \nDate: July 8, 2025 \nLocation: SAP-Allee 27, St.Leon-Rot \nLive Stream: https://www.youtube.com/user/openui5videos \nWebsite: https://openui5.org/ui5con/germany2025/\n\nImportant Dates:\nCall for Content: January 23, 2025 - March 10, 2025\nRegistration for Onsite Attendees: Opens on April 10, 2025\nEarly Bird Ticket Application: Ends March 10, 2025\n\nVisit our event page at https://openui5.org/ui5con for more information and stay tuned for updates. If you have any further questions, please don't hesitate to contact us at ui5con.bengaluru@sap.com.\n\nWe look forward to seeing you at UI5con 2025!"
+			let description = "Join us for UI5con 2026, the community event organized by the developers of the OpenUI5 framework. This event brings together the UI5 community to meet, learn from each other, and have fun. The event will take place on July 8, 2025, in SAP-Allee 27, St.Leon-Rot, Germany. For those unable to attend in person, parts of the event will be live-streamed on the UI5 YouTube channel, allowing everyone to participate and engage with the community. \n\nEvent Details: \nDate: July 8, 2025 \nLocation: SAP-Allee 27, St.Leon-Rot \nLive Stream: https://www.youtube.com/user/openui5videos \nWebsite: https://openui5.org/ui5con/germany2025/\n\nImportant Dates:\nCall for Content: January 23, 2025 - March 10, 2025\nRegistration for Onsite Attendees: Opens on April 10, 2025\nEarly Bird Ticket Application: Ends March 10, 2025\n\nVisit our event page at https://openui5.org/ui5con for more information and stay tuned for updates. If you have any further questions, please don't hesitate to contact us at ui5con.bengaluru@sap.com.\n\nWe look forward to seeing you at UI5con 2025!"
 
 			let descriptionOffice = `Join us for UI5con 2025, the community event organized by the developers of the OpenUI5 framework. This event brings together the UI5 community to meet, learn from each other, and have fun. The event will take place on July 8, 2025, in SAP-Allee 27, St.Leon-Rot, Germany. For those unable to attend in person, parts of the event will be live-streamed on the UI5 YouTube channel, allowing everyone to participate and engage with the community. <br><br> Event Details: <br> Date: July 8, 2025 <br> Location: SAP-Allee 27, St.Leon-Rot <br> Live Stream: https://www.youtube.com/user/openui5videos <br> Website: https://openui5.org/ui5con/germany2025/ <br><br> Important Dates: <br> Call for Content: January 23, 2025 - March 10, 2025 <br> Registration for Onsite Attendees: Opens on April 10, 2025 <br> Early Bird Ticket Application: Ends March 10, 2025 <br><br> Visit our event page at https://openui5.org/ui5con for more information and stay tuned for updates. If you have any further questions, please don't hesitate to contact us at ui5con.bengaluru@sap.com.<br><br> We look forward to seeing you at UI5con 2025!`
 
@@ -123,7 +123,7 @@ var header = new Vue({
 				'BEGIN:VEVENT',
 				'DTSTART:' + calendarStartDate,
 				'DTEND:' + calendarEndDate,
-				'SUMMARY:' + 'Save the Date: UI5con 2025',
+				'SUMMARY:' + 'Save the Date: UI5con 2026',
 				'LOCATION:' + 'SAP SE (ROT03), SAP-Allee 27, 68789 St. Leon-Rot (Germany)',
 				'DESCRIPTION:' + removeForbiddenCharachtersOutlook(description),
 				'UID:' + '1',
@@ -137,7 +137,7 @@ var header = new Vue({
 						google: encodeURI([
 							'https://www.google.com/calendar/render',
 							'?action=TEMPLATE',
-							'&text=' + 'Save the Date: UI5con 2025',
+							'&text=' + 'Save the Date: UI5con 2026',
 							'&dates=' + calendarStartDate,
 							'/' + calendarEndDate,
 							'&location=' + 'SAP SE (ROT03), SAP-Allee 27, 68789 St. Leon-Rot (Germany)',
@@ -148,7 +148,7 @@ var header = new Vue({
 							'https://outlook.office365.com/owa/',
 							'?path=/calendar/action/compose',
 							'&rru=addevent',
-							'&subject=' + 'Save the Date: UI5con 2025',
+							'&subject=' + 'Save the Date: UI5con 2026',
 							'&startdt=' + officeStartDate,
 							'&enddt=' + officeEndDate,
 							'&location=' + 'SAP SE (ROT03), SAP-Allee 27, 68789 St. Leon-Rot (Germany)',
