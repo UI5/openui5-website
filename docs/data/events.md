@@ -1,15 +1,15 @@
 # Events
 
 ```yaml
-title: UI5con Bengaluru 2025
-subTitle: Free community conference for UI5 enthusiasts
+title: UI5con Bengaluru 2025/26
+subTitle: "Free community conference for UI5 enthusiasts. IMPORTANT NOTE: the event was moved to January 2026, but the new date is not final yet!"
 external: true
 location: Bengaluru/India
 logo: images/events/UI5con-Bengaluru.svg
-url: 'https://openui5.org/ui5con/bengaluru2025/index.html'
+url: 'https://openui5.org/ui5con/bengaluru2026/index.html'
 id: ui5con2025-blr
-start: '2025-12-13 10:00 Asia/Kolkata'
-end: '2025-12-13 18:00 Asia/Kolkata'
+start: '2026-01-24 10:00 Asia/Kolkata'
+end: '2026-01-24 18:00 Asia/Kolkata'
 ```
 (No description)
 
