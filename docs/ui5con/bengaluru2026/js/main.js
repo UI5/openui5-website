@@ -630,9 +630,9 @@ var main = new Vue({
         if (value.toLowerCase().includes("audimax")) {
           return "Main Stage";
         } else if (value.toLowerCase().includes("track_1") || value.toLowerCase().includes("w2")) {
-          return "Demo Pod 1";
+          return "Demo Pod";
         } else if (value.toLowerCase().includes("track_2")) {
-          return "Demo Pod 2"
+          return "Deep Dive"
         } else if (value.toLowerCase().includes("expert")) {
           return "Audi"
         } else if (value.toLowerCase().includes("canteen")) {
