@@ -168,7 +168,7 @@
 	align-items: center;
 	cursor: pointer;
 	padding-block: 0.75rem;
-	padding-inline: 1.5rem;
+	padding-inline: .8rem;
 	border-radius: 0;
 	font-weight: 600;
 	transition: all .2s ease-in-out;
