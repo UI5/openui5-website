@@ -2,7 +2,7 @@
 
 ```yaml
 title: UI5con Bengaluru 2025/26
-subTitle: "Free community conference for UI5 enthusiasts. IMPORTANT NOTE: the event was moved to January 2026, but the new date is not final yet!"
+subTitle: "Free community conference for UI5 enthusiasts. NOTE: the event was moved to January 24th 2026 (new date confirmed now)"
 external: true
 location: Bengaluru/India
 logo: images/events/UI5con-Bengaluru.svg
