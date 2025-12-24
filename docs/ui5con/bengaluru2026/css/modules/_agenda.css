@@ -187,15 +187,17 @@
 }
 
 .agenda-filter__element input[type="radio"]:checked + .agenda-filter__label {
-	background-color: #b794f6;
-	color: #ffffff;
-	border-color: #b794f6;
+	background-color: #b794f6 !important;
+	color: #ffffff !important;
+	border-color: #b794f6 !important;
 	outline: none;
+	transform: scale(1.05);
+	box-shadow: 0 4px 12px rgba(183, 148, 246, 0.4);
 }
 
 .agenda-filter__element input[type="radio"]:checked:hover + .agenda-filter__label {
-	background-color: #a67ef5;
-	border-color: #a67ef5;
+	background-color: #a67ef5 !important;
+	border-color: #a67ef5 !important;
 	outline: none;
 }
 
