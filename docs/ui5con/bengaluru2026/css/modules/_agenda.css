@@ -16,8 +16,7 @@
 	gap: 2rem;
 	width: 100%;
 	justify-content: space-between;
-	margin-block: 2rem 2rem;
-	padding-block: 2rem 1rem;
+	padding-block: 2rem;
 	position: sticky;
 	top: 0;
 	left: 0;
@@ -32,7 +31,6 @@
 	.agenda-sort {
 		flex-direction: column-reverse;
 		top: 0;
-		padding-block: 2rem 2rem;
 	}
 
 	.agenda-toggle {
@@ -187,18 +185,37 @@
 }
 
 .agenda-filter__element input[type="radio"]:checked + .agenda-filter__label {
-	background-color: #b794f6 !important;
 	color: #ffffff !important;
-	border-color: #b794f6 !important;
 	outline: none;
 	transform: scale(1.05);
-	box-shadow: 0 4px 12px rgba(183, 148, 246, 0.4);
 }
 
 .agenda-filter__element input[type="radio"]:checked:hover + .agenda-filter__label {
-	background-color: #a67ef5 !important;
-	border-color: #a67ef5 !important;
 	outline: none;
+}
+
+#all:checked + .agenda-filter__label[for="all"] {
+	background-color: #ff6b8a !important;
+	border-color: #ff6b8a !important;
+	box-shadow: 0 4px 12px rgba(255, 107, 138, 0.5);
+}
+
+#audimax:checked + .agenda-filter__label[for="audimax"] {
+	background-color: #b794f6 !important;
+	border-color: #b794f6 !important;
+	box-shadow: 0 4px 12px rgba(183, 148, 246, 0.5);
+}
+
+#w1:checked + .agenda-filter__label[for="w1"] {
+	background-color: #a5e85f !important;
+	border-color: #a5e85f !important;
+	box-shadow: 0 4px 12px rgba(165, 232, 95, 0.5);
+}
+
+#w3:checked + .agenda-filter__label[for="w3"] {
+	background-color: #d7b48c !important;
+	border-color: #d7b48c !important;
+	box-shadow: 0 4px 12px rgba(215, 180, 140, 0.5);
 }
 
 .agenda-filter__element input[type="radio"]:hover + .agenda-filter__label {
@@ -207,29 +224,29 @@
 }
 
 #all + .agenda-filter__label[for="all"] {
-	background-color: rgba(255, 182, 193, 0.3);
-	color: #ff6b8a;
+	background-color: #ffd2c8;
+	color: #ab3a3a;
 	outline-color: transparent;
 	border-color: rgba(255, 182, 193, 0.5);
 }
 
 #audimax + .agenda-filter__label[for="audimax"] {
-	background-color: rgba(183, 148, 246, 0.3);
-	color: #b794f6;
+	background-color: #f3d3ff;
+    color: #9947d4;
 	outline-color: transparent;
 	border-color: rgba(183, 148, 246, 0.5);
 }
 
 #w1 + .agenda-filter__label[for="w1"] {
-	background-color: rgba(165, 232, 95, 0.3);
-	color: #a5e85f;
+	background-color: #BEDDCF;
+	color: #3C7057;
 	outline-color: transparent;
 	border-color: rgba(165, 232, 95, 0.5);
 }
 
 #w3 + .agenda-filter__label[for="w3"] {
-	background-color: rgba(215, 180, 140, 0.3);
-	color: #d7b48c;
+	background-color: #d8ceb6;
+	color: #5f5331;
 	outline-color: transparent;
 	border-color: rgba(215, 180, 140, 0.5);
 }
@@ -378,34 +395,34 @@
 	height: auto;
 	padding: 0.4rem 0.8rem;
 	border-radius: 20px;
-	color: #b794f6;
+	color: #9947d4;
 	font-weight: 600;
-	background: rgba(183, 148, 246, 0.3);
+	background: #f3d3ff;
 	border: 1px solid rgba(183, 148, 246, 0.5);
 }
 
 .agenda-room.audimax {
-	background: rgba(183, 148, 246, 0.3);
-	color: #b794f6;
+	background: #f3d3ff;
+	color: #9947d4;
 	border: 1px solid rgba(183, 148, 246, 0.5);
 }
 
 .agenda-room.w1 {
-	background: rgba(165, 232, 95, 0.3);
-	color: #a5e85f;
+	background: #BEDDCF;
+	color: #3C7057;
 	border-radius: 20px;
 	border: 1px solid rgba(165, 232, 95, 0.5);
 }
 
 .agenda-room.w3 {
-	background: rgba(215, 180, 140, 0.3);
-	color: #d7b48c;
+	background: #d8ceb6;
+	color: #5f5331;
 	position: relative;
 	border: 1px solid rgba(215, 180, 140, 0.5);
 }
 
 .timetable .agenda-room.w3 {
-	background: rgba(215, 180, 140, 0.3);
+	background: #d8ceb6;
 }
 
 .agenda-room.w3::after {
@@ -413,20 +430,20 @@
 }
 
 .agenda-room.experts {
-	background: rgba(255, 182, 193, 0.3);
-	color: #ff6b8a;
+	background: #ffd2c8;
+	color: #ab3a3a;
 	border: 1px solid rgba(255, 182, 193, 0.5);
 }
 
 .agenda-room.canteen {
-	background: rgba(255, 182, 193, 0.3);
-	color: #ff6b8a;
+	background: #ffd2c8;
+	color: #ab3a3a;
 	border: 1px solid rgba(255, 182, 193, 0.5);
 }
 
 .agenda-room.other {
-	background: rgba(255, 182, 193, 0.3);
-	color: #ff6b8a;
+	background: #ffd2c8;
+	color: #ab3a3a;
 	border: 1px solid rgba(255, 182, 193, 0.5);
 }
 
@@ -580,7 +597,7 @@
 	margin-block: 0.5rem 0.5rem;
 	max-width: 100%;
 	text-transform: none;
-	color: #e76500;
+	color: var(--text-color);
 	font-weight: 700;
 }
 
