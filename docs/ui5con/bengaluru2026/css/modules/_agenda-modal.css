@@ -8,7 +8,7 @@
 	z-index: 99;
 	position: fixed;
 	transition: all 0.3s;
-	background-color: rgba(163, 88, 54, 0.55);
+	background-color: rgb(131 129 129 / 55%);
 }
 
 .agenda-modal-backdrop:focus {
@@ -102,6 +102,11 @@
 .agenda-modal header h3 {
 	color: var(--brand-color-alt);
 	margin-block-end: 0;
+}
+
+.speaker-modal-name {
+	margin-block-end: 0;
+	color: #e76500;
 }
 
 .agenda-modal header p {
