@@ -12,7 +12,7 @@
 
 .agenda-sort {
 	display: flex;
-	flex-direction: column-reverse;
+	flex-direction: row;
 	gap: 2rem;
 	width: 100%;
 	justify-content: space-between;
@@ -29,7 +29,7 @@
 @media only screen and (min-width: 768px) {
 
 	.agenda-sort {
-		flex-direction: column-reverse;
+		flex-direction: row;
 		top: 0;
 	}
 
@@ -537,8 +537,7 @@
 }
 
 .agenda-slot-speakers-images button:is(:focus) {
-	outline: 2px solid var(--brand-color-alt);
-	outline-offset: 2px;
+	outline: none;
 }
 
 .agenda-slot-speakers-images button img {
