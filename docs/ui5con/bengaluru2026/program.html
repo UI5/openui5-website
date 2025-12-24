@@ -90,10 +90,16 @@
 								<div>
 									<p class="agenda-slot-details">
 										<span class="agenda-time">
-											{{event.startTime | trimTime}} {{event.endTime | trimTime}}
+											{{event.startTime | trimTime}} - {{event.endTime | trimTime}}
 										</span>
 
-										<span class="agenda-room">
+										<span class="agenda-room" :class="{
+											audimax: event.location.toLowerCase().includes('audimax'),
+											w1: event.location.toLowerCase().includes('track_1') || event.location.toLowerCase().includes('w2'),
+											w3: event.location.toLowerCase().includes('track_2'),
+											experts: event.location.toLowerCase().includes('expert'),
+											canteen: event.location.toLowerCase().includes('canteen')
+										}">
 											{{ event.location | formatLocation }}
 										</span>
 									</p>
