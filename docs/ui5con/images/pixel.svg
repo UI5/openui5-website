@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 1441 690">
+
+    <style>
+        .pixel {
+            animation: drop 3s ease-in forwards;
+        }
+
+        .pixel2 {
+            animation: drop2 2.5s ease-in forwards;
+        }
+
+        @keyframes drop {
+            0% {
+                opacity: 0;
+            }
+            38% {
+                opacity: 1;
+            }
+            72% {
+                transform: translateY(374px);
+                animation-timing-function: ease-out;
+            }
+            81% {
+                transform: translateY(340px);
+                animation-timing-function: ease-in;
+            }
+            90% {
+                transform: translateY(374px);
+                animation-timing-function: ease-out;
+            }
+            95% {
+                transform: translateY(364px);
+                animation-timing-function: ease-in;
+            }
+            100% {
+                transform: translateY(374px);
+                animation-timing-function: ease-out;
+            }
+        }
+
+        @keyframes drop2 {
+            0% {
+                opacity: 0;
+            }
+            38% {
+                opacity: 1;
+            }
+            72% {
+                transform: translateY(282px);
+                animation-timing-function: ease-out;
+            }
+            81% {
+                transform: translateY(220px);
+                animation-timing-function: ease-in;
+            }
+            90% {
+                transform: translateY(282px);
+                animation-timing-function: ease-out;
+            }
+            95% {
+                transform: translateY(250px);
+                animation-timing-function: ease-in;
+            }
+            100% {
+                transform: translateY(282px);
+                animation-timing-function: ease-out;
+            }
+        }
+    </style>
+
+  <path fill="#f79b36" d="M698 584h105.713v105.713H698z"/>
+  <path fill="#f79b36" d="M1229.11 689.332h-104.725V583.619h104.725z"/>
+  <path fill="#f79b36" d="M1124.38 689.332h-104.725V583.619h104.725z"/>
+  <path fill="#f79b36" d="M1019.66 689.332H913.947V583.619h105.713z"/>
+  <path fill="#f79b36" d="M1440.38 689.611h-105.713V583.898h105.713z"/>
+  <path fill="#f79b36" d="M1123.37 479.187h-105.713V373.474h105.713z"/>
+  <path fill="#f79b36" d="M1334.82 583.619h-105.713V478.894h105.713z"/>
+  <path fill="#f79b36" d="M1228.95 479.187h-105.713V373.474h105.713z"/>
+  <path fill="#f79b36" d="M1018.7 104.725H913.975V0H1018.7z"/>
+  <path fill="#f79b36" d="M1230.71 104.725h-105.713V0h105.713z"/>
+  <path fill="#f79b36" d="M1335.01 104.725h-104.725V0h104.725z"/>
+  <path id="animateme" class="" fill="#f79b36" d="M1439.72 209.727h-104.725V105.002h104.725z"/>
+  <path fill="#f79b36" d="M593 584h105.713v105.713H593z"/>
+  <path fill="#f79b36" d="M104.725 104.725H0V0h104.725z"/>
+  <path id="animateme2" class="" fill="#f79b36" d="M104.725 208.725H0V104h104.725z"/>
+  <path fill="#f79b36" d="M0 490h105.713v105.713H0z"/>
+
+  <script type="text/javascript">
+    <![CDATA[
+    const path1 = document.getElementById('animateme');
+    const path2 = document.getElementById('animateme2');
+
+    function togglePath1() {
+      path1.classList.add('pixel');
+      setTimeout(() => {
+        path1.classList.remove('pixel');
+      }, 10000);
+    }
+
+    function togglePath2() {
+      path2.classList.add('pixel2');
+      setTimeout(() => {
+        path2.classList.remove('pixel2');
+      }, 10000);
+    }
+
+    // path2: run immediately
+    togglePath2();
+
+    // path1: delay 3 seconds at start
+    setTimeout(() => {
+      togglePath1();
+      // Then repeat every 15 seconds
+      setInterval(togglePath1, 15000);
+    }, 3000);
+
+    // path2: repeat every 20 seconds
+    setInterval(togglePath2, 20000);
+    ]]>
+  </script>
+</svg>

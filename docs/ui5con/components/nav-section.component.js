@@ -1,5 +1,6 @@
 'use strict';
-Vue.component("nav-section", {
+
+window.NavSectionComponent = {
   data: function () {
     return {
       currentPage: ''
@@ -29,12 +30,6 @@ Vue.component("nav-section", {
             </a>
         </li>
         <li>
-            <a href="program.html" :class="{ active: isActive('program') }" :aria-current="isActive('program')">Program</a>
-        </li>
-        <li>
-            <a href="speakerinfo.html" :class="{ active: isActive('speakerinfo') }" :aria-current="isActive('speakerinfo')">Speakers</a>
-        </li>
-        <li>
             <a href="location.html" :class="{ active: isActive('location') }" :aria-current="isActive('location')">Participants</a>
         </li>
         <li>
@@ -50,4 +45,4 @@ Vue.component("nav-section", {
             <a href="archive.html" :class="{ active: isActive('archive') }" :aria-current="isActive('archive')">Archive</a>
         </li>
     </ul>`
-});
+};

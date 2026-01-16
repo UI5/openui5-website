@@ -1,5 +1,6 @@
 'use strict';
-Vue.component("nav-section-mobile", {
+
+window.NavSectionMobileComponent = {
   data: function () {
     return {
       currentPage: '',
@@ -41,12 +42,6 @@ Vue.component("nav-section-mobile", {
 
     <ul class="mobile-nav-menu" v-if="hamburgerMenuVisible">
         <li>
-            <a href="program.html" :class="{ active: isActive('program') }" :aria-current="isActive('program')">Program</a>
-        </li>
-        <li>
-            <a href="speakerinfo.html" :class="{ active: isActive('speakerinfo') }" :aria-current="isActive('speakerinfo')">Speakers</a>
-        </li>
-        <li>
             <a href="location.html" :class="{ active: isActive('location') }" :aria-current="isActive('location')">Participants</a>
         </li>
         <li>
@@ -64,4 +59,4 @@ Vue.component("nav-section-mobile", {
     </ul>
   </div>
   `
-});
+};

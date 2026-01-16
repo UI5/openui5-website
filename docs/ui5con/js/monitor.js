@@ -1,8 +1,9 @@
 'use strict';
 
 function createLineupApp(mountElementId, roomFilterFn) {
-  return new Vue({
-    el: `#${mountElementId}`,
+  const { createApp } = Vue;
+  
+  const app = createApp({
     data() {
       return {
         lineup: [],
@@ -129,4 +130,6 @@ function createLineupApp(mountElementId, roomFilterFn) {
       }
     }
   });
+  
+  return app.mount(`#${mountElementId}`);
 }

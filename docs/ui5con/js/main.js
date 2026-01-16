@@ -1,7 +1,8 @@
 'use strict';
 
-var nav = new Vue({
-  el: '#nav',
+const { createApp } = Vue;
+
+const nav = createApp({
   data() {
     return {
       windowHeight: window.innerHeight,
@@ -22,7 +23,7 @@ var nav = new Vue({
       }
     }
   },
-  beforeDestroy() {
+  beforeUnmount() {
     window.removeEventListener('resize', this.onResize);
   },
   methods: {
@@ -33,35 +34,50 @@ var nav = new Vue({
   }
 });
 
-var header = new Vue({
-  el: '#header',
+// Register components and mount nav app
+nav.component('nav-section', window.NavSectionComponent);
+nav.component('nav-section-mobile', window.NavSectionMobileComponent);
+nav.mount('#nav');
+
+const header = createApp({
   data() {
     return {
+      showCalendars: false
     };
   },
   mounted() {},
-  methods: {}
+  methods: {
+    toggleCalendars() {
+      this.showCalendars = !this.showCalendars;
+      const container = document.getElementById('links-container');
+      if (container) {
+        if (this.showCalendars) {
+          container.classList.remove('links-container--hidden');
+          container.classList.add('links-container--visible');
+        } else {
+          container.classList.remove('links-container--visible');
+          container.classList.add('links-container--hidden');
+        }
+      }
+    }
+  }
 });
+header.mount('#header');
 
-var main = new Vue({
-  el: '#main',
+const main = createApp({
   data() {
    return {
     team: [
-      {
-        name: 'Margot Wollny',
-        location: 'Project Lead',
-        image: 'images/team/margot-wollny.png'
-      },
+
       {
         name: 'Fabian Tempel',
-        location: 'Co-Lead, Website',
+        location: 'Lead, Website',
         image: 'images/team/fabian-tempel.jpg'
       },
       {
-        name: 'Teresa Vogelbacher',
-        location: 'Event Management',
-        image: 'images/team/teresa-vogelbacher.jpg'
+        name: 'Felix Schubert',
+        location: 'Lead, Facility, Program',
+        image: 'images/team/felix-schubert.jpg'
       },
       {
         name: 'Inna Atanasova',
@@ -69,9 +85,14 @@ var main = new Vue({
         image: 'images/team/Inna.jpg'
       },
       {
-        name: 'Jennifer Klar',
-        location: 'Communications, Facility',
-        image: 'images/team/jennifer-klar.jpg'
+        name: 'Andreas Kunz',
+        location: 'Program',
+        image: 'images/team/andreas-kunz.jpg'
+      },
+      {
+        name: 'Nikolay Kolarov',
+        location: 'Tech Setup',
+        image: 'images/team/nikolay-kolarov.jpg'
       },
       {
         name: 'Benedikt Schoelch',
@@ -89,19 +110,9 @@ var main = new Vue({
         image: 'images/team/jacky.jpg'
       },
       {
-        name: 'Andreas Kunz',
-        location: 'Program',
-        image: 'images/team/andreas-kunz.jpg'
-      },
-      {
-        name: 'Felix Schubert',
-        location: 'Program, Facility',
-        image: 'images/team/felix-schubert.jpg'
-      },
-      {
-        name: 'Daniel Nowak',
-        location: 'Program, Facility',
-        image: 'images/team/daniel-nowak.jpg'
+        name: 'Teresa Vogelbacher',
+        location: 'Event Management, Design',
+        image: 'images/team/teresa-vogelbacher.jpg'
       },
       {
         name: 'Dorota Josenhans',
@@ -109,29 +120,14 @@ var main = new Vue({
         image: 'images/team/dorota-josenhans.png'
       },
       {
+        name: 'Daniel Nowak',
+        location: 'Program, Facility',
+        image: 'images/team/daniel-nowak.jpg'
+      },
+      {
         name: 'Angelika Kirilin',
         location: 'Facility',
         image: 'images/team/angelika-kirilin.jpg'
-      },
-      {
-        name: 'Jan Mummenthaler',
-        location: 'Facility',
-        image: 'images/team/jan-mummenthaler.webp'
-      },
-      {
-        name: 'Katja Zoch',
-        location: 'Facility',
-        image: 'images/team/katja-zoch.jpg'
-      },
-      {
-        name: 'Dina Glatzel',
-        location: 'Facility',
-        image: 'images/team/dina-glatzel.jpg'
-      },
-      {
-        name: 'Nikolay Kolarov',
-        location: 'Tech Setup',
-        image: 'images/team/nikolay-kolarov.jpg'
       },
       {
         name: 'Arthur Trauter',
@@ -144,15 +140,100 @@ var main = new Vue({
         image: 'images/team/alex-rauh.jpg'
       },
       {
-        name: 'Tillman Swinke',
-        location: 'Tech Setup',
-        image: 'images/team/tillman-swinke.jpg'
-      },
-      {
         name: 'Michael Zadikowitsch',
         location: 'Tech Setup',
         image: 'images/team/michael-zadikowitsch.jpg'
       },
+      {
+        name: 'Dina Glatzel',
+        location: 'Facility',
+        image: 'images/team/dina-glatzel.jpg'
+      },
+      {
+        name: 'Claudia May',
+        location: 'Facility',
+        image: 'images/team/claudia-may.jpg'
+      },
+      {
+        name: 'Thorsten Hochreuter',
+        location: 'Facility, Programm',
+        image: 'images/team/thorsten-hochreuter.jpg'
+      },
+      {
+        name: 'Duc Vo Ngoc',
+        location: 'Communications, Program',
+        image: 'images/team/duc-vo-ngoc.jpg'
+      }
+      // {
+      //   name: 'Jennifer Klar',
+      //   location: 'Communications, Facility',
+      //   image: 'images/team/jennifer-klar.jpg'
+      // },
+      // {
+      //   name: 'Benedikt Schoelch',
+      //   location: 'Sponsorship',
+      //   image: 'images/team/benedikt-schoelch.jpg'
+      // },
+      // {
+      //   name: 'Judith Schneider',
+      //   location: 'Design',
+      //   image: 'images/team/judith-schneider.jpg'
+      // },
+      // {
+      //   name: 'Jacky Dittkowski',
+      //   location: 'Design, Facility',
+      //   image: 'images/team/jacky.jpg'
+      // },
+      // {
+      //   name: 'Dorota Josenhans',
+      //   location: 'Facility',
+      //   image: 'images/team/dorota-josenhans.png'
+      // },
+      // {
+      //   name: 'Angelika Kirilin',
+      //   location: 'Facility',
+      //   image: 'images/team/angelika-kirilin.jpg'
+      // },
+      // {
+      //   name: 'Jan Mummenthaler',
+      //   location: 'Facility',
+      //   image: 'images/team/jan-mummenthaler.webp'
+      // },
+      // {
+      //   name: 'Katja Zoch',
+      //   location: 'Facility',
+      //   image: 'images/team/katja-zoch.jpg'
+      // },
+      // {
+      //   name: 'Teresa Vogelbacher',
+      //   location: 'Event Management',
+      //   image: 'images/team/teresa-vogelbacher.jpg'
+      // },
+      // {
+      //   name: 'Dina Glatzel',
+      //   location: 'Facility',
+      //   image: 'images/team/dina-glatzel.jpg'
+      // },
+      // {
+      //   name: 'Arthur Trauter',
+      //   location: 'Tech Setup',
+      //   image: 'images/team/arthur-trauter.jpg'
+      // },
+      // {
+      //   name: 'Alexander Rauh',
+      //   location: 'Tech Setup',
+      //   image: 'images/team/alex-rauh.jpg'
+      // },
+      // {
+      //   name: 'Tillman Swinke',
+      //   location: 'Tech Setup',
+      //   image: 'images/team/tillman-swinke.jpg'
+      // },
+      // {
+      //   name: 'Michael Zadikowitsch',
+      //   location: 'Tech Setup',
+      //   image: 'images/team/michael-zadikowitsch.jpg'
+      // },
     ],
     committee: [
       {
@@ -588,11 +669,15 @@ var main = new Vue({
     }
   }
 });
+main.mount('#main');
 
-var footer = new Vue({
-  el: '#footer',
+const footer = createApp({
   data() {
     return {
     };
   },
 });
+
+// Register footer component and mount
+footer.component('footer-section', window.FooterSectionComponent);
+footer.mount('#footer');
