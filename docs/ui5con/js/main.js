@@ -115,6 +115,11 @@ const main = createApp({
         image: 'images/team/teresa-vogelbacher.jpg'
       },
       {
+        name: 'Rachel LaSpada',
+        location: 'Design',
+        image: 'images/team/rachel-laspada.jpg'
+      },
+      {
         name: 'Dorota Josenhans',
         location: 'Facility',
         image: 'images/team/dorota-josenhans.png'
