@@ -247,9 +247,29 @@ const main = createApp({
         image: "images/committee/marco-beier.jpg",
       },
       {
-        name: "Catrin Kupfer",
-        role: "DZ Bank AG",
-        image: "images/committee/catrin-kupfer.jpg",
+        name: "Robin van het Hof",
+        role: "Qualiture",
+        image: "images/committee/robin-van-het-hof.jpg",
+      },
+      {
+        name: "Mauricio Lauffer",
+        role: "SAP",
+        image: "images/committee/mauricio-lauffer.jpg",
+      },
+      {
+        name: "Juliane Dombrowski",
+        role: "U-NIQ GmbH",
+        image: "images/committee/juliane-dombrowski.jpg",
+      },
+      {
+        name: "Marten Schiwek",
+        role: "SAP",
+        image: "images/committee/marten-schiwek.jpg",
+      },
+      {
+        name: "Evgeni Katsarski",
+        role: "NTT DATA Business Solutions",
+        image: "images/committee/evgeni-katsarski.jpg",
       },
       {
         name: "Stefan Beck",
@@ -257,29 +277,9 @@ const main = createApp({
         image: "images/committee/stefan-beck.jpg",
       },
       {
-        name: "Simon Coen",
-        role: "js-soft AG",
-        image: "images/committee/simon-coen.jpg",
-      },
-      {
-        name: "Stanislava Baltova",
+        name: "Yavor Ivanov",
         role: "SAP",
-        image: "images/committee/stanislava-baltova.jpg",
-      },
-      {
-        name: "Alisdair Templeton",
-        role: "",
-        image: "images/committee/alisdair-templeton.jpg",
-      },
-      {
-        name: "Ilia Klopkov",
-        role: "SAP",
-        image: "images/committee/ilia-klopkov.jpg",
-      },
-      {
-        name: "Jacek Woźniczak",
-        role: "Nabisoft",
-        image: "images/committee/jacek-woźniczak.jpg",
+        image: "images/committee/yavor-ivanov.jpg",
       },
     ],
     activeSpeakers: null,

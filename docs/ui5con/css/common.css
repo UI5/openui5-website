@@ -1467,6 +1467,25 @@ footer {
 
 .speaker-cta {
 	margin-block: 2rem;
+
+	.btn {
+
+		&:hover,
+		&:focus-visible {
+			background-image: url(../images/pixelbg.png);
+			background-size: 180px;
+			animation: pixel .3s steps(8) forwards;
+		}
+	}
+}
+
+@keyframes pixel {
+	0% {
+		background-position-y: 0;
+	}
+	100% {
+		background-position-y: -480px;
+	}
 }
 
 .archive {
