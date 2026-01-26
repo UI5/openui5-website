@@ -163,7 +163,17 @@ const main = createApp({
         name: 'Duc Vo Ngoc',
         location: 'Communications, Program',
         image: 'images/team/duc-vo-ngoc.jpg'
-      }
+      },
+      {
+        name: "Klaudia Laag",
+        location: "Moderator",
+        image: "images/committee/klaudia-laag.jpg",
+      },
+      {
+        name: "Danielle Lyle",
+        location: "Moderator, Tech Setup",
+        image: "images/team/danielle-lyle.jpg",
+      },
       // {
       //   name: 'Jennifer Klar',
       //   location: 'Communications, Facility',

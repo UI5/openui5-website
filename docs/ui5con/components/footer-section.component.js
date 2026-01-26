@@ -25,7 +25,7 @@ window.FooterSectionComponent = {
               <a href="codeofconduct.html" hreflang="en">Code of Conduct</a>
           </div>
 
-          <p class="copyright"><small>© 2025 SAP SE or an SAP affiliate company. All rights reserved. This site is hosted by GitHub Pages.</small></p>
+          <p class="copyright"><small>© 2026 SAP SE or an SAP affiliate company. All rights reserved. This site is hosted by GitHub Pages.</small></p>
 
           <svg class="pixelfilter sr-only" hidden>
                 <filter id="pixelate-mosaic" x="0%" y="0%" width="100%" height="100%">
