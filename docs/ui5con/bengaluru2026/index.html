@@ -48,7 +48,7 @@
 
 			<div class="news-banner" id="news-banner">
 				<div class="news-banner-content">
-					<span class="news-banner-text">The wait is over - Registrations for UI5con Bengaluru 2026 are now open! <a href="#Registration">  Register Now </a> </span>
+					<span class="news-banner-text">The wait is over - Registrations for UI5con Bengaluru 2026 are now open! </span>
 				</div>
 				<button class="news-banner-close" v-on:click="closeNewsBanner" aria-label="Close announcement">
 					<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -97,12 +97,15 @@
 						</p>
 						<div>
 
-							<button class="btn"  v-if="!isCalendarsVisible" @click="toggleCalendars()">
+							<a class="section-blr-btn-link" href="https://sapinsidetrack.cfapps.eu10-004.hana.ondemand.com/index.html#/event/1937a329-59c7-42fd-a938-c5a2ac9174a5">
+								<button class="btn">Register Now</button>
+							</a>
+
+							<!-- <button class="btn"  v-if="!isCalendarsVisible" @click="toggleCalendars()">
 								Save the Date
 							</button>
 
 							<div class="calendars" v-if="isCalendarsVisible">
-								<!-- <ul class="calendars-list"> -->
 								<ul style="
 									display: flex;
 									align-items: center;
@@ -137,7 +140,7 @@
 										</a>
 									</li>
 								</ul>
-							</div>
+							</div> -->
 						</div>
 					</div>
 				</div>
@@ -182,19 +185,7 @@
 
 	<main id="main">
 		<!-- LATEST NEWS SECTION -->
-		<!-- <section class="alternate section-bg-gradient first-sec-padding">
-			<div class="wrap">
-
-				<h2 class="section-heading section-blr-color2 first-sec-header">
-					<span>Registration Opens Soon!</span>
-				</h2>
-
-				<p class="section-blr-body section-body-contrast">The countdown has begun - registrations for UI5con Bengaluru 2026 are opening soon! Don’t miss your chance to be part of the action, inspiration, and innovation.</p>
-
-				</p>
-			</div>
-		</section> -->
-		<section id="Registration" class="alternate section-bg-gradient first-sec-padding">
+		<!-- <section id="Registration" class="alternate section-bg-gradient first-sec-padding">
 			<div class="wrap">
 
 				<h2 class="section-heading section-blr-color2 first-sec-header">
@@ -210,9 +201,10 @@
 				</div>
 
 			</div>
-		</section>
+		</section> -->
 
-		<section class=" wrap section-blr-normal-bg1 section-bg-solid">
+		<section class="alternate section-bg-gradient first-sec-padding">
+			<div class="wrap">
 				<h2 class="section-heading section-blr-color2 first-sec-header">
 					<span>Agenda</span>
 				</h2>
@@ -221,14 +213,15 @@
 				</p>
 				<div class="section-blr-div">
 					<a class="section-blr-btn-link" >
-						<button class="btn section-blr-btn" disabled style="opacity: 0.5; cursor: not-allowed; background-color: #ccc; color: #666;">Stay Tuned</button>
+						<button class="btn section-blr-btn" disabled style="opacity: 0.5; cursor: not-allowed; background-color: #ccc; color: #666;">To Be Announced</button>
 					</a>
 				</div>
+			</div>
 		</section>
 
 		<!-- CONTACT SECTION-->
 		<section>
-			<div class="wrap section-blr-normal-bg2 alternate-background">
+			<div class=" wrap section-blr-normal-bg1 section-bg-solid">
 
 				<h2 class="section-heading section-blr-color2">
 					<span> Stay In The Loop</span>
