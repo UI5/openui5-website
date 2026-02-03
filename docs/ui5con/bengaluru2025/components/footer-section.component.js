@@ -22,7 +22,7 @@ Vue.component("footer-section", {
               <a href="https://www.sap.com/trademark" rel="noopener noreferrer" target="_blank"
                   hreflang="en">Trademark</a>
               <a href="codeofconduct.html" hreflang="en">Code of Conduct</a>
-              <p class="copyright"><small>© 2025 SAP SE or an SAP affiliate company. All rights reserved. This site is hosted by GitHub Pages.</small></p>
+              <p class="copyright"><small>© 2026 SAP SE or an SAP affiliate company. All rights reserved. This site is hosted by GitHub Pages.</small></p>
           </div>
       </div>
   </div>`
