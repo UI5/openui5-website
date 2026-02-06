@@ -176,7 +176,7 @@ const main = createApp({
       },
       {
         name: "Danielle Lyle",
-        location: "Moderator, Tech Setup",
+        location: "Tech Setup",
         image: "images/team/danielle-lyle.jpg",
       },
       // {
