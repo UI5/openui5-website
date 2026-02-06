@@ -2,6 +2,13 @@
 # Persons
 
 ```yaml
+name: Petar Dimov
+company: SAP
+photo: data/persons/petar-dimov.jpg
+id: petar-dimov
+```
+
+```yaml
 name: Adrian Marten
 photo: data/persons/adrian-marten.jpg
 linkedin: adrian-marten-a750a3189

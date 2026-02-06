@@ -1,6 +1,28 @@
 # Events
 
 ```yaml
+title: UI5ers live (Feb '26)
+subTitle: 45 minute interactive webcast
+location: via YouTube (← NEW!)
+logo: images/events/ui5ers.svg
+speakers:
+  - Hristo Tsolev
+  - Petar Dimov
+url: 'https://youtube.com/live/2bfX-UyCTfo'
+id: ui5ers-56
+start: '2026-02-12 15:15 Europe/Berlin'
+end: '2026-02-12 16:00 Europe/Berlin'
+```
+Let's kick off 2026 with a fresh approach: we'll be streaming UI5ers live on YouTube! Of course, you’ll still be able to chat and ask questions live during the session.
+
+In this episode, Hristo Tsolev will show the latest feature for Joule in SAP Build Code (Joule for developers): how to use it to generate development extensions in SAPUI5 adaptation projects. Joule is now able to help you create fragment coding and controller extension coding for your project based on your technical requirements.
+
+The other main topic will be the latest feature in the UI5 MCP server: Petar Dimov will introduce the latest additions to the UI5 MCP Server with tools for AI-assisted UI Integration Cards development. It covers LLM-driven scaffolding, best-practice guidance, and manifest validation for generating and editing cards. This is also worth to check out when you have not looked into integration cards in general a lot so far.
+
+We are excited (and a bit nervous) about switching to the new platform which will hopefully help us publish the recordings more easily and instantly. Join us and make it a great premiere!
+
+
+```yaml
 title: UI5con Bengaluru 2025/26
 subTitle: "Free community conference for UI5 enthusiasts. NOTE: the event was moved (a second time) to February 28th 2026 (new date confirmed)"
 external: true
