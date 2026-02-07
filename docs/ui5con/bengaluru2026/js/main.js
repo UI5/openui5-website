@@ -636,7 +636,7 @@ var main = new Vue({
         } else if (value.toLowerCase().includes("expert")) {
           return "Audi"
         } else if (value.toLowerCase().includes("canteen")) {
-          return "Belaku Cafe"
+          return "TBD"
         } else {
           return value;
         }

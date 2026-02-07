@@ -53,11 +53,11 @@ Vue.component("nav-section-mobile", {
     </div>
 
     <ul class="mobile-nav-menu" v-if="hamburgerMenuVisible">
-        <!-- <li>
-            <a href="program.html" :class="{ active: isActive('program') }" :aria-current="isActive('program')">Program</a>
-        </li>-->
         <li>
-            <a href="speakerinfo.html" :class="{ active: isActive('speakerinfo') }" :aria-current="isActive('speakerinfo')">Speakers</a>
+            <a href="program.html" class="nav-link-contrast nav-link-color" :class="{ active: isActive('program') }" :aria-current="isActive('program')">Agenda</a>
+        </li>
+        <li>
+            <a href="speakerinfo.html" class="nav-link-contrast nav-link-color" :class="{ active: isActive('speakerinfo') }" :aria-current="isActive('speakerinfo')">Speakers</a>
         </li>
         <li>
             <a href="location.html"  class="nav-link-contrast nav-link-color" :class="{ active: isActive('location') }" :aria-current="isActive('location')">Participants</a>

@@ -41,9 +41,9 @@ Vue.component("nav-section", {
                 </svg>
             </a>
         </li>
-        <!-- <li>
-            <a href="program.html" :class="{ active: isActive('program') }" :aria-current="isActive('program')">Program</a>
-        </li>-->
+        <li>
+            <a href="program.html" class="nav-link-contrast nav-link-color" :class="{ active: isActive('program') }" :aria-current="isActive('program')">Agenda</a>
+        </li>
         <li>
             <a href="speakerinfo.html" class="nav-link-contrast nav-link-color" :class="{ active: isActive('speakerinfo') }" :aria-current="isActive('speakerinfo')">Speakers</a>
         </li>
