@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            font-family: '72', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #timer {
+            font-size: 96px;
+            color: #FF5A37;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const hour = parseInt(urlParams.get('hour') || '15'); // Default hour
+            const minute = parseInt(urlParams.get('minute') || '15'); // Default minute
+
+            const now = new Date();
+            const targetDate = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hour, minute); // Set target time based on URL parameters
+
+            const timerElement = document.getElementById("timer");
+
+            function updateTimer() {
+                const now = new Date();
+                const timeDifference = targetDate - now;
+
+                if (timeDifference <= 0) {
+                    timerElement.textContent = "soon!!";
+                    clearInterval(timerInterval);
+                    return;
+                }
+
+                const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+                timerElement.textContent = 
+                    String(minutes).padStart(2, '0') + ":" + 
+                    String(seconds).padStart(2, '0');
+            }
+
+            const timerInterval = setInterval(updateTimer, 1000);
+            updateTimer();
+        });
+    </script>
+</head>
+<body>
+    <div id="timer">00:00</div>
+</body>
+</html>
