@@ -441,6 +441,12 @@
 	border: 1px solid rgba(255, 182, 193, 0.5);
 }
 
+.agenda-room.registration {
+	background: #ffd2c8;
+	color: #ab3a3a;
+	border: 1px solid rgba(255, 182, 193, 0.5);
+}
+
 .agenda-room.other {
 	background: #ffd2c8;
 	color: #ab3a3a;

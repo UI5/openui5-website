@@ -1,5 +1,16 @@
 'use strict';
-var internalSession = [{
+var internalSession = [
+  {
+    id: "B-1",
+    title: "Registration",
+    type: "catering",
+    description: "Get your Event Badge",
+    location: "registration",
+    startTime: "8:00",
+    endTime: "9:30",
+    speakers: [],
+    presentationLinks: [],
+  },{
     id: "A-1",
     title: "KeyNote",
     type: "catering",
@@ -16,7 +27,7 @@ var internalSession = [{
     type: "catering",
     description: "Lunch time!",
     location: "canteen",
-    startTime: "12:15",
+    startTime: "12:00",
     endTime: "13:00",
     speakers: [
     ],
@@ -636,7 +647,9 @@ var main = new Vue({
         } else if (value.toLowerCase().includes("expert")) {
           return "Audi"
         } else if (value.toLowerCase().includes("canteen")) {
-          return "TBD"
+          return "Breezeway - BLR12"
+        } else if (value.toLowerCase().includes("registration")) {
+          return "Reception - BLR12"
         } else {
           return value;
         }
