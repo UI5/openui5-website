@@ -5,7 +5,7 @@ subTitle: "Free community conference for UI5 enthusiasts."
 external: true
 location: St. Leon-Rot/Germany
 logo: images/events/ui5con.svg
-url: 'https://openui5.org/index.html'
+url: 'https://ui5con.org/index.html'
 id: ui5con2026
 start: '2026-07-14 09:00 Europe/Berlin'
 end: '2026-07-14 18:00 Europe/Berlin'
