@@ -1,4 +1,16 @@
 # Events
+```yaml
+title: UI5con 2026
+subTitle: "Free community conference for UI5 enthusiasts."
+external: true
+location: St. Leon-Rot/Germany
+logo: images/events/ui5con.svg
+url: 'https://openui5.org/index.html'
+id: ui5con2026
+start: '2026-07-14 09:00 Europe/Berlin'
+end: '2026-07-14 18:00 Europe/Berlin'
+```
+(No description)
 
 ```yaml
 title: UI5ers live (Feb '26)
@@ -44,7 +56,7 @@ speakers:
   - Andreas Kunz
   - Stefan Beck
   - Peter Muessig
-url: 'https://sap-se.zoom.com/j/94833714827'
+recordingUrl: https://youtu.be/gbCMpxN6_Q8
 id: ui5ers-55
 start: '2025-12-04 15:15 Europe/Berlin'
 end: '2025-12-04 16:00 Europe/Berlin'
