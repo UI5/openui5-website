@@ -179,6 +179,16 @@ const main = createApp({
         location: "Tech Setup",
         image: "images/team/danielle-lyle.jpg",
       },
+      {
+        name: "Jorg Thuijls",
+        location: "Moderator",
+        image: "images/team/jorg-thuijls.jpg",
+      },
+      {
+        name: "Sven Bender",
+        location: "Facility",
+        image: "images/team/sven-bender.jpg",
+      },
       // {
       //   name: 'Jennifer Klar',
       //   location: 'Communications, Facility',
