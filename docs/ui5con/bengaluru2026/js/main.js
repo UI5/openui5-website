@@ -299,7 +299,8 @@ var main = new Vue({
 	},
 	async mounted() {
 		this.speakers = speakerLineupJson;
-		await this.fetchLineup();
+    this.lineup = proposalLineupJson;
+		//await this.fetchLineup();
 		this.formattedLineup = this.formatLineup();
 
 		this.formattedSpeakers = this.formatSpeakers(this.formattedLineup, this.speakers);
