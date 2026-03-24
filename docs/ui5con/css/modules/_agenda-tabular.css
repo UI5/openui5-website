@@ -1,0 +1,180 @@
+
+.timetable {
+	--time-unit-height: 0.5rem;
+	--stages: 3;
+	--th-width: 3rem;
+	--stage-gap: 1rem;
+	--stage-width: min(100vw - var(--th-width) - 3rem, 22rem);
+	--start-time: 9;
+	--end-time: 18;
+	--event-duration: calc(var(--end-time) - var(--start-time) + 1);
+	--rows: auto repeat(calc(var(--event-duration) * 12), minmax(var(--time-unit-height), auto));
+	--columns: var(--th-width) repeat(var(--stages), minmax(var(--stage-width), 1fr)) 1rem;
+	--zebra-color-one: var(--background-color);
+	--zebra-color-two: var(--background-color-alternate);
+
+	overflow-x: clip;
+	timeline-scope: --scroll-x;
+}
+
+.timetable--head {
+	display: none;
+	pointer-events: none;
+	position: sticky;
+	top: 0;
+	z-index: 5;
+
+	@supports (animation-timeline: --scroll-x) {
+		display: block;
+	}
+}
+
+.timetable--inner-head {
+	display: grid;
+	gap: 0 var(--stage-gap);
+	grid-template-columns: var(--columns);
+	animation: slide linear both;
+	animation-timeline: --scroll-x;
+	background: var(--zebra-color-one);
+	position: absolute;
+	inset-inline-start: 0;
+	inset-block-start: 0;
+	min-width: 100%;
+	/* box-shadow: 0 1px 0 rgb(255 255 255 / 0.2); */
+
+	> :first-child {
+		grid-column: 2;
+	}
+}
+
+@keyframes slide {
+
+	from {
+		inset-inline-start: 0;
+		transform: translateX(0);
+	}
+
+	to {
+		inset-inline-start: 100%;
+		transform: translateX(-100%);
+	}
+}
+
+.timetable--body {
+	max-width: 100%;
+	overscroll-behavior-inline: contain;
+	scroll-timeline-name: --scroll-x;
+	scroll-timeline-axis: inline;
+	display: grid;
+	gap: 0 var(--stage-gap);
+	grid-template-rows: var(--rows);
+	grid-template-columns: var(--columns);
+	scroll-snap-type: x mandatory;
+}
+
+.stage {
+	display: grid;
+	grid-column: var(--column);
+	grid-row: 1 / -1;
+	grid-template-rows: subgrid;
+	position: relative;
+	scroll-snap-align: start;
+	scroll-margin-inline-start: calc(var(--th-width) + 0.5rem);
+}
+
+.session-list {
+	list-style-type: none;
+	grid-row: 2 / -1;
+	grid-column: 1;
+	display: grid;
+	grid-template-rows: subgrid;
+	padding: 0;
+}
+
+.stage-headline {
+	font-size: 1.5rem;
+	text-transform: uppercase;
+	text-align: center;
+	line-height: 1;
+	padding: 1.25rem 0.5rem 1rem;
+	font-weight: 700;
+}
+
+.session {
+	--minutes-to-start: calc(var(--start-time) * 60);
+	--start-hours-to-minutes: calc(round(down, var(--start) / 100, 1) * 60);
+	--start-minutes: mod(var(--start), 100);
+	--end-hours-to-minutes: calc(round(down, var(--end) / 100, 1) * 60);
+	--end-minutes: mod(var(--end), 100);
+	grid-row-start: calc((var(--start-hours-to-minutes) + var(--start-minutes) - var(--minutes-to-start)) / 5 + 1);
+	grid-row-end: calc((var(--end-hours-to-minutes) + var(--end-minutes) - var(--minutes-to-start)) / 5 + 1);
+}
+
+.hours {
+	--background: var(--zebra-color-one);
+	display: grid;
+	grid-row: 2 / -1;
+	grid-column: 1 / -1;
+	grid-template-rows: subgrid;
+
+	> div {
+		grid-row-end: span 12;
+		background: var(--background);
+
+		&:nth-child(odd) {
+			--background: var(--zebra-color-two);
+		}
+	}
+
+	time {
+		display: block;
+		position: sticky;
+		width: var(--th-width);
+		height: 100%;
+		inset-inline-start: 0;
+		background: rgb(from var(--background) r g b / 0.95);
+		z-index: 2;
+	}
+}
+
+/* additional session styling */
+.session {
+	background: var(--brand-color);
+	color: var(--text-color);
+	padding: 1rem;
+	margin-block: 0.375rem;
+
+	&.break {
+		background: var(--canteen);
+		color: var(--text-color-contrast);
+	}
+
+	&.pitch {
+		background: var(--brand-color-alt);
+	}
+
+	h3 {
+		font-size: 1.5rem;
+		font-weight: 700;
+
+		span {
+			display: block;
+			font-size: 1rem;
+			padding-block-end: 0.2em;
+			font-weight: 400;
+		}
+	}
+
+	> * + * {
+		margin-block-start: 0.5rem;
+	}
+}
+
+/* additional styling for time elements */
+.hours time {
+	font-weight: 500;
+	line-height: 1.2;
+	padding: 1.5rem 0 1.5rem 0.5rem;
+	text-align: center;
+	/* box-shadow: inset -1px 0 0 0 rgb(255 255 255 / 0.1); */
+}
