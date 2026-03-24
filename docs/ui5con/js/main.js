@@ -62,7 +62,10 @@ const header = createApp({
     }
   }
 });
-header.mount('#header');
+// Only mount header app if element exists
+if (document.getElementById('header')) {
+  header.mount('#header');
+}
 
 const main = createApp({
   data() {
@@ -319,7 +322,8 @@ const main = createApp({
     expertCornerLineup: {},
     expertCornerLineupUnsorted: [],
     proposalLineupJson: proposalLineupJson,
-    speakerLineupJson: speakerLineupJson
+    speakerLineupJson: speakerLineupJson,
+    activeSession: null
    }
   },
   mounted() {
@@ -606,6 +610,114 @@ const main = createApp({
         this.expertCornerLineup[timeSlot].push(corner);
       });
     },
+    getSessionsByRoom(room) {
+      // Get sessions for this specific room
+      const roomSessions = this.lineup.filter(session =>
+        session.location === room &&
+        session.type &&
+        !session.type.includes('expert')
+      );
+
+      // Get sessions that should appear in all rooms (canteen, breaks)
+      const allRoomsSessions = this.lineup.filter(session =>
+        session.location === 'canteen' ||
+        session.type === 'catering'
+      );
+
+      // Combine and sort by start time
+      return [...roomSessions, ...allRoomsSessions].sort((a, b) =>
+        a.startTime.localeCompare(b.startTime)
+      );
+    },
+    timeToMinutes(timeStr) {
+      const [hours, minutes] = timeStr.split(':').map(Number);
+      return hours * 100 + minutes;
+    },
+    isBreakSession(session) {
+      const lowerTitle = session.title.toLowerCase();
+      const lowerType = (session.type || '').toLowerCase();
+
+      return lowerType.includes('break') ||
+        lowerType.includes('lunch') ||
+        lowerType.includes('catering') ||
+        lowerTitle.includes('break') ||
+        lowerTitle.includes('lunch') ||
+        lowerTitle.includes('coffee') ||
+        session.location === 'canteen';
+    },
+    isPitchSession(session) {
+      const lowerType = (session.type || '').toLowerCase();
+      return lowerType.includes('pitch');
+    },
+    getSessionSpeakers(sessionId) {
+      // Find the session and return its speakers array directly
+      const session = this.lineup.find(s => s.id === sessionId);
+      return session && session.speakers ? session.speakers : [];
+    },
+    openSessionDialog(session) {
+      this.activeSession = session;
+      this.$refs.agenda.ariaHidden = true;
+      this.$refs.sessionModal.ariaHidden = false;
+      this.$refs.sessionModal.style.display = "flex";
+
+      setTimeout(() => {
+        this.$refs.sessionModal.focus();
+      }, 0);
+    },
+    closeSessionDialog() {
+      this.activeSession = null;
+      this.$refs.agenda.ariaHidden = false;
+      this.$refs.sessionModal.ariaHidden = true;
+      this.$refs.sessionModal.style.display = "none";
+    },
+    focusTrapSessionModal($event) {
+      let focussableElements = [];
+      focussableElements.push(this.$refs.sessionCloseButton);
+
+      for (const key in this.$refs) {
+        if (
+          key.startsWith("session-twitter") ||
+          key.startsWith("session-github") ||
+          key.startsWith("session-linkedin") ||
+          key.startsWith("session-mastodon") ||
+          key.startsWith("session-bluesky")
+        ) {
+          const element = this.$refs[key];
+          if (Array.isArray(element)) {
+            focussableElements.push(element[0]);
+          } else {
+            focussableElements.push(element);
+          }
+        }
+      }
+
+      const filteredFocussableElements = focussableElements.filter(
+        (el) => el !== undefined
+      );
+      const activeElementIndex = filteredFocussableElements.indexOf(
+        $event.target
+      );
+
+      if ($event.shiftKey) {
+        // Shift+Tab - go backwards
+        if (activeElementIndex === 0) {
+          // If at first element, go to last
+          filteredFocussableElements[filteredFocussableElements.length - 1].focus();
+        } else {
+          // Otherwise go to previous
+          filteredFocussableElements[activeElementIndex - 1].focus();
+        }
+      } else {
+        // Tab - go forwards
+        if (activeElementIndex === filteredFocussableElements.length - 1) {
+          // If at last element, go to first
+          filteredFocussableElements[0].focus();
+        } else {
+          // Otherwise go to next
+          filteredFocussableElements[activeElementIndex + 1].focus();
+        }
+      }
+    },
     formatProficiencyLevel(value) {
       if (!value) return '';
       return value.charAt(0).toUpperCase() + value.slice(1);
@@ -644,9 +756,15 @@ const main = createApp({
 
       return decoded;
     },
-  },
-  filters: {
-    formatLocation: function (value) {
+    trimTime(value) {
+      let time = value.substring(value.indexOf("T") + 1);
+      let timeSplit = time.split(":");
+      let hour = timeSplit[0].startsWith("0")
+        ? timeSplit[0].replace(/^0+/, "")
+        : timeSplit[0];
+      return hour + ":" + timeSplit[1];
+    },
+    formatLocation(value) {
       if (value) {
         if (value.toLowerCase().includes("audimax")) {
           return "Y";
@@ -663,36 +781,16 @@ const main = createApp({
         }
       }
     },
-    formatLevel: function (value) {
-      if (!value) return '';
-      return value.charAt(0).toUpperCase();
-    },
-    trimTime: function (value) {
-      let time = value.substring(value.indexOf("T") + 1);
-      let timeSplit = time.split(":");
-      let hour = timeSplit[0].startsWith("0")
-        ? timeSplit[0].replace(/^0+/, "")
-        : timeSplit[0];
-      return hour + ":" + timeSplit[1];
-    },
-    trimExpertText: function (value) {
+    trimExpertText(value) {
       return value.replace(/^Expert Corner: /, '');
     },
-    convertTime: function (value, eventTime) {
-      if (eventTime === "local") {
-        return luxon.DateTime.fromISO(value)
-          .toLocal()
-          .toISO({ suppressMilliseconds: true });
-      }
-      return value;
-    },
-    decodeHtml: function(value) {
+    decodeHtml(value) {
       if (!value) return '';
       const txt = document.createElement('textarea');
       txt.innerHTML = value;
       return txt.value;
-    }
-  }
+    },
+  },
 });
 main.mount('#main');
 

@@ -4,17 +4,20 @@
 	--stages: 3;
 	--th-width: 3rem;
 	--stage-gap: 1rem;
-	--stage-width: min(100vw - var(--th-width) - 3rem, 22rem);
 	--start-time: 9;
 	--end-time: 18;
 	--event-duration: calc(var(--end-time) - var(--start-time) + 1);
 	--rows: auto repeat(calc(var(--event-duration) * 12), minmax(var(--time-unit-height), auto));
-	--columns: var(--th-width) repeat(var(--stages), minmax(var(--stage-width), 1fr)) 1rem;
+	--columns: var(--th-width) repeat(var(--stages), 1fr) 1rem;
 	--zebra-color-one: var(--background-color);
 	--zebra-color-two: var(--background-color-alternate);
 
-	overflow-x: clip;
+	overflow-x: auto;
+	overflow-y: visible;
 	timeline-scope: --scroll-x;
+	margin-inline: calc(-3vw);
+	padding-inline: 3vw;
+	max-width: none;
 }
 
 .timetable--head {
@@ -61,7 +64,8 @@
 }
 
 .timetable--body {
-	max-width: 100%;
+	max-width: none;
+	overflow-x: visible;
 	overscroll-behavior-inline: contain;
 	scroll-timeline-name: --scroll-x;
 	scroll-timeline-axis: inline;
@@ -177,4 +181,62 @@
 	padding: 1.5rem 0 1.5rem 0.5rem;
 	text-align: center;
 	/* box-shadow: inset -1px 0 0 0 rgb(255 255 255 / 0.1); */
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 767px) {
+	.timetable {
+		--th-width: 0rem;
+		--stage-width: 90vw;
+		--columns: var(--th-width) repeat(var(--stages), var(--stage-width)) 1rem;
+		margin-inline: 0;
+		padding-inline: 0;
+	}
+
+	.timetable--body {
+		scroll-snap-type: x mandatory;
+	}
+
+	.hours {
+		display: none;
+	}
+
+	.stage {
+		min-width: var(--stage-width);
+	}
+
+	.stage-headline {
+		font-size: 1.25rem;
+		padding: 1rem 0.5rem 0.75rem;
+	}
+
+	.session {
+		padding: 0.75rem;
+	}
+
+	.session h3 {
+		font-size: 1.25rem;
+	}
+
+	.session h3 span {
+		font-size: 0.9rem;
+	}
+
+	.session p {
+		display: none;
+	}
+}
+/* Session hover/focus styles */
+.session {
+	cursor: pointer;
+	transition: transform 0.2s ease;
+}
+
+.session:hover {
+	transform: scale(1.02);
+}
+
+.session:focus {
+	outline: 2px solid var(--brand-color);
+	outline-offset: 2px;
 }
