@@ -162,6 +162,8 @@
 						@click.self="closeSessionDialog" v-cloak>
 						<div class="agenda-modal" role="document" aria-labelledby="session-dialog-title"
 							aria-describedby="session-dialog-description" tabindex="-1" ref="sessionModalContent">
+							
+							<!-- Title -->
 							<h2 class="sr-only" id="session-dialog-title" v-if="activeSession">
 								{{ activeSession.title }}
 							</h2>
@@ -177,21 +179,34 @@
 							</button>
 
 							<div v-if="activeSession">
-								<header style="margin-bottom: 1rem;">
-									<p style="opacity: 0.8; margin-bottom: 0.5rem; font-weight: 500;">
-										<time>{{ activeSession.startTime }}</time> - <time>{{ activeSession.endTime }}</time>
-									</p>
-									<h3 style="font-size: 1.75rem; margin: 0;">{{ activeSession.title }}</h3>
-								</header>
+								<p class="agenda-modal-type">{{ activeSession.type }}</p>
 
-								<p v-if="activeSession.description" style="margin-bottom: 2rem; line-height: 1.6;">
+								<!-- Title -->
+								<h2 class="agenda-modal-title">{{ activeSession.title }}</h2>
+
+								<!-- Details -->
+								<div class="agenda-modal-details">
+									<p>
+										<span>time</span>
+										<time>{{ activeSession.startTime }} - {{ activeSession.endTime }}</time>  
+									</p>
+
+									<p><span>location</span> {{ activeSession.location }}</p>
+
+									<p><span>complexity</span> {{ activeSession.proficiencyLevel }}</p>
+								</div>
+								
+
+								<!-- Description -->
+								<p v-if="activeSession.description" class="agenda-modal-description">
 									{{ activeSession.description }}
 								</p>
 
-								<div v-if="getSessionSpeakers(activeSession.id).length > 0">
-									<h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Speakers</h3>
+								<!-- Speakers -->
+								<div v-if="getSessionSpeakers(activeSession.id).length > 0" class="agenda-modal-speakers">
+								
 									<div v-for="(speaker, index) in getSessionSpeakers(activeSession.id)" :key="index"
-										class="agenda-modal-content-container">
+										class="agenda-modal-speaker">
 										<figure>
 											<!-- <img
 												v-if="speaker.hasPhoto"
@@ -205,12 +220,8 @@
 										</figure>
 										<article>
 											<header>
-												<div>
-													<h3>
-														{{speaker.firstName}} {{speaker.lastName}}
-													</h3>
-													<p v-if="speaker.company" v-html="speaker.company"></p>
-												</div>
+												<h3>{{speaker.firstName}} {{speaker.lastName}}</h3>
+												<p v-if="speaker.company" v-html="speaker.company"></p>
 											</header>
 											<p v-if="speaker.bio" v-html="decodeBioHtml(speaker.bio)"></p>
 											<ul class="speakers-socials"

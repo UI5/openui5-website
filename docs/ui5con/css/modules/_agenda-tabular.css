@@ -229,11 +229,19 @@
 /* Session hover/focus styles */
 .session {
 	cursor: pointer;
-	transition: transform 0.2s ease;
+	transition: background-color 0.3s ease;
 }
 
 .session:hover {
-	transform: scale(1.02);
+	background-color: color-mix(in srgb, var(--brand-color) 85%, black);
+}
+
+.session.break:hover {
+	background-color: color-mix(in srgb, var(--canteen) 85%, black);
+}
+
+.session.pitch:hover {
+	background-color: color-mix(in srgb, var(--brand-color-alt) 85%, black);
 }
 
 .session:focus {
