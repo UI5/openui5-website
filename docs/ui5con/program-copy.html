@@ -92,7 +92,7 @@
 									>
 										<h3>
 											<span class="time">{{ session.startTime }} - {{ session.endTime }}</span>
-											{{ session.title }}
+											<span v-html="decodeBioHtml(session.title)"></span>
 										</h3>
 									</li>
 								</ol>
@@ -120,7 +120,7 @@
 									>
 										<h3>
 											<span class="time">{{ session.startTime }} - {{ session.endTime }}</span>
-											{{ session.title }}
+											<span v-html="decodeBioHtml(session.title)"></span>
 										</h3>
 									</li>
 								</ol>
@@ -148,7 +148,7 @@
 									>
 										<h3>
 											<span class="time">{{ session.startTime }} - {{ session.endTime }}</span>
-											{{ session.title }}
+											<span v-html="decodeBioHtml(session.title)"></span>
 										</h3>
 									</li>
 								</ol>
@@ -182,7 +182,7 @@
 								<p class="agenda-modal-type">{{ activeSession.type }}</p>
 
 								<!-- Title -->
-								<h2 class="agenda-modal-title">{{ activeSession.title }}</h2>
+								<h2 class="agenda-modal-title" v-html="decodeBioHtml(activeSession.title)"></h2>
 
 								<!-- Details -->
 								<div class="agenda-modal-details">
@@ -193,16 +193,17 @@
 
 									<p><span>location</span> {{ activeSession.location }}</p>
 
-									<p><span>complexity</span> {{ activeSession.proficiencyLevel }}</p>
+									<p v-if="activeSession.proficiencyLevel"><span>complexity</span> {{ activeSession.proficiencyLevel }}</p>
 								</div>
 								
 
 								<!-- Description -->
-								<p v-if="activeSession.description" class="agenda-modal-description">
-									{{ activeSession.description }}
+								<h3 class="agenda-modal-section-heading">OVERVIEW</h3>
+								<p v-if="activeSession.description" class="agenda-modal-description" v-html="decodeBioHtml(activeSession.description)">
 								</p>
 
 								<!-- Speakers -->
+								<h3 v-if="getSessionSpeakers(activeSession.id).length > 0" class="agenda-modal-section-heading">SPEAKERS</h3>
 								<div v-if="getSessionSpeakers(activeSession.id).length > 0" class="agenda-modal-speakers">
 								
 									<div v-for="(speaker, index) in getSessionSpeakers(activeSession.id)" :key="index"
@@ -279,6 +280,52 @@
 											</ul>
 										</article>
 									</div>
+								</div>
+
+								<!-- Calendars -->
+								<h3 class="agenda-modal-section-heading">ADD TO CALENDAR</h3>
+								<div class="agenda-modal-calendars">
+									<!-- Google Calendar Link -->
+									<a href="https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20260714%2F20260715&details=Building%20our%20future%20%E2%80%93%20together%20with%20CodeConnect.%0A%0AJoin%20us%20for%20UI5con%202026%2C%20the%20premiere%20community%20event%20hosted%20by%20the%20developers%20of%20the%20OpenUI5%20framework.%20UI5con%20is%20part%20of%20CodeConnect%202026%20in%20St.%20Leon-Rot%2C%20Germany.%20Bring%20your%20toolkit%3A%20code%2C%20creativity%2C%20community.%20Connect%20with%20the%20UI5%20community%20to%20network%2C%20learn%2C%20and%20level%20up%20your%20skills.%20Let%E2%80%99s%20turn%20ideas%20into%20building%20blocks.%0A%0AEvent%20Details%3A%0A-%20Location%3A%20SAP-Allee%2027%2C%20St.%20Leon-Rot%2C%20Germany%0A-%20Date%3A%20July%2014%2C%202026%0A-%20Registration%3A%2008%3A00%20CEST%0A-%20Program%3A%2009%3A00%E2%80%9318%3A00%20CEST%0A-%20Evening%20event%3A%20Until%2022%3A00%20CEST%0A-%20Virtual%20participation%3A%20Parts%20of%20the%20event%20will%20be%20live-streamed%20on%20the%20UI5%20YouTube%20channel%20%28https%3A%2F%2Fwww.youtube.com%2F%40ui5videos%29.%0A%0AKey%20Dates%3A%0A-%20Call%20for%20Content%3A%20January%2023%E2%80%93March%2013%2C%202026%0A-%20Registration%20for%20onsite%20attendees%3A%20Opens%20April%2010%2C%202026%0A%0AStay%20updated%20and%20get%20involved%3A%0A-%20Save%20the%20date%3A%20add%20July%2014%2C%202026%20to%20your%20calendar.%0A-%20Submit%20your%20session%3A%20share%20your%20ideas%20before%20March%2013%2C%202026.%0A-%20Follow%20along%20online%3A%20watch%20the%20livestream%20on%20our%20YouTube%20channel.%0A-%20Event%20page%3A%20https%3A%2F%2Fopenui5.org%2Fui5con%0A-%20Questions%3A%20openui5%40sap.com%0A%0ACo-op%20mode%3A%20build%20together%20with%20the%20UI5%20community.%20We%20look%20forward%20to%20seeing%20you%20at%20UI5con%202026%21%0A%0AYour%20UI5con%20Team&location=SAP-Allee%2027%2C%20St.%20Leon-Rot%2C%20Germany&text=UI5con%202026"
+										target="_blank">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256">
+											<path fill="#FFF" d="M195.368 60.632H60.632v134.736h134.736z" />
+											<path fill="#EA4335"
+												d="M195.368 256L256 195.368l-30.316-5.172l-30.316 5.172l-5.533 27.73z" />
+											<path fill="#188038"
+												d="M0 195.368v40.421C0 246.956 9.044 256 20.21 256h40.422l6.225-30.316l-6.225-30.316l-33.033-5.172z" />
+											<path fill="#1967D2"
+												d="M256 60.632V20.21C256 9.044 246.956 0 235.79 0h-40.422q-5.532 22.554-5.533 33.196q0 10.641 5.533 27.436q20.115 5.76 30.316 5.76T256 60.631" />
+											<path fill="#FBBC04" d="M256 60.632h-60.632v134.736H256z" />
+											<path fill="#34A853" d="M195.368 195.368H60.632V256h134.736z" />
+											<path fill="#4285F4"
+												d="M195.368 0H20.211C9.044 0 0 9.044 0 20.21v175.158h60.632V60.632h134.736z" />
+											<path fill="#4285F4"
+												d="M88.27 165.154c-5.036-3.402-8.523-8.37-10.426-14.94l11.689-4.816q1.59 6.063 5.558 9.398c2.627 2.223 5.827 3.318 9.566 3.318q5.734 0 9.852-3.487c2.746-2.324 4.127-5.288 4.127-8.875q0-5.508-4.345-8.994c-2.897-2.324-6.535-3.486-10.88-3.486h-6.754v-11.57h6.063q5.608 0 9.448-3.033c2.56-2.02 3.84-4.783 3.84-8.303c0-3.132-1.145-5.625-3.435-7.494c-2.29-1.87-5.188-2.813-8.708-2.813c-3.436 0-6.164.91-8.185 2.745a16.1 16.1 0 0 0-4.413 6.754l-11.57-4.817c1.532-4.345 4.345-8.185 8.471-11.503s9.398-4.985 15.798-4.985c4.733 0 8.994.91 12.767 2.745c3.772 1.836 6.736 4.379 8.875 7.613c2.14 3.25 3.2 6.888 3.2 10.93c0 4.126-.993 7.613-2.98 10.476s-4.43 5.052-7.327 6.585v.69a22.25 22.25 0 0 1 9.398 7.327c2.442 3.284 3.672 7.208 3.672 11.79c0 4.58-1.163 8.673-3.487 12.26c-2.324 3.588-5.54 6.417-9.617 8.472c-4.092 2.055-8.69 3.1-13.793 3.1c-5.912.016-11.369-1.685-16.405-5.087m71.797-58.005l-12.833 9.28l-6.417-9.734l23.023-16.607h8.825v78.333h-12.598z" />
+										</svg>Google
+									</a>
+
+									<!-- Outlook/iCal Link -->
+									<a href="data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0D%0AVERSION:2.0%0D%0APRODID:-//UI5con 2026//EN%0D%0ACALSCALE:GREGORIAN%0D%0ABEGIN:VEVENT%0D%0ADTSTART:20260714%0D%0ADTEND:20260715%0D%0ASUMMARY:UI5con 2026%0D%0ADESCRIPTION:Building our future – together with CodeConnect.\n\nJoin us for UI5con 2026%2C the premiere community event hosted by the developers of the OpenUI5 framework. UI5con is part of CodeConnect 2026 in St. Leon-Rot%2C Germany. Bring your toolkit: code%2C creativity%2C community. Connect with the UI5 community to network%2C learn%2C and level up your skills. Let's turn ideas into building blocks.\n\nEvent Details:\n- Location: SAP-Allee 27%2C St. Leon-Rot%2C Germany\n- Date: July 14%2C 2026\n- Registration: 08:00 CEST\n- Program: 09:00–18:00 CEST\n- Evening event: Until 22:00 CEST\n- Virtual participation: Parts of the event will be live-streamed on the UI5 YouTube channel (https://www.youtube.com/@ui5videos).\n\nKey Dates:\n- Call for Content: January 23–March 13%2C 2026\n- Registration for onsite attendees: Opens April 10%2C 2026\n\nStay updated and get involved:\n- Save the date: add July 14%2C 2026 to your calendar.\n- Submit your session: share your ideas before March 13%2C 2026.\n- Follow along online: watch the livestream on our YouTube channel.\n- Event page: https://openui5.org/ui5con\n- Questions: openui5@sap.com\n\nCo-op mode: build together with the UI5 community. We look forward to seeing you at UI5con 2026!\n\nYour UI5con Team%0D%0ALOCATION:SAP-Allee 27%2C St. Leon-Rot%2C Germany%0D%0AEND:VEVENT%0D%0AEND:VCALENDAR"
+										download="UI5con_2026.ics">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">
+											<path fill="#0072c6"
+												d="M19.484 7.937v5.477l1.916 1.205a.5.5 0 0 0 .21 0l8.238-5.554a1.174 1.174 0 0 0-.959-1.128Z" />
+											<path fill="#0072c6"
+												d="m19.484 15.457l1.747 1.2a.52.52 0 0 0 .543 0c-.3.181 8.073-5.378 8.073-5.378v10.066a1.408 1.408 0 0 1-1.49 1.555h-8.874zm-9.044-2.525a1.61 1.61 0 0 0-1.42.838a4.13 4.13 0 0 0-.526 2.218A4.05 4.05 0 0 0 9.02 18.2a1.6 1.6 0 0 0 2.771.022a4 4 0 0 0 .515-2.2a4.37 4.37 0 0 0-.5-2.281a1.54 1.54 0 0 0-1.366-.809" />
+											<path fill="#0072c6"
+												d="M2.153 5.155v21.427L18.453 30V2Zm10.908 14.336a3.23 3.23 0 0 1-2.7 1.361a3.19 3.19 0 0 1-2.64-1.318A5.46 5.46 0 0 1 6.706 16.1a5.87 5.87 0 0 1 1.036-3.616a3.27 3.27 0 0 1 2.744-1.384a3.12 3.12 0 0 1 2.61 1.321a5.64 5.64 0 0 1 1 3.484a5.76 5.76 0 0 1-1.035 3.586" />
+										</svg>Outlook
+									</a>
+
+									<!-- Office 365 Link -->
+									<a href="https://outlook.office.com/calendar/0/deeplink/compose?path=/calendar/action/compose&rru=addevent&startdt=2026-07-14&enddt=2026-07-15&subject=UI5con+2026&body=Building+our+future+%E2%80%93+together+with+CodeConnect.%3Cbr%3E%3Cbr%3EJoin+us+for+UI5con+2026%2C+the+premiere+community+event+hosted+by+the+developers+of+the+OpenUI5+framework.+UI5con+is+part+of+CodeConnect+2026+in+St.+Leon-Rot%2C+Germany.+Bring+your+toolkit%3A+code%2C+creativity%2C+community.+Connect+with+the+UI5+community+to+network%2C+learn%2C+and+level+up+your+skills.+Let%E2%80%99s+turn+ideas+into+building+blocks.%3Cbr%3E%3Cbr%3EEvent+Details%3A%3Cbr%3E-+Location%3A+SAP-Allee+27%2C+St.+Leon-Rot%2C+Germany%3Cbr%3E-+Date%3A+July+14%2C+2026%3Cbr%3E-+Registration%3A+08%3A00+CEST%3Cbr%3E-+Program%3A+09%3A00%E2%80%9318%3A00+CEST%3Cbr%3E-+Evening+event%3A+Until+22%3A00+CEST%3Cbr%3E-+Virtual+participation%3A+Parts+of+the+event+will+be+live-streamed+on+the+UI5+YouTube+channel+(https%3A%2F%2Fwww.youtube.com%2F%40ui5videos).%3Cbr%3E%3Cbr%3EKey+Dates%3A%3Cbr%3E-+Call+for+Content%3A+January+23%E2%80%93March+13%2C+2026%3Cbr%3E-+Registration+for+onsite+attendees%3A+Opens+April+10%2C+2026%3Cbr%3E%3Cbr%3EStay+updated+and+get+involved%3A%3Cbr%3E-+Save+the+date%3A+add+July+14%2C+2026+to+your+calendar.%3Cbr%3E-+Submit+your+session%3A+share+your+ideas+before+March+13%2C+2026.%3Cbr%3E-+Follow+along+online%3A+watch+the+livestream+on+our+YouTube+channel.%3Cbr%3E-+Event+page%3A+https%3A%2F%2Fopenui5.org%2Fui5con%3Cbr%3E-+Questions%3A+openui5%40sap.com%3Cbr%3E%3Cbr%3ECo-op+mode%3A+build+together+with+the+UI5+community.+We+look+forward+to+seeing+you+at+UI5con+2026!%3Cbr%3E%3Cbr%3EYour+UI5con+Team&location=SAP-Allee+27%2C+St.+Leon-Rot%2C+Germany"
+										target="_blank">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+											<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+												stroke-width="1.5" d="M4 18V6l10.5-4L20 4v16l-5.5 2zm0 0l10 .5V6L8.5 7.5v8z" />
+										</svg>Office 365
+									</a>
 								</div>
 							</div>
 						</div>

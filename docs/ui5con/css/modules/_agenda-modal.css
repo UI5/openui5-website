@@ -49,33 +49,36 @@
 }
 
 .agenda-modal button {
+	top: 0;
 	right: 0;
 	border: none;
-	top: 0;
+	width: 3.75rem;
+	height: 3.75rem;
 	cursor: pointer;
+	font-weight: 600;
 	font-size: 1.8rem;
 	position: absolute;
-	background: var(--brand-color);
+	padding: 0.75rem 1rem;
 	color: var(--btn-bg-color);
 	transition: color .2s ease;
-	padding: 0.75rem 1rem;
-	font-weight: 600;
+	background: var(--brand-color);
+	
 }
 
 .agenda-modal button:is(:hover) {
-	color: var(--brand-color);
+	background: var(--brand-color-alt);
 }
 
 .agenda-modal button:is(:focus) {
-	border-radius: 0.2rem;
-	outline: 0.0625rem solid var(--brand-color);
+	outline-offset: -0.35rem;
+	outline: 0.25rem solid var(--btn-bg-color);
 }
 
 .agenda-modal figure {
 	margin: 0;
 	padding: 0;
-	height: fit-content;
 	width: fit-content;
+	height: fit-content;
 }
 
 .agenda-modal article {
@@ -108,7 +111,13 @@
 
 .agenda-modal article p {
 	margin-block-start: .8rem;
- }
+}
+
+.agenda-modal-section-heading {
+	margin: var(--agenda-modal-spacing);
+	color: var(--brand-color);
+	font-size: var(--type-2);
+}
 
 .agenda-modal-content-container {
 	gap: 1.5rem;
@@ -140,6 +149,7 @@
 .agenda-modal-description {
 	margin: var(--agenda-modal-spacing);
 	font-size: var(--type-0);
+	line-height: 1.75;
 }
 
 .agenda-modal-details {
@@ -171,6 +181,7 @@
 		margin-inline-end: 0.5rem;
 	}
 }
+
 
 .agenda-modal-details p:nth-child(2) span::before {
 	background: var(--code-connect-color);
@@ -220,10 +231,33 @@
 	}
 }
 
+.agenda-modal-speaker h3 {
+	font-size: var(--type-2);
+}
+
 .agenda-modal-speaker header {
 	display: flex;
 	flex-direction: column;
 	gap: 0.25rem;
+}
+
+.agenda-modal-calendars {
+	display: flex;
+	gap: var(--agenda-modal-spacing);
+	margin: var(--agenda-modal-spacing);
+}
+
+.agenda-modal-calendars a {
+	flex: 1;
+	gap: 0.5rem;
+	font-weight: 600;
+	align-items: center;
+	display: inline-flex;
+	text-decoration: none;
+	color: var(--text-color);
+	text-transform: uppercase;
+	padding: var(--agenda-modal-spacing);
+	background: var(--background-color-alternate);
 }
 
 @media only screen and (min-width: 768px) {
