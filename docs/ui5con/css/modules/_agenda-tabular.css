@@ -186,7 +186,7 @@
 @media screen and (max-width: 767px) {
 
 	.timetable {
-		--stage-gap: .5rem;
+		--stage-gap: 0rem;
 		--th-width: 0rem;
 		--stage-width: 1fr;
 		--columns: var(--th-width) repeat(var(--stages), var(--stage-width));
@@ -204,6 +204,11 @@
 
 	.stage {
 		min-width: var(--stage-width);
+		margin-inline-end: .5rem;
+
+		&:last-of-type {
+			margin: 0;
+		}
 	}
 
 	.stage-headline {
