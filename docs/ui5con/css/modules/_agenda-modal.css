@@ -2,6 +2,7 @@
 
 :root {
 	--agenda-modal-spacing: 1rem;
+	--agenda-modal-btn-size: 2.75rem;
 }
 
 .agenda-modal-backdrop {
@@ -52,17 +53,15 @@
 	top: 0;
 	left: 100%;
 	border: none;
-	width: 3.75rem;
-	height: 3.75rem;
 	cursor: pointer;
 	font-weight: 600;
 	font-size: 1.8rem;
 	position: sticky;
-	padding: 0.75rem 1rem;
 	color: var(--btn-bg-color);
 	transition: color .2s ease;
 	background: var(--brand-color);
-
+	width: var(--agenda-modal-btn-size);
+	height: var(--agenda-modal-btn-size);
 }
 
 .agenda-modal button:is(:hover) {
@@ -278,6 +277,7 @@
 
 	:root {
 		--agenda-modal-spacing: 2rem;
+		--agenda-modal-btn-size: 3.75rem;
 	}
 
 	.agenda-modal-content-container {
