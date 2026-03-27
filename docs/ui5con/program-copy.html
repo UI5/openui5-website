@@ -162,7 +162,7 @@
 						@click.self="closeSessionDialog" v-cloak>
 						<div class="agenda-modal" role="document" aria-labelledby="session-dialog-title"
 							aria-describedby="session-dialog-description" tabindex="-1" ref="sessionModalContent">
-							
+
 							<!-- Title -->
 							<h2 class="sr-only" id="session-dialog-title" v-if="activeSession">
 								{{ activeSession.title }}
@@ -188,14 +188,14 @@
 								<div class="agenda-modal-details">
 									<p>
 										<span>time</span>
-										<time>{{ activeSession.startTime }} - {{ activeSession.endTime }}</time>  
+										<time>{{ activeSession.startTime }} - {{ activeSession.endTime }}</time>
 									</p>
 
 									<p><span>location</span> {{ activeSession.location }}</p>
 
 									<p v-if="activeSession.proficiencyLevel"><span>complexity</span> {{ activeSession.proficiencyLevel }}</p>
 								</div>
-								
+
 
 								<!-- Description -->
 								<h3 class="agenda-modal-section-heading">OVERVIEW</h3>
@@ -205,7 +205,7 @@
 								<!-- Speakers -->
 								<h3 v-if="getSessionSpeakers(activeSession.id).length > 0" class="agenda-modal-section-heading">SPEAKERS</h3>
 								<div v-if="getSessionSpeakers(activeSession.id).length > 0" class="agenda-modal-speakers">
-								
+
 									<div v-for="(speaker, index) in getSessionSpeakers(activeSession.id)" :key="index"
 										class="agenda-modal-speaker">
 										<figure>
