@@ -52,37 +52,134 @@
 						<span>Agenda</span>
 					</h2>
 
+					<!-- View Switcher -->
+					<button 
+						@click="toggleAgendaView" 
+						class="btn btn-shape btn-lite"
+						:aria-label="agendaViewMode === 'grid' ? 'Switch to linear view' : 'Switch to grid view'">
+						<span>
+							{{agendaViewMode === 'grid' ? 'Grid View' : 'Linear View'}}
+						</span>
+					</button>
+
 					<!-- Dynamic Agenda using Vue -->
-					<div class="timetable">
-						<div class="timetable--head" aria-hidden="true">
-							<div class="timetable--inner-head">
-								<div class="stage-headline">Audimax</div>
-								<div class="stage-headline">W1/W2</div>
-								<div class="stage-headline">W3</div>
-							</div>
-						</div>
-						<div class="timetable--body">
-							<div class="hours" aria-hidden="true">
-								<div v-for="hour in 10" :key="hour">
-									<time :datetime="`${(hour + 8).toString().padStart(2, '0')}:00`">
-										{{ (hour + 8).toString().padStart(2, '0') }}:00
-									</time>
+					<div class="timetable" :class="{ 'timetable--linear': agendaViewMode === 'linear' }">
+						<!-- Grid View -->
+						<template v-if="agendaViewMode === 'grid'">
+							<div class="timetable--head" aria-hidden="true">
+								<div class="timetable--inner-head">
+									<div class="stage-headline">Audimax</div>
+									<div class="stage-headline">W1/W2</div>
+									<div class="stage-headline">W3</div>
 								</div>
 							</div>
+							<div class="timetable--body">
+								<div class="hours" aria-hidden="true">
+									<div v-for="hour in 10" :key="hour">
+										<time :datetime="`${(hour + 8).toString().padStart(2, '0')}:00`">
+											{{ (hour + 8).toString().padStart(2, '0') }}:00
+										</time>
+									</div>
+								</div>
 
-							<!-- Audimax -->
-							<div class="stage" style="--column: 2;">
-								<h2 class="stage-headline">Audimax</h2>
+								<!-- Audimax -->
+								<div class="stage" style="--column: 2;">
+									<h2 class="stage-headline">Audimax</h2>
+									<ol class="session-list" role="list">
+										<li
+											v-for="session in getSessionsByRoom('audimax')"
+											:key="session.id"
+											class="session"
+											:class="{
+												break: isBreakSession(session),
+												pitch: isPitchSession(session)
+											}"
+											:style="`--start: ${timeToMinutes(session.startTime)}; --end: ${timeToMinutes(session.endTime)};`"
+											@click="openSessionDialog(session)"
+											@keydown.enter="openSessionDialog(session)"
+											@keydown.space.prevent="openSessionDialog(session)"
+											tabindex="0"
+											role="button"
+											:aria-label="`View details for ${session.title}`"
+										>
+											<h3>
+												<span class="time">{{ session.startTime }} - {{ session.endTime }}</span>
+												<span v-html="decodeBioHtml(session.title)"></span>
+											</h3>
+										</li>
+									</ol>
+								</div>
+
+								<!-- W1/W2 -->
+								<div class="stage" style="--column: 3;">
+									<h2 class="stage-headline">W1/W2</h2>
+									<ol class="session-list" role="list">
+										<li
+											v-for="session in getSessionsByRoom('room_w1')"
+											:key="session.id"
+											class="session"
+											:class="{
+												break: isBreakSession(session),
+												pitch: isPitchSession(session)
+											}"
+											:style="`--start: ${timeToMinutes(session.startTime)}; --end: ${timeToMinutes(session.endTime)};`"
+											@click="openSessionDialog(session)"
+											@keydown.enter="openSessionDialog(session)"
+											@keydown.space.prevent="openSessionDialog(session)"
+											tabindex="0"
+											role="button"
+											:aria-label="`View details for ${session.title}`"
+										>
+											<h3>
+												<span class="time">{{ session.startTime }} - {{ session.endTime }}</span>
+												<span v-html="decodeBioHtml(session.title)"></span>
+											</h3>
+										</li>
+									</ol>
+								</div>
+
+								<!-- W3 -->
+								<div class="stage" style="--column: 4;">
+									<h2 class="stage-headline">W3</h2>
+									<ol class="session-list" role="list">
+										<li
+											v-for="session in getSessionsByRoom('room_w3')"
+											:key="session.id"
+											class="session"
+											:class="{
+												break: isBreakSession(session),
+												pitch: isPitchSession(session)
+											}"
+											:style="`--start: ${timeToMinutes(session.startTime)}; --end: ${timeToMinutes(session.endTime)};`"
+											@click="openSessionDialog(session)"
+											@keydown.enter="openSessionDialog(session)"
+											@keydown.space.prevent="openSessionDialog(session)"
+											tabindex="0"
+											role="button"
+											:aria-label="`View details for ${session.title}`"
+										>
+											<h3>
+												<span class="time">{{ session.startTime }} - {{ session.endTime }}</span>
+												<span v-html="decodeBioHtml(session.title)"></span>
+											</h3>
+										</li>
+									</ol>
+								</div>
+							</div>
+						</template>
+
+						<!-- Linear View -->
+						<template v-else>
+							<div class="timetable-linear alt">
 								<ol class="session-list" role="list">
 									<li
-										v-for="session in getSessionsByRoom('audimax')"
+										v-for="session in getAllSessionsSorted()"
 										:key="session.id"
 										class="session"
 										:class="{
 											break: isBreakSession(session),
 											pitch: isPitchSession(session)
 										}"
-										:style="`--start: ${timeToMinutes(session.startTime)}; --end: ${timeToMinutes(session.endTime)};`"
 										@click="openSessionDialog(session)"
 										@keydown.enter="openSessionDialog(session)"
 										@keydown.space.prevent="openSessionDialog(session)"
@@ -90,70 +187,21 @@
 										role="button"
 										:aria-label="`View details for ${session.title}`"
 									>
-										<h3>
+										<div>
 											<span class="time">{{ session.startTime }} - {{ session.endTime }}</span>
+											<span class="separator"></span>
+											<span>{{ formatLocationTitle(session.location) }}</span>
+											<span v-if="session.proficiencyLevel" class="separator"></span>
+											<span v-if="session.proficiencyLevel">{{ formatProficiencyLevel(session.proficiencyLevel) }}</span>
+										</div>
+										
+										<h3>
 											<span v-html="decodeBioHtml(session.title)"></span>
 										</h3>
 									</li>
 								</ol>
 							</div>
-
-							<!-- W1/W2 -->
-							<div class="stage" style="--column: 3;">
-								<h2 class="stage-headline">W1/W2</h2>
-								<ol class="session-list" role="list">
-									<li
-										v-for="session in getSessionsByRoom('room_w1')"
-										:key="session.id"
-										class="session"
-										:class="{
-											break: isBreakSession(session),
-											pitch: isPitchSession(session)
-										}"
-										:style="`--start: ${timeToMinutes(session.startTime)}; --end: ${timeToMinutes(session.endTime)};`"
-										@click="openSessionDialog(session)"
-										@keydown.enter="openSessionDialog(session)"
-										@keydown.space.prevent="openSessionDialog(session)"
-										tabindex="0"
-										role="button"
-										:aria-label="`View details for ${session.title}`"
-									>
-										<h3>
-											<span class="time">{{ session.startTime }} - {{ session.endTime }}</span>
-											<span v-html="decodeBioHtml(session.title)"></span>
-										</h3>
-									</li>
-								</ol>
-							</div>
-
-							<!-- W3 -->
-							<div class="stage" style="--column: 4;">
-								<h2 class="stage-headline">W3</h2>
-								<ol class="session-list" role="list">
-									<li
-										v-for="session in getSessionsByRoom('room_w3')"
-										:key="session.id"
-										class="session"
-										:class="{
-											break: isBreakSession(session),
-											pitch: isPitchSession(session)
-										}"
-										:style="`--start: ${timeToMinutes(session.startTime)}; --end: ${timeToMinutes(session.endTime)};`"
-										@click="openSessionDialog(session)"
-										@keydown.enter="openSessionDialog(session)"
-										@keydown.space.prevent="openSessionDialog(session)"
-										tabindex="0"
-										role="button"
-										:aria-label="`View details for ${session.title}`"
-									>
-										<h3>
-											<span class="time">{{ session.startTime }} - {{ session.endTime }}</span>
-											<span v-html="decodeBioHtml(session.title)"></span>
-										</h3>
-									</li>
-								</ol>
-							</div>
-						</div>
+						</template>
 					</div>
 
 					<!-- Session Details Modal -->

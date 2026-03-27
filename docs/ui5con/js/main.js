@@ -323,7 +323,8 @@ const main = createApp({
     expertCornerLineupUnsorted: [],
     proposalLineupJson: proposalLineupJson,
     speakerLineupJson: speakerLineupJson,
-    activeSession: null
+    activeSession: null,
+    agendaViewMode: 'grid' // 'grid' or 'linear'
    }
   },
   mounted() {
@@ -649,6 +650,22 @@ const main = createApp({
       const lowerType = (session.type || '').toLowerCase();
       return lowerType.includes('pitch');
     },
+    toggleAgendaView() {
+      this.agendaViewMode = this.agendaViewMode === 'grid' ? 'linear' : 'grid';
+    },
+    getAllSessionsSorted() {
+      // Get all sessions except expert corner sessions
+      const allSessions = this.lineup.filter(session =>
+        session.type && !session.type.includes('expert')
+      );
+      
+      // Sort by start time (convert to minutes for proper numerical comparison)
+      return allSessions.sort((a, b) => {
+        const timeA = this.timeToMinutes(a.startTime);
+        const timeB = this.timeToMinutes(b.startTime);
+        return timeA - timeB;
+      });
+    },
     getSessionSpeakers(sessionId) {
       // Find the session and return its speakers array directly
       const session = this.lineup.find(s => s.id === sessionId);
@@ -727,15 +744,15 @@ const main = createApp({
 
       if (value) {
         if (value.toLowerCase().includes("audimax")) {
-          return "Yellow";
+          return "AUDIMAX";
         } else if (value.toLowerCase().includes("w1") || value.toLowerCase().includes("w2")) {
-          return "Blue";
+          return "W1/W2";
         } else if (value.toLowerCase().includes("w3")) {
-          return "Orange"
+          return "W3"
         } else if (value.toLowerCase().includes("expert")) {
           return "EXP"
         } else if (value.toLowerCase().includes("canteen")) {
-          return "Canteen"
+          return "CANTEEN"
         } else {
           return value;
         }

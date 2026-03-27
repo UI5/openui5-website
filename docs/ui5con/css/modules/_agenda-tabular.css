@@ -254,3 +254,18 @@
 	outline: 2px solid var(--brand-color);
 	outline-offset: 2px;
 }
+
+/* Linear View Styles */
+
+.timetable-linear.alt .session {
+	background: var(--background-color-alternate);
+
+}
+
+.timetable-linear.alt .separator {
+	width: 0.75rem;
+	height: 0.75rem;
+	display: inline-block;
+	margin-inline: 0.4rem;
+	background: var(--brand-color);
+}
