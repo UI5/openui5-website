@@ -73,15 +73,12 @@
 	outline: 0.25rem solid var(--btn-bg-color);
 }
 
-.agenda-modal > div {
-	margin-block-start: -3.75rem;
-}
-
 .agenda-modal figure {
 	margin: 0;
 	padding: 0;
 	width: fit-content;
 	height: fit-content;
+	position: relative;
 }
 
 .agenda-modal article {
@@ -93,6 +90,9 @@
 	width: 8rem;
 	height: 9.5rem;
 	object-fit: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 .agenda-modal header {
@@ -126,7 +126,7 @@
 	gap: 1.5rem;
 	display: flex;
 	flex-direction: column;
-	padding: 0 0 1.5rem 0;
+	padding: 0 1rem 1.5rem 1rem;
 	padding-top: 0.375rem;
 }
 

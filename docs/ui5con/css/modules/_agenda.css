@@ -425,6 +425,7 @@
 	font-weight: 600;
 	transform: translateY(-5px);
 	line-height: 1;
+	margin-inline-start: 1rem;
 	text-transform: capitalize;
 }
 
@@ -476,6 +477,7 @@
 	overflow: hidden;
 	background: transparent;
 	transition: all .2s ease-in-out;
+	position: relative;
 }
 
 .agenda-slot-speakers-images.lunch img {
@@ -500,6 +502,9 @@
 	height: 8rem;
 	object-fit: cover;
 	transition: all .2s ease-in-out;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 .agenda-slot-speakers-images .placeholder,
@@ -571,7 +576,6 @@
 	display: flex;
 	flex-wrap: wrap;
 	gap: 0 1rem;
-	width: 100%;
 }
 
 .agenda-slot-linkitem {

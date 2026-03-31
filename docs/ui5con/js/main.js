@@ -744,15 +744,15 @@ const main = createApp({
 
       if (value) {
         if (value.toLowerCase().includes("audimax")) {
-          return "AUDIMAX";
+          return "A";
         } else if (value.toLowerCase().includes("w1") || value.toLowerCase().includes("w2")) {
-          return "W1/W2";
+          return "W1/2";
         } else if (value.toLowerCase().includes("w3")) {
           return "W3"
         } else if (value.toLowerCase().includes("expert")) {
           return "EXP"
         } else if (value.toLowerCase().includes("canteen")) {
-          return "CANTEEN"
+          return "CAN"
         } else {
           return value;
         }

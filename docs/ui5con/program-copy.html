@@ -58,7 +58,7 @@
 						class="btn btn-shape btn-lite"
 						:aria-label="agendaViewMode === 'grid' ? 'Switch to linear view' : 'Switch to grid view'">
 						<span>
-							{{agendaViewMode === 'grid' ? 'Grid View' : 'Linear View'}}
+							{{agendaViewMode === 'grid' ? 'Linear View' : 'Grid View'}}
 						</span>
 					</button>
 
@@ -170,41 +170,164 @@
 
 						<!-- Linear View -->
 						<template v-else>
-							<div class="timetable-linear alt">
-								<ol class="session-list" role="list">
-									<li
-										v-for="session in getAllSessionsSorted()"
-										:key="session.id"
-										class="session"
-										:class="{
-											break: isBreakSession(session),
-											pitch: isPitchSession(session)
-										}"
-										@click="openSessionDialog(session)"
-										@keydown.enter="openSessionDialog(session)"
-										@keydown.space.prevent="openSessionDialog(session)"
-										tabindex="0"
-										role="button"
-										:aria-label="`View details for ${session.title}`"
-									>
-										<div>
-											<span class="time">{{ session.startTime }} - {{ session.endTime }}</span>
-											<span class="separator"></span>
-											<span>{{ formatLocationTitle(session.location) }}</span>
-											<span v-if="session.proficiencyLevel" class="separator"></span>
-											<span v-if="session.proficiencyLevel">{{ formatProficiencyLevel(session.proficiencyLevel) }}</span>
+							<div class="agenda-sort">
+								<div class="agenda-filter-container">
+									<fieldset class="agenda-filter">
+										<legend class="sr-only">Show all elements of the agenda</legend>
+										<div class="agenda-filter__element"><input type="radio" @change="onFilterChange($event)" id="all" name="filter"
+												value="all" checked="checked" data-enpassusermodified="yes"> <label for="all"
+												class="agenda-filter__label">All</label></div>
+									</fieldset>
+									<fieldset class="agenda-filter">
+										<legend class="sr-only">Filter by room</legend>
+										<div class="agenda-filter__element"><input type="radio" @change="onFilterChange($event)" id="audimax" name="filter"
+												value="audimax" data-enpassusermodified="yes"> <label for="audimax"
+												class="agenda-filter__label">Audimax</label></div>
+										<div class="agenda-filter__element"><input type="radio" @change="onFilterChange($event)" id="w1" name="filter" value="w1"
+												data-enpassusermodified="yes"> <label for="w1" class="agenda-filter__label">W1/W2</label>
 										</div>
-										
-										<h3>
-											<span v-html="decodeBioHtml(session.title)"></span>
-										</h3>
-									</li>
-								</ol>
+										<div class="agenda-filter__element"><input type="radio" @change="onFilterChange($event)" id="w3" name="filter" value="w3"
+												data-enpassusermodified="yes"> <label for="w3" class="agenda-filter__label">W3</label>
+										</div>
+									</fieldset>
+									<fieldset class="agenda-filter">
+										<legend class="sr-only">
+											Filter by session type
+										</legend>
+										<div class="agenda-filter__element"><input type="radio" @change="onFilterChange($event)" id="talks" name="filter"
+												value="talks" data-enpassusermodified="yes"> <label for="talks"
+												class="agenda-filter__label">Talks</label></div>
+										<div class="agenda-filter__element"><input type="radio" @change="onFilterChange($event)" id="workshops" name="filter"
+												value="workshops" data-enpassusermodified="yes"> <label for="workshops"
+												class="agenda-filter__label">Workshops</label></div>
+									</fieldset>
+									<fieldset class="agenda-filter">
+										<legend class="sr-only">Filter by type</legend>
+										<div class="agenda-filter__element"><input type="radio" @change="onFilterChange($event)" id="beginner" name="filter"
+												value="beginner" data-enpassusermodified="yes"> <label for="beginner"
+												class="agenda-filter__label">Beginner</label></div>
+										<div class="agenda-filter__element"><input type="radio" @change="onFilterChange($event)" id="intermediate" name="filter"
+												value="intermediate" data-enpassusermodified="yes"> <label for="intermediate"
+												class="agenda-filter__label">Intermediate</label></div>
+										<div class="agenda-filter__element"><input type="radio" @change="onFilterChange($event)" id="advanced" name="filter"
+												value="advanced" data-enpassusermodified="yes"> <label for="advanced"
+												class="agenda-filter__label">Advanced</label></div>
+									</fieldset>
+								</div>
 							</div>
+
+							<ol class="agenda">
+								<li
+									v-for="session in formattedLineup"
+									:key="session.id"
+									class="agenda-slot"
+									:class="{
+										break: isBreakSession(session),
+										pitch: isPitchSession(session)
+									}"
+									v-cloak
+								>
+									<div class="agenda-slot-header">
+										<div>
+											<p class="agenda-slot-details">
+												<span class="agenda-time">
+													{{trimTime(session.startTime)}}<br>{{trimTime(session.endTime)}}
+												</span>
+
+												<span class="agenda-room"
+													:class="{
+														w1: session.location.toLowerCase().includes('w1') || session.location.toLowerCase().includes('w2'),
+														w3: session.location.toLowerCase().includes('w3'),
+														canteen: session.location.toLowerCase().includes('canteen')
+													}"
+												>
+													{{ formatLocationTitle(session.location) }}
+												</span>
+											</p>
+										</div>
+									</div>
+
+									<div class="agenda-slot-container">
+										<h2 class="agenda-slot-title">
+											<span v-html="decodeBioHtml(session.title)"></span>
+											<span
+												v-if="session.proficiencyLevel"
+												class="agenda-level"
+												:class="{
+													beginner: session.proficiencyLevel === 'beginner',
+													intermediate: session.proficiencyLevel === 'intermediate',
+													advanced: session.proficiencyLevel === 'advanced'
+												}"
+											>
+												{{ session.proficiencyLevel }}
+											</span>
+										</h2>
+
+										<p class="agenda-slot-speakers" v-if="session.speakers && session.speakers.length > 0">
+											<template v-for="(speaker, index) in session.speakers" :key="`${speaker.firstName} ${speaker.lastName}`">
+												<span>{{speaker.firstName}} {{speaker.lastName}} (<span v-html="speaker.company"></span>)</span><span v-if="index != session.speakers.length - 1">, </span>
+											</template>
+										</p>
+
+										<div class="agenda-slot-inner-container">
+											<div class="agenda-slot-speakers-images" v-if="session.speakers && session.speakers.length > 0">
+												<template v-for="speaker in session.speakers" :key="`${speaker.firstName} ${speaker.lastName}`">
+													<button
+														:id="`btn-${speaker.firstName}-${speaker.lastName}-${session.id}`"
+														@click="openSpeakerInfoModal(session.speakers, `btn-${speaker.firstName}-${speaker.lastName}-${session.id}`)"
+													>
+														<div class="placeholder"></div>
+														<img
+															v-if="speaker.hasPhoto"
+															:src="`images/speakers/${speaker.photoUrl}.jpg`"
+															:alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`"
+															@error="$event.target.style.display='none'"
+														/>
+													</button>
+												</template>
+											</div>
+
+											<p class="agenda-slot-description" v-html="decodeBioHtml(session.description)"></p>
+										</div>
+
+										<div class="agenda-links">
+											<a
+												v-if="session.location.toLowerCase().includes('audimax')"
+												href="https://youtube.com/live/0D0_M4RDiZY"
+												rel="noopener noreferrer"
+												target="_blank"
+												hreflang="en"
+												class="agenda-slot-linkitem"
+											>
+												Livestream
+											</a>
+											<template v-if="session.presentationLinks && session.presentationLinks.length > 0">
+												<template v-if="!(session.presentationLinks.length == 1 && session.presentationLinks[0].linkType.toLowerCase() == 'feedback')">
+													<ul class="agenda-slot-links">
+														<template v-for="link in session.presentationLinks" :key="link.linkType">
+															<li v-if="link.linkType.toLowerCase() !== 'feedback'">
+																<a
+																	:href="link.url"
+																	class="agenda-slot-linkitem"
+																	target="_blank"
+																	hreflang="en"
+																	rel="noopener noreferrer"
+																>
+																	{{link.linkType}}
+																</a>
+															</li>
+														</template>
+													</ul>
+												</template>
+											</template>
+										</div>
+									</div>
+								</li>
+							</ol>
 						</template>
 					</div>
 
-					<!-- Session Details Modal -->
+					<!-- Session Details Modal (Grid View) -->
 					<div id="session-modal" ref="sessionModal" aria-hidden="true" tabindex="-1" aria-modal="true"
 						class="agenda-modal-backdrop" style="display: none" @keydown.esc="closeSessionDialog"
 						@click.self="closeSessionDialog" v-cloak>
@@ -257,15 +380,13 @@
 									<div v-for="(speaker, index) in getSessionSpeakers(activeSession.id)" :key="index"
 										class="agenda-modal-speaker">
 										<figure>
-											<!-- <img
+											<div class="placeholder"></div>
+											<img
 												v-if="speaker.hasPhoto"
 												:src="`images/speakers/${speaker.photoUrl}.jpg`"
-												:alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`" />
-											<div
-												v-else
-												class="placeholder"
-											></div> -->
-											<div class="placeholder"></div>
+												:alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`"
+												@error="$event.target.style.display='none'"
+											/>
 										</figure>
 										<article>
 											<header>
@@ -375,6 +496,113 @@
 										</svg>Office 365
 									</a>
 								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Speaker Modal (Linear View) -->
+					<div id="speaker-modal" ref="speakerModal" aria-hidden="true" tabindex="-1" aria-modal="true"
+						class="agenda-modal-backdrop" style="display: none" @keydown.esc="closeSpeakerInfoModal"
+						@click.self="closeSpeakerInfoModal" v-cloak>
+						<div class="agenda-modal" role="document" aria-labelledby="speaker-dialog-title"
+							aria-describedby="speaker-dialog-description" tabindex="-1" ref="speakerModalContent">
+							<h2 class="sr-only" id="speaker-dialog-title">
+								Detailed Info about
+								<template v-for="speaker in activeSpeakers"
+								:key="`${speaker.firstName} ${speaker.lastName}`">
+								{{speaker.firstName}} {{speaker.lastName}}
+							</template>
+						</h2>
+
+						<p class="sr-only" id="speaker-dialog-description">
+							<template v-for="speaker in activeSpeakers"
+								:key="`${speaker.firstName} ${speaker.lastName}`">
+									Speaker's name: {{speaker.firstName}} {{speaker.lastName}}
+									<span v-if="speaker.company">Speaker's company: {{speaker.company}}</span>
+									Speaker's bio: {{speaker.bio}}
+								</template>
+							</p>
+
+							<button aria-label="Close Dialog" @click="closeSpeakerInfoModal" ref="close"
+								v-on:keydown.tab.prevent="focusTrapModal($event)">
+								✕
+							</button>
+
+							<div v-for="(speaker, index) in activeSpeakers" class="agenda-modal-content-container"
+								:key="index">
+								<figure>
+								<div class="placeholder"></div>
+								<img
+									v-if="speaker.hasPhoto"
+									:src="`images/speakers/${speaker.photoUrl}.jpg`"
+									:alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`"
+									@error="$event.target.style.display='none'"
+								/>
+								</figure>
+								<article>
+									<header>
+										<div>
+											<h3 class="">
+												{{speaker.firstName}} {{speaker.lastName}}
+											</h3>
+											<p v-if="speaker.company" v-html="speaker.company"></p>
+										</div>
+									</header>
+									<p class="" v-if="speaker.bio" v-html="decodeBioHtml(speaker.bio)"></p>
+									<ul class="speakers-socials"
+										v-if="speaker.githubUrl || speaker.linkedInUrl || speaker.twitterHandle || speaker.mastodonHandle || speaker.blueskyHandle">
+										<li v-if="speaker.githubUrl">
+											<a :href="speaker.githubUrl" rel="nofollow" target="_blank"
+												:ref="`github ${speaker.firstName} ${speaker.lastName}`"
+												:aria-label="`Github profile of ${speaker.firstName} ${speaker.lastName}`"
+												v-on:keydown.tab.prevent="focusTrapModal($event)">
+												<svg class="icon" aria-hidden="true">
+													<use xlink:href="images/icons/sprite.svg#github"></use>
+												</svg>
+											</a>
+										</li>
+										<li v-if="speaker.linkedInUrl">
+											<a :href="speaker.linkedInUrl" rel="nofollow" target="_blank"
+												:ref="`linkedin ${speaker.firstName} ${speaker.lastName}`"
+												:aria-label="`Linkedin profile of ${speaker.firstName} ${speaker.lastName}`"
+												v-on:keydown.tab.prevent="focusTrapModal($event)">
+												<svg class="icon" aria-hidden="true">
+													<use xlink:href="images/icons/sprite.svg#linkedin"></use>
+												</svg>
+											</a>
+										</li>
+										<li v-if="speaker.twitterHandle">
+											<a :href="speaker.twitterHandle" rel="nofollow" target="_blank"
+												:ref="`twitter ${speaker.firstName} ${speaker.lastName}`"
+												:aria-label="`Twitter profile of ${speaker.firstName} ${speaker.lastName}`"
+												v-on:keydown.tab.prevent="focusTrapModal($event)">
+												<svg class="icon" aria-hidden="true">
+													<use xlink:href="images/icons/sprite.svg#twitter"></use>
+												</svg>
+											</a>
+										</li>
+										<li v-if="speaker.mastodonHandle">
+											<a :href="speaker.mastodonHandle" rel="nofollow" target="_blank"
+												:ref="`mastodon ${speaker.firstName} ${speaker.lastName}`"
+												:aria-label="`Mastodon profile of ${speaker.firstName} ${speaker.lastName}`"
+												v-on:keydown.tab.prevent="focusTrapModal($event)">
+												<svg class="icon" aria-hidden="true">
+													<use xlink:href="images/icons/sprite.svg#mastodon"></use>
+												</svg>
+											</a>
+										</li>
+										<li v-if="speaker.blueskyHandle">
+											<a :href="speaker.blueskyHandle" rel="nofollow" target="_blank"
+												:ref="`bluesky ${speaker.firstName} ${speaker.lastName}`"
+												:aria-label="`Bluesky profile of ${speaker.firstName} ${speaker.lastName}`"
+												v-on:keydown.tab.prevent="focusTrapModal($event)">
+												<svg class="icon" aria-hidden="true">
+													<use xlink:href="images/icons/sprite.svg#bluesky"></use>
+												</svg>
+											</a>
+										</li>
+									</ul>
+								</article>
 							</div>
 						</div>
 					</div>
