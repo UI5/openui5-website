@@ -68,6 +68,9 @@ if (document.getElementById('header')) {
 }
 
 const main = createApp({
+  compilerOptions: {
+    isCustomElement: tag => tag === 'tito-widget'
+  },
   data() {
    return {
     team: [
