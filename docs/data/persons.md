@@ -2,6 +2,21 @@
 # Persons
 
 ```yaml
+name: Angelika Kirilin
+company: SAP
+photo: data/persons/angelika-kirilin.png
+linkedin: angelika-kirilin-96b5b4231
+id: angelika-kirilin
+```
+
+```yaml
+name: Rainer Liebisch
+company: SAP
+photo: data/persons/rainer-liebisch.png
+id: rainer-liebisch
+```
+
+```yaml
 name: Petar Dimov
 company: SAP
 photo: data/persons/petar-dimov.jpg
