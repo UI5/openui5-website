@@ -35,7 +35,6 @@ end: '2026-07-14 18:00 Europe/Berlin'
 title: UI5ers live (Feb '26)
 subTitle: 45 minute interactive webcast
 location: YouTube
-location: YouTube
 logo: images/events/ui5ers.svg
 speakers:
   - Hristo Tsolev
@@ -56,7 +55,6 @@ We are excited (and a bit nervous) about switching to the new platform which wil
 
 ```yaml
 title: UI5con Bengaluru 2025/26
-subTitle: "Free community conference for UI5 enthusiasts."
 subTitle: "Free community conference for UI5 enthusiasts."
 external: true
 location: Bengaluru/India
