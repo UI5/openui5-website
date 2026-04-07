@@ -7,16 +7,17 @@ logo: images/events/ui5ers.svg
 speakers:
   - Patric Ksinsik
   - Rainer Liebisch
+  - Angelika Kirilin
 url: 'https://youtube.com/live/SyDK6mYQSFo'
 id: ui5ers-57
-start: '2026-04-16 15:15 Europe/Berlin'
-end: '2026-04-16 16:00 Europe/Berlin'
+start: '2026-04-09 15:15 Europe/Berlin'
+end: '2026-04-09 16:00 Europe/Berlin'
 ```
 Two topics from the 1.146 release — one closing a long-standing community request, one expanding an existing feature to a new environment.
 
 Bound Filters — Filtering a dropdown inside a table row based on another value in the same row (e.g. only show projects belonging to the row's client) required controller code and couldn't be expressed declaratively in the view. This gap was raised years ago in a GitHub issue and is now resolved: sap.ui.model.Filter supports data binding for value1 and value2. Patric Ksinsik will explain the use case, walk through the implementation, and show it running in a sample.
 
-SAPUI5 Flexibility: Adapting UIs for Specific User Roles — Key users can create role-specific UI adaptations without developer involvement. Previously limited to the SAP BTP, ABAP environment, this capability is now also available on SAP BTP, Cloud Foundry environment as of 1.146. Rainer Liebisch will demo what this looks like end to end.
+SAPUI5 Flexibility: Adapting UIs for Specific User Roles — Key users can create role-specific UI adaptations without developer involvement. Previously limited to the SAP BTP, ABAP environment, this capability is now also available on SAP BTP, Cloud Foundry environment as of 1.146. Angelika Kirilin and Rainer Liebisch will demo what this looks like end to end.
 
 ```yaml
 title: UI5con 2026
@@ -34,7 +35,6 @@ end: '2026-07-14 18:00 Europe/Berlin'
 ```yaml
 title: UI5ers live (Feb '26)
 subTitle: 45 minute interactive webcast
-location: YouTube
 location: YouTube
 logo: images/events/ui5ers.svg
 speakers:
@@ -56,7 +56,6 @@ We are excited (and a bit nervous) about switching to the new platform which wil
 
 ```yaml
 title: UI5con Bengaluru 2025/26
-subTitle: "Free community conference for UI5 enthusiasts."
 subTitle: "Free community conference for UI5 enthusiasts."
 external: true
 location: Bengaluru/India
