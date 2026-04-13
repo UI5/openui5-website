@@ -325,13 +325,19 @@ const main = createApp({
     expertCornerLineup: {},
     expertCornerLineupUnsorted: [],
     proposalLineupJson: proposalLineupJson,
-    speakerLineupJson: speakerLineupJson,
+    speakerLineupJson: [],
     activeSession: null,
     agendaViewMode: 'grid' // 'grid' or 'linear'
    }
   },
-  mounted() {
-    this.speakers = speakerLineupJson;
+  async mounted() {
+    try {
+      const response = await fetch('https://ui5con.cfapps.eu12.hana.ondemand.com/api/speaker/lineup');
+      this.speakerLineupJson = await response.json();
+    } catch (e) {
+      console.error('Failed to fetch speaker lineup:', e);
+    }
+    this.speakers = this.speakerLineupJson;
     this.lineup = proposalLineupJson;
     this.formattedLineup = this.formatLineup();
 

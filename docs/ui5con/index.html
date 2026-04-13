@@ -197,50 +197,45 @@
 		</section>
 
 		<!-- <section class="alternate">
-		<div class="wrap" id="speakers">
+			<div class="wrap" id="speakers">
+				<h2 class="section-heading section-heading--cube-7 section-heading--bounce">
+					<span>Speakers</span>
+				</h2>				
+				
+				<ul class="people-list people-list--speakers" role="list">
+					<li
+						v-for="speaker in formattedSpeakers.filter(s => s.hasPhoto)"
+						:key="`${speaker.firstName} ${speaker.firstName}`"
+						tabindex="-1"
+						role="listitem"
+						class="people-list-item">
+						
+						<figure class="people-member" tabindex="0">
+							<img
+								v-if="speaker.hasPhoto"
+								:src="`https://ui5con.cfapps.eu12.hana.ondemand.com${speaker.photoUrl}`"
+								:alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`" />
+							<div v-else class="placeholder"></div>
 
-			<h2 class="section-heading section-heading--cube-4 section-heading--bounce">
-				<span aria-hidden="true">↘</span>
-				<span>Speakers</span>
-			</h2>				<ul class="people-list people-list--speakers" role="list">
-				<li
-				tabindex="-1"
-				role="listitem"
-				class="people-list-item"
-
-				v-for="speaker in formattedSpeakers.filter(s => s.hasPhoto)"
-				:key="`${speaker.firstName} ${speaker.firstName}`">
-
-				<figure class="people-member" tabindex="0">
-
-					<img
-					v-if="speaker.hasPhoto"
-					:src="`images/speakers/${speaker.photoUrl}.jpg`"
-					:alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`" />
-
-					<div v-else class="placeholder"></div>
-
-					<figcaption>
-						<h3
-						class="people-topic"
-						:class="{
-						w1: speaker.proposals[0].location.toLowerCase().includes('w1') ||
-						speaker.proposals[0].location.toLowerCase().includes('w2'),
-						w3: speaker.proposals[0].location.toLowerCase().includes('w3'),
-						audimax: speaker.proposals[0].location.toLowerCase().includes('audimax')}"
-						v-if="speaker.proposals.length">
-						{{ speaker.proposals[0].title | decodeHtml }}
-					</h3>
-					<p class="people-name">{{speaker.firstName}} {{speaker.lastName}}</p>
-					<small>{{speaker.company}}</small>
-				</figcaption>
-			</figure>
-
-		</li>
-	</ul>
-
-</div>
-</section> -->
+							<figcaption>
+								<h3
+									v-if="speaker.proposals.length"
+									class="people-topic"
+									:class="{
+										w1: speaker.proposals[0].location.toLowerCase().includes('w1') ||
+										speaker.proposals[0].location.toLowerCase().includes('w2'),
+										w3: speaker.proposals[0].location.toLowerCase().includes('w3'),
+										audimax: speaker.proposals[0].location.toLowerCase().includes('audimax')}">
+									<span v-html="decodeBioHtml(speaker.proposals[0].title)"></span>
+								</h3>
+								<p class="people-name">{{speaker.firstName}} {{speaker.lastName}}</p>
+								<small>{{speaker.company}}</small>
+							</figcaption>
+						</figure>
+					</li>
+				</ul>
+			</div>
+		</section> -->
 
 		<section>
 			<div class="wrap">

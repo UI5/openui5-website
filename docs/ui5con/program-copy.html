@@ -279,7 +279,7 @@
 														<div class="placeholder"></div>
 														<img
 															v-if="speaker.hasPhoto"
-															:src="`images/speakers/${speaker.photoUrl}.jpg`"
+																:src="`https://ui5con.cfapps.eu12.hana.ondemand.com/${speaker.photoUrl}`"
 															:alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`"
 															@error="$event.target.style.display='none'"
 														/>
@@ -383,7 +383,7 @@
 											<div class="placeholder"></div>
 											<img
 												v-if="speaker.hasPhoto"
-												:src="`images/speakers/${speaker.photoUrl}.jpg`"
+												:src="`https://ui5con.cfapps.eu12.hana.ondemand.com/${speaker.photoUrl}`"
 												:alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`"
 												@error="$event.target.style.display='none'"
 											/>
@@ -534,7 +534,7 @@
 								<div class="placeholder"></div>
 								<img
 									v-if="speaker.hasPhoto"
-									:src="`images/speakers/${speaker.photoUrl}.jpg`"
+									:src="`https://ui5con.cfapps.eu12.hana.ondemand.com/${speaker.photoUrl}`"
 									:alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`"
 									@error="$event.target.style.display='none'"
 								/>
