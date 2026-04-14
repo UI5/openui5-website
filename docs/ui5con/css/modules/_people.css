@@ -94,6 +94,13 @@
 	color: var(--text-color);
 }
 
+@media (prefers-color-scheme: dark) {
+
+	.people-topic.audimax {
+		color: var(--white);
+	}
+}
+
 .people-member:is(:hover, :focus) {
 	outline: none;
 
