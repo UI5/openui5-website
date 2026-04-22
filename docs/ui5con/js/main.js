@@ -195,6 +195,11 @@ const main = createApp({
         location: "Facility",
         image: "images/team/sven-bender.jpg",
       },
+      {
+        name: "Michael Sobczak",
+        location: "Facility",
+        image: "images/team/michael-sobczak.jpg",
+      },
       // {
       //   name: 'Jennifer Klar',
       //   location: 'Communications, Facility',

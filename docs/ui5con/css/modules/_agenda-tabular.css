@@ -269,3 +269,66 @@
 	margin-inline: 0.4rem;
 	background: var(--brand-color);
 }
+
+/* Agenda switch toggle */
+
+.switch {
+	display: inline-block;
+	cursor: pointer;
+	
+	p {
+		display: inline-block;
+	}
+	
+	.switch-text {
+		line-height: 1;
+		margin-inline: .5rem;
+		font-size: var(--type-0);
+		
+		svg {
+			position: relative;
+			top: -1px;
+			width: 16px;
+			height: 16px;
+			vertical-align: middle;
+		}
+	}
+	
+	input {
+		display: none;
+		
+		&:checked {
+			
+			+ .switch-btn {
+				background-color: var(--brand-color-alt);
+			}
+			
+			+ .switch-btn::after {
+				transform: translateX(100%);
+			}
+		}
+	}
+	
+	.switch-btn {
+		display: inline-block;
+		position: relative;
+		height: 1.8rem;
+		width: 3.6rem;
+		background: var(--brand-color);
+		vertical-align: middle;
+		top: -3px;
+		
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 3px;
+			bottom: 3px;
+			left: 3px;
+			width: 1.6rem;
+			background: var(--white);
+			transition: all .2s ease-in-out;
+			transition-behavior: allow-discrete;
+		}
+	}
+}

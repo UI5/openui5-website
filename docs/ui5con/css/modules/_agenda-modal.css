@@ -134,6 +134,10 @@
 	margin-block-end: 1rem;
 }
 
+.agenda-modal-content {
+	margin-block-start: calc(var(--agenda-modal-btn-size) * -1);
+}
+
 .agenda-modal-type {
 	display: inline-flex;
 	padding: 0.25rem 0.75rem;
