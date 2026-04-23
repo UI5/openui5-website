@@ -128,7 +128,7 @@ const main = createApp({
       {
         name: 'Dorota Josenhans',
         location: 'Facility',
-        image: 'images/team/dorota-josenhans.png'
+        image: 'images/team/dorota-josenhans.jpg'
       },
       {
         name: 'Daniel Nowak',
