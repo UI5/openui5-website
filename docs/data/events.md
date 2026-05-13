@@ -1,8 +1,25 @@
 # Events
 ```yaml
+title: UI5ers live (May '26)
+subTitle: 45 minute interactive webcast
+location: via YouTube
+logo: images/events/ui5ers.svg
+speakers:
+  - Holger Schäfer
+  - Peter Muessig
+url: 'https://youtube.com/live/11lju1pShew'
+id: ui5ers-58
+start: '2026-05-21 15:15 Europe/Berlin'
+end: '2026-05-21 16:00 Europe/Berlin'
+```
+What if Claude wasn't an API call, but a model you could bind to? In this episode, Holger Schäfer from the community introduces ClaudeJSONModel — an open-source, drop-in JSONModel replacement that turns Claude into a native, bindable data source for SAPUI5/OpenUI5. No imperative fetch logic, no manual loading states: your controls bind to AI results exactly the way they bind to OData.
+
+Peter Muessig from the UI5 team walks through the removal of the experimental sap.ui.webc.* wrapper libraries in SAPUI5 1.147.0. They shipped a frozen snapshot of UI5 Web Components that couldn't evolve — the replacement, sap.ui.core.webc.WebComponent (public since 1.138), integrates Web Components natively from npm, always current, no frozen bundles. Peter will explain the reasoning behind this decision and show the recommended approach going forward.
+
+```yaml
 title: UI5ers live (Apr '26)
 subTitle: 45 minute interactive webcast
-location: via YouTube (← NEW!)
+location: via YouTube
 logo: images/events/ui5ers.svg
 speakers:
   - Patric Ksinsik
