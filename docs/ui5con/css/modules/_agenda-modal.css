@@ -88,11 +88,8 @@
 
 .agenda-modal img {
 	width: 8rem;
-	height: 9.5rem;
+	height: 8rem;
 	object-fit: cover;
-	position: absolute;
-	top: 0;
-	left: 0;
 }
 
 .agenda-modal header {
@@ -277,7 +274,14 @@
 	}
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 1024px) {
+	.agenda-modal img {
+		width: 4rem;
+		height: 4rem;
+	}
+}
+
+@media only screen and (min-width: 1025px) {
 
 	:root {
 		--agenda-modal-spacing: 2rem;
