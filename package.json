@@ -13,11 +13,13 @@
     "url": "https://github.com/UI5/openui5-website/issues"
   },
   "scripts": {
-    "start": "browser-sync start --server --serveStatic ./docs --files \"./**/*\""
+    "start": "browser-sync start --server --serveStatic ./docs --files \"./**/*\"",
+    "lint:lockfile": "lockfile-lint --path package-lock.json --type npm --allowed-hosts npm --validate-https"
   },
   "keywords": [],
   "devDependencies": {
-    "browser-sync": "^3.0.4"
+    "browser-sync": "3.0.4",
+    "lockfile-lint": "5.0.0"
   },
   "engines": {
     "node": "20.x || 22.x || >=24"
