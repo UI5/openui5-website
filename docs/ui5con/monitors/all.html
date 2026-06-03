@@ -53,64 +53,76 @@
 		</ul>
 	</nav>
 
-	<table class="timetable" id="all">
-		<caption></caption>
-		<thead>
-			<tr>
-				<th scope="col">Time</th>
-				<th scope="col">Station</th>
-				<th scope="col">Session Title</th>
-				<th scope="col">Speaker</th>
-				<th scope="col">Level</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr v-for="event in this.formattedLineup" :key="event.id" v-cloak :style="{ display: event.isPast ? 'none' : '' }">
-				<th scope="row">{{event.startTime | trimTime}}</th>
-				<td>
-					<span
-						class="agenda-room"
-						:class="{
-							w1: event.location.toLowerCase().includes('w1') ||
-							event.location.toLowerCase().includes('w2'),
-							w3: event.location.toLowerCase().includes('w3'),
-							experts: event.location.toLowerCase().includes('expert'),
-							canteen: event.location.toLowerCase().includes('canteen'),
-							other: event.location.toLowerCase().includes('other'),
-						}">
-						{{ event.location | formatLocation }}
-					</span>
-				</td>
-				<td>{{event.title  | decodeHtml}}</td>
-				<td v-if="event.speakers">
-					<template
-						v-for="(speaker, index) in event.speakers"
-						:key="`${speaker.firstName} ${speaker.firstName}`">
-						{{speaker.firstName}} {{speaker.lastName}}
-						(<span v-html="speaker.company"></span>)<template v-if="index != event.speakers.length - 1">, </template>
-					</template>
-				</td>
-				<td>
-					<span
-						v-if="event.proficiencyLevel"
-						class="agenda-level"
-						:class="{
-							beginner: event.proficiencyLevel === 'beginner',
-							intermediate: event.proficiencyLevel === 'intermediate',
-							advanced: event.proficiencyLevel === 'advanced' }">
-						{{ event.proficiencyLevel }}
-					</span>
-				</td>
-			</tr>
-		</tbody>
-	</table>
-	<script src="../js/monitor.js"></script>
-	<script src="../js/proposal-lineup.js"></script>
+	<div id="all">
+		<!-- Loading state -->
+		<div v-if="isLoading" class="loading-state" aria-live="polite">
+			<p>Loading schedule...</p>
+		</div>
+
+		<!-- Error state -->
+		<div v-else-if="error" class="error-state" role="alert">
+			<p>Failed to load schedule: {{ error }}</p>
+		</div>
+
+		<!-- Schedule table -->
+		<table v-else class="timetable" v-cloak>
+			<caption class="sr-only">UI5con 2026 Schedule - All Rooms</caption>
+			<thead>
+				<tr>
+					<th scope="col">Time</th>
+					<th scope="col">Location</th>
+					<th scope="col">Session Title</th>
+					<th scope="col">Speaker</th>
+					<th scope="col">Level</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr
+					v-for="event in visibleEvents"
+					:key="event.id"
+					:class="{ 'is-live': event.isLive }">
+					<th scope="row">{{ trimTime(event.startTime) }}</th>
+					<td>
+						<span
+							class="agenda-room"
+							:class="getLocationClass(event.location)">
+							{{ formatLocation(event.location) }}
+						</span>
+					</td>
+					<td>{{ decodeHtml(event.title) }}</td>
+					<td>
+						<span v-if="event.speakers && event.speakers.length > 0">
+							<template v-for="(speaker, index) in event.speakers" :key="speaker.id || index">
+								{{ speaker.firstName }} {{ speaker.lastName }}
+								(<span v-html="speaker.company"></span>)<template v-if="index < event.speakers.length - 1">, </template>
+							</template>
+						</span>
+						<span v-else>—</span>
+					</td>
+					<td>
+						<span
+							v-if="event.proficiencyLevel"
+							class="agenda-level"
+							:class="event.proficiencyLevel">
+							{{ formatLevel(event.proficiencyLevel) }}
+						</span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
 	<script src="../js/luxon.min.js"></script>
+	<script src="../js/monitor.js"></script>
 	<script>
-		 createLineupApp('all', session =>
-			session.location && (session.location.toLowerCase().includes('w1') || session.location.toLowerCase().includes('w2') || session.location.toLowerCase().includes('audimax') || session.location.toLowerCase().includes('w3'))
-		);
+		createLineupApp('all', (session) => {
+			if (!session.location) return false;
+			const location = session.location.toLowerCase();
+			return location.includes('w1') ||
+			       location.includes('w2') ||
+			       location.includes('audimax') ||
+			       location.includes('w3');
+		});
 	</script>
 </body>
 </html>

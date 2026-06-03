@@ -1,8 +1,6 @@
 .schedule nav {
 	max-width: 100%;
 	padding: 2rem;
-	background: transparent url(../images/timetable-bg.svg) 101% 102% no-repeat;
-	background-size: 2800px auto;
 }
 
 .timetable {
@@ -13,6 +11,7 @@
 	border-top-width: 0.75rem;
 	border-collapse: collapse;
 	text-wrap: balance;
+	margin-inline: auto;
 }
 
 .timetable thead th {
@@ -74,6 +73,6 @@
 .timetable .agenda-level {
 	width: max-content;
 	padding-inline: 1rem;
-	border-radius: 10px;
 	font-size: 1.5rem;
+	border-radius: 0;
 }
