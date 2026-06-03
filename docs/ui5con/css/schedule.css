@@ -16,7 +16,7 @@
 
 .timetable thead th {
 	text-align: left;
-	font-size: 2.5rem;
+	font-size: 2.2rem;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	font-weight: 900;
@@ -75,4 +75,21 @@
 	padding-inline: 1rem;
 	font-size: 1.5rem;
 	border-radius: 0;
+	margin-inline: 0;
+}
+
+/* Loading state */
+.loading-state,
+.error-state {
+	padding: 3rem;
+	text-align: center;
+	font-size: 1.8rem;
+}
+
+.error-state {
+	color: #d32f2f;
+}
+
+.loading-state {
+	color: var(--text-color);
 }

@@ -106,6 +106,11 @@ function createLineupApp(mountElementId, roomFilterFn) {
     async mounted() {
       await this.fetchLineup();
       this.startAutoUpdate();
+
+      // Store app instance globally for debug access
+      if (window.DebugMonitor) {
+        window.DebugMonitor._appInstance = this;
+      }
     },
     beforeUnmount() {
       this.stopAutoUpdate();

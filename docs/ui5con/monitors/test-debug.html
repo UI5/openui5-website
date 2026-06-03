@@ -4,29 +4,8 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>UI5con Germany in July 2026</title>
-	<meta name="description"
-		content="If you want to learn more about UI5, you can't miss UI5con 2026. A day of inspiration, learning, and networking with like-minded people. Inspiring talks. Endless learning. Frontend, Framework, SAPUI5, OpenUI5, UI5con, SAP" />
-	<meta name="keywords"
-		content="webstandards, web standards, html, css, JavaScript, Accessibility, Barrierefreiheit, WCAG, OpenUI5, DevOps, SAPUI5, UI5con, UI5 Web Components, Web Components, Webcomponents, Open Source" />
-	<meta name="robots" content="index, follow" />
-	<meta name="author" content="SAP SE" />
-	<meta property="twitter:card" content="summary" />
-	<meta property="twitter:url" content="https://openui5.org/ui5con/" />
-	<meta property="twitter:title" content="UI5con Germany in July 14th 2026" />
-	<meta property="twitter:description"
-		content="If you want to learn more about UI5, you can't miss UI5con 2026. A day of inspiration, learning, and networking with like-minded people. Inspiring talks. Endless learning. July 14th 2026" />
-	<meta property="twitter:image" content="https://openui5.org/ui5con/images/share.png" />
-	<meta property="og:title" content="UI5con Germany in July 14th 2026" />
-	<meta property="og:description"
-		content="If you want to learn more about UI5, you can't miss UI5con 2026. A day of inspiration, learning, and networking with like-minded people. Inspiring talks. Endless learning. July 14th 2026" />
-	<meta property="og:image" content="https://openui5.org/ui5con/images/share.png" />
-
+	<title>UI5con 2026 - Monitor Debug Test</title>
 	<meta name="theme-color" content="#e76500">
-
-	<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
-	<link rel="icon" type="image/svg+xml" href="../images/icon.svg" />
-	<link rel="icon" sizes="any" href="../images/android-chrome-192x192.png" />
 
 	<link rel="preconnect" href="https://rsms.me/">
 	<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
@@ -37,8 +16,28 @@
 
 	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+	<!-- DEBUG MODE: Load debug script BEFORE monitor.js -->
+	<script src="../js/monitor-debug.js"></script>
+
+	<style>
+		.test-banner {
+			background: #ff6b6b;
+			color: white;
+			padding: 10px;
+			text-align: center;
+			font-weight: bold;
+			position: sticky;
+			top: 0;
+			z-index: 1000;
+		}
+	</style>
 </head>
 <body class="schedule">
+	<div class="test-banner">
+		🧪 DEBUG MODE - Use the debug panel (top right) to test different times
+	</div>
+
 	<nav class="nav" aria-label="Main navigation" id="nav">
 		<ul>
 			<li>
@@ -53,7 +52,7 @@
 		</ul>
 	</nav>
 
-	<div id="audimax">
+	<div id="all">
 		<!-- Loading state -->
 		<div v-if="isLoading" class="loading-state" aria-live="polite">
 			<p>Loading schedule...</p>
@@ -66,7 +65,7 @@
 
 		<!-- Schedule table -->
 		<table v-else class="timetable" v-cloak>
-			<caption class="sr-only">UI5con 2026 Schedule - Audimax</caption>
+			<caption class="sr-only">UI5con 2026 Schedule - Debug Mode</caption>
 			<thead>
 				<tr>
 					<th scope="col">Time</th>
@@ -120,9 +119,22 @@
 	<script src="../js/luxon.min.js"></script>
 	<script src="../js/monitor.js"></script>
 	<script>
-		createLineupApp('audimax', (session) => {
-			return session.location && session.location.toLowerCase().includes('audimax');
+		createLineupApp('all', (session) => {
+			if (!session.location) return false;
+			const location = session.location.toLowerCase();
+			return location.includes('w1') ||
+			       location.includes('w2') ||
+			       location.includes('audimax') ||
+			       location.includes('w3');
 		});
+
+		// Log instructions to console
+		console.log('%c🧪 DEBUG MODE ACTIVE', 'font-size: 20px; color: #ff6b00; font-weight: bold;');
+		console.log('%cUse the debug panel in the top-right corner to test different times!', 'font-size: 14px; color: #333;');
+		console.log('%cOr use console commands:', 'font-size: 12px; font-weight: bold;');
+		console.log('  DebugMonitor.jumpToMidMorning()  - Jump to 10:30 AM');
+		console.log('  DebugMonitor.jumpToLunch()       - Jump to lunch time');
+		console.log('  DebugMonitor.reset()             - Back to real time');
 	</script>
 </body>
 </html>
