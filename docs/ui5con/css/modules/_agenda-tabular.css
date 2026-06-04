@@ -163,6 +163,30 @@
 		color: black;
 		grid-column: 1;
 	}
+	
+	.audimax & {
+		background: var(--audimax);
+		
+		&:hover {
+			background: color-mix(in srgb, var(--audimax) 80%, white);
+		}
+	}
+	
+	.w1 & {
+		background: var(--w1);
+		
+		&:hover {
+			background: color-mix(in srgb, var(--w1) 80%, white);
+		}
+	}
+	
+	.w3 & {
+		background: var(--w3);
+		
+		&:hover {
+			background: color-mix(in srgb, var(--w3) 80%, white);
+		}
+	}
 
 	h3 {
 		font-size: 1.5rem;
@@ -243,10 +267,6 @@
 .session {
 	cursor: pointer;
 	transition: background-color 0.3s ease;
-}
-
-.session:hover {
-	background-color: color-mix(in srgb, var(--brand-color) 85%, black);
 }
 
 .session.break:hover {

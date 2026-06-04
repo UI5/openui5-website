@@ -78,6 +78,10 @@
 	margin-inline: 0;
 }
 
+.timetable .agenda-level {
+	transform: none;
+}
+
 /* Loading state */
 .loading-state,
 .error-state {
@@ -92,4 +96,22 @@
 
 .loading-state {
 	color: var(--text-color);
+}
+
+.active {
+	text-transform: uppercase;
+	font-weight: 800;
+	color: #e60000;
+	
+	&::before {
+		content: "●";
+		color: #e60000;
+		margin-inline: 0 .3rem;
+		animation: blink 1s linear infinite alternate;
+		text-decoration-thickness: 0 !important;
+		display: inline-block;
+		
+		mask: none;
+		background: none;
+	}
 }
