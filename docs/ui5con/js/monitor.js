@@ -11,9 +11,9 @@ const API_ENDPOINTS = {
 
 const EVENT_DATE = "2026-07-14";
 const EVENT_TIMEZONE = "+02:00";
-const EVENT_START_TIME = `${EVENT_DATE}T00:50:00.000${EVENT_TIMEZONE}`;
-const EVENT_END_TIME = `${EVENT_DATE}T18:10:00.000${EVENT_TIMEZONE}`;
-const UPDATE_INTERVAL_MS = 30000; // 30 seconds
+const EVENT_START_TIME = `${EVENT_DATE}T02:00:00.000${EVENT_TIMEZONE}`;
+const EVENT_END_TIME = `${EVENT_DATE}T19:00:00.000${EVENT_TIMEZONE}`;
+const UPDATE_INTERVAL_MS = 60000; // 60 seconds
 
 // Location mapping for display
 const LOCATION_MAP = {
@@ -105,6 +105,10 @@ function createLineupApp(mountElementId, roomFilterFn) {
     },
     async mounted() {
       await this.fetchLineup();
+
+      // Update live session status
+      this.updateLiveSession();
+
       this.startAutoUpdate();
 
       // Store app instance globally for debug access

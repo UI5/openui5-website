@@ -623,6 +623,37 @@ const main = createApp({
     this.formattedSpeakers = this.formatSpeakers(this.formattedLineup, this.speakers);
 
     this.isLoading = false;
+
+    // Update live session status
+    this.updateLiveSession();
+
+    // Start interval timer for live session updates
+    let interval;
+    let timeNow = new Date().toISOString();
+
+    const startCounterTime = new Date(
+      `${EVENT_DATE}T02:00:00.000${EVENT_TIMEZONE}`
+    ).toISOString();
+
+    const endCounterTime = new Date(
+      `${EVENT_DATE}T19:00:00.000${EVENT_TIMEZONE}`
+    ).toISOString();
+
+    if (timeNow > startCounterTime && timeNow <= endCounterTime) {
+      interval = setInterval(() => {
+        timeNow = new Date().toISOString();
+        if (timeNow > endCounterTime) {
+          clearInterval(interval);
+          return;
+        }
+        this.updateLiveSession();
+      }, 60000);
+    }
+
+    // Register this Vue instance with DebugAgenda if it exists
+    if (window.DebugAgenda) {
+      window.DebugAgenda._appInstance = this;
+    }
   },
   computed: {
     // Returns sorted break/catering sessions
@@ -789,11 +820,18 @@ const main = createApp({
         ? session.description.replace(/&amp;/g, "&").replace(/(?:\r\n|\r|\n)/g, "<br>")
         : "";
 
+      // Calculate initial live status
+      const timeNow = new Date().toISOString();
+      const sessionTimeStart = newStartTime ? new Date(newStartTime).toISOString() : null;
+      const sessionTimeEnd = newEndTime ? new Date(newEndTime).toISOString() : null;
+      const isLive = sessionTimeStart && sessionTimeEnd && timeNow >= sessionTimeStart && timeNow < sessionTimeEnd;
+
       return {
         ...session,
         speakers: formattedSpeakers,
         startTime: newStartTime,
         endTime: newEndTime,
+        isLive: isLive,
         calendars: buildCalendarLinks(session, calendarDates, calDescription),
       };
     },
@@ -910,6 +948,18 @@ const main = createApp({
     isExpertSession(session) {
       const lowerType = (session.type || "").toLowerCase();
       return lowerType.includes(SESSION_TYPES.EXPERT_CORNER);
+    },
+    // Updates the live status for all sessions
+    updateLiveSession() {
+      this.formattedLineup.forEach((session) => {
+        if (!session.startTime || !session.endTime) return;
+
+        const timeNow = new Date().toISOString();
+        const sessionTimeStart = new Date(session.startTime).toISOString();
+        const sessionTimeEnd = new Date(session.endTime).toISOString();
+
+        session.isLive = timeNow >= sessionTimeStart && timeNow < sessionTimeEnd;
+      });
     },
     // Toggles between grid and linear agenda views
     toggleAgendaView() {

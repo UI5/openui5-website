@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-debug-mode="true">
 
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>UI5con Germany in July 2026 - Agenda</title>
+	<title>UI5con Germany - Agenda DEBUG MODE</title>
 	<meta name="description"
 		content="If you want to learn more about UI5, you can't miss UI5con 2026. A day of inspiration, learning, and networking with like-minded people. Inspiring talks. Endless learning. Frontend, Framework, SAPUI5, OpenUI5, UI5con, SAP" />
 	<meta name="keywords"
 		content="webstandards, web standards, html, css, JavaScript, Accessibility, Barrierefreiheit, WCAG, OpenUI5, DevOps, SAPUI5, UI5con, UI5 Web Components, Web Components, Webcomponents, Open Source" />
-	<meta name="robots" content="index, follow" />
+	<meta name="robots" content="noindex, nofollow" />
 	<meta name="author" content="SAP SE" />
 	<meta property="twitter:card" content="summary" />
 	<meta property="twitter:url" content="https://openui5.org/ui5con/" />
@@ -36,6 +36,28 @@
 
 	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+	<style>
+		/* Debug mode indicator */
+		body::before {
+			content: "🐛 DEBUG MODE - Time can be controlled via debug panel";
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			background: #ff9800;
+			color: black;
+			padding: 0.5rem;
+			text-align: center;
+			font-weight: bold;
+			z-index: 9999;
+			font-size: 0.9rem;
+		}
+
+		.nav {
+			margin-top: 3rem;
+		}
+	</style>
 </head>
 
 <body>
@@ -49,7 +71,7 @@
 			<div class="wrap">
 				<div class="box">
 					<h2 class="section-heading section-heading--cube-12">
-						<span>Agenda</span>
+						<span>Agenda - DEBUG MODE</span>
 					</h2>
 	
 					<label class="switch">

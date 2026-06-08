@@ -331,6 +331,25 @@
 	}
 }
 
+.agenda-slot.live {
+	outline: 0.25rem solid #4caf50;
+	outline-offset: 0.5rem;
+	border-radius: 0.5rem;
+}
+
+.agenda-slot.live .agenda-slot-container {
+	animation: pulse-live-linear 2s ease-in-out infinite;
+}
+
+@keyframes pulse-live-linear {
+	0%, 100% {
+		box-shadow: 0 0 1rem rgba(76, 175, 80, 0.3);
+	}
+	50% {
+		box-shadow: 0 0 2rem rgba(76, 175, 80, 0.5);
+	}
+}
+
 @keyframes glowing-pulse {
 	0% {
 		background-color: #e60000;

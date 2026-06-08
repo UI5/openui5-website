@@ -163,7 +163,23 @@
 		color: black;
 		grid-column: 1;
 	}
-	
+
+	&.live {
+		outline: 0.25rem solid #4caf50;
+		outline-offset: -0.25rem;
+		box-shadow: 0 0 1rem rgba(76, 175, 80, 0.4);
+		animation: pulse-live 2s ease-in-out infinite;
+	}
+
+	@keyframes pulse-live {
+		0%, 100% {
+			box-shadow: 0 0 1rem rgba(76, 175, 80, 0.4);
+		}
+		50% {
+			box-shadow: 0 0 1.5rem rgba(76, 175, 80, 0.6);
+		}
+	}
+
 	.audimax & {
 		background: var(--audimax);
 		
