@@ -274,6 +274,15 @@
 	}
 }
 
+.agenda-modal-calendars.links {
+	flex-wrap: wrap;
+}
+
+.agenda-modal-calendars.links a::before{
+	color: var(--brand-color);
+}
+
+
 @media only screen and (max-width: 1024px) {
 	.agenda-modal img {
 		width: 4rem;

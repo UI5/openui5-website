@@ -600,6 +600,20 @@
 	margin-inline: 0 .3rem;
 }
 
+.agenda-slot-linkitem[href*="forms"]::before {
+	content: "";
+	background: currentColor;
+	mask: url(../../images/icons/feedback-person.svg);
+	mask-size: contain;
+	mask-repeat: no-repeat;
+	display: inline-block;
+	height: 1rem;
+	width: 1rem;
+	vertical-align: middle;
+	line-height: 1;
+	margin-inline: 0 .3rem;
+}
+
 .agenda-slot-linkitem[href*="youtu"]::before {
 	content: "";
 	background: currentColor;
@@ -692,6 +706,7 @@
 	gap: 0.75rem;
 	flex-wrap: wrap;
 	display: inline-flex;
+	margin-inline: 0.75rem;
 }
 
 .calendar-list {
