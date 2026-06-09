@@ -2,6 +2,12 @@
 # Persons
 
 ```yaml
+name: Biser Miloshev
+company: SAP
+photo: data/persons/biser-miloshev.jpg
+id: biser-miloshev
+
+```yaml
 name: Angelika Kirilin
 company: SAP
 photo: data/persons/angelika-kirilin.png
