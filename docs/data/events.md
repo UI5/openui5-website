@@ -9,6 +9,7 @@ speakers:
   - Biser Miloshev
   - Thorsten Hochreuter
 url: 'https://youtube.com/live/aMmD2hTDW-U'
+recordingUrl: https://youtube.com/live/aMmD2hTDW-U
 id: ui5ers-59
 start: '2026-06-18 15:15 Europe/Berlin'
 end: '2026-06-18 16:00 Europe/Berlin'
@@ -26,6 +27,7 @@ speakers:
   - Holger Schäfer
   - Peter Muessig
 url: 'https://youtube.com/live/11lju1pShew'
+recordingUrl: https://youtube.com/live/11lju1pShew
 id: ui5ers-58
 start: '2026-05-21 15:15 Europe/Berlin'
 end: '2026-05-21 16:00 Europe/Berlin'
@@ -43,6 +45,7 @@ speakers:
   - Patric Ksinsik
   - Rainer Liebisch
 url: 'https://youtube.com/live/SyDK6mYQSFo'
+recordingUrl: https://youtube.com/live/SyDK6mYQSFo
 id: ui5ers-57
 start: '2026-04-16 15:15 Europe/Berlin'
 end: '2026-04-16 16:00 Europe/Berlin'
@@ -75,6 +78,7 @@ speakers:
   - Hristo Tsolev
   - Petar Dimov
 url: 'https://youtube.com/live/2bfX-UyCTfo'
+recordingUrl: https://youtube.com/live/2bfX-UyCTfo
 id: ui5ers-56
 start: '2026-02-12 15:15 Europe/Berlin'
 end: '2026-02-12 16:00 Europe/Berlin'

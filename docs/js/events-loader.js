@@ -639,7 +639,7 @@
       linksEl.innerHTML = '';
       const links = [];
 
-      if (ev.recordingUrl) {
+      if (ev.recordingUrl && isEventPast(ev)) {
         const recordingLink = cloneTpl('tpl-dialog-link-recording');
         if (recordingLink) {
           recordingLink.setAttribute('href', ev.recordingUrl);
