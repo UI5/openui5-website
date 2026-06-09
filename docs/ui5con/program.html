@@ -451,8 +451,7 @@
 											   rel="noopener noreferrer"
 											   target="_blank"
 											   hreflang="en"
-											   class="agenda-slot-linkitem">
-												Feedback
+											   class="agenda-slot-linkitem">Feedback
 											</a>
 
 											<a
@@ -461,8 +460,7 @@
 											   rel="noopener noreferrer"
 											   target="_blank"
 											   hreflang="en"
-											   class="agenda-slot-linkitem">
-												Livestream
+											   class="agenda-slot-linkitem">Livestream
 											</a>
 
 											<template v-if="session.presentationLinks && session.presentationLinks.length > 0">
@@ -536,6 +534,51 @@
 								<p v-if="activeSession.description" class="agenda-modal-description"
 								   v-html="decodeBioHtml(activeSession.description)">
 								</p>
+								
+								<!-- Additional Links -->
+								<div v-if="!isBreakSession(activeSession) && (activeSession.attendeeRatingLink || (activeSession.location && activeSession.location.toLowerCase().includes('audimax')) || (activeSession.presentationLinks && activeSession.presentationLinks.length > 0))"
+									class="agenda-modal-links">
+									<h3 class="agenda-modal-section-heading">LINKS</h3>
+									<div class="agenda-modal-calendars links">
+										<a
+											v-if="activeSession.attendeeRatingLink"
+											:href="activeSession.attendeeRatingLink"
+											rel="noopener noreferrer"
+											target="_blank"
+											hreflang="en"
+											class="agenda-slot-linkitem">
+											Feedback
+										</a>
+
+										<a
+											v-if="activeSession.location.toLowerCase().includes('audimax')"
+											href="https://www.youtube.com/live/CMPudw4scSE"
+											rel="noopener noreferrer"
+											target="_blank"
+											hreflang="en"
+											class="agenda-slot-linkitem">
+											Livestream
+										</a>
+
+										<template v-if="activeSession.presentationLinks && activeSession.presentationLinks.length > 0">
+											<ul class="agenda-slot-links">
+												<template v-for="link in activeSession.presentationLinks"
+															:key="link.linkType">
+													<li>
+														<a
+															:href="link.url"
+															class="agenda-slot-linkitem"
+															target="_blank"
+															hreflang="en"
+															rel="noopener noreferrer">
+															{{link.linkType}}
+														</a>
+													</li>
+												</template>
+											</ul>
+										</template>
+									</div>
+								</div>
 	
 								<!-- Speakers -->
 								<h3 v-if="getSessionSpeakers(activeSession.id).length > 0"
@@ -671,50 +714,6 @@
 								</div>
 							</div>
 
-							<!-- Additional Links -->
-							 <div v-if="!isBreakSession(activeSession) && (activeSession.attendeeRatingLink || (activeSession.location && activeSession.location.toLowerCase().includes('audimax')) || (activeSession.presentationLinks && activeSession.presentationLinks.length > 0))"
-								  class="agenda-modal-links">
-								<h3 class="agenda-modal-section-heading">LINKS</h3>
-								<div class="agenda-modal-calendars links">
-									<a
-										v-if="activeSession.attendeeRatingLink"
-										:href="activeSession.attendeeRatingLink"
-										rel="noopener noreferrer"
-										target="_blank"
-										hreflang="en"
-										class="agenda-slot-linkitem">
-										Feedback
-									</a>
-
-									<a
-										v-if="activeSession.location.toLowerCase().includes('audimax')"
-										href="https://www.youtube.com/live/CMPudw4scSE"
-										rel="noopener noreferrer"
-										target="_blank"
-										hreflang="en"
-										class="agenda-slot-linkitem">
-										Livestream
-									</a>
-
-									<template v-if="activeSession.presentationLinks && activeSession.presentationLinks.length > 0">
-										<ul class="agenda-slot-links">
-											<template v-for="link in activeSession.presentationLinks"
-														:key="link.linkType">
-												<li>
-													<a
-														:href="link.url"
-														class="agenda-slot-linkitem"
-														target="_blank"
-														hreflang="en"
-														rel="noopener noreferrer">
-														{{link.linkType}}
-													</a>
-												</li>
-											</template>
-										</ul>
-									</template>
-								</div>
-							 </div>
 						</div>
 					</div>
 				</div>

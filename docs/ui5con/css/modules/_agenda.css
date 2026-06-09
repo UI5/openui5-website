@@ -622,7 +622,7 @@
 .agenda-slot-linkitem[href*="forms"]::before {
 	content: "";
 	background: currentColor;
-	mask: url(../../images/icons/feedback-person.svg);
+	mask: url(../../images/icons/feedback-color.svg);
 	mask-size: contain;
 	mask-repeat: no-repeat;
 	display: inline-block;
@@ -635,7 +635,7 @@
 
 .agenda-slot-linkitem[href*="youtu"]::before {
 	content: "";
-	background: currentColor;
+	background: #f00;
 	mask: url(../../images/icons/youtube.svg);
 	display: inline-block;
 	height: 1rem;
