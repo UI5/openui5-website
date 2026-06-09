@@ -1,846 +1,1097 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UI5con Germany in July 2026 - Agenda</title>
+    <meta
+      name="description"
+      content="If you want to learn more about UI5, you can't miss UI5con 2026. A day of inspiration, learning, and networking with like-minded people. Inspiring talks. Endless learning. Frontend, Framework, SAPUI5, OpenUI5, UI5con, SAP"
+    />
+    <meta
+      name="keywords"
+      content="webstandards, web standards, html, css, JavaScript, Accessibility, Barrierefreiheit, WCAG, OpenUI5, DevOps, SAPUI5, UI5con, UI5 Web Components, Web Components, Webcomponents, Open Source"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="SAP SE" />
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:url" content="https://openui5.org/ui5con/" />
+    <meta property="twitter:title" content="UI5con Germany in July 14th 2026" />
+    <meta
+      property="twitter:description"
+      content="If you want to learn more about UI5, you can't miss UI5con 2026. A day of inspiration, learning, and networking with like-minded people. Inspiring talks. Endless learning. July 14th 2026"
+    />
+    <meta property="twitter:image" content="https://openui5.org/ui5con/images/share.png" />
+    <meta property="og:title" content="UI5con Germany in July 14th 2026" />
+    <meta
+      property="og:description"
+      content="If you want to learn more about UI5, you can't miss UI5con 2026. A day of inspiration, learning, and networking with like-minded people. Inspiring talks. Endless learning. July 14th 2026"
+    />
+    <meta property="og:image" content="https://openui5.org/ui5con/images/share.png" />
+    <meta name="theme-color" content="#e76500" />
 
-<head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>UI5con Germany in July 2026 - Agenda</title>
-	<meta name="description"
-		content="If you want to learn more about UI5, you can't miss UI5con 2026. A day of inspiration, learning, and networking with like-minded people. Inspiring talks. Endless learning. Frontend, Framework, SAPUI5, OpenUI5, UI5con, SAP" />
-	<meta name="keywords"
-		content="webstandards, web standards, html, css, JavaScript, Accessibility, Barrierefreiheit, WCAG, OpenUI5, DevOps, SAPUI5, UI5con, UI5 Web Components, Web Components, Webcomponents, Open Source" />
-	<meta name="robots" content="index, follow" />
-	<meta name="author" content="SAP SE" />
-	<meta property="twitter:card" content="summary" />
-	<meta property="twitter:url" content="https://openui5.org/ui5con/" />
-	<meta property="twitter:title" content="UI5con Germany in July 14th 2026" />
-	<meta property="twitter:description"
-		content="If you want to learn more about UI5, you can't miss UI5con 2026. A day of inspiration, learning, and networking with like-minded people. Inspiring talks. Endless learning. July 14th 2026" />
-	<meta property="twitter:image" content="https://openui5.org/ui5con/images/share.png" />
-	<meta property="og:title" content="UI5con Germany in July 14th 2026" />
-	<meta property="og:description"
-		content="If you want to learn more about UI5, you can't miss UI5con 2026. A day of inspiration, learning, and networking with like-minded people. Inspiring talks. Endless learning. July 14th 2026" />
-	<meta property="og:image" content="https://openui5.org/ui5con/images/share.png" />
-	<meta name="theme-color" content="#e76500">
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="images/icon.svg" />
+    <link rel="icon" sizes="any" href="images/android-chrome-192x192.png" />
 
-	<link rel="apple-touch-icon" href="../images/apple-touch-icon.png" />
-	<link rel="icon" type="image/svg+xml" href="images/icon.svg" />
-	<link rel="icon" sizes="any" href="images/android-chrome-192x192.png" />
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 
-	<link rel="preconnect" href="https://rsms.me/">
-	<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css" />
+    <link rel="stylesheet" href="./css/modules.css" />
 
-	<link rel="stylesheet" href="./css/common.css" />
-	<link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
-	<link rel="stylesheet" href="./css/modules.css" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+  </head>
 
-	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-</head>
+  <body>
+    <nav class="nav" aria-label="Main navigation" id="nav">
+      <nav-section v-if="!showMobileNav"></nav-section>
+      <nav-section-mobile v-else></nav-section-mobile>
+    </nav>
 
-<body>
-	<nav class="nav" aria-label="Main navigation" id="nav">
-		<nav-section v-if="!showMobileNav"></nav-section>
-		<nav-section-mobile v-else></nav-section-mobile>
-	</nav>
+    <main id="main">
+      <section id="agenda" ref="agenda">
+        <div class="wrap">
+          <div class="box">
+            <h2 class="section-heading section-heading--cube-12">
+              <span>Agenda</span>
+            </h2>
 
-		<main id="main">
-		<section id="agenda" ref="agenda">
-			<div class="wrap">
-				<div class="box">
-					<h2 class="section-heading section-heading--cube-12">
-						<span>Agenda</span>
-					</h2>
-	
-					<label class="switch">
-						<p>View mode:</p>
-						<span class="switch-text" aria-label="Grid View">
-							<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-								<path
-									  d="M6 1v3H1V1zM1 0a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1zm14 12v3h-5v-3zm-5-1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1zM6 8v7H1V8zM1 7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1zm14-6v7h-5V1zm-5-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1z" />
-							</svg>
-						</span>
-					
-						<input type="checkbox" role="switch" class="switch-input" @click="toggleAgendaView" />
-					
-						<span class="switch-btn"></span>
-					
-						<span class="switch-text" aria-label="Linear View">
-							<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-								<path fill-rule="evenodd"
-									  d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
-							</svg>
-						</span>
-					</label>
+            <label class="switch">
+              <p>View mode:</p>
+              <span class="switch-text" aria-label="Grid View">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                  <path
+                    d="M6 1v3H1V1zM1 0a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1zm14 12v3h-5v-3zm-5-1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1zM6 8v7H1V8zM1 7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1zm14-6v7h-5V1zm-5-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1z"
+                  />
+                </svg>
+              </span>
 
-					<div class="break-sessions" v-if="agendaViewMode === 'grid'">
-						<div class="break-session">
-							<div class="break-session-time">
-								<span>09:00</span>
-								<span>11:00</span>
-							</div>
-							<span class="break-session-text">Breakfast</span>
-						</div>
+              <input type="checkbox" role="switch" class="switch-input" @click="toggleAgendaView" />
 
-						<div class="break-session">
-							<div class="break-session-time">
-								<span>12:00</span>
-								<span>14:00</span>
-							</div>
-							<span class="break-session-text">Lunch</span>
-						</div>
+              <span class="switch-btn"></span>
 
-						<div class="break-session">
-							<div class="break-session-time">
-								<span>15:00</span>
-								<span>16:30</span>
-							</div>
-							<span class="break-session-text">Afternoon Snack</span>
-						</div>
+              <span class="switch-text" aria-label="Linear View">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                  <path
+                    fill-rule="evenodd"
+                    d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2"
+                  />
+                </svg>
+              </span>
+            </label>
 
-						<div class="break-session">
-							<div class="break-session-time">
-								<span>18:00</span>
-								<span>20:00</span>
-							</div>
-							<span class="break-session-text">Afterparty</span>
-						</div>
-					</div>
+            <div class="break-sessions" v-if="agendaViewMode === 'grid'">
+              <div class="break-session">
+                <div class="break-session-time">
+                  <span>09:00</span>
+                  <span>11:00</span>
+                </div>
+                <span class="break-session-text">Breakfast</span>
+              </div>
 
-					<div class="swipe-container" v-if="agendaViewMode === 'grid'">
-						<div class="swipe">
-							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16"
-								 class="swipe-arrow swipe-arrow-left">
-								<path fill-rule="evenodd"
-									  d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z" />
-							</svg>
-							<span>Swipe</span>
-							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16"
-								 class="swipe-arrow swipe-arrow-right">
-								<path fill-rule="evenodd"
-									  d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
-							</svg>
-						</div>
-					</div>
-	
-					<!-- Dynamic Agenda using Vue -->
-					<div class="timetable" :class="{ 'timetable--linear': agendaViewMode === 'linear' }">
-						<!-- Grid View -->
-						<template v-if="agendaViewMode === 'grid'">
-							<div class="timetable--body">
-								<div class="hours" aria-hidden="true">
-									<div v-for="hour in 9" :key="hour">
-										<time :datetime="`${(hour + 8).toString().padStart(2, '0')}:00`">
-											{{ (hour + 8).toString().padStart(2, '0') }}:00
-										</time>
-									</div>
-								</div>
+              <div class="break-session">
+                <div class="break-session-time">
+                  <span>12:00</span>
+                  <span>14:00</span>
+                </div>
+                <span class="break-session-text">Lunch</span>
+              </div>
 
-								<!-- Audimax -->
-								<div class="stage audimax" style="--column: 2;">
-									<h2 class="stage-headline">Audimax</h2>
-									<ol class="session-list" role="list">
-										<li
-											v-for="session in getSessionsByRoom('audimax')"
-											:key="session.id"
-											class="session"
-											:class="{
-													break: isBreakSession(session),
-													pitch: isPitchSession(session),
-													expert: isExpertSession(session),
-													live: session.isLive
-												}"
-											:style="`--start: ${timeToGridValue(session.startTime)}; --end: ${timeToGridValue(session.endTime)};`"
-											@click="openSessionDialog(session)"
-											@keydown.enter="openSessionDialog(session)"
-											@keydown.space.prevent="openSessionDialog(session)"
-											tabindex="0"
-											role="button"
-											:aria-label="`View details for ${session.title}`">
-											<h3>
-												<span class="time">{{ trimTime(session.startTime) }} - {{ trimTime(session.endTime) }}</span>
-												<span v-html="decodeBioHtml(session.title)"></span>
-											</h3>
-										</li>
-									</ol>
-								</div>
+              <div class="break-session">
+                <div class="break-session-time">
+                  <span>15:00</span>
+                  <span>16:30</span>
+                </div>
+                <span class="break-session-text">Afternoon Snack</span>
+              </div>
 
-								<!-- W1/W2 -->
-								<div class="stage w1" style="--column: 3;">
-									<h2 class="stage-headline">W1/W2</h2>
-									<ol class="session-list" role="list">
-										<li
-											v-for="session in getSessionsByRoom('room_w1')"
-											:key="session.id"
-											class="session"
-											:class="{
-													break: isBreakSession(session),
-													pitch: isPitchSession(session),
-													expert: isExpertSession(session),
-													live: session.isLive
-												}"
-											:style="`--start: ${timeToGridValue(session.startTime)}; --end: ${timeToGridValue(session.endTime)};`"
-											@click="openSessionDialog(session)"
-											@keydown.enter="openSessionDialog(session)"
-											@keydown.space.prevent="openSessionDialog(session)"
-											tabindex="0"
-											role="button"
-											:aria-label="`View details for ${session.title}`">
-											<h3>
-												<span class="time">{{ trimTime(session.startTime) }} - {{ trimTime(session.endTime) }}</span>
-												<span v-html="decodeBioHtml(session.title)"></span>
-											</h3>
-										</li>
-									</ol>
-								</div>
+              <div class="break-session">
+                <div class="break-session-time">
+                  <span>18:00</span>
+                  <span>20:00</span>
+                </div>
+                <span class="break-session-text">Afterparty</span>
+              </div>
+            </div>
 
-								<!-- W3 -->
-								<div class="stage w3" style="--column: 4;">
-									<h2 class="stage-headline">W3</h2>
-									<ol class="session-list" role="list">
-										<li
-											v-for="session in getSessionsByRoom('room_w3')"
-											:key="session.id"
-											class="session"
-											:class="{
-													break: isBreakSession(session),
-													pitch: isPitchSession(session),
-													expert: isExpertSession(session),
-													live: session.isLive
-												}"
-											:style="`--start: ${timeToGridValue(session.startTime)}; --end: ${timeToGridValue(session.endTime)};`"
-											@click="openSessionDialog(session)"
-											@keydown.enter="openSessionDialog(session)"
-											@keydown.space.prevent="openSessionDialog(session)"
-											tabindex="0"
-											role="button"
-											:aria-label="`View details for ${session.title}`">
-											<h3>
-												<span class="time">{{ trimTime(session.startTime) }} - {{ trimTime(session.endTime) }}</span>
-												<span v-html="decodeBioHtml(session.title)"></span>
-											</h3>
-										</li>
-									</ol>
-								</div>
+            <div class="swipe-container" v-if="agendaViewMode === 'grid'">
+              <div class="swipe">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 16 16"
+                  class="swipe-arrow swipe-arrow-left"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"
+                  />
+                </svg>
+                <span>Swipe</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 16 16"
+                  class="swipe-arrow swipe-arrow-right"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                  />
+                </svg>
+              </div>
+            </div>
 
-								<!-- Experts Corner -->
-								<div class="stage" style="--column: 5;" v-if="getSessionsByRoom('room_experts').length > 0">
-									<h2 class="stage-headline">EXP</h2>
-									<ol class="session-list" role="list">
-										<li
-											v-for="session in getSessionsByRoom('room_experts')"
-											:key="session.id"
-											class="session"
-											:class="{
-													break: isBreakSession(session),
-													pitch: isPitchSession(session),
-													expert: isExpertSession(session),
-													live: session.isLive
-												}"
-											:style="`--start: ${timeToGridValue(session.startTime)}; --end: ${timeToGridValue(session.endTime)};`"
-											@click="openSessionDialog(session)"
-											@keydown.enter="openSessionDialog(session)"
-											@keydown.space.prevent="openSessionDialog(session)"
-											tabindex="0"
-											role="button"
-											:aria-label="`View details for ${session.title}`">
-											<h3>
-												<span class="time">{{ trimTime(session.startTime) }} - {{ trimTime(session.endTime) }}</span>
-												<span v-html="decodeBioHtml(session.title)"></span>
-											</h3>
-										</li>
-									</ol>
-								</div>
+            <!-- Dynamic Agenda using Vue -->
+            <div class="timetable" :class="{ 'timetable--linear': agendaViewMode === 'linear' }">
+              <!-- Grid View -->
+              <template v-if="agendaViewMode === 'grid'">
+                <div class="timetable--body">
+                  <div class="hours" aria-hidden="true">
+                    <div v-for="hour in 9" :key="hour">
+                      <time :datetime="`${(hour + 8).toString().padStart(2, '0')}:00`">
+                        {{ (hour + 8).toString().padStart(2, '0') }}:00
+                      </time>
+                    </div>
+                  </div>
 
-							</div>
-						</template>
-	
-						<!-- Linear View -->
-						<template v-if="agendaViewMode === 'linear'">
-							<div class="agenda-sort">
-								<div class="agenda-filter-container">
-									<fieldset class="agenda-filter">
-										<legend class="sr-only">Show all elements of the agenda</legend>
-										<div class="agenda-filter__element"><input type="radio"
-												   @change="onFilterChange($event)" id="all" name="filter"
-												   value="all" checked="checked" data-enpassusermodified="yes"> <label
-												   for="all"
-												   class="agenda-filter__label">All</label></div>
-									</fieldset>
-									<fieldset class="agenda-filter">
-										<legend class="sr-only">Filter by room</legend>
-										<div class="agenda-filter__element"><input type="radio"
-												   @change="onFilterChange($event)" id="audimax" name="filter"
-												   value="audimax" data-enpassusermodified="yes"> <label for="audimax"
-												   class="agenda-filter__label">Audimax</label></div>
-										<div class="agenda-filter__element"><input type="radio"
-												   @change="onFilterChange($event)" id="w1" name="filter" value="w1"
-												   data-enpassusermodified="yes"> <label for="w1"
-												   class="agenda-filter__label">W1/W2</label>
-										</div>
-										<div class="agenda-filter__element"><input type="radio"
-												   @change="onFilterChange($event)" id="w3" name="filter" value="w3"
-												   data-enpassusermodified="yes"> <label for="w3"
-												   class="agenda-filter__label">W3</label>
-										</div>
-									</fieldset>
-									<fieldset class="agenda-filter">
-										<legend class="sr-only">
-											Filter by session type
-										</legend>
-										<div class="agenda-filter__element"><input type="radio"
-												   @change="onFilterChange($event)" id="talks" name="filter"
-												   value="talks" data-enpassusermodified="yes"> <label for="talks"
-												   class="agenda-filter__label">Talks</label></div>
-										<div class="agenda-filter__element"><input type="radio"
-												   @change="onFilterChange($event)" id="workshops" name="filter"
-												   value="workshops" data-enpassusermodified="yes"> <label for="workshops"
-												   class="agenda-filter__label">Workshops</label></div>
-										<div class="agenda-filter__element"><input type="radio"
-												   @change="onFilterChange($event)" id="experts" name="filter"
-												   value="experts" data-enpassusermodified="yes"> <label for="experts"
-												   class="agenda-filter__label">Experts</label></div>
-									</fieldset>
-									<fieldset class="agenda-filter">
-										<legend class="sr-only">Filter by type</legend>
-										<div class="agenda-filter__element"><input type="radio"
-												   @change="onFilterChange($event)" id="beginner" name="filter"
-												   value="beginner" data-enpassusermodified="yes"> <label for="beginner"
-												   class="agenda-filter__label">Beginner</label></div>
-										<div class="agenda-filter__element"><input type="radio"
-												   @change="onFilterChange($event)" id="intermediate" name="filter"
-												   value="intermediate" data-enpassusermodified="yes"> <label
-												   for="intermediate"
-												   class="agenda-filter__label">Intermediate</label></div>
-										<div class="agenda-filter__element"><input type="radio"
-												   @change="onFilterChange($event)" id="advanced" name="filter"
-												   value="advanced" data-enpassusermodified="yes"> <label for="advanced"
-												   class="agenda-filter__label">Advanced</label></div>
-									</fieldset>
-								</div>
-							</div>
-	
-							<ol class="agenda">
-								<li
-									v-for="session in formattedLineup"
-									:key="session.id"
-									class="agenda-slot"
-									:class="{
-											break: isBreakSession(session),
-											pitch: isPitchSession(session),
-											live: session.isLive
-										}"
-									v-cloak>
-									<div class="agenda-slot-header">
-										<div>
-											<p class="agenda-slot-details">
-												<span class="agenda-time">
-													{{trimTime(session.startTime)}}<br>{{trimTime(session.endTime)}}
-												</span>
-	
-												<span class="agenda-room"
-													  :class="{
-															w1: session.location && (session.location.toLowerCase().includes('w1') || session.location.toLowerCase().includes('w2')),
-															w3: session.location && session.location.toLowerCase().includes('w3'),
-															canteen: session.location && session.location.toLowerCase().includes('canteen'),
-															experts: session.location && session.location.toLowerCase().includes('experts')
-														}">
-													{{ formatLocationTitle(session.location) }}
-												</span>
-											</p>
-										</div>
-									</div>
-	
-									<div class="agenda-slot-container">
-										<h2 class="agenda-slot-title">
-											<span v-html="decodeBioHtml(session.title)"></span>
-											<span
-												  v-if="session.proficiencyLevel"
-												  class="agenda-level"
-												  :class="{
-														beginner: session.proficiencyLevel === 'beginner',
-														intermediate: session.proficiencyLevel === 'intermediate',
-														advanced: session.proficiencyLevel === 'advanced'
-													}">
-												{{ session.proficiencyLevel }}
-											</span>
-										</h2>
-	
-										<p class="agenda-slot-speakers"
-										   v-if="session.speakers && session.speakers.length > 0">
-											<template v-for="(speaker, index) in session.speakers"
-													  :key="`${speaker.firstName} ${speaker.lastName}`">
-												<span>{{speaker.firstName}} {{speaker.lastName}} (<span
-														  v-html="speaker.company"></span>)</span><span
-													  v-if="index != session.speakers.length - 1">, </span>
-											</template>
-										</p>
-	
-										<div class="agenda-slot-inner-container">
-											<div class="agenda-slot-speakers-images"
-												 v-if="session.speakers && session.speakers.length > 0">
-												<template v-for="speaker in session.speakers"
-														  :key="`${speaker.firstName} ${speaker.lastName}`">
-													<button
-															:id="`btn-${speaker.firstName}-${speaker.lastName}-${session.id}`"
-															@click="openSpeakerInfoModal(session.speakers, `btn-${speaker.firstName}-${speaker.lastName}-${session.id}`)">
-														<div class="placeholder" v-if="!speaker.hasPhoto"></div>
-														<img
-															 v-else
-															 :src="`https://ui5con.cfapps.eu12.hana.ondemand.com${speaker.photoUrl}`"
-															 :alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`" />
-													</button>
-												</template>
-											</div>
-	
-											<p class="agenda-slot-description" v-html="decodeBioHtml(session.description)">
-											</p>
-										</div>
+                  <!-- Audimax -->
+                  <div class="stage audimax" style="--column: 2">
+                    <h2 class="stage-headline">Audimax</h2>
+                    <ol class="session-list" role="list">
+                      <li
+                        v-for="session in getSessionsByRoom('audimax')"
+                        :key="session.id"
+                        class="session"
+                        :class="{
+							break: isBreakSession(session),
+							pitch: isPitchSession(session),
+							expert: isExpertSession(session),
+							live: session.isLive
+						}"
+                        :style="`--start: ${timeToGridValue(session.startTime)}; --end: ${timeToGridValue(session.endTime)};`"
+                        @click="openSessionDialog(session)"
+                        @keydown.enter="openSessionDialog(session)"
+                        @keydown.space.prevent="openSessionDialog(session)"
+                        tabindex="0"
+                        role="button"
+                        :aria-label="`View details for ${session.title}`"
+                      >
+                        <h3>
+                          <template v-if="session.isLive">
+                            <span class="time">LIVE NOW</span>
+                          </template>
+                          <template v-else>
+                            <span class="time">
+                              {{ trimTime(session.startTime) }} - {{ trimTime(session.endTime) }}
+                            </span>
+                          </template>
+                          <span v-html="decodeBioHtml(session.title)"></span>
+                        </h3>
+                      </li>
+                    </ol>
+                  </div>
 
-									<div class="calendar-list" v-if="session.calendars && !isBreakSession(session)">
-										<!-- Google Calendar Link -->
-										<a :href="session.calendars.google"
-											   target="_blank">
-												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-													 viewBox="0 0 256 256">
-													<path fill="#FFF" d="M195.368 60.632H60.632v134.736h134.736z" />
-													<path fill="#EA4335"
-														  d="M195.368 256L256 195.368l-30.316-5.172l-30.316 5.172l-5.533 27.73z" />
-													<path fill="#188038"
-														  d="M0 195.368v40.421C0 246.956 9.044 256 20.21 256h40.422l6.225-30.316l-6.225-30.316l-33.033-5.172z" />
-													<path fill="#1967D2"
-														  d="M256 60.632V20.21C256 9.044 246.956 0 235.79 0h-40.422q-5.532 22.554-5.533 33.196q0 10.641 5.533 27.436q20.115 5.76 30.316 5.76T256 60.631" />
-													<path fill="#FBBC04" d="M256 60.632h-60.632v134.736H256z" />
-													<path fill="#34A853" d="M195.368 195.368H60.632V256h134.736z" />
-													<path fill="#4285F4"
-														  d="M195.368 0H20.211C9.044 0 0 9.044 0 20.21v175.158h60.632V60.632h134.736z" />
-													<path fill="#4285F4"
-														  d="M88.27 165.154c-5.036-3.402-8.523-8.37-10.426-14.94l11.689-4.816q1.59 6.063 5.558 9.398c2.627 2.223 5.827 3.318 9.566 3.318q5.734 0 9.852-3.487c2.746-2.324 4.127-5.288 4.127-8.875q0-5.508-4.345-8.994c-2.897-2.324-6.535-3.486-10.88-3.486h-6.754v-11.57h6.063q5.608 0 9.448-3.033c2.56-2.02 3.84-4.783 3.84-8.303c0-3.132-1.145-5.625-3.435-7.494c-2.29-1.87-5.188-2.813-8.708-2.813c-3.436 0-6.164.91-8.185 2.745a16.1 16.1 0 0 0-4.413 6.754l-11.57-4.817c1.532-4.345 4.345-8.185 8.471-11.503s9.398-4.985 15.798-4.985c4.733 0 8.994.91 12.767 2.745c3.772 1.836 6.736 4.379 8.875 7.613c2.14 3.25 3.2 6.888 3.2 10.93c0 4.126-.993 7.613-2.98 10.476s-4.43 5.052-7.327 6.585v.69a22.25 22.25 0 0 1 9.398 7.327c2.442 3.284 3.672 7.208 3.672 11.79c0 4.58-1.163 8.673-3.487 12.26c-2.324 3.588-5.54 6.417-9.617 8.472c-4.092 2.055-8.69 3.1-13.793 3.1c-5.912.016-11.369-1.685-16.405-5.087m71.797-58.005l-12.833 9.28l-6.417-9.734l23.023-16.607h8.825v78.333h-12.598z" />
-												</svg>Google
-											</a>
+                  <!-- W1/W2 -->
+                  <div class="stage w1" style="--column: 3">
+                    <h2 class="stage-headline">W1/W2</h2>
+                    <ol class="session-list" role="list">
+                      <li
+                        v-for="session in getSessionsByRoom('room_w1')"
+                        :key="session.id"
+                        class="session"
+                        :class="{
+							break: isBreakSession(session),
+							pitch: isPitchSession(session),
+							expert: isExpertSession(session)
+						}"
+                        :style="`--start: ${timeToGridValue(session.startTime)}; --end: ${timeToGridValue(session.endTime)};`"
+                        @click="openSessionDialog(session)"
+                        @keydown.enter="openSessionDialog(session)"
+                        @keydown.space.prevent="openSessionDialog(session)"
+                        tabindex="0"
+                        role="button"
+                        :aria-label="`View details for ${session.title}`"
+                      >
+                        <h3>
+                          <span class="time">{{ trimTime(session.startTime) }} - {{ trimTime(session.endTime) }}</span>
+                          <span v-html="decodeBioHtml(session.title)"></span>
+                        </h3>
+                      </li>
+                    </ol>
+                  </div>
 
-											<!-- Outlook/iCal Link -->
-										<a :href="session.calendars.ics"
-											   download="ui5con_session.ics">
-												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">
-													<path fill="#0072c6"
-														  d="M19.484 7.937v5.477l1.916 1.205a.5.5 0 0 0 .21 0l8.238-5.554a1.174 1.174 0 0 0-.959-1.128Z" />
-													<path fill="#0072c6"
-														  d="m19.484 15.457l1.747 1.2a.52.52 0 0 0 .543 0c-.3.181 8.073-5.378 8.073-5.378v10.066a1.408 1.408 0 0 1-1.49 1.555h-8.874zm-9.044-2.525a1.61 1.61 0 0 0-1.42.838a4.13 4.13 0 0 0-.526 2.218A4.05 4.05 0 0 0 9.02 18.2a1.6 1.6 0 0 0 2.771.022a4 4 0 0 0 .515-2.2a4.37 4.37 0 0 0-.5-2.281a1.54 1.54 0 0 0-1.366-.809" />
-													<path fill="#0072c6"
-														  d="M2.153 5.155v21.427L18.453 30V2Zm10.908 14.336a3.23 3.23 0 0 1-2.7 1.361a3.19 3.19 0 0 1-2.64-1.318A5.46 5.46 0 0 1 6.706 16.1a5.87 5.87 0 0 1 1.036-3.616a3.27 3.27 0 0 1 2.744-1.384a3.12 3.12 0 0 1 2.61 1.321a5.64 5.64 0 0 1 1 3.484a5.76 5.76 0 0 1-1.035 3.586" />
-												</svg>Outlook
-											</a>
+                  <!-- W3 -->
+                  <div class="stage w3" style="--column: 4">
+                    <h2 class="stage-headline">W3</h2>
+                    <ol class="session-list" role="list">
+                      <li
+                        v-for="session in getSessionsByRoom('room_w3')"
+                        :key="session.id"
+                        class="session"
+                        :class="{
+							break: isBreakSession(session),
+							pitch: isPitchSession(session),
+							expert: isExpertSession(session)
+						}"
+                        :style="`--start: ${timeToGridValue(session.startTime)}; --end: ${timeToGridValue(session.endTime)};`"
+                        @click="openSessionDialog(session)"
+                        @keydown.enter="openSessionDialog(session)"
+                        @keydown.space.prevent="openSessionDialog(session)"
+                        tabindex="0"
+                        role="button"
+                        :aria-label="`View details for ${session.title}`"
+                      >
+                        <h3>
+                          <span class="time">{{ trimTime(session.startTime) }} - {{ trimTime(session.endTime) }}</span>
+                          <span v-html="decodeBioHtml(session.title)"></span>
+                        </h3>
+                      </li>
+                    </ol>
+                  </div>
 
-											<!-- Office 365 Link -->
-										<a :href="session.calendars.office365"
-											   target="_blank">
-												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-													<path fill="#D83B01" stroke="#D83B01" stroke-linecap="round"
-														  stroke-linejoin="round"
-														  stroke-width="1.5"
-														  d="M4 18V6l10.5-4L20 4v16l-5.5 2zm0 0l10 .5V6L8.5 7.5v8z" />
-												</svg>Office 365
-											</a>
-										</div>
-	
-										<div class="agenda-links">
-											<a
-											   v-if="session.attendeeRatingLink"
-											   :href="session.attendeeRatingLink"
-											   rel="noopener noreferrer"
-											   target="_blank"
-											   hreflang="en"
-											   class="agenda-slot-linkitem">Feedback
-											</a>
+                  <!-- Experts Corner -->
+                  <div class="stage" style="--column: 5" v-if="getSessionsByRoom('room_experts').length > 0">
+                    <h2 class="stage-headline">EXP</h2>
+                    <ol class="session-list" role="list">
+                      <li
+                        v-for="session in getSessionsByRoom('room_experts')"
+                        :key="session.id"
+                        class="session"
+                        :class="{
+							break: isBreakSession(session),
+							pitch: isPitchSession(session),
+							expert: isExpertSession(session)
+						}"
+                        :style="`--start: ${timeToGridValue(session.startTime)}; --end: ${timeToGridValue(session.endTime)};`"
+                        @click="openSessionDialog(session)"
+                        @keydown.enter="openSessionDialog(session)"
+                        @keydown.space.prevent="openSessionDialog(session)"
+                        tabindex="0"
+                        role="button"
+                        :aria-label="`View details for ${session.title}`"
+                      >
+                        <h3>
+                          <span class="time">{{ trimTime(session.startTime) }} - {{ trimTime(session.endTime) }}</span>
+                          <span v-html="decodeBioHtml(session.title)"></span>
+                        </h3>
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+              </template>
 
-											<a
-											   v-if="session.location.toLowerCase().includes('audimax')"
-											   href="https://www.youtube.com/live/CMPudw4scSE"
-											   rel="noopener noreferrer"
-											   target="_blank"
-											   hreflang="en"
-											   class="agenda-slot-linkitem">Livestream
-											</a>
+              <!-- Linear View -->
+              <template v-if="agendaViewMode === 'linear'">
+                <div class="agenda-sort">
+                  <div class="agenda-filter-container">
+                    <fieldset class="agenda-filter">
+                      <legend class="sr-only">Show all elements of the agenda</legend>
+                      <div class="agenda-filter__element">
+                        <input
+                          type="radio"
+                          @change="onFilterChange($event)"
+                          id="all"
+                          name="filter"
+                          value="all"
+                          checked="checked"
+                          data-enpassusermodified="yes"
+                        />
+                        <label for="all" class="agenda-filter__label">All</label>
+                      </div>
+                    </fieldset>
+                    <fieldset class="agenda-filter">
+                      <legend class="sr-only">Filter by room</legend>
+                      <div class="agenda-filter__element">
+                        <input
+                          type="radio"
+                          @change="onFilterChange($event)"
+                          id="audimax"
+                          name="filter"
+                          value="audimax"
+                          data-enpassusermodified="yes"
+                        />
+                        <label for="audimax" class="agenda-filter__label">Audimax</label>
+                      </div>
+                      <div class="agenda-filter__element">
+                        <input
+                          type="radio"
+                          @change="onFilterChange($event)"
+                          id="w1"
+                          name="filter"
+                          value="w1"
+                          data-enpassusermodified="yes"
+                        />
+                        <label for="w1" class="agenda-filter__label">W1/W2</label>
+                      </div>
+                      <div class="agenda-filter__element">
+                        <input
+                          type="radio"
+                          @change="onFilterChange($event)"
+                          id="w3"
+                          name="filter"
+                          value="w3"
+                          data-enpassusermodified="yes"
+                        />
+                        <label for="w3" class="agenda-filter__label">W3</label>
+                      </div>
+                    </fieldset>
+                    <fieldset class="agenda-filter">
+                      <legend class="sr-only">Filter by session type</legend>
+                      <div class="agenda-filter__element">
+                        <input
+                          type="radio"
+                          @change="onFilterChange($event)"
+                          id="talks"
+                          name="filter"
+                          value="talks"
+                          data-enpassusermodified="yes"
+                        />
+                        <label for="talks" class="agenda-filter__label">Talks</label>
+                      </div>
+                      <div class="agenda-filter__element">
+                        <input
+                          type="radio"
+                          @change="onFilterChange($event)"
+                          id="workshops"
+                          name="filter"
+                          value="workshops"
+                          data-enpassusermodified="yes"
+                        />
+                        <label for="workshops" class="agenda-filter__label">Workshops</label>
+                      </div>
+                      <div class="agenda-filter__element">
+                        <input
+                          type="radio"
+                          @change="onFilterChange($event)"
+                          id="experts"
+                          name="filter"
+                          value="experts"
+                          data-enpassusermodified="yes"
+                        />
+                        <label for="experts" class="agenda-filter__label">Experts</label>
+                      </div>
+                    </fieldset>
+                    <fieldset class="agenda-filter">
+                      <legend class="sr-only">Filter by type</legend>
+                      <div class="agenda-filter__element">
+                        <input
+                          type="radio"
+                          @change="onFilterChange($event)"
+                          id="beginner"
+                          name="filter"
+                          value="beginner"
+                          data-enpassusermodified="yes"
+                        />
+                        <label for="beginner" class="agenda-filter__label">Beginner</label>
+                      </div>
+                      <div class="agenda-filter__element">
+                        <input
+                          type="radio"
+                          @change="onFilterChange($event)"
+                          id="intermediate"
+                          name="filter"
+                          value="intermediate"
+                          data-enpassusermodified="yes"
+                        />
+                        <label for="intermediate" class="agenda-filter__label">Intermediate</label>
+                      </div>
+                      <div class="agenda-filter__element">
+                        <input
+                          type="radio"
+                          @change="onFilterChange($event)"
+                          id="advanced"
+                          name="filter"
+                          value="advanced"
+                          data-enpassusermodified="yes"
+                        />
+                        <label for="advanced" class="agenda-filter__label">Advanced</label>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
 
-											<template v-if="session.presentationLinks && session.presentationLinks.length > 0">
-												<ul class="agenda-slot-links">
-													<template v-for="link in session.presentationLinks"
-																:key="link.linkType">
-														<li>
-															<a
-																:href="link.url"
-																class="agenda-slot-linkitem"
-																target="_blank"
-																hreflang="en"
-																rel="noopener noreferrer">
-																{{link.linkType}}
-															</a>
-														</li>
-													</template>
-												</ul>
-											</template>
-										</div>
-									</div>
-								</li>
-							</ol>
-						</template>
-					</div>
+                <ol class="agenda">
+                  <li
+                    v-for="session in formattedLineup"
+                    :key="session.id"
+                    class="agenda-slot"
+                    :class="{
+						break: isBreakSession(session),
+						pitch: isPitchSession(session)
+					}"
+                    v-cloak
+                  >
+                    <div class="agenda-slot-header">
+                      <div>
+                        <p class="agenda-slot-details">
+                          <span
+                            class="agenda-time"
+                            :class="{live: (session.location.toLowerCase().includes('audimax')) && session.isLive}"
+                          >
+                            <template v-if="(session.location.toLowerCase().includes('audimax')) && session.isLive">
+                              LIVE NOW
+                            </template>
+                            <template v-else>
+                              {{trimTime(session.startTime)}}
+                              <br />
+                              {{trimTime(session.endTime)}}
+                            </template>
+                          </span>
 
-			<!-- Session Details Modal -->
-			<div id="session-modal" ref="sessionModal" aria-hidden="true" tabindex="-1" aria-modal="true"
-				 class="agenda-modal-backdrop" style="display: none" @keydown.esc="closeSessionDialog"
-				 @click.self="closeSessionDialog" v-cloak>
-				<div class="agenda-modal" role="document" aria-labelledby="session-dialog-title"
-					 aria-describedby="session-dialog-description" tabindex="-1" ref="sessionModalContent">
+                          <span
+                            class="agenda-room"
+                            :class="{
+								w1: session.location && (session.location.toLowerCase().includes('w1') || session.location.toLowerCase().includes('w2')),
+								w3: session.location && session.location.toLowerCase().includes('w3'),
+								canteen: session.location && session.location.toLowerCase().includes('canteen'),
+								experts: session.location && session.location.toLowerCase().includes('experts')
+							}"
+                          >
+                            {{ formatLocationTitle(session.location) }}
+                          </span>
+                        </p>
+                      </div>
+                    </div>
 
-					<!-- Title -->
-					<h2 class="sr-only" id="session-dialog-title" v-if="activeSession">
-						{{ activeSession.title }}
-					</h2>
-	
-							<p class="sr-only" id="session-dialog-description" v-if="activeSession">
-								Session from {{ trimTime(activeSession.startTime) }} to {{ trimTime(activeSession.endTime) }}.
-								{{ activeSession.description }}
-							</p>
-	
-							<button aria-label="Close Dialog" @click="closeSessionDialog" ref="sessionCloseButton"
-									v-on:keydown.tab.prevent="focusTrapSessionModal($event)">
-								✕
-							</button>
-	
-							<div class="agenda-modal-content" v-if="activeSession">
-								<p class="agenda-modal-type">{{ formatSessionType(activeSession.type) }}</p>
-	
-								<!-- Title -->
-								<h2 class="agenda-modal-title" v-html="decodeBioHtml(activeSession.title)"></h2>
-	
-								<!-- Details -->
-								<div class="agenda-modal-details">
-									<p>
-										<span>time</span>
-										<time>{{ trimTime(activeSession.startTime) }} - {{ trimTime(activeSession.endTime) }}</time>
-									</p>
-	
-									<p><span>location</span> {{ formatLocation(activeSession.location) }}</p>
-	
-									<p v-if="activeSession.proficiencyLevel"><span>complexity</span> {{
-										activeSession.proficiencyLevel }}</p>
-								</div>
-	
-	
-								<!-- Description -->
-								<h3 class="agenda-modal-section-heading">OVERVIEW</h3>
-								<p v-if="activeSession.description" class="agenda-modal-description"
-								   v-html="decodeBioHtml(activeSession.description)">
-								</p>
-								
-								<!-- Additional Links -->
-								<div v-if="!isBreakSession(activeSession) && (activeSession.attendeeRatingLink || (activeSession.location && activeSession.location.toLowerCase().includes('audimax')) || (activeSession.presentationLinks && activeSession.presentationLinks.length > 0))"
-									class="agenda-modal-links">
-									<h3 class="agenda-modal-section-heading">LINKS</h3>
-									<div class="agenda-modal-calendars links">
-										<a
-											v-if="activeSession.attendeeRatingLink"
-											:href="activeSession.attendeeRatingLink"
-											rel="noopener noreferrer"
-											target="_blank"
-											hreflang="en"
-											class="agenda-slot-linkitem">
-											Feedback
-										</a>
+                    <div class="agenda-slot-container">
+                      <h2 class="agenda-slot-title">
+                        <span v-html="decodeBioHtml(session.title)"></span>
+                        <span
+                          v-if="session.proficiencyLevel"
+                          class="agenda-level"
+                          :class="{
+								beginner: session.proficiencyLevel === 'beginner',
+								intermediate: session.proficiencyLevel === 'intermediate',
+								advanced: session.proficiencyLevel === 'advanced'
+							}"
+                        >
+                          {{ session.proficiencyLevel }}
+                        </span>
+                      </h2>
 
-										<a
-											v-if="activeSession.location.toLowerCase().includes('audimax')"
-											href="https://www.youtube.com/live/CMPudw4scSE"
-											rel="noopener noreferrer"
-											target="_blank"
-											hreflang="en"
-											class="agenda-slot-linkitem">
-											Livestream
-										</a>
+                      <p class="agenda-slot-speakers" v-if="session.speakers && session.speakers.length > 0">
+                        <template
+                          v-for="(speaker, index) in session.speakers"
+                          :key="`${speaker.firstName} ${speaker.lastName}`"
+                        >
+                          <span>
+                            {{speaker.firstName}} {{speaker.lastName}} (
+                            <span v-html="speaker.company"></span>
+                            )
+                          </span>
+                          <span v-if="index != session.speakers.length - 1">,</span>
+                        </template>
+                      </p>
 
-										<template v-if="activeSession.presentationLinks && activeSession.presentationLinks.length > 0">
-											<ul class="agenda-slot-links">
-												<template v-for="link in activeSession.presentationLinks"
-															:key="link.linkType">
-													<li>
-														<a
-															:href="link.url"
-															class="agenda-slot-linkitem"
-															target="_blank"
-															hreflang="en"
-															rel="noopener noreferrer">
-															{{link.linkType}}
-														</a>
-													</li>
-												</template>
-											</ul>
-										</template>
-									</div>
-								</div>
-	
-								<!-- Speakers -->
-								<h3 v-if="getSessionSpeakers(activeSession.id).length > 0"
-									class="agenda-modal-section-heading">SPEAKERS</h3>
-								<div v-if="getSessionSpeakers(activeSession.id).length > 0" class="agenda-modal-speakers">
-	
-									<div v-for="(speaker, index) in getSessionSpeakers(activeSession.id)" :key="index"
-										 class="agenda-modal-speaker">
-										<figure>
-											<div class="placeholder" v-if="!speaker.hasPhoto"></div>
-											<img
-												 v-else
-												 :src="`https://ui5con.cfapps.eu12.hana.ondemand.com${speaker.photoUrl}`"
-												 :alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`" />
-										</figure>
-										<article>
-											<header>
-												<h3>{{speaker.firstName}} {{speaker.lastName}}</h3>
-												<p v-if="speaker.company" v-html="speaker.company"></p>
-											</header>
-											<p v-if="speaker.bio" v-html="decodeBioHtml(speaker.bio)"></p>
-											<ul class="speakers-socials"
-												v-if="speaker.githubUrl || speaker.linkedInUrl || speaker.twitterHandle || speaker.mastodonHandle || speaker.blueskyHandle">
-												<li v-if="speaker.githubUrl">
-													<a :href="speaker.githubUrl" rel="nofollow" target="_blank"
-													   :ref="`session-github-${index}`"
-													   :aria-label="`Github profile of ${speaker.firstName} ${speaker.lastName}`"
-													   v-on:keydown.tab.prevent="focusTrapSessionModal($event)">
-														<svg class="icon" aria-hidden="true">
-															<use xlink:href="images/icons/sprite.svg#github"></use>
-														</svg>
-													</a>
-												</li>
-												<li v-if="speaker.linkedInUrl">
-													<a :href="speaker.linkedInUrl" rel="nofollow" target="_blank"
-													   :ref="`session-linkedin-${index}`"
-													   :aria-label="`Linkedin profile of ${speaker.firstName} ${speaker.lastName}`"
-													   v-on:keydown.tab.prevent="focusTrapSessionModal($event)">
-														<svg class="icon" aria-hidden="true">
-															<use xlink:href="images/icons/sprite.svg#linkedin"></use>
-														</svg>
-													</a>
-												</li>
-												<li v-if="speaker.twitterHandle">
-													<a :href="speaker.twitterHandle" rel="nofollow" target="_blank"
-													   :ref="`session-twitter-${index}`"
-													   :aria-label="`Twitter profile of ${speaker.firstName} ${speaker.lastName}`"
-													   v-on:keydown.tab.prevent="focusTrapSessionModal($event)">
-														<svg class="icon" aria-hidden="true">
-															<use xlink:href="images/icons/sprite.svg#twitter"></use>
-														</svg>
-													</a>
-												</li>
-												<li v-if="speaker.mastodonHandle">
-													<a :href="speaker.mastodonHandle" rel="nofollow" target="_blank"
-													   :ref="`session-mastodon-${index}`"
-													   :aria-label="`Mastodon profile of ${speaker.firstName} ${speaker.lastName}`"
-													   v-on:keydown.tab.prevent="focusTrapSessionModal($event)">
-														<svg class="icon" aria-hidden="true">
-															<use xlink:href="images/icons/sprite.svg#mastodon"></use>
-														</svg>
-													</a>
-												</li>
-												<li v-if="speaker.blueskyHandle">
-													<a :href="speaker.blueskyHandle" rel="nofollow" target="_blank"
-													   :ref="`session-bluesky-${index}`"
-													   :aria-label="`Bluesky profile of ${speaker.firstName} ${speaker.lastName}`"
-													   v-on:keydown.tab.prevent="focusTrapSessionModal($event)">
-														<svg class="icon" aria-hidden="true">
-															<use xlink:href="images/icons/sprite.svg#bluesky"></use>
-														</svg>
-													</a>
-												</li>
-											</ul>
-										</article>
-									</div>
-								</div>
-	
-								<!-- Calendars -->
-							<div v-if="!isBreakSession(activeSession)">
-								<h3 class="agenda-modal-section-heading">ADD TO CALENDAR</h3>
-							<div class="agenda-modal-calendars" v-if="activeSession.calendars">
-									<!-- Google Calendar Link -->
-									<a :href="activeSession.calendars.google"
-									   ref="session-calendar-google"
-									   v-on:keydown.tab.prevent="focusTrapSessionModal($event)"
-									   target="_blank">
-										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-											 viewBox="0 0 256 256">
-											<path fill="#FFF" d="M195.368 60.632H60.632v134.736h134.736z" />
-											<path fill="#EA4335"
-												  d="M195.368 256L256 195.368l-30.316-5.172l-30.316 5.172l-5.533 27.73z" />
-											<path fill="#188038"
-												  d="M0 195.368v40.421C0 246.956 9.044 256 20.21 256h40.422l6.225-30.316l-6.225-30.316l-33.033-5.172z" />
-											<path fill="#1967D2"
-												  d="M256 60.632V20.21C256 9.044 246.956 0 235.79 0h-40.422q-5.532 22.554-5.533 33.196q0 10.641 5.533 27.436q20.115 5.76 30.316 5.76T256 60.631" />
-											<path fill="#FBBC04" d="M256 60.632h-60.632v134.736H256z" />
-											<path fill="#34A853" d="M195.368 195.368H60.632V256h134.736z" />
-											<path fill="#4285F4"
-												  d="M195.368 0H20.211C9.044 0 0 9.044 0 20.21v175.158h60.632V60.632h134.736z" />
-											<path fill="#4285F4"
-												  d="M88.27 165.154c-5.036-3.402-8.523-8.37-10.426-14.94l11.689-4.816q1.59 6.063 5.558 9.398c2.627 2.223 5.827 3.318 9.566 3.318q5.734 0 9.852-3.487c2.746-2.324 4.127-5.288 4.127-8.875q0-5.508-4.345-8.994c-2.897-2.324-6.535-3.486-10.88-3.486h-6.754v-11.57h6.063q5.608 0 9.448-3.033c2.56-2.02 3.84-4.783 3.84-8.303c0-3.132-1.145-5.625-3.435-7.494c-2.29-1.87-5.188-2.813-8.708-2.813c-3.436 0-6.164.91-8.185 2.745a16.1 16.1 0 0 0-4.413 6.754l-11.57-4.817c1.532-4.345 4.345-8.185 8.471-11.503s9.398-4.985 15.798-4.985c4.733 0 8.994.91 12.767 2.745c3.772 1.836 6.736 4.379 8.875 7.613c2.14 3.25 3.2 6.888 3.2 10.93c0 4.126-.993 7.613-2.98 10.476s-4.43 5.052-7.327 6.585v.69a22.25 22.25 0 0 1 9.398 7.327c2.442 3.284 3.672 7.208 3.672 11.79c0 4.58-1.163 8.673-3.487 12.26c-2.324 3.588-5.54 6.417-9.617 8.472c-4.092 2.055-8.69 3.1-13.793 3.1c-5.912.016-11.369-1.685-16.405-5.087m71.797-58.005l-12.833 9.28l-6.417-9.734l23.023-16.607h8.825v78.333h-12.598z" />
-										</svg>Google
-									</a>
+                      <div class="agenda-slot-inner-container">
+                        <div class="agenda-slot-speakers-images" v-if="session.speakers && session.speakers.length > 0">
+                          <template
+                            v-for="speaker in session.speakers"
+                            :key="`${speaker.firstName} ${speaker.lastName}`"
+                          >
+                            <button
+                              :id="`btn-${speaker.firstName}-${speaker.lastName}-${session.id}`"
+                              @click="openSpeakerInfoModal(session.speakers, `btn-${speaker.firstName}-${speaker.lastName}-${session.id}`)"
+                            >
+                              <div class="placeholder" v-if="!speaker.hasPhoto"></div>
+                              <img
+                                v-else
+                                :src="`https://ui5con.cfapps.eu12.hana.ondemand.com${speaker.photoUrl}`"
+                                :alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`"
+                              />
+                            </button>
+                          </template>
+                        </div>
 
-									<!-- Outlook/iCal Link -->
-									<a :href="activeSession.calendars.ics"
-									   ref="session-calendar-outlook"
-									   v-on:keydown.tab.prevent="focusTrapSessionModal($event)"
-									   download="ui5con_session.ics">
-										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">
-											<path fill="#0072c6"
-												  d="M19.484 7.937v5.477l1.916 1.205a.5.5 0 0 0 .21 0l8.238-5.554a1.174 1.174 0 0 0-.959-1.128Z" />
-											<path fill="#0072c6"
-												  d="m19.484 15.457l1.747 1.2a.52.52 0 0 0 .543 0c-.3.181 8.073-5.378 8.073-5.378v10.066a1.408 1.408 0 0 1-1.49 1.555h-8.874zm-9.044-2.525a1.61 1.61 0 0 0-1.42.838a4.13 4.13 0 0 0-.526 2.218A4.05 4.05 0 0 0 9.02 18.2a1.6 1.6 0 0 0 2.771.022a4 4 0 0 0 .515-2.2a4.37 4.37 0 0 0-.5-2.281a1.54 1.54 0 0 0-1.366-.809" />
-											<path fill="#0072c6"
-												  d="M2.153 5.155v21.427L18.453 30V2Zm10.908 14.336a3.23 3.23 0 0 1-2.7 1.361a3.19 3.19 0 0 1-2.64-1.318A5.46 5.46 0 0 1 6.706 16.1a5.87 5.87 0 0 1 1.036-3.616a3.27 3.27 0 0 1 2.744-1.384a3.12 3.12 0 0 1 2.61 1.321a5.64 5.64 0 0 1 1 3.484a5.76 5.76 0 0 1-1.035 3.586" />
-										</svg>Outlook
-									</a>
+                        <p class="agenda-slot-description" v-html="decodeBioHtml(session.description)"></p>
+                      </div>
 
-									<!-- Office 365 Link -->
-									<a :href="activeSession.calendars.office365"
-									   ref="session-calendar-office365"
-									   v-on:keydown.tab.prevent="focusTrapSessionModal($event)"
-									   target="_blank">
-										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-											<path fill="#D83B01" stroke="#D83B01" stroke-linecap="round"
-												  stroke-linejoin="round"
-												  stroke-width="1.5"
-												  d="M4 18V6l10.5-4L20 4v16l-5.5 2zm0 0l10 .5V6L8.5 7.5v8z" />
-										</svg>Office 365
-									</a>
-								</div>
-							</div>
+                      <div class="calendar-list" v-if="session.calendars && !isBreakSession(session)">
+                        <!-- Google Calendar Link -->
+                        <a :href="session.calendars.google" target="_blank">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256">
+                            <path fill="#FFF" d="M195.368 60.632H60.632v134.736h134.736z" />
+                            <path
+                              fill="#EA4335"
+                              d="M195.368 256L256 195.368l-30.316-5.172l-30.316 5.172l-5.533 27.73z"
+                            />
+                            <path
+                              fill="#188038"
+                              d="M0 195.368v40.421C0 246.956 9.044 256 20.21 256h40.422l6.225-30.316l-6.225-30.316l-33.033-5.172z"
+                            />
+                            <path
+                              fill="#1967D2"
+                              d="M256 60.632V20.21C256 9.044 246.956 0 235.79 0h-40.422q-5.532 22.554-5.533 33.196q0 10.641 5.533 27.436q20.115 5.76 30.316 5.76T256 60.631"
+                            />
+                            <path fill="#FBBC04" d="M256 60.632h-60.632v134.736H256z" />
+                            <path fill="#34A853" d="M195.368 195.368H60.632V256h134.736z" />
+                            <path
+                              fill="#4285F4"
+                              d="M195.368 0H20.211C9.044 0 0 9.044 0 20.21v175.158h60.632V60.632h134.736z"
+                            />
+                            <path
+                              fill="#4285F4"
+                              d="M88.27 165.154c-5.036-3.402-8.523-8.37-10.426-14.94l11.689-4.816q1.59 6.063 5.558 9.398c2.627 2.223 5.827 3.318 9.566 3.318q5.734 0 9.852-3.487c2.746-2.324 4.127-5.288 4.127-8.875q0-5.508-4.345-8.994c-2.897-2.324-6.535-3.486-10.88-3.486h-6.754v-11.57h6.063q5.608 0 9.448-3.033c2.56-2.02 3.84-4.783 3.84-8.303c0-3.132-1.145-5.625-3.435-7.494c-2.29-1.87-5.188-2.813-8.708-2.813c-3.436 0-6.164.91-8.185 2.745a16.1 16.1 0 0 0-4.413 6.754l-11.57-4.817c1.532-4.345 4.345-8.185 8.471-11.503s9.398-4.985 15.798-4.985c4.733 0 8.994.91 12.767 2.745c3.772 1.836 6.736 4.379 8.875 7.613c2.14 3.25 3.2 6.888 3.2 10.93c0 4.126-.993 7.613-2.98 10.476s-4.43 5.052-7.327 6.585v.69a22.25 22.25 0 0 1 9.398 7.327c2.442 3.284 3.672 7.208 3.672 11.79c0 4.58-1.163 8.673-3.487 12.26c-2.324 3.588-5.54 6.417-9.617 8.472c-4.092 2.055-8.69 3.1-13.793 3.1c-5.912.016-11.369-1.685-16.405-5.087m71.797-58.005l-12.833 9.28l-6.417-9.734l23.023-16.607h8.825v78.333h-12.598z"
+                            />
+                          </svg>
+                          Google
+                        </a>
 
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+                        <!-- Outlook/iCal Link -->
+                        <a :href="session.calendars.ics" download="ui5con_session.ics">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">
+                            <path
+                              fill="#0072c6"
+                              d="M19.484 7.937v5.477l1.916 1.205a.5.5 0 0 0 .21 0l8.238-5.554a1.174 1.174 0 0 0-.959-1.128Z"
+                            />
+                            <path
+                              fill="#0072c6"
+                              d="m19.484 15.457l1.747 1.2a.52.52 0 0 0 .543 0c-.3.181 8.073-5.378 8.073-5.378v10.066a1.408 1.408 0 0 1-1.49 1.555h-8.874zm-9.044-2.525a1.61 1.61 0 0 0-1.42.838a4.13 4.13 0 0 0-.526 2.218A4.05 4.05 0 0 0 9.02 18.2a1.6 1.6 0 0 0 2.771.022a4 4 0 0 0 .515-2.2a4.37 4.37 0 0 0-.5-2.281a1.54 1.54 0 0 0-1.366-.809"
+                            />
+                            <path
+                              fill="#0072c6"
+                              d="M2.153 5.155v21.427L18.453 30V2Zm10.908 14.336a3.23 3.23 0 0 1-2.7 1.361a3.19 3.19 0 0 1-2.64-1.318A5.46 5.46 0 0 1 6.706 16.1a5.87 5.87 0 0 1 1.036-3.616a3.27 3.27 0 0 1 2.744-1.384a3.12 3.12 0 0 1 2.61 1.321a5.64 5.64 0 0 1 1 3.484a5.76 5.76 0 0 1-1.035 3.586"
+                            />
+                          </svg>
+                          Outlook
+                        </a>
 
+                        <!-- Office 365 Link -->
+                        <a :href="session.calendars.office365" target="_blank">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path
+                              fill="#D83B01"
+                              stroke="#D83B01"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="1.5"
+                              d="M4 18V6l10.5-4L20 4v16l-5.5 2zm0 0l10 .5V6L8.5 7.5v8z"
+                            />
+                          </svg>
+                          Office 365
+                        </a>
+                      </div>
 
-	<!-- Speaker Modal -->
-		<div id="speaker-modal" ref="speakerModal" aria-hidden="true" tabindex="-1" aria-modal="true"
-			 class="agenda-modal-backdrop" style="display: none" @keydown.esc="closeSpeakerInfoModal"
-			 @click.self="closeSpeakerInfoModal" v-cloak>
-			<div class="agenda-modal" role="document" aria-labelledby="speaker-dialog-title"
-				 aria-describedby="speaker-dialog-description" tabindex="-1" ref="speakerModalContent">
-				<h2 class="sr-only" id="speaker-dialog-title">
-					Detailed Info about
-					<template v-for="speaker in activeSpeakers"
-							  :key="`${speaker.firstName} ${speaker.lastName}`">
-						{{speaker.firstName}} {{speaker.lastName}}
-					</template>
-				</h2>
+                      <div class="agenda-links">
+                        <a
+                          v-if="session.attendeeRatingLink"
+                          :href="session.attendeeRatingLink"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                          hreflang="en"
+                          class="agenda-slot-linkitem"
+                        >
+                          Feedback
+                        </a>
 
-				<p class="sr-only" id="speaker-dialog-description">
-					<template v-for="speaker in activeSpeakers"
-							  :key="`${speaker.firstName} ${speaker.lastName}`">
-						Speaker's name: {{speaker.firstName}} {{speaker.lastName}}
-						<span v-if="speaker.company">Speaker's company: {{speaker.company}}</span>
-						Speaker's bio: {{speaker.bio}}
-					</template>
-				</p>
+                        <a
+                          v-if="session.location.toLowerCase().includes('audimax')"
+                          href="https://www.youtube.com/live/CMPudw4scSE"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                          hreflang="en"
+                          class="agenda-slot-linkitem"
+                        >
+                          Livestream
+                        </a>
 
-				<button aria-label="Close Dialog" @click="closeSpeakerInfoModal" ref="close"
-						v-on:keydown.tab.prevent="focusTrapModal($event)">
-					✕
-				</button>
+                        <template v-if="session.presentationLinks && session.presentationLinks.length > 0">
+                          <ul class="agenda-slot-links">
+                            <template v-for="link in session.presentationLinks" :key="link.linkType">
+                              <li>
+                                <a
+                                  :href="link.url"
+                                  class="agenda-slot-linkitem"
+                                  target="_blank"
+                                  hreflang="en"
+                                  rel="noopener noreferrer"
+                                >
+                                  {{link.linkType}}
+                                </a>
+                              </li>
+                            </template>
+                          </ul>
+                        </template>
+                      </div>
+                    </div>
+                  </li>
+                </ol>
+              </template>
+            </div>
 
-				<div v-for="(speaker, index) in activeSpeakers" class="agenda-modal-content-container"
-					 :key="index">
-					<figure>
-						<div class="placeholder" v-if="!speaker.hasPhoto"></div>
-						<img
-							 v-else
-							 :src="`https://ui5con.cfapps.eu12.hana.ondemand.com${speaker.photoUrl}`"
-							 :alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`" />
-					</figure>
-					<article>
-						<header>
-							<div>
-								<h3 class="">
-									{{speaker.firstName}} {{speaker.lastName}}
-								</h3>
-								<p v-if="speaker.company" v-html="speaker.company"></p>
-							</div>
-						</header>
-						<p class="" v-if="speaker.bio" v-html="decodeBioHtml(speaker.bio)"></p>
-						<ul class="speakers-socials"
-							v-if="speaker.githubUrl || speaker.linkedInUrl || speaker.twitterHandle || speaker.mastodonHandle || speaker.blueskyHandle">
-							<li v-if="speaker.githubUrl">
-								<a :href="speaker.githubUrl" rel="nofollow" target="_blank"
-								   :ref="`github ${speaker.firstName} ${speaker.lastName}`"
-								   :aria-label="`Github profile of ${speaker.firstName} ${speaker.lastName}`"
-								   v-on:keydown.tab.prevent="focusTrapModal($event)">
-									<svg class="icon" aria-hidden="true">
-										<use xlink:href="images/icons/sprite.svg#github"></use>
-									</svg>
-								</a>
-							</li>
-							<li v-if="speaker.linkedInUrl">
-								<a :href="speaker.linkedInUrl" rel="nofollow" target="_blank"
-								   :ref="`linkedin ${speaker.firstName} ${speaker.lastName}`"
-								   :aria-label="`Linkedin profile of ${speaker.firstName} ${speaker.lastName}`"
-								   v-on:keydown.tab.prevent="focusTrapModal($event)">
-									<svg class="icon" aria-hidden="true">
-										<use xlink:href="images/icons/sprite.svg#linkedin"></use>
-									</svg>
-								</a>
-							</li>
-							<li v-if="speaker.twitterHandle">
-								<a :href="speaker.twitterHandle" rel="nofollow" target="_blank"
-								   :ref="`twitter ${speaker.firstName} ${speaker.lastName}`"
-								   :aria-label="`Twitter profile of ${speaker.firstName} ${speaker.lastName}`"
-								   v-on:keydown.tab.prevent="focusTrapModal($event)">
-									<svg class="icon" aria-hidden="true">
-										<use xlink:href="images/icons/sprite.svg#twitter"></use>
-									</svg>
-								</a>
-							</li>
-							<li v-if="speaker.mastodonHandle">
-								<a :href="speaker.mastodonHandle" rel="nofollow" target="_blank"
-								   :ref="`mastodon ${speaker.firstName} ${speaker.lastName}`"
-								   :aria-label="`Mastodon profile of ${speaker.firstName} ${speaker.lastName}`"
-								   v-on:keydown.tab.prevent="focusTrapModal($event)">
-									<svg class="icon" aria-hidden="true">
-										<use xlink:href="images/icons/sprite.svg#mastodon"></use>
-									</svg>
-								</a>
-							</li>
-							<li v-if="speaker.blueskyHandle">
-								<a :href="speaker.blueskyHandle" rel="nofollow" target="_blank"
-								   :ref="`bluesky ${speaker.firstName} ${speaker.lastName}`"
-								   :aria-label="`Bluesky profile of ${speaker.firstName} ${speaker.lastName}`"
-								   v-on:keydown.tab.prevent="focusTrapModal($event)">
-									<svg class="icon" aria-hidden="true">
-										<use xlink:href="images/icons/sprite.svg#bluesky"></use>
-									</svg>
-								</a>
-							</li>
-						</ul>
-					</article>
-				</div>
-			</div>
-		</div>
-	</main>
+            <!-- Session Details Modal -->
+            <div
+              id="session-modal"
+              ref="sessionModal"
+              aria-hidden="true"
+              tabindex="-1"
+              aria-modal="true"
+              class="agenda-modal-backdrop"
+              style="display: none"
+              @keydown.esc="closeSessionDialog"
+              @click.self="closeSessionDialog"
+              v-cloak
+            >
+              <div
+                class="agenda-modal"
+                role="document"
+                aria-labelledby="session-dialog-title"
+                aria-describedby="session-dialog-description"
+                tabindex="-1"
+                ref="sessionModalContent"
+              >
+                <!-- Title -->
+                <h2 class="sr-only" id="session-dialog-title" v-if="activeSession">{{ activeSession.title }}</h2>
 
-	<footer id="footer">
-		<footer-section></footer-section>
-	</footer>
+                <p class="sr-only" id="session-dialog-description" v-if="activeSession">
+                  Session from {{ trimTime(activeSession.startTime) }} to {{ trimTime(activeSession.endTime) }}. {{
+                  activeSession.description }}
+                </p>
 
-	<script src="./js/luxon.min.js"></script>
-	<script src="./components/calendar-link.component.js"></script>
-	<script src="./components/nav-section.component.js"></script>
-	<script src="./components/nav-section-mobile.component.js"></script>
-	<script src="./components/footer-section.component.js"></script>
-	<script src="./js/proposal-lineup.js"></script>
-	<script src="./js/speaker-lineup.js"></script>
-	<script src="./js/agenda-debug.js"></script>
-	<script src="./js/main.js"></script>
+                <button
+                  aria-label="Close Dialog"
+                  @click="closeSessionDialog"
+                  ref="sessionCloseButton"
+                  v-on:keydown.tab.prevent="focusTrapSessionModal($event)"
+                >
+                  ✕
+                </button>
 
-</body>
+                <div class="agenda-modal-content" v-if="activeSession">
+                  <p class="agenda-modal-type">{{ formatSessionType(activeSession.type) }}</p>
 
+                  <!-- Title -->
+                  <h2 class="agenda-modal-title" v-html="decodeBioHtml(activeSession.title)"></h2>
+
+                  <!-- Details -->
+                  <div class="agenda-modal-details">
+                    <p>
+                      <span>time</span>
+                      <time>{{ trimTime(activeSession.startTime) }} - {{ trimTime(activeSession.endTime) }}</time>
+                    </p>
+
+                    <p>
+                      <span>location</span>
+                      {{ formatLocation(activeSession.location) }}
+                    </p>
+
+                    <p v-if="activeSession.proficiencyLevel">
+                      <span>complexity</span>
+                      {{ activeSession.proficiencyLevel }}
+                    </p>
+                  </div>
+
+                  <!-- Description -->
+                  <h3 class="agenda-modal-section-heading">OVERVIEW</h3>
+                  <p
+                    v-if="activeSession.description"
+                    class="agenda-modal-description"
+                    v-html="decodeBioHtml(activeSession.description)"
+                  ></p>
+
+                  <!-- Speakers -->
+                  <h3 v-if="getSessionSpeakers(activeSession.id).length > 0" class="agenda-modal-section-heading">
+                    SPEAKERS
+                  </h3>
+                  <div v-if="getSessionSpeakers(activeSession.id).length > 0" class="agenda-modal-speakers">
+                    <div
+                      v-for="(speaker, index) in getSessionSpeakers(activeSession.id)"
+                      :key="index"
+                      class="agenda-modal-speaker"
+                    >
+                      <figure>
+                        <div class="placeholder" v-if="!speaker.hasPhoto"></div>
+                        <img
+                          v-else
+                          :src="`https://ui5con.cfapps.eu12.hana.ondemand.com${speaker.photoUrl}`"
+                          :alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`"
+                        />
+                      </figure>
+                      <article>
+                        <header>
+                          <h3>{{speaker.firstName}} {{speaker.lastName}}</h3>
+                          <p v-if="speaker.company" v-html="speaker.company"></p>
+                        </header>
+                        <p v-if="speaker.bio" v-html="decodeBioHtml(speaker.bio)"></p>
+                        <ul
+                          class="speakers-socials"
+                          v-if="speaker.githubUrl || speaker.linkedInUrl || speaker.twitterHandle || speaker.mastodonHandle || speaker.blueskyHandle"
+                        >
+                          <li v-if="speaker.githubUrl">
+                            <a
+                              :href="speaker.githubUrl"
+                              rel="nofollow"
+                              target="_blank"
+                              :ref="`session-github-${index}`"
+                              :aria-label="`Github profile of ${speaker.firstName} ${speaker.lastName}`"
+                              v-on:keydown.tab.prevent="focusTrapSessionModal($event)"
+                            >
+                              <svg class="icon" aria-hidden="true">
+                                <use xlink:href="images/icons/sprite.svg#github"></use>
+                              </svg>
+                            </a>
+                          </li>
+                          <li v-if="speaker.linkedInUrl">
+                            <a
+                              :href="speaker.linkedInUrl"
+                              rel="nofollow"
+                              target="_blank"
+                              :ref="`session-linkedin-${index}`"
+                              :aria-label="`Linkedin profile of ${speaker.firstName} ${speaker.lastName}`"
+                              v-on:keydown.tab.prevent="focusTrapSessionModal($event)"
+                            >
+                              <svg class="icon" aria-hidden="true">
+                                <use xlink:href="images/icons/sprite.svg#linkedin"></use>
+                              </svg>
+                            </a>
+                          </li>
+                          <li v-if="speaker.twitterHandle">
+                            <a
+                              :href="speaker.twitterHandle"
+                              rel="nofollow"
+                              target="_blank"
+                              :ref="`session-twitter-${index}`"
+                              :aria-label="`Twitter profile of ${speaker.firstName} ${speaker.lastName}`"
+                              v-on:keydown.tab.prevent="focusTrapSessionModal($event)"
+                            >
+                              <svg class="icon" aria-hidden="true">
+                                <use xlink:href="images/icons/sprite.svg#twitter"></use>
+                              </svg>
+                            </a>
+                          </li>
+                          <li v-if="speaker.mastodonHandle">
+                            <a
+                              :href="speaker.mastodonHandle"
+                              rel="nofollow"
+                              target="_blank"
+                              :ref="`session-mastodon-${index}`"
+                              :aria-label="`Mastodon profile of ${speaker.firstName} ${speaker.lastName}`"
+                              v-on:keydown.tab.prevent="focusTrapSessionModal($event)"
+                            >
+                              <svg class="icon" aria-hidden="true">
+                                <use xlink:href="images/icons/sprite.svg#mastodon"></use>
+                              </svg>
+                            </a>
+                          </li>
+                          <li v-if="speaker.blueskyHandle">
+                            <a
+                              :href="speaker.blueskyHandle"
+                              rel="nofollow"
+                              target="_blank"
+                              :ref="`session-bluesky-${index}`"
+                              :aria-label="`Bluesky profile of ${speaker.firstName} ${speaker.lastName}`"
+                              v-on:keydown.tab.prevent="focusTrapSessionModal($event)"
+                            >
+                              <svg class="icon" aria-hidden="true">
+                                <use xlink:href="images/icons/sprite.svg#bluesky"></use>
+                              </svg>
+                            </a>
+                          </li>
+                        </ul>
+                      </article>
+                    </div>
+                  </div>
+
+                  <!-- Additional Links -->
+                  <div
+                    v-if="!isBreakSession(activeSession) && (activeSession.attendeeRatingLink || (activeSession.location && activeSession.location.toLowerCase().includes('audimax')) || (activeSession.presentationLinks && activeSession.presentationLinks.length > 0))"
+                    class="agenda-modal-links"
+                  >
+                    <h3 class="agenda-modal-section-heading">LINKS</h3>
+                    <div class="agenda-modal-calendars links">
+                      <a
+                        v-if="activeSession.attendeeRatingLink"
+                        :href="activeSession.attendeeRatingLink"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        hreflang="en"
+                        class="agenda-slot-linkitem"
+                      >
+                        Feedback
+                      </a>
+
+                      <a
+                        v-if="activeSession.location.toLowerCase().includes('audimax')"
+                        href="https://www.youtube.com/live/CMPudw4scSE"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        hreflang="en"
+                        class="agenda-slot-linkitem"
+                      >
+                        Livestream
+                      </a>
+
+                      <template v-if="activeSession.presentationLinks && activeSession.presentationLinks.length > 0">
+                        <ul class="agenda-slot-links">
+                          <template v-for="link in activeSession.presentationLinks" :key="link.linkType">
+                            <li>
+                              <a
+                                :href="link.url"
+                                class="agenda-slot-linkitem"
+                                target="_blank"
+                                hreflang="en"
+                                rel="noopener noreferrer"
+                              >
+                                {{link.linkType}}
+                              </a>
+                            </li>
+                          </template>
+                        </ul>
+                      </template>
+                    </div>
+                  </div>
+
+                  <!-- Calendars -->
+                  <div v-if="!isBreakSession(activeSession)">
+                    <h3 class="agenda-modal-section-heading">ADD TO CALENDAR</h3>
+                    <div class="agenda-modal-calendars" v-if="activeSession.calendars">
+                      <!-- Google Calendar Link -->
+                      <a
+                        :href="activeSession.calendars.google"
+                        ref="session-calendar-google"
+                        v-on:keydown.tab.prevent="focusTrapSessionModal($event)"
+                        target="_blank"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256">
+                          <path fill="#FFF" d="M195.368 60.632H60.632v134.736h134.736z" />
+                          <path fill="#EA4335" d="M195.368 256L256 195.368l-30.316-5.172l-30.316 5.172l-5.533 27.73z" />
+                          <path
+                            fill="#188038"
+                            d="M0 195.368v40.421C0 246.956 9.044 256 20.21 256h40.422l6.225-30.316l-6.225-30.316l-33.033-5.172z"
+                          />
+                          <path
+                            fill="#1967D2"
+                            d="M256 60.632V20.21C256 9.044 246.956 0 235.79 0h-40.422q-5.532 22.554-5.533 33.196q0 10.641 5.533 27.436q20.115 5.76 30.316 5.76T256 60.631"
+                          />
+                          <path fill="#FBBC04" d="M256 60.632h-60.632v134.736H256z" />
+                          <path fill="#34A853" d="M195.368 195.368H60.632V256h134.736z" />
+                          <path
+                            fill="#4285F4"
+                            d="M195.368 0H20.211C9.044 0 0 9.044 0 20.21v175.158h60.632V60.632h134.736z"
+                          />
+                          <path
+                            fill="#4285F4"
+                            d="M88.27 165.154c-5.036-3.402-8.523-8.37-10.426-14.94l11.689-4.816q1.59 6.063 5.558 9.398c2.627 2.223 5.827 3.318 9.566 3.318q5.734 0 9.852-3.487c2.746-2.324 4.127-5.288 4.127-8.875q0-5.508-4.345-8.994c-2.897-2.324-6.535-3.486-10.88-3.486h-6.754v-11.57h6.063q5.608 0 9.448-3.033c2.56-2.02 3.84-4.783 3.84-8.303c0-3.132-1.145-5.625-3.435-7.494c-2.29-1.87-5.188-2.813-8.708-2.813c-3.436 0-6.164.91-8.185 2.745a16.1 16.1 0 0 0-4.413 6.754l-11.57-4.817c1.532-4.345 4.345-8.185 8.471-11.503s9.398-4.985 15.798-4.985c4.733 0 8.994.91 12.767 2.745c3.772 1.836 6.736 4.379 8.875 7.613c2.14 3.25 3.2 6.888 3.2 10.93c0 4.126-.993 7.613-2.98 10.476s-4.43 5.052-7.327 6.585v.69a22.25 22.25 0 0 1 9.398 7.327c2.442 3.284 3.672 7.208 3.672 11.79c0 4.58-1.163 8.673-3.487 12.26c-2.324 3.588-5.54 6.417-9.617 8.472c-4.092 2.055-8.69 3.1-13.793 3.1c-5.912.016-11.369-1.685-16.405-5.087m71.797-58.005l-12.833 9.28l-6.417-9.734l23.023-16.607h8.825v78.333h-12.598z"
+                          />
+                        </svg>
+                        Google
+                      </a>
+
+                      <!-- Outlook/iCal Link -->
+                      <a
+                        :href="activeSession.calendars.ics"
+                        ref="session-calendar-outlook"
+                        v-on:keydown.tab.prevent="focusTrapSessionModal($event)"
+                        download="ui5con_session.ics"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">
+                          <path
+                            fill="#0072c6"
+                            d="M19.484 7.937v5.477l1.916 1.205a.5.5 0 0 0 .21 0l8.238-5.554a1.174 1.174 0 0 0-.959-1.128Z"
+                          />
+                          <path
+                            fill="#0072c6"
+                            d="m19.484 15.457l1.747 1.2a.52.52 0 0 0 .543 0c-.3.181 8.073-5.378 8.073-5.378v10.066a1.408 1.408 0 0 1-1.49 1.555h-8.874zm-9.044-2.525a1.61 1.61 0 0 0-1.42.838a4.13 4.13 0 0 0-.526 2.218A4.05 4.05 0 0 0 9.02 18.2a1.6 1.6 0 0 0 2.771.022a4 4 0 0 0 .515-2.2a4.37 4.37 0 0 0-.5-2.281a1.54 1.54 0 0 0-1.366-.809"
+                          />
+                          <path
+                            fill="#0072c6"
+                            d="M2.153 5.155v21.427L18.453 30V2Zm10.908 14.336a3.23 3.23 0 0 1-2.7 1.361a3.19 3.19 0 0 1-2.64-1.318A5.46 5.46 0 0 1 6.706 16.1a5.87 5.87 0 0 1 1.036-3.616a3.27 3.27 0 0 1 2.744-1.384a3.12 3.12 0 0 1 2.61 1.321a5.64 5.64 0 0 1 1 3.484a5.76 5.76 0 0 1-1.035 3.586"
+                          />
+                        </svg>
+                        Outlook
+                      </a>
+
+                      <!-- Office 365 Link -->
+                      <a
+                        :href="activeSession.calendars.office365"
+                        ref="session-calendar-office365"
+                        v-on:keydown.tab.prevent="focusTrapSessionModal($event)"
+                        target="_blank"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                          <path
+                            fill="#D83B01"
+                            stroke="#D83B01"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="1.5"
+                            d="M4 18V6l10.5-4L20 4v16l-5.5 2zm0 0l10 .5V6L8.5 7.5v8z"
+                          />
+                        </svg>
+                        Office 365
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Speaker Modal -->
+      <div
+        id="speaker-modal"
+        ref="speakerModal"
+        aria-hidden="true"
+        tabindex="-1"
+        aria-modal="true"
+        class="agenda-modal-backdrop"
+        style="display: none"
+        @keydown.esc="closeSpeakerInfoModal"
+        @click.self="closeSpeakerInfoModal"
+        v-cloak
+      >
+        <div
+          class="agenda-modal"
+          role="document"
+          aria-labelledby="speaker-dialog-title"
+          aria-describedby="speaker-dialog-description"
+          tabindex="-1"
+          ref="speakerModalContent"
+        >
+          <h2 class="sr-only" id="speaker-dialog-title">
+            Detailed Info about
+            <template v-for="speaker in activeSpeakers" :key="`${speaker.firstName} ${speaker.lastName}`">
+              {{speaker.firstName}} {{speaker.lastName}}
+            </template>
+          </h2>
+
+          <p class="sr-only" id="speaker-dialog-description">
+            <template v-for="speaker in activeSpeakers" :key="`${speaker.firstName} ${speaker.lastName}`">
+              Speaker's name: {{speaker.firstName}} {{speaker.lastName}}
+              <span v-if="speaker.company">Speaker's company: {{speaker.company}}</span>
+              Speaker's bio: {{speaker.bio}}
+            </template>
+          </p>
+
+          <button
+            aria-label="Close Dialog"
+            @click="closeSpeakerInfoModal"
+            ref="close"
+            v-on:keydown.tab.prevent="focusTrapModal($event)"
+          >
+            ✕
+          </button>
+
+          <div v-for="(speaker, index) in activeSpeakers" class="agenda-modal-content-container" :key="index">
+            <figure>
+              <div class="placeholder" v-if="!speaker.hasPhoto"></div>
+              <img
+                v-else
+                :src="`https://ui5con.cfapps.eu12.hana.ondemand.com${speaker.photoUrl}`"
+                :alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`"
+              />
+            </figure>
+            <article>
+              <header>
+                <div>
+                  <h3 class="">{{speaker.firstName}} {{speaker.lastName}}</h3>
+                  <p v-if="speaker.company" v-html="speaker.company"></p>
+                </div>
+              </header>
+              <p class="" v-if="speaker.bio" v-html="decodeBioHtml(speaker.bio)"></p>
+              <ul
+                class="speakers-socials"
+                v-if="speaker.githubUrl || speaker.linkedInUrl || speaker.twitterHandle || speaker.mastodonHandle || speaker.blueskyHandle"
+              >
+                <li v-if="speaker.githubUrl">
+                  <a
+                    :href="speaker.githubUrl"
+                    rel="nofollow"
+                    target="_blank"
+                    :ref="`github ${speaker.firstName} ${speaker.lastName}`"
+                    :aria-label="`Github profile of ${speaker.firstName} ${speaker.lastName}`"
+                    v-on:keydown.tab.prevent="focusTrapModal($event)"
+                  >
+                    <svg class="icon" aria-hidden="true">
+                      <use xlink:href="images/icons/sprite.svg#github"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li v-if="speaker.linkedInUrl">
+                  <a
+                    :href="speaker.linkedInUrl"
+                    rel="nofollow"
+                    target="_blank"
+                    :ref="`linkedin ${speaker.firstName} ${speaker.lastName}`"
+                    :aria-label="`Linkedin profile of ${speaker.firstName} ${speaker.lastName}`"
+                    v-on:keydown.tab.prevent="focusTrapModal($event)"
+                  >
+                    <svg class="icon" aria-hidden="true">
+                      <use xlink:href="images/icons/sprite.svg#linkedin"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li v-if="speaker.twitterHandle">
+                  <a
+                    :href="speaker.twitterHandle"
+                    rel="nofollow"
+                    target="_blank"
+                    :ref="`twitter ${speaker.firstName} ${speaker.lastName}`"
+                    :aria-label="`Twitter profile of ${speaker.firstName} ${speaker.lastName}`"
+                    v-on:keydown.tab.prevent="focusTrapModal($event)"
+                  >
+                    <svg class="icon" aria-hidden="true">
+                      <use xlink:href="images/icons/sprite.svg#twitter"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li v-if="speaker.mastodonHandle">
+                  <a
+                    :href="speaker.mastodonHandle"
+                    rel="nofollow"
+                    target="_blank"
+                    :ref="`mastodon ${speaker.firstName} ${speaker.lastName}`"
+                    :aria-label="`Mastodon profile of ${speaker.firstName} ${speaker.lastName}`"
+                    v-on:keydown.tab.prevent="focusTrapModal($event)"
+                  >
+                    <svg class="icon" aria-hidden="true">
+                      <use xlink:href="images/icons/sprite.svg#mastodon"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li v-if="speaker.blueskyHandle">
+                  <a
+                    :href="speaker.blueskyHandle"
+                    rel="nofollow"
+                    target="_blank"
+                    :ref="`bluesky ${speaker.firstName} ${speaker.lastName}`"
+                    :aria-label="`Bluesky profile of ${speaker.firstName} ${speaker.lastName}`"
+                    v-on:keydown.tab.prevent="focusTrapModal($event)"
+                  >
+                    <svg class="icon" aria-hidden="true">
+                      <use xlink:href="images/icons/sprite.svg#bluesky"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer">
+      <footer-section></footer-section>
+    </footer>
+
+    <script src="./js/luxon.min.js"></script>
+    <script src="./components/calendar-link.component.js"></script>
+    <script src="./components/nav-section.component.js"></script>
+    <script src="./components/nav-section-mobile.component.js"></script>
+    <script src="./components/footer-section.component.js"></script>
+    <script src="./js/proposal-lineup.js"></script>
+    <script src="./js/speaker-lineup.js"></script>
+    <script src="./js/agenda-debug.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
 </html>

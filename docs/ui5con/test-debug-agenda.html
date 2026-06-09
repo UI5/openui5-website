@@ -180,7 +180,10 @@
 											role="button"
 											:aria-label="`View details for ${session.title}`">
 											<h3>
-												<span class="time">{{ trimTime(session.startTime) }} - {{ trimTime(session.endTime) }}</span>
+												<template v-if="session.isLive">
+													<span class="time">LIVE NOW</span>
+												</template>
+												<template v-else><span class="time">{{ trimTime(session.startTime) }} - {{ trimTime(session.endTime) }}</span></template>
 												<span v-html="decodeBioHtml(session.title)"></span>
 											</h3>
 										</li>
@@ -198,8 +201,7 @@
 											:class="{
 													break: isBreakSession(session),
 													pitch: isPitchSession(session),
-													expert: isExpertSession(session),
-													live: session.isLive
+													expert: isExpertSession(session)
 												}"
 											:style="`--start: ${timeToGridValue(session.startTime)}; --end: ${timeToGridValue(session.endTime)};`"
 											@click="openSessionDialog(session)"
@@ -227,8 +229,7 @@
 											:class="{
 													break: isBreakSession(session),
 													pitch: isPitchSession(session),
-													expert: isExpertSession(session),
-													live: session.isLive
+													expert: isExpertSession(session)
 												}"
 											:style="`--start: ${timeToGridValue(session.startTime)}; --end: ${timeToGridValue(session.endTime)};`"
 											@click="openSessionDialog(session)"
@@ -256,8 +257,7 @@
 											:class="{
 													break: isBreakSession(session),
 													pitch: isPitchSession(session),
-													expert: isExpertSession(session),
-													live: session.isLive
+													expert: isExpertSession(session)
 												}"
 											:style="`--start: ${timeToGridValue(session.startTime)}; --end: ${timeToGridValue(session.endTime)};`"
 											@click="openSessionDialog(session)"
@@ -349,15 +349,15 @@
 									class="agenda-slot"
 									:class="{
 											break: isBreakSession(session),
-											pitch: isPitchSession(session),
-											live: session.isLive
+											pitch: isPitchSession(session)
 										}"
 									v-cloak>
 									<div class="agenda-slot-header">
 										<div>
 											<p class="agenda-slot-details">
-												<span class="agenda-time">
-													{{trimTime(session.startTime)}}<br>{{trimTime(session.endTime)}}
+												<span class="agenda-time" :class="{live: (session.location.toLowerCase().includes('audimax')) && session.isLive}">
+													<template v-if="(session.location.toLowerCase().includes('audimax')) && session.isLive">LIVE NOW</template>
+													<template v-else>{{trimTime(session.startTime)}}<br>{{trimTime(session.endTime)}}</template>
 												</span>
 	
 												<span class="agenda-room"

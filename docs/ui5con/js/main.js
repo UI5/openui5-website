@@ -964,6 +964,8 @@ const main = createApp({
     // Toggles between grid and linear agenda views
     toggleAgendaView() {
       this.agendaViewMode = this.agendaViewMode === "grid" ? "linear" : "grid";
+      this.filter = "all";
+      this.formattedLineup = this.formatLineup();
     },
     // Retrieves speakers for a specific session by ID
     getSessionSpeakers(sessionId) {
