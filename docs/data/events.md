@@ -1,4 +1,22 @@
 # Events
+
+```yaml
+title: UI5ers live (June '26)
+subTitle: 45 minute interactive webcast
+location: via YouTube
+logo: images/events/ui5ers.svg
+speakers:
+  - Biser Miloshev
+  - Thorsten Hochreuter
+url: 'https://youtube.com/live/aMmD2hTDW-U'
+id: ui5ers-59
+start: '2026-06-18 15:15 Europe/Berlin'
+end: '2026-06-18 16:00 Europe/Berlin'
+```
+Logistics dashboards, asset tracking, operational monitoring — location-based data is everywhere in enterprise apps, and developers have long relied on sap.ui.vbm.GeoMap to visualize it. With the MDC GeoMap control available since OpenUI5 1.142, map capabilities are now part of the metadata-driven MDC architecture. Biser Miloshev walks through the core concepts, live-codes a map-based application with GeoJSON data, and covers map providers, layers, and patterns for connecting geospatial views with business workflows.
+  
+Meanwhile, debugging apps just got a lot more convenient. OpenUI5 1.149 ships experimental built-in debug utilities — a global ui5 object in the browser console that gives you structured access to controls, modules, and framework internals. No globals required. Thorsten Hochreuter shows what's there and how to use it. Activate with sap-ui-debug-tools=true and type ui5.help() to get started.
+
 ```yaml
 title: UI5ers live (May '26)
 subTitle: 45 minute interactive webcast
