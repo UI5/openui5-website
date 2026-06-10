@@ -468,10 +468,10 @@
                           v-if="session.proficiencyLevel"
                           class="agenda-level"
                           :class="{
-								beginner: session.proficiencyLevel === 'beginner',
-								intermediate: session.proficiencyLevel === 'intermediate',
-								advanced: session.proficiencyLevel === 'advanced'
-							}"
+                            beginner: session.proficiencyLevel === 'beginner',
+                            intermediate: session.proficiencyLevel === 'intermediate',
+                            advanced: session.proficiencyLevel === 'advanced'
+                          }"
                         >
                           {{ session.proficiencyLevel }}
                         </span>
@@ -481,13 +481,8 @@
                         <template
                           v-for="(speaker, index) in session.speakers"
                           :key="`${speaker.firstName} ${speaker.lastName}`"
-                        >
-                          <span>
-                            {{speaker.firstName}} {{speaker.lastName}} (
-                            <span v-html="speaker.company"></span>
-                            )
-                          </span>
-                          <span v-if="index != session.speakers.length - 1">,</span>
+                        ><span>
+                            {{speaker.firstName}} {{speaker.lastName}} (<span v-html="speaker.company"></span>)</span><span v-if="index != session.speakers.length - 1">, </span>
                         </template>
                       </p>
 
@@ -696,6 +691,55 @@
                     class="agenda-modal-description"
                     v-html="decodeBioHtml(activeSession.description)"
                   ></p>
+                  
+                  <!-- Additional Links -->
+                  <div
+                    v-if="!isBreakSession(activeSession) && (activeSession.attendeeRatingLink || (activeSession.location && activeSession.location.toLowerCase().includes('audimax')) || (activeSession.presentationLinks && activeSession.presentationLinks.length > 0))"
+                    class="agenda-modal-links"
+                  >
+                    <h3 class="agenda-modal-section-heading">LINKS</h3>
+                    <div class="agenda-modal-calendars links">
+                      <a
+                        v-if="activeSession.attendeeRatingLink"
+                        :href="activeSession.attendeeRatingLink"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        hreflang="en"
+                        class="agenda-slot-linkitem"
+                      >
+                        Feedback
+                      </a>
+
+                      <a
+                        v-if="activeSession.location.toLowerCase().includes('audimax')"
+                        href="https://www.youtube.com/live/CMPudw4scSE"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        hreflang="en"
+                        class="agenda-slot-linkitem"
+                      >
+                        Livestream
+                      </a>
+
+                      <template v-if="activeSession.presentationLinks && activeSession.presentationLinks.length > 0">
+                        <ul class="agenda-slot-links">
+                          <template v-for="link in activeSession.presentationLinks" :key="link.linkType">
+                            <li>
+                              <a
+                                :href="link.url"
+                                class="agenda-slot-linkitem"
+                                target="_blank"
+                                hreflang="en"
+                                rel="noopener noreferrer"
+                              >
+                                {{link.linkType}}
+                              </a>
+                            </li>
+                          </template>
+                        </ul>
+                      </template>
+                    </div>
+                  </div>
 
                   <!-- Speakers -->
                   <h3 v-if="getSessionSpeakers(activeSession.id).length > 0" class="agenda-modal-section-heading">
@@ -721,6 +765,7 @@
                           <p v-if="speaker.company" v-html="speaker.company"></p>
                         </header>
                         <p v-if="speaker.bio" v-html="decodeBioHtml(speaker.bio)"></p>
+                        
                         <ul
                           class="speakers-socials"
                           v-if="speaker.githubUrl || speaker.linkedInUrl || speaker.twitterHandle || speaker.mastodonHandle || speaker.blueskyHandle"
@@ -797,55 +842,6 @@
                           </li>
                         </ul>
                       </article>
-                    </div>
-                  </div>
-
-                  <!-- Additional Links -->
-                  <div
-                    v-if="!isBreakSession(activeSession) && (activeSession.attendeeRatingLink || (activeSession.location && activeSession.location.toLowerCase().includes('audimax')) || (activeSession.presentationLinks && activeSession.presentationLinks.length > 0))"
-                    class="agenda-modal-links"
-                  >
-                    <h3 class="agenda-modal-section-heading">LINKS</h3>
-                    <div class="agenda-modal-calendars links">
-                      <a
-                        v-if="activeSession.attendeeRatingLink"
-                        :href="activeSession.attendeeRatingLink"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                        hreflang="en"
-                        class="agenda-slot-linkitem"
-                      >
-                        Feedback
-                      </a>
-
-                      <a
-                        v-if="activeSession.location.toLowerCase().includes('audimax')"
-                        href="https://www.youtube.com/live/CMPudw4scSE"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                        hreflang="en"
-                        class="agenda-slot-linkitem"
-                      >
-                        Livestream
-                      </a>
-
-                      <template v-if="activeSession.presentationLinks && activeSession.presentationLinks.length > 0">
-                        <ul class="agenda-slot-links">
-                          <template v-for="link in activeSession.presentationLinks" :key="link.linkType">
-                            <li>
-                              <a
-                                :href="link.url"
-                                class="agenda-slot-linkitem"
-                                target="_blank"
-                                hreflang="en"
-                                rel="noopener noreferrer"
-                              >
-                                {{link.linkType}}
-                              </a>
-                            </li>
-                          </template>
-                        </ul>
-                      </template>
                     </div>
                   </div>
 

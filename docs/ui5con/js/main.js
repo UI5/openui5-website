@@ -64,8 +64,8 @@ const SOCIAL_PLATFORMS = {
 // Location mapping configuration
 const LOCATION_CONFIG = [
   { match: "audimax", full: "Audimax", short: "A", calendar: "Audimax" },
-  { match: "w1", full: "W1/W2", short: "W1/2", calendar: "Room W1/W2" },
-  { match: "w2", full: "W1/W2", short: "W1/2", calendar: "Room W1/W2" },
+  { match: "w1", full: "W1/W2", short: "W2", calendar: "Room W1/W2" },
+  { match: "w2", full: "W1/W2", short: "W2", calendar: "Room W1/W2" },
   { match: "w3", full: "W3", short: "W3", calendar: "Room W3" },
   { match: "expert", full: "Expert Corner", short: "EXP", calendar: "Expert Corner" },
   { match: "canteen", full: "Canteen", short: "CAN", calendar: "Canteen" },
