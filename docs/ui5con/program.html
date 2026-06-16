@@ -491,7 +491,7 @@
                               <div class="placeholder" v-if="!speaker.hasPhoto"></div>
                               <img
                                 v-else
-                                :src="`https://ui5con.cfapps.eu12.hana.ondemand.com${speaker.photoUrl}`"
+                                :src="`${API_BASE_URL}${speaker.photoUrl}`"
                                 :alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`"
                               />
                             </button>
@@ -738,7 +738,7 @@
                         <div class="placeholder" v-if="!speaker.hasPhoto"></div>
                         <img
                           v-else
-                          :src="`https://ui5con.cfapps.eu12.hana.ondemand.com${speaker.photoUrl}`"
+                          :src="`${API_BASE_URL}${speaker.photoUrl}`"
                           :alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`"
                         />
                       </figure>
@@ -963,7 +963,7 @@
               <div class="placeholder" v-if="!speaker.hasPhoto"></div>
               <img
                 v-else
-                :src="`https://ui5con.cfapps.eu12.hana.ondemand.com${speaker.photoUrl}`"
+                :src="`${API_BASE_URL}${speaker.photoUrl}`"
                 :alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`"
               />
             </figure>
