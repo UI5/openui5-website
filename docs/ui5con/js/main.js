@@ -815,6 +815,36 @@ const main = createApp({
       // Generate calendar dates
       const calendarDates = this.generateCalendarDates(newStartTime, newEndTime);
 
+      // Format title for expert corner sessions
+      let formattedTitle = session.title;
+      let formattedDescription = session.description;
+
+      if (this.isExpertSession(session) && session.title && session.title.includes("##")) {
+        // First decode HTML entities manually (without stripping HTML tags)
+        let decodedTitle = session.title.replace(/&amp;/g, "&");
+        const titles = decodedTitle.split("##").map(t => t.trim());
+        const numberedTitles = titles.map((title, index) => `#${index + 1} ${title}`).join("<br>");
+        formattedTitle = `Expert corners:<br>${numberedTitles}`;
+
+        // Format description: add heading session titles after double <br> separators
+        if (session.description) {
+          let desc = session.description.replace(/&amp;/g, "&").replace(/(?:\r\n|\r|\n)/g, "<br>");
+
+          // Split by double <br> to get sections
+          const sections = desc.split("<br><br>");
+
+          // Add heading title before each section (except we skip the first if it doesn't need a title)
+          const formattedSections = sections.map((section, index) => {
+            if (index < titles.length && section.trim()) {
+              return `<h4 style="font-size: var(--type-1)">${titles[index]}</h4><br>${section.trim()}`;
+            }
+            return section.trim();
+          }).filter(s => s); // Remove empty sections
+
+          formattedDescription = formattedSections.join("<br><br>");
+        }
+      }
+
       // Format description for calendar
       const calDescription = session.description
         ? session.description.replace(/&amp;/g, "&").replace(/(?:\r\n|\r|\n)/g, "<br>")
@@ -828,6 +858,8 @@ const main = createApp({
 
       return {
         ...session,
+        title: formattedTitle,
+        description: formattedDescription,
         speakers: formattedSpeakers,
         startTime: newStartTime,
         endTime: newEndTime,
@@ -1000,6 +1032,12 @@ const main = createApp({
     // Decodes HTML and formats bio text with line breaks
     decodeBioHtml(value) {
       if (!value) return "";
+
+      // If value already contains <br> tags, it's already formatted HTML - don't decode
+      if (value.includes("<br>")) {
+        return value;
+      }
+
       let decoded = decodeHtmlEntities(value);
 
       // Replace "&amp;" or "&" with " and "
