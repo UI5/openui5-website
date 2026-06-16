@@ -836,7 +836,7 @@ const main = createApp({
           // Add heading title before each section (except we skip the first if it doesn't need a title)
           const formattedSections = sections.map((section, index) => {
             if (index < titles.length && section.trim()) {
-              return `<h4 style="font-size: var(--type-1)">${titles[index]}</h4><br>${section.trim()}`;
+              return `<b style="font-size: var(--type-1)">${titles[index]}</b><br>${section.trim()}`;
             }
             return section.trim();
           }).filter(s => s); // Remove empty sections
