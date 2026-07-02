@@ -1132,7 +1132,7 @@ const uxCorner = [
     "endTime": "10:45",
     "speakers": [],
     "presentationLinks": [{
-      "linkType": "Resigtration",
+      "linkType": "Registration",
       "url": "https://outlook.office.com/book/ui5conuxtesting@bookings.sap.com/"
     }]
   },
@@ -1146,7 +1146,7 @@ const uxCorner = [
     "endTime": "11:45",
     "speakers": [],
     "presentationLinks": [{
-      "linkType": "Resigtration",
+      "linkType": "Registration",
       "url": "https://outlook.office.com/book/ui5conuxtesting@bookings.sap.com/"
     }]
   },
@@ -1160,7 +1160,7 @@ const uxCorner = [
     "endTime": "13:45",
     "speakers": [],
     "presentationLinks": [{
-      "linkType": "Resigtration",
+      "linkType": "Registration",
       "url": "https://outlook.office.com/book/ui5conuxtesting@bookings.sap.com/"
     }]
   },
@@ -1174,7 +1174,7 @@ const uxCorner = [
     "endTime": "14:45",
     "speakers": [],
     "presentationLinks": [{
-      "linkType": "Resigtration",
+      "linkType": "Registration",
       "url": "https://outlook.office.com/book/ui5conuxtesting@bookings.sap.com/"
     }]
   },
@@ -1188,7 +1188,7 @@ const uxCorner = [
     "endTime": "15:45",
     "speakers": [],
     "presentationLinks": [{
-      "linkType": "Resigtration",
+      "linkType": "Registration",
       "url": "https://outlook.office.com/book/ui5conuxtesting@bookings.sap.com/"
     }]
   },
@@ -1202,7 +1202,7 @@ const uxCorner = [
     "endTime": "16:45",
     "speakers": [],
     "presentationLinks": [{
-      "linkType": "Resigtration",
+      "linkType": "Registration",
       "url": "https://outlook.office.com/book/ui5conuxtesting@bookings.sap.com/"
     }]
   },
