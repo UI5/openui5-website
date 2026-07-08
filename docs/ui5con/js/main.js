@@ -979,7 +979,12 @@ const main = createApp({
     isBreakSession(session) {
       if (session.location === CANTEEN_LOCATION) return true;
       const type = session.type || "";
-      return BREAK_SESSION_PATTERN.test(type) || BREAK_SESSION_PATTERN.test(session.title);
+      // Only treat as break if it has break pattern in type, OR if title matches AND has no speakers
+      if (BREAK_SESSION_PATTERN.test(type)) return true;
+      if (BREAK_SESSION_PATTERN.test(session.title) && (!session.speakers || session.speakers.length === 0)) {
+        return true;
+      }
+      return false;
     },
     // Checks if session is a pitch session
     isPitchSession(session) {
