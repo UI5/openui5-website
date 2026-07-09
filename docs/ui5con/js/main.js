@@ -29,6 +29,7 @@ const SESSION_TYPES = {
   PRESENTATION: "presentation",
   HANDS_ON: "hands",
   EXPERT_CORNER: "expert",
+  UX_CORNER: "ux",
   PITCH: "pitch",
 };
 
@@ -64,10 +65,11 @@ const SOCIAL_PLATFORMS = {
 // Location mapping configuration
 const LOCATION_CONFIG = [
   { match: "audimax", full: "Audimax", short: "A", calendar: "Audimax" },
-  { match: "w1", full: "W1/W2", short: "W2", calendar: "Room W1/W2" },
-  { match: "w2", full: "W1/W2", short: "W2", calendar: "Room W1/W2" },
+  { match: "w1", full: "W2", short: "W2", calendar: "Room W2" },
+  { match: "w2", full: "W2", short: "W2", calendar: "Room W2" },
   { match: "w3", full: "W3", short: "W3", calendar: "Room W3" },
   { match: "expert", full: "Expert Corner", short: "EXP", calendar: "Expert Corner" },
+  { match: "ux", full: "UX Corner", short: "UX", calendar: "UX Corner" },
   { match: "canteen", full: "Canteen", short: "CAN", calendar: "Canteen" },
 ];
 
@@ -614,6 +616,9 @@ const main = createApp({
       this.lineup = [];
     }
 
+    // Append UX Corner sessions to lineup
+    this.lineup = [...this.lineup, ...uxCorner];
+
     // Set error state if any API calls failed
     if (errors.length > 0) {
       this.apiError = errors.join('. ');
@@ -775,6 +780,10 @@ const main = createApp({
         experts: () =>
           sortedSchedule.filter((s) =>
             s.type.includes(SESSION_TYPES.EXPERT_CORNER),
+          ),
+        ux: () =>
+          sortedSchedule.filter((s) =>
+            s.type.includes(SESSION_TYPES.UX_CORNER),
           ),
         audimax: () =>
           sortedSchedule.filter((s) => s.location.toLowerCase() === "audimax"),
@@ -970,7 +979,12 @@ const main = createApp({
     isBreakSession(session) {
       if (session.location === CANTEEN_LOCATION) return true;
       const type = session.type || "";
-      return BREAK_SESSION_PATTERN.test(type) || BREAK_SESSION_PATTERN.test(session.title);
+      // Only treat as break if it has break pattern in type, OR if title matches AND has no speakers
+      if (BREAK_SESSION_PATTERN.test(type)) return true;
+      if (BREAK_SESSION_PATTERN.test(session.title) && (!session.speakers || session.speakers.length === 0)) {
+        return true;
+      }
+      return false;
     },
     // Checks if session is a pitch session
     isPitchSession(session) {
@@ -981,6 +995,11 @@ const main = createApp({
     isExpertSession(session) {
       const lowerType = (session.type || "").toLowerCase();
       return lowerType.includes(SESSION_TYPES.EXPERT_CORNER);
+    },
+    // Checks if session is a UX corner session
+    isUxSession(session) {
+      const lowerType = (session.type || "").toLowerCase();
+      return lowerType.includes(SESSION_TYPES.UX_CORNER);
     },
     // Updates the live status for all sessions
     updateLiveSession() {
@@ -1082,6 +1101,8 @@ const main = createApp({
         return "Workshop";
       } else if (value.toLowerCase().includes(SESSION_TYPES.EXPERT_CORNER)) {
         return "Expert Corner";
+      } else if (value.toLowerCase().includes(SESSION_TYPES.UX_CORNER)) {
+        return "UX Corner";
       } else {
         return value;
       } 
@@ -1104,3 +1125,90 @@ const footer = createApp({
 // Register footer component and mount
 footer.component('footer-section', window.FooterSectionComponent);
 footer.mount('#footer');
+
+const uxCorner = [
+    {
+    "id": "id-1781606152021-001",
+    "title": "UX Testing for UI5 Inspector / UI Theme Designer / SAPUI5 Flexibility",
+    "type": "ux_corner",
+    "description": "Session 1: UI5 Inspector\n\nThe UI5 Inspector Chrome DevTools extension helps developers and support specialists inspect, analyze, and optimize OpenUI5 and SAPUI5 applications. Key features include:\n\n-Inspect UI5 controls, including their properties, bindings, and data models\n-Modify control properties in real time\n-Access relevant framework insights for OpenUI5/SAPUI5 applications\n-Explore AI integration with Prompt API and upcoming new features\n\nTarget audience: UI5 Developers, Support Engineers, and UX Professionals\n\n______________________________________________\n\nSession 2: UI Theme Designer\n\nThe UI Theme Designer is a browser-based tool for cross-theming scenarios, allowing users to create corporate identity themes by modifying SAP-provided theme templates. Users can customize the color scheme, add company logos, and more.\nThe goal is to gather feedback on the usability and effectiveness of SAP Joule and other conversational AI tools when assisting users with the UI Theme Designer, and to identify gaps in the existing documentation.\n\nTarget audience: Designers and consultants working with the UI Theme Designer and developers working with modern IDEs\n\n______________________________________________\n\nSession 3: SAPUI5 flexibility\n\nKey User Adaptation lets business users modify SAP Fiori app layouts directly in the SAP Fiori launchpad or SAP Build Work Zone without writing code. This session will be split into two parts:\n\nPart 1 - Hands-on testing: Try out our redesigned Key User Adaptation interface and share where things work well or fall short.\n\nPart 2 - Feedback on planned features: We will walk you through features currently in development and look for your honest reactions to validate our direction.\n\nTarget audience: Users who want to adapt standard SAPUI5 apps for business users. Both key users and developers welcome.",
+    "location": "ux_corner",
+    "startTime": "10:00",
+    "endTime": "10:45",
+    "speakers": [],
+    "presentationLinks": [{
+      "linkType": "Registration",
+      "url": "https://outlook.office.com/book/ui5conuxtesting@bookings.sap.com/"
+    }]
+  },
+  {
+    "id": "id-1781606152021-002",
+    "title": "UX Testing for UI5 Inspector / UI Theme Designer / SAPUI5 Flexibility",
+    "type": "ux_corner",
+    "description": "Session 1: UI5 Inspector\n\nThe UI5 Inspector Chrome DevTools extension helps developers and support specialists inspect, analyze, and optimize OpenUI5 and SAPUI5 applications. Key features include:\n\n-Inspect UI5 controls, including their properties, bindings, and data models\n-Modify control properties in real time\n-Access relevant framework insights for OpenUI5/SAPUI5 applications\n-Explore AI integration with Prompt API and upcoming new features\n\nTarget audience: UI5 Developers, Support Engineers, and UX Professionals\n\n______________________________________________\n\nSession 2: UI Theme Designer\n\nThe UI Theme Designer is a browser-based tool for cross-theming scenarios, allowing users to create corporate identity themes by modifying SAP-provided theme templates. Users can customize the color scheme, add company logos, and more.\nThe goal is to gather feedback on the usability and effectiveness of SAP Joule and other conversational AI tools when assisting users with the UI Theme Designer, and to identify gaps in the existing documentation.\n\nTarget audience: Designers and consultants working with the UI Theme Designer and developers working with modern IDEs\n\n______________________________________________\n\nSession 3: SAPUI5 flexibility\n\nKey User Adaptation lets business users modify SAP Fiori app layouts directly in the SAP Fiori launchpad or SAP Build Work Zone without writing code. This session will be split into two parts:\n\nPart 1 - Hands-on testing: Try out our redesigned Key User Adaptation interface and share where things work well or fall short.\n\nPart 2 - Feedback on planned features: We will walk you through features currently in development and look for your honest reactions to validate our direction.\n\nTarget audience: Users who want to adapt standard SAPUI5 apps for business users. Both key users and developers welcome.",
+    "location": "ux_corner",
+    "startTime": "11:00",
+    "endTime": "11:45",
+    "speakers": [],
+    "presentationLinks": [{
+      "linkType": "Registration",
+      "url": "https://outlook.office.com/book/ui5conuxtesting@bookings.sap.com/"
+    }]
+  },
+  {
+    "id": "id-1781606152021-003",
+    "title": "UX Testing for UI5 Inspector / UI Theme Designer / SAPUI5 Flexibility",
+    "type": "ux_corner",
+    "description": "Session 1: UI5 Inspector\n\nThe UI5 Inspector Chrome DevTools extension helps developers and support specialists inspect, analyze, and optimize OpenUI5 and SAPUI5 applications. Key features include:\n\n-Inspect UI5 controls, including their properties, bindings, and data models\n-Modify control properties in real time\n-Access relevant framework insights for OpenUI5/SAPUI5 applications\n-Explore AI integration with Prompt API and upcoming new features\n\nTarget audience: UI5 Developers, Support Engineers, and UX Professionals\n\n______________________________________________\n\nSession 2: UI Theme Designer\n\nThe UI Theme Designer is a browser-based tool for cross-theming scenarios, allowing users to create corporate identity themes by modifying SAP-provided theme templates. Users can customize the color scheme, add company logos, and more.\nThe goal is to gather feedback on the usability and effectiveness of SAP Joule and other conversational AI tools when assisting users with the UI Theme Designer, and to identify gaps in the existing documentation.\n\nTarget audience: Designers and consultants working with the UI Theme Designer and developers working with modern IDEs\n\n______________________________________________\n\nSession 3: SAPUI5 flexibility\n\nKey User Adaptation lets business users modify SAP Fiori app layouts directly in the SAP Fiori launchpad or SAP Build Work Zone without writing code. This session will be split into two parts:\n\nPart 1 - Hands-on testing: Try out our redesigned Key User Adaptation interface and share where things work well or fall short.\n\nPart 2 - Feedback on planned features: We will walk you through features currently in development and look for your honest reactions to validate our direction.\n\nTarget audience: Users who want to adapt standard SAPUI5 apps for business users. Both key users and developers welcome.",
+    "location": "ux_corner",
+    "startTime": "13:00",
+    "endTime": "13:45",
+    "speakers": [],
+    "presentationLinks": [{
+      "linkType": "Registration",
+      "url": "https://outlook.office.com/book/ui5conuxtesting@bookings.sap.com/"
+    }]
+  },
+  {
+    "id": "id-1781606152021-004",
+    "title": "UX Testing for UI5 Inspector / UI Theme Designer / SAPUI5 Flexibility",
+    "type": "ux_corner",
+    "description": "Session 1: UI5 Inspector\n\nThe UI5 Inspector Chrome DevTools extension helps developers and support specialists inspect, analyze, and optimize OpenUI5 and SAPUI5 applications. Key features include:\n\n-Inspect UI5 controls, including their properties, bindings, and data models\n-Modify control properties in real time\n-Access relevant framework insights for OpenUI5/SAPUI5 applications\n-Explore AI integration with Prompt API and upcoming new features\n\nTarget audience: UI5 Developers, Support Engineers, and UX Professionals\n\n______________________________________________\n\nSession 2: UI Theme Designer\n\nThe UI Theme Designer is a browser-based tool for cross-theming scenarios, allowing users to create corporate identity themes by modifying SAP-provided theme templates. Users can customize the color scheme, add company logos, and more.\nThe goal is to gather feedback on the usability and effectiveness of SAP Joule and other conversational AI tools when assisting users with the UI Theme Designer, and to identify gaps in the existing documentation.\n\nTarget audience: Designers and consultants working with the UI Theme Designer and developers working with modern IDEs\n\n______________________________________________\n\nSession 3: SAPUI5 flexibility\n\nKey User Adaptation lets business users modify SAP Fiori app layouts directly in the SAP Fiori launchpad or SAP Build Work Zone without writing code. This session will be split into two parts:\n\nPart 1 - Hands-on testing: Try out our redesigned Key User Adaptation interface and share where things work well or fall short.\n\nPart 2 - Feedback on planned features: We will walk you through features currently in development and look for your honest reactions to validate our direction.\n\nTarget audience: Users who want to adapt standard SAPUI5 apps for business users. Both key users and developers welcome.",
+    "location": "ux_corner",
+    "startTime": "14:00",
+    "endTime": "14:45",
+    "speakers": [],
+    "presentationLinks": [{
+      "linkType": "Registration",
+      "url": "https://outlook.office.com/book/ui5conuxtesting@bookings.sap.com/"
+    }]
+  },
+  {
+    "id": "id-1781606152021-005",
+    "title": "UX Testing for UI5 Inspector / UI Theme Designer / SAPUI5 Flexibility",
+    "type": "ux_corner",
+    "description": "Session 1: UI5 Inspector\n\nThe UI5 Inspector Chrome DevTools extension helps developers and support specialists inspect, analyze, and optimize OpenUI5 and SAPUI5 applications. Key features include:\n\n-Inspect UI5 controls, including their properties, bindings, and data models\n-Modify control properties in real time\n-Access relevant framework insights for OpenUI5/SAPUI5 applications\n-Explore AI integration with Prompt API and upcoming new features\n\nTarget audience: UI5 Developers, Support Engineers, and UX Professionals\n\n______________________________________________\n\nSession 2: UI Theme Designer\n\nThe UI Theme Designer is a browser-based tool for cross-theming scenarios, allowing users to create corporate identity themes by modifying SAP-provided theme templates. Users can customize the color scheme, add company logos, and more.\nThe goal is to gather feedback on the usability and effectiveness of SAP Joule and other conversational AI tools when assisting users with the UI Theme Designer, and to identify gaps in the existing documentation.\n\nTarget audience: Designers and consultants working with the UI Theme Designer and developers working with modern IDEs\n\n______________________________________________\n\nSession 3: SAPUI5 flexibility\n\nKey User Adaptation lets business users modify SAP Fiori app layouts directly in the SAP Fiori launchpad or SAP Build Work Zone without writing code. This session will be split into two parts:\n\nPart 1 - Hands-on testing: Try out our redesigned Key User Adaptation interface and share where things work well or fall short.\n\nPart 2 - Feedback on planned features: We will walk you through features currently in development and look for your honest reactions to validate our direction.\n\nTarget audience: Users who want to adapt standard SAPUI5 apps for business users. Both key users and developers welcome.",
+    "location": "ux_corner",
+    "startTime": "15:00",
+    "endTime": "15:45",
+    "speakers": [],
+    "presentationLinks": [{
+      "linkType": "Registration",
+      "url": "https://outlook.office.com/book/ui5conuxtesting@bookings.sap.com/"
+    }]
+  },
+  {
+    "id": "id-1781606152021-006",
+    "title": "UX Testing for UI5 Inspector / UI Theme Designer / SAPUI5 Flexibility",
+    "type": "ux_corner",
+    "description": "Session 1: UI5 Inspector\n\nThe UI5 Inspector Chrome DevTools extension helps developers and support specialists inspect, analyze, and optimize OpenUI5 and SAPUI5 applications. Key features include:\n\n-Inspect UI5 controls, including their properties, bindings, and data models\n-Modify control properties in real time\n-Access relevant framework insights for OpenUI5/SAPUI5 applications\n-Explore AI integration with Prompt API and upcoming new features\n\nTarget audience: UI5 Developers, Support Engineers, and UX Professionals\n\n______________________________________________\n\nSession 2: UI Theme Designer\n\nThe UI Theme Designer is a browser-based tool for cross-theming scenarios, allowing users to create corporate identity themes by modifying SAP-provided theme templates. Users can customize the color scheme, add company logos, and more.\nThe goal is to gather feedback on the usability and effectiveness of SAP Joule and other conversational AI tools when assisting users with the UI Theme Designer, and to identify gaps in the existing documentation.\n\nTarget audience: Designers and consultants working with the UI Theme Designer and developers working with modern IDEs\n\n______________________________________________\n\nSession 3: SAPUI5 flexibility\n\nKey User Adaptation lets business users modify SAP Fiori app layouts directly in the SAP Fiori launchpad or SAP Build Work Zone without writing code. This session will be split into two parts:\n\nPart 1 - Hands-on testing: Try out our redesigned Key User Adaptation interface and share where things work well or fall short.\n\nPart 2 - Feedback on planned features: We will walk you through features currently in development and look for your honest reactions to validate our direction.\n\nTarget audience: Users who want to adapt standard SAPUI5 apps for business users. Both key users and developers welcome.",
+    "location": "ux_corner",
+    "startTime": "16:00",
+    "endTime": "16:45",
+    "speakers": [],
+    "presentationLinks": [{
+      "linkType": "Registration",
+      "url": "https://outlook.office.com/book/ui5conuxtesting@bookings.sap.com/"
+    }]
+  },
+]

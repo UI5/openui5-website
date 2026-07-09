@@ -14,6 +14,8 @@
 	position: fixed;
 	transition: all 0.3s;
 	background-color: rgba(245, 245, 245, .8);
+	place-items: center;
+	place-content: center;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -27,8 +29,6 @@
 }
 
 .agenda-modal {
-	top: 50%;
-	left: 50%;
 	width: 90vw;
 	max-height: 95dvh;
 	overflow-y: scroll;
@@ -36,7 +36,6 @@
 	position: absolute;
 	scrollbar-width: none;
 	-ms-overflow-style: none;
-	transform: translate(-50%, -50%);
 	background: var(--white);
 	box-shadow: 0 2px 3px rgba(0, 0, 0, .2);
 }

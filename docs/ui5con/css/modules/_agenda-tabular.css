@@ -1,14 +1,14 @@
 
 .timetable {
 	--time-unit-height: 0.5rem;
-	--stages: 4;
-	--th-width: 3.5rem;
-	--stage-gap: 1rem;
+	--stages: 5;
+	--th-width: 3rem;
+	--stage-gap: 0.9rem;
 	--start-time: 9;
 	--end-time: 17;
 	--event-duration: calc(var(--end-time) - var(--start-time) + 1);
 	--rows: auto repeat(calc(var(--event-duration) * 12), minmax(var(--time-unit-height), auto));
-	--columns: var(--th-width) repeat(3, 1fr) 0.5fr;
+	--columns: var(--th-width) repeat(3, 1fr) 0.5fr 0.5fr;
 	--zebra-color-one: var(--background-color);
 	--zebra-color-two: var(--background-color-alternate);
 
@@ -164,6 +164,18 @@
 		grid-column: 1;
 	}
 
+	&.ux {
+		background: var(--ux);
+		
+		&:hover {
+			background: color-mix(in srgb, var(--ux) 80%, white);
+		}
+
+		h3 {
+			font-size: 1.25rem;
+		}
+	}
+
 	&.live {
 		animation: glowing-pulse 2s ease-in-out infinite;
 		background-color: #e60000;
@@ -212,7 +224,7 @@
 	}
 
 	h3 {
-		font-size: 1.5rem;
+		font-size: 1.3rem;
 		font-weight: 700;
 
 		.time {

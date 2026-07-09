@@ -163,11 +163,12 @@
                         :key="session.id"
                         class="session"
                         :class="{
-							break: isBreakSession(session),
-							pitch: isPitchSession(session),
-							expert: isExpertSession(session),
-							live: session.isLive
-						}"
+                          break: isBreakSession(session),
+                          pitch: isPitchSession(session),
+                          expert: isExpertSession(session),
+                          ux: isUxSession(session),
+                          live: session.isLive
+                        }"
                         :style="`--start: ${timeToGridValue(session.startTime)}; --end: ${timeToGridValue(session.endTime)};`"
                         @click="openSessionDialog(session)"
                         @keydown.enter="openSessionDialog(session)"
@@ -185,7 +186,7 @@
                               {{ trimTime(session.startTime) }} - {{ trimTime(session.endTime) }}
                             </span>
                           </template>
-                          <span v-html="decodeBioHtml(session.title)"></span>
+                          <span class="title" v-html="decodeBioHtml(session.title)"></span>
                         </h3>
                       </li>
                     </ol>
@@ -193,17 +194,18 @@
 
                   <!-- W1/W2 -->
                   <div class="stage w1" style="--column: 3">
-                    <h2 class="stage-headline">W1/W2</h2>
+                    <h2 class="stage-headline">W2</h2>
                     <ol class="session-list" role="list">
                       <li
                         v-for="session in getSessionsByRoom('room_w1')"
                         :key="session.id"
                         class="session"
                         :class="{
-							break: isBreakSession(session),
-							pitch: isPitchSession(session),
-							expert: isExpertSession(session)
-						}"
+                          break: isBreakSession(session),
+                          pitch: isPitchSession(session),
+                          expert: isExpertSession(session),
+                          ux: isUxSession(session)
+                        }"
                         :style="`--start: ${timeToGridValue(session.startTime)}; --end: ${timeToGridValue(session.endTime)};`"
                         @click="openSessionDialog(session)"
                         @keydown.enter="openSessionDialog(session)"
@@ -214,7 +216,7 @@
                       >
                         <h3>
                           <span class="time">{{ trimTime(session.startTime) }} - {{ trimTime(session.endTime) }}</span>
-                          <span v-html="decodeBioHtml(session.title)"></span>
+                          <span class="title" v-html="decodeBioHtml(session.title)"></span>
                         </h3>
                       </li>
                     </ol>
@@ -229,10 +231,11 @@
                         :key="session.id"
                         class="session"
                         :class="{
-							break: isBreakSession(session),
-							pitch: isPitchSession(session),
-							expert: isExpertSession(session)
-						}"
+                          break: isBreakSession(session),
+                          pitch: isPitchSession(session),
+                          expert: isExpertSession(session),
+                          ux: isUxSession(session)
+                        }"
                         :style="`--start: ${timeToGridValue(session.startTime)}; --end: ${timeToGridValue(session.endTime)};`"
                         @click="openSessionDialog(session)"
                         @keydown.enter="openSessionDialog(session)"
@@ -243,7 +246,7 @@
                       >
                         <h3>
                           <span class="time">{{ trimTime(session.startTime) }} - {{ trimTime(session.endTime) }}</span>
-                          <span v-html="decodeBioHtml(session.title)"></span>
+                          <span class="title" v-html="decodeBioHtml(session.title)"></span>
                         </h3>
                       </li>
                     </ol>
@@ -258,10 +261,10 @@
                         :key="session.id"
                         class="session"
                         :class="{
-							break: isBreakSession(session),
-							pitch: isPitchSession(session),
-							expert: isExpertSession(session)
-						}"
+                          break: isBreakSession(session),
+                          pitch: isPitchSession(session),
+                          expert: isExpertSession(session)
+                        }"
                         :style="`--start: ${timeToGridValue(session.startTime)}; --end: ${timeToGridValue(session.endTime)};`"
                         @click="openSessionDialog(session)"
                         @keydown.enter="openSessionDialog(session)"
@@ -272,7 +275,36 @@
                       >
                         <h3>
                           <span class="time">{{ trimTime(session.startTime) }} - {{ trimTime(session.endTime) }}</span>
-                          <span v-html="decodeBioHtml(session.title)"></span>
+                          <span class="title" v-html="decodeBioHtml(session.title)"></span>
+                        </h3>
+                      </li>
+                    </ol>
+                  </div>
+
+                  <!-- UX Corner -->
+                  <div class="stage" style="--column: 6" v-if="getSessionsByRoom('ux_corner').length > 0">
+                    <h2 class="stage-headline">UX</h2>
+                    <ol class="session-list" role="list">
+                      <li
+                        v-for="session in getSessionsByRoom('ux_corner')"
+                        :key="session.id"
+                        class="session"
+                        :class="{
+                          break: isBreakSession(session),
+                          pitch: isPitchSession(session),
+                          ux: isUxSession(session)
+                        }"
+                        :style="`--start: ${timeToGridValue(session.startTime)}; --end: ${timeToGridValue(session.endTime)};`"
+                        @click="openSessionDialog(session)"
+                        @keydown.enter="openSessionDialog(session)"
+                        @keydown.space.prevent="openSessionDialog(session)"
+                        tabindex="0"
+                        role="button"
+                        :aria-label="`View details for ${session.title}`"
+                      >
+                        <h3>
+                          <span class="time">{{ trimTime(session.startTime) }} - {{ trimTime(session.endTime) }}</span>
+                          <span class="title" v-html="decodeBioHtml(session.title)"></span>
                         </h3>
                       </li>
                     </ol>
@@ -321,7 +353,7 @@
                           value="w1"
                           data-enpassusermodified="yes"
                         />
-                        <label for="w1" class="agenda-filter__label">W1/W2</label>
+                        <label for="w1" class="agenda-filter__label">W2</label>
                       </div>
                       <div class="agenda-filter__element">
                         <input
@@ -369,6 +401,17 @@
                           data-enpassusermodified="yes"
                         />
                         <label for="experts" class="agenda-filter__label">Experts</label>
+                      </div>
+                      <div class="agenda-filter__element">
+                        <input
+                          type="radio"
+                          @change="onFilterChange($event)"
+                          id="ux"
+                          name="filter"
+                          value="ux"
+                          data-enpassusermodified="yes"
+                        />
+                        <label for="ux" class="agenda-filter__label">UX</label>
                       </div>
                     </fieldset>
                     <fieldset class="agenda-filter">
@@ -444,7 +487,8 @@
 								w1: session.location && (session.location.toLowerCase().includes('w1') || session.location.toLowerCase().includes('w2')),
 								w3: session.location && session.location.toLowerCase().includes('w3'),
 								canteen: session.location && session.location.toLowerCase().includes('canteen'),
-								experts: session.location && session.location.toLowerCase().includes('experts')
+								experts: session.location && session.location.toLowerCase().includes('experts'),
+                ux: session.location && session.location.toLowerCase().includes('ux')
 							}"
                           >
                             {{ formatLocationTitle(session.location) }}

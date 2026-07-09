@@ -170,6 +170,7 @@
 													break: isBreakSession(session),
 													pitch: isPitchSession(session),
 													expert: isExpertSession(session),
+													ux: isUxSession(session),
 													live: session.isLive
 												}"
 											:style="`--start: ${timeToGridValue(session.startTime)}; --end: ${timeToGridValue(session.endTime)};`"
@@ -201,7 +202,8 @@
 											:class="{
 													break: isBreakSession(session),
 													pitch: isPitchSession(session),
-													expert: isExpertSession(session)
+													expert: isExpertSession(session),
+													ux: isUxSession(session)
 												}"
 											:style="`--start: ${timeToGridValue(session.startTime)}; --end: ${timeToGridValue(session.endTime)};`"
 											@click="openSessionDialog(session)"
@@ -229,7 +231,8 @@
 											:class="{
 													break: isBreakSession(session),
 													pitch: isPitchSession(session),
-													expert: isExpertSession(session)
+													expert: isExpertSession(session),
+													ux: isUxSession(session)
 												}"
 											:style="`--start: ${timeToGridValue(session.startTime)}; --end: ${timeToGridValue(session.endTime)};`"
 											@click="openSessionDialog(session)"
@@ -258,6 +261,34 @@
 													break: isBreakSession(session),
 													pitch: isPitchSession(session),
 													expert: isExpertSession(session)
+												}"
+											:style="`--start: ${timeToGridValue(session.startTime)}; --end: ${timeToGridValue(session.endTime)};`"
+											@click="openSessionDialog(session)"
+											@keydown.enter="openSessionDialog(session)"
+											@keydown.space.prevent="openSessionDialog(session)"
+											tabindex="0"
+											role="button"
+											:aria-label="`View details for ${session.title}`">
+											<h3>
+												<span class="time">{{ trimTime(session.startTime) }} - {{ trimTime(session.endTime) }}</span>
+												<span v-html="decodeBioHtml(session.title)"></span>
+											</h3>
+										</li>
+									</ol>
+								</div>
+
+								<!-- UX Corner -->
+								<div class="stage" style="--column: 6;" v-if="getSessionsByRoom('ux_corner').length > 0">
+									<h2 class="stage-headline">UX</h2>
+									<ol class="session-list" role="list">
+										<li
+											v-for="session in getSessionsByRoom('ux_corner')"
+											:key="session.id"
+											class="session"
+											:class="{
+													break: isBreakSession(session),
+													pitch: isPitchSession(session),
+													ux: isUxSession(session)
 												}"
 											:style="`--start: ${timeToGridValue(session.startTime)}; --end: ${timeToGridValue(session.endTime)};`"
 											@click="openSessionDialog(session)"
