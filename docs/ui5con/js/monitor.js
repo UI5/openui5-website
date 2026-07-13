@@ -18,8 +18,8 @@ const UPDATE_INTERVAL_MS = 60000; // 60 seconds
 // Location mapping for display
 const LOCATION_MAP = {
   audimax: "Audimax",
-  w1: "W1/W2",
-  w2: "W1/W2",
+  w1: "W2",
+  w2: "W2",
   w3: "W3",
   expert: "Expert Corner",
   canteen: "Canteen",
