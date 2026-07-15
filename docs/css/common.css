@@ -1071,3 +1071,28 @@ footer {
 		}
 	}
 }
+
+/* UI5con ad */
+
+[role="banner"] {
+	background: linear-gradient(to right, var(--brand-color-dark-primary), var(--brand-color-dark-secondary));
+	text-align: center;
+	
+	p {
+		font-size: 1.2rem;
+		margin: 0;
+		line-height: 3;
+		font-weight: 600;
+		color: #fff;
+	}
+	
+	a {
+		color: inherit;
+		text-decoration: none;
+		text-decoration-color: inherit;
+		
+		&:focus, &:hover {
+			text-decoration: underline;
+		}
+	}
+}

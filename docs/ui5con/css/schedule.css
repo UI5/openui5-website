@@ -2,7 +2,7 @@
 	max-width: 100%;
 	padding: 2rem;
 	background: transparent url(../images/timetable-bg.svg) 100% 0% no-repeat;
-	background-size: 65%;
+	background-size: auto 100%;
 	background-color: var(--brand-color-alt);
 }
 
@@ -11,7 +11,7 @@
 	width: 100%;
 	font-size: 1.7rem;
 	border: 1px solid var(--brand-color-alt);
-	border-top-width: 0.75rem;
+	border-top-width: 0;
 	border-collapse: collapse;
 	text-wrap: balance;
 	margin-inline: auto;
@@ -56,6 +56,10 @@
 
 .timetable tr {
 	border-top: 1px solid var(--text-color);
+}
+
+.timetable thead tr:first-child {
+	border-top: 0;
 }
 
 .timetable th,
