@@ -31,6 +31,7 @@ id: petar-dimov
 
 ```yaml
 name: Adrian Marten
+company:
 photo: data/persons/adrian-marten.jpg
 linkedin: adrian-marten-a750a3189
 github: tabris87
@@ -60,7 +61,7 @@ id: andreas-kunz
 
 ```yaml
 name: Ari Gilmore
-company: IBM
+company:
 id: ari-gilmore
 ```
 
@@ -85,7 +86,7 @@ id: benedikt-schoelch
 
 ```yaml
 name: Christian Braukmüller
-company: Evonik
+company:
 photo: data/persons/christian-braukmueller.jpg
 twitter: CBasis
 linkedin: cbasis
@@ -94,7 +95,7 @@ id: christian-braukmueller
 
 ```yaml
 name: Christian Pfisterer
-company: Home Shopping Europe GmbH
+company:
 photo: data/persons/christian-pfisterer.jpg
 twitter: fidschenheimer
 linkedin: chpfisterer
@@ -152,7 +153,6 @@ id: dj-adams
 
 ```yaml
 name: Dominik Feininger
-company: js-soft GmbH
 photo: data/persons/dominik-feininger.jpeg
 twitter: The_dominiK
 github: dominikfeininger
@@ -238,7 +238,7 @@ id: florian-vogt
 
 ```yaml
 name: Geert-Jan Klaps
-company: TheValueChain NV
+company:
 photo: data/persons/geert-jan-klaps.jpg
 twitter: geertjanklaps
 linkedin: geertjanklaps
@@ -257,7 +257,7 @@ id: hanna-olbert
 
 ```yaml
 name: Hansi Richstein
-company: SAP
+company:
 photo: data/persons/hansi-richstein.png
 twitter: hjrichstein
 linkedin: hans-juergen-richstein-aab6374
@@ -283,7 +283,7 @@ id: hristo-tsolev
 
 ```yaml
 name: Hubert Drecker
-company: Cpro conlog GmbH
+company:
 photo: data/persons/hubert-drecker.jpg
 twitter:
 linkedin:
@@ -418,6 +418,14 @@ id: kevin-edinger
 ```
 
 ```yaml
+name: Komma Rakshitha
+company: SAP
+photo: data/persons/komma-rakshitha.jpg
+linkedin: rakshitha-komma-008004235
+id: komma-rakshitha
+``` 
+
+```yaml
 name: Kristian Kralijc
 company: SAP
 photo: data/persons/kristian-kralijc.jpg
@@ -438,7 +446,7 @@ id: lars-kissel
 
 ```yaml
 name: Ludwig Stockbauer-Muhr
-company: msg
+company:
 photo: data/persons/ludwig-stockbauer-muhr.jpg
 linkedin: ludwig-stockbauer-muhr-22133a280
 github: DevEpos
@@ -446,8 +454,16 @@ id: ludwig-stockbauer-muhr
 ```
 
 ```yaml
+name: Manasi Mishra
+company: SAP
+photo: data/persons/manasi-mishra.jpg
+linkedin: manasi-m-573324147
+id: manasi-mishra
+```
+
+```yaml
 name: Marcel Schork
-company: Schwarz IT KG
+company: 
 photo: data/persons/marcel-schork.jpg
 twitter: marcel_schork
 linkedin: marcel-schork-b28876183
@@ -457,7 +473,7 @@ id: marcel-schork
 
 ```yaml
 name: Marco Beier
-company: Accenture
+company: 
 photo: data/persons/marco-beier.jpg
 linkedin: dev-marco-beier
 github: wridgeu
@@ -495,7 +511,7 @@ id: mariana-naboka
 
 ```yaml
 name: Mario Kernich
-company: SWAN
+company:
 photo: data/persons/mario-kernich.jpg
 linkedin: mariokernich
 github: mariokernich
@@ -505,7 +521,7 @@ id: mario-kernich
 
 ```yaml
 name: Marita Kruempelmann
-company: SAP
+company:
 photo: data/persons/marita-kruempelmann.jpg
 twitter: mkruempelmann
 id: marita-kruempelmann
@@ -513,7 +529,7 @@ id: marita-kruempelmann
 
 ```yaml
 name: Marius Obert
-company: SAP
+company: 
 photo: data/persons/marius-obert.jpg
 twitter: IObert_
 linkedin: mariusobert
@@ -523,7 +539,7 @@ id: marius-obert
 
 ```yaml
 name: Martin Broede
-company: SAP
+company: 
 photo: data/persons/martin-broede.jpg
 linkedin: martinbroede
 id: martin-broede
@@ -576,7 +592,7 @@ id: merlin-beutlberger
 
 ```yaml
 name: Mike Zaschka
-company: p36 GmbH
+company: 
 photo: data/persons/mike-zaschka.jpg
 twitter: mike_zaschka
 linkedin: mike-zaschka-7395949
@@ -643,7 +659,7 @@ id: peter-muessig
 
 ```yaml
 name: Pieter Janssens
-company: Deloitte Consulting & Advisory
+company:
 photo: data/persons/pieter-janssens.jpg
 twitter: piejanssens
 linkedin: pieter-janssens-52270a38
@@ -653,7 +669,7 @@ id: pieter-janssens
 
 ```yaml
 name: Robin van het Hof
-company: Qualiture
+company:
 photo: data/persons/robin-van-het-hof.jpeg
 linkedin: robinvanhethof
 github: qualiture
@@ -662,7 +678,7 @@ id: robin-van-het-hof
 
 ```yaml
 name: Ruben Tuider
-company: CAMAO TEC
+company: 
 photo: data/persons/ruben-tuider.jpg
 linkedin: ruben-tuider-2a8bab205
 id: ruben-tuider
@@ -732,7 +748,7 @@ id: tereza-chobanova
 
 ```yaml
 name: Thomas Allmer
-company: ING
+company: 
 twitter: daKmoR
 github: daKmoR
 id: thomas-allmer
@@ -744,16 +760,6 @@ company: SAP
 photo: data/persons/thorsten-hochreuter.jpg
 github: Thodd
 id: thorsten-hochreuter
-```
-
-```yaml
-name: Tobias Hofmann
-company: BridgingIT GmbH
-photo: data/persons/tobias-hofmann.jpg
-twitter: tobiashofmann
-linkedin: tobias-hofmann-768b085/
-github: tobiashofmann
-id: tobias-hofmann
 ```
 
 ```yaml
@@ -811,18 +817,8 @@ id: vladimir-velinov
 ```
 
 ```yaml
-name: Volker Buzek
-company: Camunda
-photo: data/persons/volker-buzek.jpg
-twitter: vobu
-linkedin: volkerbuzek
-github: vobu
-id: volker-buzek
-```
-
-```yaml
 name: Westbrook Johnson
-company: Adobe
+company:
 twitter: WestbrookJ
 github: Westbrook
 id: westbrook-johnson

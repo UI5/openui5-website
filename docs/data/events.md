@@ -1,6 +1,25 @@
 # Events
 
 ```yaml
+title: UI5ers live (August '26)
+subTitle: 45 minute interactive webcast
+location: via YouTube
+logo: images/events/ui5ers.svg
+speakers:
+  - Mario Kernich
+  - Manasi Mishra
+  - Komma Rakshitha
+url: 'https://youtube.com/live/FIFtvnDJRPo'
+recordingUrl: https://youtube.com/live/FIFtvnDJRPo
+id: ui5ers-60
+start: '2026-08-06 15:15 Europe/Berlin'
+end: '2026-08-06 16:00 Europe/Berlin'
+```
+In this episode, Mario Kernich introduces a new generator for SAP Fiori launchpad plugins built on TypeScript and the current Extension API. Building launchpad plugins has traditionally meant wrestling with boilerplate and outdated tooling. Mario walks through the plugin architecture — which mirrors a standard SAPUI5 app but uses a single Component.ts as its entry point — and explores extension points for adding shell header buttons, triggering user actions, running background services, and embedding sidebars. He also covers how plugins access core launchpad capabilities via the AppLifeCycle service and UserInfo, plus a fallback approach for older SAPUI5 versions that still depend on direct Renderer access.
+
+Manasi Mishra and Komma Rakshitha then show how to take SAPUI5 applications beyond standard controls by embedding modern open-source visualization libraries as first-class SAPUI5 custom controls. Drawing on real-world work inspired by SAP Visual Business, they demonstrate practical integration patterns for Three.js (3D shapes, drag-and-drop, selection) and MapLibre (vector maps, custom arrow overlays, spot markers, rectangular selection). The talk covers project setup, dependency management, and how to bridge the rendering and event models between SAPUI5 and external libraries — patterns you can apply immediately in your own apps.
+
+```yaml
 title: UI5ers live (June '26)
 subTitle: 45 minute interactive webcast
 location: via YouTube
