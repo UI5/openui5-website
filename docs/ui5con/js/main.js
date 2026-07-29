@@ -10,12 +10,12 @@ const DEBOUNCE_DELAY = 150;
 const EVENT_DATE = "2026-07-14";
 const EVENT_TIMEZONE = "+02:00";
 const EVENT_TITLE_PREFIX = "ui5con: ";
-const ICS_PRODID = "-//ui5con Conference//ui5con.cfapps.eu12.hana.ondemand.com//EN";
+const ICS_PRODID = "-//ui5con Conference//ui5con.com//EN";
 
-const API_BASE_URL = "https://ui5con.cfapps.eu12.hana.ondemand.com";
-const API_ENDPOINTS = {
-  speakerLineup: `${API_BASE_URL}/api/speaker/lineup`,
-  proposalLineup: `${API_BASE_URL}/api/proposal/lineup`,
+// Local data endpoints (replaced API calls)
+const DATA_ENDPOINTS = {
+  speakerLineup: 'data/speakers.json',
+  proposalLineup: 'data/proposals.json',
 };
 
 // Cached regex for calendar text sanitization
@@ -236,7 +236,7 @@ function buildIcsContent(session, calendarStartDate, calendarEndDate, location) 
     `SUMMARY:${EVENT_TITLE_PREFIX}${sanitizeTextForICS(session.title)}`,
     `LOCATION:${location}`,
     `DESCRIPTION:${sanitizeTextForICS(session.description)}`,
-    `UID:${session.id}@ui5con.cfapps.eu12.hana.ondemand.com`,
+    `UID:${session.id}@ui5con.com`,
     "END:VEVENT",
     "END:VCALENDAR",
   ].join("\r\n");
@@ -332,7 +332,6 @@ const main = createApp({
   },
   data() {
    return {
-    API_BASE_URL: API_BASE_URL,
     team: [
 
       {
@@ -592,10 +591,10 @@ const main = createApp({
    }
   },
   async mounted() {
-   // Fetch both APIs in parallel
+   // Fetch both local JSON files in parallel
     const [speakerResult, proposalResult] = await Promise.allSettled([
-      fetch(API_ENDPOINTS.speakerLineup).then(r => r.json()),
-      fetch(API_ENDPOINTS.proposalLineup).then(r => r.json()),
+      fetch(DATA_ENDPOINTS.speakerLineup).then(r => r.json()),
+      fetch(DATA_ENDPOINTS.proposalLineup).then(r => r.json()),
     ]);
 
     const errors = [];

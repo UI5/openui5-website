@@ -231,7 +231,7 @@
 						<figure class="people-member" tabindex="0">
 							<img
 								v-if="speaker.hasPhoto"
-								:src="`https://ui5con.cfapps.eu12.hana.ondemand.com${speaker.photoUrl}`"
+								:src="speaker.photoUrl"
 								:alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`" />
 							<div v-else class="placeholder"></div>
 

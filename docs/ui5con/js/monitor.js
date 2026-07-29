@@ -3,10 +3,8 @@
 // ========================
 // Constants
 // ========================
-const API_BASE_URL = "https://ui5con.cfapps.eu12.hana.ondemand.com/api";
-const API_ENDPOINTS = {
-  speakerLineup: `${API_BASE_URL}/speaker/lineup`,
-  proposalLineup: `${API_BASE_URL}/proposal/lineup`,
+const DATA_ENDPOINTS = {
+  proposalLineup: '../data/proposals.json',
 };
 
 const EVENT_DATE = "2026-07-14";
@@ -121,14 +119,14 @@ function createLineupApp(mountElementId, roomFilterFn) {
     },
     methods: {
       /**
-       * Fetches proposal lineup from API and initializes data
+       * Fetches proposal lineup from local JSON file and initializes data
        */
       async fetchLineup() {
         try {
           this.isLoading = true;
           this.error = null;
 
-          const response = await fetch(API_ENDPOINTS.proposalLineup);
+          const response = await fetch(DATA_ENDPOINTS.proposalLineup);
           if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
           }
