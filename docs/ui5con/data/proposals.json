@@ -338,7 +338,12 @@
         "photoUrl": "images/speakers/lars-kissel.jpg"
       }
     ],
-    "presentationLinks": [],
+    "presentationLinks": [
+      {
+        "linkType": "Slides",
+        "url": "https://github.com/larskissel/ui5con/blob/main/2026/Offline_capabilities_in_UI5_-_Lets_discuss.pdf"
+      }
+    ],
     "proficiencyLevel": "intermediate",
     "prerequisites": "",
     "attendeeRatingLink": "https://forms.gle/F5HztLxr9USdUuaPA"
