@@ -2,6 +2,14 @@
 # Persons
 
 ```yaml
+name: Stefan Blamberg
+company: SAP
+photo: data/persons/stefan-blamberg.jpg
+github: StefanBlamberg
+id: stefan-blamberg
+```
+
+```yaml
 name: Biser Miloshev
 company: SAP
 photo: data/persons/biser-miloshev.jpg
