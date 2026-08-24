@@ -19,7 +19,7 @@
   "keywords": [],
   "devDependencies": {
     "browser-sync": "3.0.4",
-    "lockfile-lint": "5.0.0"
+    "lockfile-lint": "5.0.1"
   },
   "engines": {
     "node": "20.x || 22.x || >=24"
