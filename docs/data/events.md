@@ -1,4 +1,23 @@
 # Events
+```yaml
+title: UI5ers live (September '26)
+subTitle: 45 minute interactive webcast
+location: via YouTube
+logo: images/events/ui5ers.svg
+speakers:
+  - Stefan Blamberg
+  - Peter Muessig
+url: 'https://youtube.com/live/ss9jCkBSiS8'
+recordingUrl: https://youtube.com/live/ss9jCkBSiS8
+id: ui5ers-61
+start: '2026-09-10 15:15 Europe/Berlin'
+end: '2026-09-10 16:00 Europe/Berlin'
+```
+New tools change how you work. Episode 61 has two of them.
+
+Stefan Blamberg (UI5 dev team) showcases upcoming AI capabilities for adapting existing applications across no-code, low-code, and pro-code scenarios. See SAP Joule integrated directly into the key-user adaptation mode, describing intent in natural language, using live app runtime context to generate flexibility changes, and handling off semalessly to a code agent via the SAP Fiori tools MCP server when requirements go beyond key-user scope.
+
+Peter Muessig introduces the JSX/TSX runtime for OpenUI5: write your views in TypeScript with full per-control type safety and IDE support – no virtual DOM, no reconciler, just OpenUI5 as you know it. Quietly announced at UI5con, this is the full story: live demo, key concepts, and how it works under the hood.
 
 ```yaml
 title: UI5ers live (August '26)
