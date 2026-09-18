@@ -8,6 +8,7 @@
 	padding-inline: 3vw;
 
 	ul {
+		position: relative;
 		list-style: none;
 		padding: 0;
 		margin: 0;
@@ -27,7 +28,7 @@
 		font-weight: 400;
 		font-size: var(--type-0);
 		white-space: nowrap;
-		color: rgba(var(--white), .8);
+		color: var(--text-color);
 		transition: color .2s linear;
 
 		@supports(anchor-name: none) {
@@ -35,7 +36,6 @@
 		}
 
 		.logo {
-			color: rgba(var(--white), 1);
 			height: 42px;
 			width: 42px;
 		}
@@ -93,14 +93,15 @@
 	content: "";
 	position: absolute;
 	bottom: calc(anchor(var(--target) bottom) - 10px);
-	left: anchor(var(--target) left);
-	right: anchor(var(--target) right);
-	height: 3px;
-	background-color: #fff;
-	border-bottom: 3px solid #fff;
+	left: calc(anchor(var(--target) left) - 15px);
+	right: calc(anchor(var(--target) right) - 15px);
+	height: 95%;
+	background-color: var(--brand-color-alt);
+	border-radius: 25px;
 	transition: all 0.3s;
 	pointer-events: none;
 	transition-behavior: allow-discrete;
+	z-index: -1;
 }
 
 @starting-style {
@@ -111,11 +112,13 @@
 
 .anchor-nav a {
 	anchor-name: var(--anchor);
-	color: rgba(var(--white), .8);
+	color: var(--text-color);
 }
 
 .anchor-nav a:is(:hover,:focus-visible) {
-	color: rgba(var(--white), 1);
+	text-decoration: underline;
+	text-underline-offset: -2px;
+	text-decoration-thickness: 2px;
 }
 
 .anchor-nav li:nth-child(2) { --anchor: --item-1 }
@@ -171,7 +174,7 @@
 			margin-inline-end: 0;
 		}
 
-		 a {
+		a {
 			line-height: 44px;
 			display: block;
 		}

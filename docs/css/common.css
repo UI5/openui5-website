@@ -1,14 +1,15 @@
 :root {
 	--background-color: #fff;
-	--background-color-alternate: #f4f9fb;
-	--brand-color: #1873b4;
-	--brand-color-alt: #0f9be6;
+	--background-color-alternate: #F4F1EC;
+	--brand-color: #111143;
+	--brand-color-alt: #F98613;
 	--brand-color-contrast: #b9d5e8; /* #FF741A */
 	--dark-brand-color: #223548;
-	--text-color: #000;
-	--text-color-contrast: #fff;
-	--btn-bg-color: #0f9be6;
+	--text-color: #111143;
+	--text-color-contrast: #F4F1EC;
+	--btn-bg-color: var(--brand-color);
 	--white: 255, 255, 255;
+	
 	--sucess-color: #30914c;
 	--logo-color: #646363;
 
@@ -19,6 +20,7 @@
 	--type-4: clamp(2.0738rem, 1.7943rem + 1.3973vw, 3.0519rem);
 	--type-5: clamp(2.5rem, 2.1786rem + 2.6071vw, 6.125rem);
 
+	/* Brand page */
 	--brand-color-dark-primary: #FF5A37;
 	--brand-color-dark-secondary: #FFA42C;
 	--brand-color-dark-bg: #000;
@@ -81,6 +83,48 @@
 	font-style: normal;
 	font-display: swap;
 }
+
+@font-face {
+	font-family: "Syne";
+	src: url("../fonts/Syne-Regular.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Syne";
+	src: url("../fonts/Syne-Medium.woff2") format("woff2");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Syne";
+	src: url("../fonts/Syne-SemiBold.woff2") format("woff2");
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Syne";
+	src: url("../fonts/Syne-Bold.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Syne";
+	src: url("../fonts/Syne-ExtraBold.woff2") format("woff2");
+	font-weight: 800;
+	font-style: normal;
+	font-display: swap;
+}
+
+
 
 /* Document
  * ========================================================================== */
@@ -415,6 +459,11 @@ body {
 }
 
 /* --------------------------- Typography ---------------------------  */
+
+h1, h2, h3, h4, h5 {
+	font-family: "Syne", "72", sans-serif;
+}
+
 h1 {
 	font-size: var(--type-4);
 	font-weight: 700;
@@ -424,7 +473,7 @@ h1 {
 
 h2 {
 	font-size: var(--type-3);
-	font-weight: 500;
+	font-weight: 600;
 	margin-block-start: .2lh;
 	margin-block-end: .5lh;
 }
@@ -432,6 +481,10 @@ h2 {
 .emphasized {
 	font-size: var(--type-3);
 	color: var(--brand-color-alt);
+}
+
+.section-heading {
+	text-align: center;
 }
 
 h3 {
@@ -695,52 +748,10 @@ article {
 /* --------------------------- Main Contents ---------------------------  */
 .head {
 	position: relative;
-	height: 25vh;
-	background: linear-gradient(225deg, var(--brand-color), var(--brand-color-alt));
-	background-size: 400% 400%;
-	animation: header-animation 15s ease infinite;
-
-	&::before {
-		position: absolute;
-		inset: 0;
-		content: '';
-		background-image: url(../images/phoenix-outlines.svg);
-		background-repeat: no-repeat;
-		background-size: 2200px auto;
-		background-position: -650px 50%;
-		z-index: 0;
-		opacity: .12;
-		mix-blend-mode: soft-light;
-	}
+	background: var(--background-color-alternate);
 
 	&.head--collapsed {
 		height: auto;
-
-		&::before {
-			display: none;
-		}
-	}
-}
-
-@media (width >= 768px) {
-
-	.head {
-		height: 50vh;
-	}
-}
-
-@keyframes header-animation {
-
-	0% {
-		background-position: 0 50%
-	}
-
-	50% {
-		background-position: 100% 50%
-	}
-
-	to {
-		background-position: 0 50%
 	}
 }
 
@@ -749,13 +760,17 @@ article {
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	justify-content: center;
 	height: calc(100% - 9rem);
+	padding-inline: 3vw;
 
 	.logo {
-		width: 30vw;
-		color: rgb(var(--white));
+		width: 100%;
+	}
+	
+	p {
+		font-size: var(--type-1);
+		width: 35vw;
+		align-self: flex-start;
 	}
 }
 
@@ -764,17 +779,9 @@ article {
 	font-size: var(--type-4);
 }
 
-@media (width >= 821px) {
-
-	.head-container {
-		flex-direction: row;
-	}
-}
-
 /* ------------------------------ Teaser -------------------------------  */
 
-.teaser {
-	text-align: center;
+.teaser {;
 
 	svg {
 		display: inline-block;
@@ -783,7 +790,6 @@ article {
 	}
 
 	&.teaser--content {
-		text-align: left;
 
 		svg {
 			margin: 0;
@@ -817,19 +823,6 @@ article {
 			text-align: center;
 		}
 	}
-}
-
-/* iFrame */
-
-#example {
-	text-align: center;
-}
-
-.example {
-	height: 572px;
-	border: 0;
-	width: 100%;
-	margin-block: 2rem 0;
 }
 
 .link-list {
@@ -991,8 +984,8 @@ article {
 /* ---------------------------- Site Footer ----------------------------  */
 
 footer {
-	background: var(--brand-color);
-	color: var(--text-color-contrast);
+	background: var(--background-color-alternate);
+	color: var(--text-color);
 
 	.wrap {
 		padding-block: 3rem;
@@ -1023,12 +1016,12 @@ footer {
 	justify-content: space-around;
 
 	a {
-		color: var(--text-color-contrast);
+		color: var(--text-color);
 	}
 
 	a:is(:hover, :focus) {
-		color: rgba(var(--white), 1);
-		text-decoration-color: rgb(var(--white));
+		color: var(--brand-color);
+		text-decoration-color: var(--brand-color-alt);
 	}
 }
 
@@ -1053,14 +1046,14 @@ footer {
 @media (prefers-color-scheme: dark) {
 
 	:root {
-		--background-color: var(--white);
+		--background-color: #0E0E40;
 		--white: #1a1a1a;
-		--background-color-alternate: #212121;
-		--dark-brand-color: #f5f5f5;
+		--background-color-alternate: #000E29;
+		--dark-brand-color: #F4F1EC;
 		--brand-color-contrast: var(--brand-color-alt);
-		--text-color: #f5f5f5;
+		--text-color: #F4F1EC;
 		--text-color-contrast: #fff;
-		--logo-color: #f5f5f5;
+		--logo-color: #F4F1EC;
 		--btn-bg-color: var(--brand-color-alt);
 	}
 
