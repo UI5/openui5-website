@@ -1,6 +1,7 @@
 :root {
 	--background-color: #fff;
 	--background-color-alternate: #F4F1EC;
+	--background-color-dark: #111143;
 	--brand-color: #111143;
 	--brand-color-alt: #F98613;
 	--brand-color-contrast: #b9d5e8; /* #FF741A */
@@ -411,7 +412,7 @@ summary {
 p {
 	margin-block-end: 1lh;
 	font-size: var(--type-0);
-	line-height: 1.25;
+	line-height: 1.35;
 }
 
 li::marker {
@@ -653,7 +654,11 @@ article {
 	.wrap {
 		padding-block: 4rem;
 	}
+}
 
+.darkened {
+	background-color: var(--background-color-dark);
+	color: var(--text-color-contrast);
 }
 
 .wrap {
@@ -786,6 +791,11 @@ article {
 /* ------------------------------ Teaser -------------------------------  */
 
 .teaser {;
+	
+	&.teaser--line {
+		border-top: 1px solid var(--brand-color);
+		padding-block-start: 1rem;
+	}
 
 	svg {
 		display: inline-block;
@@ -840,20 +850,19 @@ article {
 }
 
 .head-icon {
-	--icon-size: 96px;
-
+	--icon-size: 55px;
+	
 	display: inline-block;
-	aspect-ratio: 1/1;
-	background: var(--background-color-alternate);
-	color: var(--brand-color);
+	aspect-ratio: 1;
+	color: var(--brand-color-alt);
 	height: var(--icon-size);
-	border-radius: 50%;
-	text-align: center;
+	text-align: left;
 	line-height: var(--icon-size);
 	margin-block-end: 1rem;
 
 	svg {
-		height: calc(var(--icon-size) / 2);
+		height: calc(var(--icon-size) - .3rem);
+		margin-block-end: 0;
 	}
 }
 
@@ -1053,6 +1062,7 @@ footer {
 		--background-color: #0E0E40;
 		--white: #1a1a1a;
 		--background-color-alternate: #000E29;
+		--background-color-dark: #111143;
 		--dark-brand-color: #F4F1EC;
 		--brand-color-contrast: var(--brand-color-alt);
 		--text-color: #F4F1EC;

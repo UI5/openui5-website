@@ -1,233 +1,311 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>OpenUI5</title>
-    <meta
-      name="description"
-      content="OpenUI5 is an open-source JavaScript framework from SAP for building enterprise-grade web applications. It offers powerful UI controls, MVC architecture, data binding, and responsive design for modern, cross-platform development." />
 
-    <meta
-      name="keywords"
-      content="webstandards, web standards, html, css, JavaScript, Accessibility, framework, frontendframework, javascriptframework, WCAG, OpenUI5, DevOps, SAPUI5, UI5con, UI5 Web Components, Web Components, Webcomponents, Open Source" />
-    <meta name="robots" content="index, follow" />
-    <meta name="author" content="SAP SE" />
-    <meta property="twitter:card" content="summary" />
-    <meta property="twitter:url" content="https://openui5.org/" />
-    <meta property="twitter:title" content="OpenUI5" />
-    <meta
-      property="twitter:description"
-      content="Build enterprise-ready web apps with OpenUI5. SAP’s open-source JavaScript framework featuring responsive controls, robust data binding, and a powerful MVC architecture." />
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>OpenUI5</title>
+	<meta name="description"
+		content="OpenUI5 is an open-source JavaScript framework from SAP for building enterprise-grade web applications. It offers powerful UI controls, MVC architecture, data binding, and responsive design for modern, cross-platform development." />
 
-    <meta property="twitter:image" content="https://openui5.org/" />
-    <meta property="og:title" content="OpenUI5" />
-    <meta
-      property="og:description"
-      content="Build enterprise-ready web apps with OpenUI5. SAP’s open-source JavaScript framework featuring responsive controls, robust data binding, and a powerful MVC architecture." />
+	<meta name="keywords"
+		content="webstandards, web standards, html, css, JavaScript, Accessibility, framework, frontendframework, javascriptframework, WCAG, OpenUI5, DevOps, SAPUI5, UI5con, UI5 Web Components, Web Components, Webcomponents, Open Source" />
+	<meta name="robots" content="index, follow" />
+	<meta name="author" content="SAP SE" />
+	<meta property="twitter:card" content="summary" />
+	<meta property="twitter:url" content="https://openui5.org/" />
+	<meta property="twitter:title" content="OpenUI5" />
+	<meta property="twitter:description"
+		content="Build enterprise-ready web apps with OpenUI5. SAP’s open-source JavaScript framework featuring responsive controls, robust data binding, and a powerful MVC architecture." />
 
-    <meta name="theme-color" content="#0f9be6" />
+	<meta property="twitter:image" content="https://openui5.org/" />
+	<meta property="og:title" content="OpenUI5" />
+	<meta property="og:description"
+		content="Build enterprise-ready web apps with OpenUI5. SAP’s open-source JavaScript framework featuring responsive controls, robust data binding, and a powerful MVC architecture." />
 
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
-    <link rel="icon" type="image/svg+xml" href="images/icon.svg" />
-    <link rel="icon" sizes="any" href="images/android-chrome-192x192.png" />
+	<meta name="theme-color" content="#0f9be6" />
 
-    <link rel="stylesheet" href="./css/common.css" />
-    <link rel="stylesheet" href="./css/modules.css" />
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+	<link rel="icon" type="image/svg+xml" href="images/icon.svg" />
+	<link rel="icon" sizes="any" href="images/android-chrome-192x192.png" />
 
-    <script src="js/common.js"></script>
-    <script src="js/carousel.js" defer></script>
-  </head>
+	<link rel="stylesheet" href="./css/common.css" />
+	<link rel="stylesheet" href="./css/modules.css" />
 
-  <body>
-    <header class="head" id="header">
-      <nav class="nav" aria-label="Main navigation" id="nav">
-        <nav-section></nav-section>
-        <nav-section-mobile></nav-section-mobile>
-      </nav>
+	<script src="js/common.js"></script>
+	<script src="js/carousel.js" defer></script>
+</head>
 
-      <div class="wrap head-container">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          class="logo"
-          aria-hidden="true"
-          viewBox="0 0 423 100">
-          <path
-            fill="currentColor"
-            d="M32.709 80.519a29.69 29.69 0 0 1-13.11-2.9A30.578 30.578 0 0 1 9.263 69.48a38.47 38.47 0 0 1-6.806-12.685 57.062 57.062 0 0 1 0-33.123 38.657 38.657 0 0 1 6.806-12.695A30.46 30.46 0 0 1 19.6 2.87a31.347 31.347 0 0 1 26.208 0 30.362 30.362 0 0 1 10.337 8.108 38.657 38.657 0 0 1 6.806 12.695 57.061 57.061 0 0 1 0 33.123 38.47 38.47 0 0 1-6.806 12.685 30.45 30.45 0 0 1-10.337 8.138 29.682 29.682 0 0 1-13.1 2.9Zm0-6.708c3.495.028 6.95-.744 10.1-2.259a22.135 22.135 0 0 0 8.04-6.599 32.235 32.235 0 0 0 5.197-10.633 53.984 53.984 0 0 0 0-28.2 31.683 31.683 0 0 0-5.218-10.545 22.293 22.293 0 0 0-8.039-6.55 24.008 24.008 0 0 0-20.29 0 22.687 22.687 0 0 0-7.96 6.55 32.294 32.294 0 0 0-5.247 10.544 53.443 53.443 0 0 0 0 28.201 32.856 32.856 0 0 0 5.247 10.594 22.469 22.469 0 0 0 7.96 6.599 22.785 22.785 0 0 0 10.21 2.298ZM78.97 23.802h7.22v7.832a37.82 37.82 0 0 1 7.782-6.215 20.103 20.103 0 0 1 10.693-2.663c3.05-.01 6.07.601 8.877 1.796a19.497 19.497 0 0 1 7.22 5.296 26.041 26.041 0 0 1 4.804 8.878 39.825 39.825 0 0 1 1.825 12.635 40.052 40.052 0 0 1-1.795 12.666 25.072 25.072 0 0 1-4.932 8.877 19.895 19.895 0 0 1-7.418 5.267 24.047 24.047 0 0 1-9.262 1.766 20.28 20.28 0 0 1-9.726-2.348 33.34 33.34 0 0 1-8.088-6.096V100h-7.22l.02-76.198Zm24.422 50.108a16.96 16.96 0 0 0 6.777-1.331 13.71 13.71 0 0 0 5.296-4.045 19.613 19.613 0 0 0 3.453-6.904 36.016 36.016 0 0 0 1.243-10.19c.059-3.36-.377-6.71-1.293-9.942a20.076 20.076 0 0 0-3.629-7.033 14.804 14.804 0 0 0-5.347-4.143 15.67 15.67 0 0 0-6.5-1.361c-3.224-.052-6.398.799-9.163 2.456a39.458 39.458 0 0 0-8.04 6.658v26.869a34.367 34.367 0 0 0 8.237 6.707 18.249 18.249 0 0 0 8.966 2.26ZM162.141 80.203a23.73 23.73 0 0 1-9.212-1.835 21.488 21.488 0 0 1-7.704-5.533 28.144 28.144 0 0 1-5.297-9.006 35.509 35.509 0 0 1-2.012-12.468 34.365 34.365 0 0 1 2.15-12.724 26.104 26.104 0 0 1 5.632-8.878 23.093 23.093 0 0 1 7.753-5.247 22.762 22.762 0 0 1 8.671-1.746 21.86 21.86 0 0 1 8.986 1.844 19.564 19.564 0 0 1 7.112 5.455 26.639 26.639 0 0 1 4.734 9.006 40.33 40.33 0 0 1 1.746 12.408v1.381h-39.495a26.7 26.7 0 0 0 1.411 9.065 20.547 20.547 0 0 0 3.758 6.648 15.896 15.896 0 0 0 12.231 5.583 18.015 18.015 0 0 0 10.111-2.584 25.126 25.126 0 0 0 7.082-7.497l4.508 3.581a29.201 29.201 0 0 1-8.986 9.213c-3.532 2.222-7.924 3.334-13.179 3.334Zm15.566-33.162a34.81 34.81 0 0 0-1.411-7.191 18.425 18.425 0 0 0-2.959-5.84 13.153 13.153 0 0 0-4.754-3.837 15.095 15.095 0 0 0-6.53-1.351 15.523 15.523 0 0 0-5.781 1.095 15.083 15.083 0 0 0-5.04 3.354 19.09 19.09 0 0 0-3.847 5.661 26.466 26.466 0 0 0-2.071 8.109h32.393ZM198.332 23.802h7.21v8.7a41.225 41.225 0 0 1 9.243-6.905 24.184 24.184 0 0 1 11.836-2.89c5.465 0 9.568 1.433 12.31 4.3 2.742 2.868 4.117 6.895 4.123 12.084V79.01h-7.22V40.442c0-3.9-.888-6.793-2.663-8.68-1.776-1.887-4.554-2.834-8.335-2.84a20.285 20.285 0 0 0-9.963 2.564 45.656 45.656 0 0 0-9.341 7.062V78.99h-7.21l.01-55.188ZM288.833 80.312a41.172 41.172 0 0 1-13.977-2.15 24.223 24.223 0 0 1-15.466-15.95 41.98 41.98 0 0 1-1.845-12.823V1.44h17.094v47.495c0 5.662 1.134 9.995 3.403 13 2.269 3.006 5.964 4.508 11.087 4.508 5.011 0 8.628-1.502 10.85-4.508 2.223-3.005 3.338-7.338 3.344-13V1.44h16.769v47.8a42.423 42.423 0 0 1-1.835 12.922 25.322 25.322 0 0 1-5.662 9.805 24.655 24.655 0 0 1-9.745 6.194 41.356 41.356 0 0 1-14.017 2.15ZM335.657 79.03V1.44h16.986v77.59h-16.986ZM392.157 80.518a45.257 45.257 0 0 1-16.66-2.791 41.738 41.738 0 0 1-12.36-7.496l8.602-11.216a32.014 32.014 0 0 0 8.877 5.682 25.874 25.874 0 0 0 10.564 2.249c5.162 0 8.907-1.286 11.235-3.857a14.095 14.095 0 0 0 3.512-9.864c0-4.4-1.135-7.838-3.403-10.317-2.269-2.48-5.606-3.716-10.012-3.71a16.316 16.316 0 0 0-7.595 1.865 21.39 21.39 0 0 0-6.629 5.553l-11.008-3.422 3.127-41.764h47.08l-.868 12.892h-33.162l-1.49 17.203a17.623 17.623 0 0 1 5.84-3.354 27.927 27.927 0 0 1 9.864-1.46c3.71-.054 7.396.616 10.85 1.973a22.423 22.423 0 0 1 7.891 5.346 22.2 22.2 0 0 1 4.814 8.167 32.385 32.385 0 0 1 1.607 10.446 29.687 29.687 0 0 1-2.091 11.304 24.656 24.656 0 0 1-6.066 8.809 27.68 27.68 0 0 1-9.706 5.73 38.042 38.042 0 0 1-12.813 2.032Z" />
-        </svg>
+<body>
+	<header class="head" id="header">
+		<nav class="nav" aria-label="Main navigation" id="nav">
+			<nav-section></nav-section>
+			<nav-section-mobile></nav-section-mobile>
+		</nav>
 
-        <div class="sr-only">
-          <h1>OpenUI5</h1>
-        </div>
+		<div class="wrap head-container">
+			<svg xmlns="http://www.w3.org/2000/svg" fill="none" class="logo" aria-hidden="true" viewBox="0 0 423 100">
+				<path fill="currentColor"
+					d="M32.709 80.519a29.69 29.69 0 0 1-13.11-2.9A30.578 30.578 0 0 1 9.263 69.48a38.47 38.47 0 0 1-6.806-12.685 57.062 57.062 0 0 1 0-33.123 38.657 38.657 0 0 1 6.806-12.695A30.46 30.46 0 0 1 19.6 2.87a31.347 31.347 0 0 1 26.208 0 30.362 30.362 0 0 1 10.337 8.108 38.657 38.657 0 0 1 6.806 12.695 57.061 57.061 0 0 1 0 33.123 38.47 38.47 0 0 1-6.806 12.685 30.45 30.45 0 0 1-10.337 8.138 29.682 29.682 0 0 1-13.1 2.9Zm0-6.708c3.495.028 6.95-.744 10.1-2.259a22.135 22.135 0 0 0 8.04-6.599 32.235 32.235 0 0 0 5.197-10.633 53.984 53.984 0 0 0 0-28.2 31.683 31.683 0 0 0-5.218-10.545 22.293 22.293 0 0 0-8.039-6.55 24.008 24.008 0 0 0-20.29 0 22.687 22.687 0 0 0-7.96 6.55 32.294 32.294 0 0 0-5.247 10.544 53.443 53.443 0 0 0 0 28.201 32.856 32.856 0 0 0 5.247 10.594 22.469 22.469 0 0 0 7.96 6.599 22.785 22.785 0 0 0 10.21 2.298ZM78.97 23.802h7.22v7.832a37.82 37.82 0 0 1 7.782-6.215 20.103 20.103 0 0 1 10.693-2.663c3.05-.01 6.07.601 8.877 1.796a19.497 19.497 0 0 1 7.22 5.296 26.041 26.041 0 0 1 4.804 8.878 39.825 39.825 0 0 1 1.825 12.635 40.052 40.052 0 0 1-1.795 12.666 25.072 25.072 0 0 1-4.932 8.877 19.895 19.895 0 0 1-7.418 5.267 24.047 24.047 0 0 1-9.262 1.766 20.28 20.28 0 0 1-9.726-2.348 33.34 33.34 0 0 1-8.088-6.096V100h-7.22l.02-76.198Zm24.422 50.108a16.96 16.96 0 0 0 6.777-1.331 13.71 13.71 0 0 0 5.296-4.045 19.613 19.613 0 0 0 3.453-6.904 36.016 36.016 0 0 0 1.243-10.19c.059-3.36-.377-6.71-1.293-9.942a20.076 20.076 0 0 0-3.629-7.033 14.804 14.804 0 0 0-5.347-4.143 15.67 15.67 0 0 0-6.5-1.361c-3.224-.052-6.398.799-9.163 2.456a39.458 39.458 0 0 0-8.04 6.658v26.869a34.367 34.367 0 0 0 8.237 6.707 18.249 18.249 0 0 0 8.966 2.26ZM162.141 80.203a23.73 23.73 0 0 1-9.212-1.835 21.488 21.488 0 0 1-7.704-5.533 28.144 28.144 0 0 1-5.297-9.006 35.509 35.509 0 0 1-2.012-12.468 34.365 34.365 0 0 1 2.15-12.724 26.104 26.104 0 0 1 5.632-8.878 23.093 23.093 0 0 1 7.753-5.247 22.762 22.762 0 0 1 8.671-1.746 21.86 21.86 0 0 1 8.986 1.844 19.564 19.564 0 0 1 7.112 5.455 26.639 26.639 0 0 1 4.734 9.006 40.33 40.33 0 0 1 1.746 12.408v1.381h-39.495a26.7 26.7 0 0 0 1.411 9.065 20.547 20.547 0 0 0 3.758 6.648 15.896 15.896 0 0 0 12.231 5.583 18.015 18.015 0 0 0 10.111-2.584 25.126 25.126 0 0 0 7.082-7.497l4.508 3.581a29.201 29.201 0 0 1-8.986 9.213c-3.532 2.222-7.924 3.334-13.179 3.334Zm15.566-33.162a34.81 34.81 0 0 0-1.411-7.191 18.425 18.425 0 0 0-2.959-5.84 13.153 13.153 0 0 0-4.754-3.837 15.095 15.095 0 0 0-6.53-1.351 15.523 15.523 0 0 0-5.781 1.095 15.083 15.083 0 0 0-5.04 3.354 19.09 19.09 0 0 0-3.847 5.661 26.466 26.466 0 0 0-2.071 8.109h32.393ZM198.332 23.802h7.21v8.7a41.225 41.225 0 0 1 9.243-6.905 24.184 24.184 0 0 1 11.836-2.89c5.465 0 9.568 1.433 12.31 4.3 2.742 2.868 4.117 6.895 4.123 12.084V79.01h-7.22V40.442c0-3.9-.888-6.793-2.663-8.68-1.776-1.887-4.554-2.834-8.335-2.84a20.285 20.285 0 0 0-9.963 2.564 45.656 45.656 0 0 0-9.341 7.062V78.99h-7.21l.01-55.188ZM288.833 80.312a41.172 41.172 0 0 1-13.977-2.15 24.223 24.223 0 0 1-15.466-15.95 41.98 41.98 0 0 1-1.845-12.823V1.44h17.094v47.495c0 5.662 1.134 9.995 3.403 13 2.269 3.006 5.964 4.508 11.087 4.508 5.011 0 8.628-1.502 10.85-4.508 2.223-3.005 3.338-7.338 3.344-13V1.44h16.769v47.8a42.423 42.423 0 0 1-1.835 12.922 25.322 25.322 0 0 1-5.662 9.805 24.655 24.655 0 0 1-9.745 6.194 41.356 41.356 0 0 1-14.017 2.15ZM335.657 79.03V1.44h16.986v77.59h-16.986ZM392.157 80.518a45.257 45.257 0 0 1-16.66-2.791 41.738 41.738 0 0 1-12.36-7.496l8.602-11.216a32.014 32.014 0 0 0 8.877 5.682 25.874 25.874 0 0 0 10.564 2.249c5.162 0 8.907-1.286 11.235-3.857a14.095 14.095 0 0 0 3.512-9.864c0-4.4-1.135-7.838-3.403-10.317-2.269-2.48-5.606-3.716-10.012-3.71a16.316 16.316 0 0 0-7.595 1.865 21.39 21.39 0 0 0-6.629 5.553l-11.008-3.422 3.127-41.764h47.08l-.868 12.892h-33.162l-1.49 17.203a17.623 17.623 0 0 1 5.84-3.354 27.927 27.927 0 0 1 9.864-1.46c3.71-.054 7.396.616 10.85 1.973a22.423 22.423 0 0 1 7.891 5.346 22.2 22.2 0 0 1 4.814 8.167 32.385 32.385 0 0 1 1.607 10.446 29.687 29.687 0 0 1-2.091 11.304 24.656 24.656 0 0 1-6.066 8.809 27.68 27.68 0 0 1-9.706 5.73 38.042 38.042 0 0 1-12.813 2.032Z" />
+			</svg>
 
-        <p>
-          OpenUI5 is an open-source UI framework designed for building
-          responsive & feature-rich web applications targeting enterprise and
-          individual use cases.
-        </p>
-      </div>
-    </header>
+			<div class="sr-only">
+				<h1>OpenUI5</h1>
+			</div>
 
-    <main id="main">
-      <section class="">
-        <div class="wrap" id="speakers">
-          <h2 class="section-heading">
-            <span>High functionality meets efficiency</span>
-          </h2>
+			<p>
+				OpenUI5 is an open-source UI framework designed for building
+				responsive & feature-rich web applications targeting enterprise and
+				individual use cases.
+			</p>
+		</div>
+	</header>
 
-          <div class="teaser">
-            <figure>
-              <figcaption></figcaption>
-            </figure>
-            <h3>Enterprise-Grade</h3>
-            <p>
-              OpenUI5 follows open standards and includes powerful development
-              concepts, efficient tools, as well as a rich set of UI controls.
-            </p>
-          </div>
+	<main id="main">
+		<section class="">
+			<div class="wrap" id="speakers">
+				<h2 class="section-heading">
+					<span>High functionality meets efficiency</span>
+				</h2>
 
-          <div class="teaser teaser-alternate">
-            <figure>
-              <figcaption></figcaption>
-            </figure>
-            <h3>Responsive on All Devices</h3>
-            <p>
-              No need to worry about device specifics! UI5 apps and controls run
-              on smartphones, tablets and desktop browsers.
-            </p>
-          </div>
+				<div class="teaser">
+					<figure>
+						<figcaption></figcaption>
+					</figure>
+					<h3>Enterprise-Grade</h3>
+					<p>
+						OpenUI5 follows open standards and includes powerful development
+						concepts, efficient tools, as well as a rich set of UI controls.
+					</p>
+				</div>
 
-          <div class="teaser">
-            <figure>
-              <figcaption></figcaption>
-            </figure>
-            <h3>Free and Open Source</h3>
-            <p>
-              OpenUI5 is a JavaScript UI Framework released by SAP under the
-              Apache 2.0 license. It's open for contributions and feedback!
-            </p>
-          </div>
-        </div>
-      </section>
+				<div class="teaser teaser-alternate">
+					<figure>
+						<figcaption></figcaption>
+					</figure>
+					<h3>Responsive on All Devices</h3>
+					<p>
+						No need to worry about device specifics! UI5 apps and controls run
+						on smartphones, tablets and desktop browsers.
+					</p>
+				</div>
 
-      <section class="alternate">
-        <div class="wrap" id="testimonials">
-          <h2 class="section-heading"><span>What our users say</span></h2>
-          <p class="section-subheading">Real stories from people who use UI5</p>
-          <div class="carousel-wrap">
-            <ul class="carousel">
-              <li>
-				<span class="carousel-quote" aria-hidden="true"></span>
-                <p>"Lorem ipsum dolor sit amet consectetur. Fermentum cras quam tem pus auctor."</p>
-				<div class="carousel-meta">
-					<img src="https://picsum.photos/id/64/200" alt="John Doe">
-					<div>
-						<b>John Doe</b>
-						<span>Developer</span>
+				<div class="teaser">
+					<figure>
+						<figcaption></figcaption>
+					</figure>
+					<h3>Free and Open Source</h3>
+					<p>
+						OpenUI5 is a JavaScript UI Framework released by SAP under the
+						Apache 2.0 license. It's open for contributions and feedback!
+					</p>
+				</div>
+			</div>
+		</section>
+		
+		<section class="">
+			<div class="wrap">
+				<h2 class="section-heading"><span>Empowering your app development</span></h2>
+				
+				<div class="grid-wrap grid-wrap--split">
+					<div class="teaser teaser--line">
+						
+						<span class="head-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 55 55" aria-hidden="true">
+								<path fill="currentcolor" d="M14.138 41.25a6.877 6.877 0 0 1 12.971 0h23.306v4.583H27.11a6.877 6.877 0 0 1-12.97 0H4.581V41.25zm13.75-16.042a6.877 6.877 0 0 1 12.971 0h9.556v4.584H40.86a6.877 6.877 0 0 1-12.97 0H4.581v-4.584zM14.138 9.167a6.877 6.877 0 0 1 12.971 0h23.306v4.583H27.11a6.877 6.877 0 0 1-12.97 0H4.581V9.167z"/>
+							</svg>
+						</span>
+						
+						<h3>UI Controls</h3>
+						<p>
+							OpenUI5 comes with a wide variety of controls ranging from basic input elements and buttons to more complex components like tables, object pages and trees. All of these controls offer best-in-class Accessibility and following the SAP Design system.
+						</p>
+					</div>
+					
+					<div class="teaser teaser--line">
+						<h3>Internationalization</h3>
+						<p>
+							All UI controls contained in OpenUI5 offer localized texts for more than 50 languages. Furthermore, OpenUI5 makes it quite easy to create translatable applications right from the start.
+						</p>
+					</div>
+					
+					<div class="teaser teaser--line">
+						<h3>Programming Model</h3>
+						<p>
+							OpenUI5 follows a modular, MVC (Model View Controller) - based architecture ensuring well defined project setups also for more complex scenarios. 
+						</p>
+					</div>
+					
+					<div class="teaser teaser--line">
+						<h3>Theming</h3>
+						<p>
+							The visual appearance of OpenUI5 ishandled by themes. OpenUI5 contains  themes follwing the current SAP esign system. Furthermore, it's possible to customize thevisual appearance to match thebranding and style requirements. Theming can be achieved through the use of the SAP Theme Designer orbycustom CSS.
+						</p>
+					</div>
+					
+					<div class="teaser teaser--line">
+						<h3>Data Binding</h3>
+						<p>
+							OpenUI5 follows a modular, MVC (Model View Controller) - based architecture ensuring well defined project setups also for more complex scenarios. 
+						</p>
+					</div>
+					
+					<div class="teaser teaser--line">
+						<h3>Tools</h3>
+						<p>
+							UI5 offers a wide rangeof toolsto makethe dailylife of an UI5 developer asproductive as possible.
+							<b>UI5 CLI:</b> A commandline interface toserve and build UI5 projects efficiently
+							<b>UI5 linter:</b> A tool toensure your UI5 project followscurrent bestpractices
+							<b>UI5 MCP server:</b> The tool tochoose in caseyour AI agentneeds UI5 expertise
+						</p>
 					</div>
 				</div>
-              </li>
-              <li>
-				<span class="carousel-quote" aria-hidden="true"></span>
-                <p>"Lorem ipsum dolor sit amet consectetur. Fermentum cras quam tem pus auctor."</p>
-				<div class="carousel-meta">
-					<img src="https://picsum.photos/id/64/200" alt="John Doe">
-					<div>
-						<b>John Doe</b>
-						<span>Developer</span>
-					</div>
-				</div>
-              </li>
-			  <li>
-				<span class="carousel-quote" aria-hidden="true"></span>
-                <p>"Lorem ipsum dolor sit amet consectetur. Fermentum cras quam tem pus auctor."</p>
-				<div class="carousel-meta">
-					<img src="https://picsum.photos/id/64/200" alt="John Doe">
-					<div>
-						<b>John Doe</b>
-						<span>Developer</span>
-					</div>
-				</div>
-              </li>
-			  <li>
-				<span class="carousel-quote" aria-hidden="true"></span>
-                <p>"Lorem ipsum dolor sit amet consectetur. Fermentum cras quam tem pus auctor."</p>
-				<div class="carousel-meta">
-					<img src="https://picsum.photos/id/64/200" alt="John Doe">
-					<div>
-						<b>John Doe</b>
-						<span>Developer</span>
-					</div>
-				</div>
-              </li>
-			  <li>
-				<span class="carousel-quote" aria-hidden="true"></span>
-                <p>"Lorem ipsum dolor sit amet consectetur. Fermentum cras quam tem pus auctor."</p>
-				<div class="carousel-meta">
-					<img src="https://picsum.photos/id/64/200" alt="John Doe">
-					<div>
-						<b>John Doe</b>
-						<span>Developer</span>
-					</div>
-				</div>
-              </li>
-			  <li>
-				<span class="carousel-quote" aria-hidden="true"></span>
-                <p>"Lorem ipsum dolor sit amet consectetur. Fermentum cras quam tem pus auctor."</p>
-				<div class="carousel-meta">
-					<img src="https://picsum.photos/id/64/200" alt="John Doe">
-					<div>
-						<b>John Doe</b>
-						<span>Developer</span>
-					</div>
-				</div>
-              </li>
-			  <li>
-				<span class="carousel-quote" aria-hidden="true"></span>
-                <p>"Lorem ipsum dolor sit amet consectetur. Fermentum cras quam tem pus auctor."</p>
-				<div class="carousel-meta">
-					<img src="https://picsum.photos/id/64/200" alt="John Doe">
-					<div>
-						<b>John Doe</b>
-						<span>Developer</span>
-					</div>
-				</div>
-              </li>
-			  <li>
-				<span class="carousel-quote" aria-hidden="true"></span>
-                <p>"Lorem ipsum dolor sit amet consectetur. Fermentum cras quam tem pus auctor."</p>
-				<div class="carousel-meta">
-					<img src="https://picsum.photos/id/64/200" alt="John Doe">
-					<div>
-						<b>John Doe</b>
-						<span>Developer</span>
-					</div>
-				</div>
-              </li>
-			  <li>
-				<span class="carousel-quote" aria-hidden="true"></span>
-                <p>"Lorem ipsum dolor sit amet consectetur. Fermentum cras quam tem pus auctor."</p>
-				<div class="carousel-meta">
-					<img src="https://picsum.photos/id/64/200" alt="John Doe">
-					<div>
-						<b>John Doe</b>
-						<span>Developer</span>
-					</div>
-				</div>
-              </li>
-            </ul>
-            <nav
-              class="carousel-dots"
-              aria-label="Testimonial navigation"></nav>
-          </div>
-        </div>
-      </section>
-    </main>
+			</div>
+		</section>
+		
+		<section class="alternate">
+			<div class="wrap">
+				<h2 class="section-heading"><span>OpenUI5 for enterprises</span></h2>
+				<p class="section-subheading">
+					OpenUI5 is especially well-suited for enterprises that
+				</p>
+			</div>
+		</section>
 
-    <footer id="footer">
-      <footer-section></footer-section>
-    </footer>
-  </body>
+		<section class="">
+			<div class="wrap" id="testimonials">
+				<h2 class="section-heading"><span>What our users say</span></h2>
+				<p class="section-subheading">Real stories from people who use UI5</p>
+				<div class="carousel-wrap">
+					<ul class="carousel">
+						<li>
+							<figure>
+								<blockquote>Lorem ipsum dolor sit amet consectetur. Fermentum cras quam tem pus auctor.</blockquote>
+								<figcaption class="carousel-meta">
+									<img src="https://picsum.photos/id/64/200" alt="John Doe">
+									<p>
+										<b>John Doe</b>
+										<span>Developer</span>
+									</p>
+								</figcaption>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<blockquote>Lorem ipsum dolor sit amet consectetur. Fermentum cras quam tem pus auctor.</blockquote>
+								<figcaption class="carousel-meta">
+									<img src="https://picsum.photos/id/64/200" alt="John Doe">
+									<p>
+										<b>John Doe</b>
+										<span>Developer</span>
+									</p>
+								</figcaption>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<blockquote>Lorem ipsum dolor sit amet consectetur. Fermentum cras quam tem pus auctor.</blockquote>
+								<figcaption class="carousel-meta">
+									<img src="https://picsum.photos/id/64/200" alt="John Doe">
+									<p>
+										<b>John Doe</b>
+										<span>Developer</span>
+									</p>
+								</figcaption>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<blockquote>Lorem ipsum dolor sit amet consectetur. Fermentum cras quam tem pus auctor.</blockquote>
+								<figcaption class="carousel-meta">
+									<img src="https://picsum.photos/id/64/200" alt="John Doe">
+									<p>
+										<b>John Doe</b>
+										<span>Developer</span>
+									</p>
+								</figcaption>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<blockquote>Lorem ipsum dolor sit amet consectetur. Fermentum cras quam tem pus auctor.</blockquote>
+								<figcaption class="carousel-meta">
+									<img src="https://picsum.photos/id/64/200" alt="John Doe">
+									<p>
+										<b>John Doe</b>
+										<span>Developer</span>
+									</p>
+								</figcaption>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<blockquote>Lorem ipsum dolor sit amet consectetur. Fermentum cras quam tem pus auctor.</blockquote>
+								<figcaption class="carousel-meta">
+									<img src="https://picsum.photos/id/64/200" alt="John Doe">
+									<p>
+										<b>John Doe</b>
+										<span>Developer</span>
+									</p>
+								</figcaption>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<blockquote>Lorem ipsum dolor sit amet consectetur. Fermentum cras quam tem pus auctor.</blockquote>
+								<figcaption class="carousel-meta">
+									<img src="https://picsum.photos/id/64/200" alt="John Doe">
+									<p>
+										<b>John Doe</b>
+										<span>Developer</span>
+									</p>
+								</figcaption>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<blockquote>Lorem ipsum dolor sit amet consectetur. Fermentum cras quam tem pus auctor.</blockquote>
+								<figcaption class="carousel-meta">
+									<img src="https://picsum.photos/id/64/200" alt="John Doe">
+									<p>
+										<b>John Doe</b>
+										<span>Developer</span>
+									</p>
+								</figcaption>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<blockquote>Lorem ipsum dolor sit amet consectetur. Fermentum cras quam tem pus auctor.</blockquote>
+								<figcaption class="carousel-meta">
+									<img src="https://picsum.photos/id/64/200" alt="John Doe">
+									<p>
+										<b>John Doe</b>
+										<span>Developer</span>
+									</p>
+								</figcaption>
+							</figure>
+						</li>
+					</ul>
+					<nav class="carousel-dots" aria-label="Testimonial navigation"></nav>
+				</div>
+			</div>
+		</section>
+		
+		<section class="darkened">
+			<div class="wrap">
+				<h2 class="section-heading"><span>Join our vibrant community</span></h2>
+				<p class="section-subheading">
+					OpenUI5 has a large community of developers all around the world. The community helps improving OpenUI5 by reporting issues, suggesting features, and contributing even code. Over the last decade the UI5 community has established an own GitHub organization to centralize community projects like controls, extensions for UI5 CLI and many more. 
+				</p>
+				
+			</div>
+		</section>
+	</main>
+
+	<footer id="footer">
+		<footer-section></footer-section>
+	</footer>
+</body>
+
 </html>
