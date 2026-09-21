@@ -1,0 +1,89 @@
+ul.carousel {
+  display: flex;
+  height: 17rem;
+  overflow-x: auto;
+  text-align: center;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+ul.carousel li {
+  flex: 0 0 var(--carousel-item-width, 85%);
+  height: 100%;
+  padding: 1rem;
+  margin: 0 1rem;
+  text-align: left;
+  border-radius: 1rem;
+  list-style-type: none;
+  scroll-snap-align: start;
+  border: 0.0625rem solid var(--text-color-contrast);
+  background-color: var(--background-color-alternate);
+}
+
+ul.carousel li:nth-child(even) {
+  border: 0.0625rem solid transparent;
+  background-color: var(--background-color);
+}
+
+.carousel-wrap {
+  position: relative;
+}
+
+.carousel-dots {
+  gap: 1rem;
+  display: flex;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.carousel-dots.is-hidden {
+  display: none;
+}
+
+.carousel-dots button {
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  min-width: 1rem;
+  min-height: 1rem;
+  border-radius: 0.625rem;
+  background-color: var(--text-color);
+}
+
+.carousel-dots button.active {
+  transition: all 0.7s;
+  background-color: var(--brand-color-alt);
+}
+
+.carousel-meta {
+    gap: 0.5rem;
+    display: flex;
+    margin-top: 0.5rem;
+    align-items: center;
+}
+
+.carousel-meta img {
+    width: 3rem;
+    height: 3rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.carousel-meta div {
+    display: flex;
+    font-size: 0.875rem;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.carousel-quote {
+    display: inline-block;
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--brand-color-alt);
+    mask-image: url("../../images/icons/quote.svg");
+    -webkit-mask-image: url("../../images/icons/quote.svg");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+}
