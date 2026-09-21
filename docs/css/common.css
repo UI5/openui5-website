@@ -774,12 +774,15 @@ article {
 
 	.logo {
 		width: 100%;
+		shape-outside: polygon(0 0, 100% 0, 100% 100%,  55% 100%, 40% 50%,0 50%);
+		float: right;
+		shape-margin: 1em;
 	}
 	
 	p {
 		font-size: var(--type-1);
-		width: 35vw;
 		align-self: flex-start;
+		margin-block: 0;
 	}
 }
 
