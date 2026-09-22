@@ -2,9 +2,17 @@
 	display: flex;
 	height: 17rem;
 	overflow-x: auto;
+    margin-block: 3rem;
 	text-align: center;
 	scroll-behavior: smooth;
 	scroll-snap-type: x mandatory;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	-ms-overflow-style: none;
+	scrollbar-width: none;
 	
 	li {
 		flex: 0 0 var(--carousel-item-width, 85%);
