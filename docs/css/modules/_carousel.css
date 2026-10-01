@@ -1,9 +1,10 @@
 .carousel {
 	display: flex;
-	height: 17rem;
 	overflow-x: auto;
-    margin-block: 3rem;
+	min-height: 17rem;
 	text-align: center;
+    padding-block: 3rem;
+	align-items: stretch;
 	scroll-behavior: smooth;
 	scroll-snap-type: x mandatory;
 
@@ -13,10 +14,10 @@
 
 	-ms-overflow-style: none;
 	scrollbar-width: none;
-	
+
 	li {
+		display: flex;
 		flex: 0 0 var(--carousel-item-width, 85%);
-		height: 100%;
 		padding: 1rem;
 		margin: 0 1rem;
 		text-align: left;
@@ -24,17 +25,23 @@
 		list-style-type: none;
 		scroll-snap-align: start;
 		border: 0.0625rem solid var(--text-color-contrast);
+		background-color: var(--background-color);
+	}
+
+	li > * {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+	}
+
+	li:nth-child(even) {
+		border: 0.0625rem solid var(--background-color-alternate);
 		background-color: var(--background-color-alternate);
 	}
 	
-	li:nth-child(even) {
-		border: 0.0625rem solid transparent;
-		background-color: var(--background-color);
-	}
-	
 	blockquote::before {
-	content: open-quote;
-}
+		content: open-quote;
+	}
 
 	blockquote::after {
 		content: close-quote;
@@ -42,6 +49,7 @@
 
 	blockquote {
 		margin: 0;
+		flex: 1;
 		line-height: 1.5;
 		font-size: var(--type-0);
 		quotes: "“" "”" "‘" "’";
@@ -72,12 +80,13 @@
 
 .carousel-wrap {
 	position: relative;
+	margin-block-end: 3rem;
 }
 
 .carousel-dots {
 	gap: 1rem;
 	display: flex;
-	margin-top: 1rem;
+	margin-block-start: 1rem;
 	justify-content: center;
 }
 
@@ -133,3 +142,33 @@
 	mask-position: center;
 	mask-size: contain;
 }
+
+/* Events Carousel */
+.carousel.events li {
+	position: relative;
+}	
+
+.carousel.events h3 {
+	margin-block: 1rem;
+} 
+
+.carousel.events dd {
+	margin-inline-start: 0;
+	margin-block-end: 1rem;
+}
+
+.carousel.events .event-link {
+	top: 0;
+	right: 0;
+	width: 3rem;
+	height: 3rem;
+	border-radius: 50%;
+	position: absolute;
+	transform: translate(45%, -45%);
+	background-color: var(--brand-color-light-bg);
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23111143' d='M6.4 18L5 16.6L14.6 7H6V5h12v12h-2V8.4z'/%3E%3C/svg%3E");
+	background-size: 2rem 2rem;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
