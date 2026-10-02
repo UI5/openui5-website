@@ -1,5 +1,25 @@
 # Events
 ```yaml
+title: UI5ers live (October '26)
+subTitle: 45 minute webcast
+location: Online
+logo: images/events/ui5ers.svg
+speakers:
+  - Florian Vogt
+  - Peter Muessig
+url: 'https://youtube.com/live/tWZc_2jkWl4'
+recordingUrl: https://youtube.com/live/tWZc_2jkWl4
+id: ui5ers-62
+start: '2026-10-08 15:15 Europe/Berlin'
+end: '2026-10-08 16:00 Europe/Berlin'
+```
+Coding agents get smarter about OpenUI5 and SAPUI4. And AI moves into the browser itself.
+
+Florian Vogt walks through the UI5 Plugins for Coding Agents project — what plugins exist, what they enable, and how to install them. The plugins extend both OpenUI5 and SAPUI5 development in agents like Claude and GitHub Copilot with project creation, API documentation lookup, best-practice guidance, modernization workflows, and TypeScript conversion support.
+
+Peter Muessig introduces Chrome's built-in AI: foundation models shipped directly inside the browser. No server, no API key, no round trip. Peter covers the key APIs (Summarizer, Writer, Translator, Prompt) explains why on-device AI matters for latency, cost, and user privacy, and shows how to integrate these capabilities into an OpenUI5 application.
+
+```yaml
 title: UI5 Views, Reimagined – Type-Safe TSX for a Modern Dev Experience
 subTitle: Event by SAP Community
 location: Online
