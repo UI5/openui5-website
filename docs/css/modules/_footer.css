@@ -32,6 +32,7 @@ footer {
 .footer-section h2 {
 	margin-block-end: 1rem;
 	font-size: var(--type-0);
+	color: var(--text-color);
 }
 
 .footer-section ul {
@@ -41,38 +42,7 @@ footer {
 }
 
 .footer-section li {
-	margin-block-end: 0.5rem;
-}
-
-.footer-section a {
-    line-height: 1.6;
-	text-decoration: none;
-	display: inline-block;
-    justify-content: center;
-	font-size: var(--type-0);
-	transition: color 0.2s ease;
-	color: var(--text-color-contrast);
-}
-
-.footer-section a:hover {
-	text-decoration: underline;
-	color: var(--brand-color-alt);
-}
-
-.footer-section a:focus {
-	outline-offset: 0.25rem;
-    color: var(--brand-color-alt);
-	outline: 0.125rem solid var(--brand-color-alt);
-}
-
-.social-links a {
-	gap: 1rem;
-	display: flex;
-	align-items: center;
-}
-
-.social-links svg {
-	flex-shrink: 0;
+	margin-block-end: 0.75rem;
 }
 
 .footer-bottom p {

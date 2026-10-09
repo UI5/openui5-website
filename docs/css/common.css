@@ -532,19 +532,16 @@ ul {
 /* ---------------------- Interactive Elements ---------------------------  */
 a {
 	text-decoration: none;
-	color: var(--brand-color);
+	padding-block: 0.25rem;
+	color: var(--text-color);
+	text-underline-offset: 0.25rem;
+	text-decoration-thickness: 0.0625rem;
 	transition: text-decoration 0.3s ease-in-out;
-	text-decoration: underline;
-	text-decoration-color: var(--brand-color);
-	text-decoration-thickness: 1px;
-	text-underline-offset: 3px;
 
 	&:is(:hover) {
-		color: var(--brand-color-alt);
 		text-decoration: underline;
-		text-decoration-color: var(--brand-color-alt);
-		text-decoration-thickness: 1px;
-		text-underline-offset: 3px;
+		text-underline-offset: 0.25rem;
+		text-decoration-thickness: 0.0625rem;
 	}
 
 	&:is(:focus) {
@@ -552,25 +549,25 @@ a {
 	}
 
 	&:is(:focus-visible) {
-		outline: 2px solid currentColor;
-		outline-offset: 4px;
+		outline-offset: 0.25rem;
+		outline: 0.125rem solid var(--brand-color-contrast);
 	}
 
 	&:is(.active) {
-		text-decoration-color: var(--brand-color);
+		color: var(--brand-color-alt);
 	}
 }
 
 .btn {
 	cursor: pointer;
-	padding: 0.8rem 1.4rem;
 	border-radius: 5rem;
 	display: inline-block;
 	text-decoration: none;
+	padding: 0.8rem 1.4rem;
 	font-size: var(--type-0);
-	background: var(--brand-color-btn-primary);
+	transition: all .15s linear;
 	color: var(--text-color-contrast);
-	transition: background .15s linear, border-color .15s linear;
+	background: var(--brand-color-btn-primary);
 	border: 0.125rem solid var(--brand-color-btn-primary);
 
 	&:is(:hover) {
@@ -580,28 +577,66 @@ a {
 
 	&:is(:focus) {
 		text-decoration: none;
+		outline-offset: 0.125rem;
+		outline: 0.1875rem solid var(--brand-color-contrast);
 	}
 
-	&:is(:focus-within) {
-		outline-offset: -0.25rem;
-		outline: 0.125rem solid var(--text-color-contrast);
+	&:is(:focus-visible) {
+		outline-offset: 0.125rem;
+		outline: 0.1875rem solid var(--brand-color-contrast);
 	}
 
-	&:has( + .btn, + .btn-lite) {
+	&:disabled,
+	&[disabled] {
+		opacity: 0.5;
+		cursor: not-allowed;
+		pointer-events: none;
+	}
+
+	&:has( + .btn, + .btn-lite, + button) {
 		margin-inline-end: 1rem;
 	}
 
 	.icon {
 		width: 1.4rem;
 		height: 1.4rem;
+		color: inherit;
 		display: inline-block;
 		margin-inline-end: .5rem;
 		transform: translateY(-0.0625rem);
-		color: inherit;
 	}
 
-	&.btn-lite {
-		background: transparent;
+	@media (prefers-color-scheme: dark) {
+		background: var(--brand-color-btn-primary);
+		border-color: var(--brand-color-btn-primary);
+
+		&:is(:hover) {
+			background: var(--brand-color-btn-secondary);
+			border-color: var(--brand-color-btn-secondary);
+		}
+	}
+}
+
+.btn-lite {
+	background: transparent;
+	color: var(--brand-color);
+	border-color: var(--brand-color);
+
+	&:is(:hover) {
+		background: var(--brand-color);
+		border-color: var(--brand-color);
+		color: var(--text-color-contrast);
+	}
+
+	@media (prefers-color-scheme: dark) {
+		color: var(--text-color-contrast);
+		border-color: var(--text-color-contrast);
+
+		&:is(:hover) {
+			color: var(--brand-color);
+			background: var(--text-color-contrast);
+			border-color: var(--text-color-contrast);
+		}
 	}
 }
 
@@ -765,6 +800,10 @@ article {
 		shape-outside: polygon(0 0, 100% 0, 100% 100%,  55% 100%, 40% 50%,0 50%);
 		float: right;
 		shape-margin: 1em;
+
+		.logo-text {
+			fill: var(--text-color);
+		}
 	}
 	
 	p {
@@ -777,6 +816,10 @@ article {
 .head-container h1 {
 	margin-block-start: 0;
 	font-size: var(--type-4);
+}
+
+.head .button-group {
+	margin-block-start: 1.5rem;
 }
 
 /* ------------------------------ Teaser -------------------------------  */
@@ -1232,7 +1275,9 @@ footer {
 
 /* Statistics */
 .stat {
-	border-block:  0.0625rem solid var(--text-color);
+	background: var(--background-color-dark);
+	color: var(--text-color-contrast);
+	border-block:  0.0625rem solid var(--text-color-contrast);
 }
 
 .stat-container {
@@ -1282,7 +1327,7 @@ footer {
 	.stat-item {
 		align-items: start;
 		padding-inline-start: 2rem;
-		border-inline-start: 0.0625rem solid var(--text-color);
+		border-inline-start: 0.0625rem solid var(--text-color-contrast);
 	}
 }
 

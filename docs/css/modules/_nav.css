@@ -1,269 +1,201 @@
+/* Navigation Container */
 .nav {
-	position: relative;
-	z-index: 2;
-	max-width: 1240px;
-	margin-block: 0;
-	margin-inline: auto;
+	top: 0;
+	z-index: 1000;
+	background-color: var(--background-color-alternate);
+}
+
+/* ==================== DESKTOP ==================== */
+.anchor-nav {
+	gap: 2rem;
+	display: flex;
+	margin: 0 auto;
+	list-style: none;
+	align-items: center;
 	padding-block: 1rem;
-	padding-inline: 3vw;
-
-	ul {
-		position: relative;
-		list-style: none;
-		padding: 0;
-		margin: 0;
-		display: flex;
-		flex-wrap: wrap;
-		flex-direction: row;
-		align-items: center;
-		justify-content: center;
-		gap: .7rem 2.5rem;
-	}
-
-	a:not(:hover, :focus, :focus-within) {
-		text-decoration-color: transparent;
-	}
-
-	a {
-		font-weight: 400;
-		font-size: var(--type-0);
-		white-space: nowrap;
-		color: var(--text-color);
-		transition: color .2s linear;
-
-		@supports(anchor-name: none) {
-			text-decoration: none;
-		}
-
-		.logo {
-			height: 42px;
-			width: 42px;
-		}
-
-		@supports(not (anchor-name: none)) {
-
-			&:is( :hover, :focus) {
-				color: rgba(var(--white), 1);
-				text-decoration-thickness: 4px;
-				text-decoration-color: rgba(var(--white), 1);
-				text-underline-offset: 10px;
-			}
-
-			&[aria-current="true"] {
-				text-decoration-thickness: 4px;
-				text-decoration-color: rgba(var(--white), 1);
-				text-underline-offset: 10px;
-			}
-		}
-	}
+	justify-content: flex-end;
 }
 
-@media (width >= 700px) {
+.anchor-nav li {
+	margin: 0;
 
-	.nav li:first-child {
-		flex: 0 0 auto;
+	&:first-child {
 		margin-inline-end: auto;
-
-		a {
-			justify-content: flex-start;
-		}
 	}
 }
 
-@media (width >= 1024px) {
+.anchor-nav .logo {
+	width: 2.5rem;
+	height: 2.5rem;
+}
 
-	.nav {
-		padding-block: 2rem;
+.anchor-nav .github {
+	width: 1.5rem;
+	height: 1.5rem;
+	transition: transform 0.3s linear;
+
+	&:hover {
+		transform: scale(1.15);
 	}
 }
 
-.header-link {
-	display: block;
-}
-
-.logo {
-	width: 100px;
-	color: var(--white);
-}
-
-/* Anchor Positioning Navigation - CSS native Nesting breaks anchor position */
-
-/* Only works with styles of Anchor Positioning Block down below */
-.anchor-nav::before {
-	content: "";
-	position: absolute;
-	bottom: calc(anchor(var(--target) bottom) - 10px);
-	left: calc(anchor(var(--target) left) - 15px);
-	right: calc(anchor(var(--target) right) - 15px);
-	height: 95%;
-	background-color: var(--brand-color-alt);
-	border-radius: 25px;
-	transition: all 0.3s;
-	pointer-events: none;
-	transition-behavior: allow-discrete;
-	z-index: -1;
-}
-
-@starting-style {
-	.anchor-nav::before {
-		opacity: 0;
-	}
-}
-
-.anchor-nav a {
-	anchor-name: var(--anchor);
-	color: var(--text-color);
-}
-
-.anchor-nav a:is(:hover,:focus-visible) {
-	text-decoration: underline;
-	text-underline-offset: -2px;
-	text-decoration-thickness: 2px;
-}
-
-.anchor-nav li:nth-child(2) { --anchor: --item-1 }
-.anchor-nav:has(:nth-child(2) a:is(:hover, :focus-visible)),
-.anchor-nav:has(:nth-child(2) [aria-current]) {
-	--target: --item-1;
-}
-
-.anchor-nav li:nth-child(3) { --anchor: --item-2 }
-.anchor-nav:has(:nth-child(3) a:is(:hover, :focus-visible)),
-.anchor-nav:has(:nth-child(3) [aria-current]) {
-	--target: --item-2;
-}
-
-.anchor-nav li:nth-child(4) { --anchor: --item-3 }
-.anchor-nav:has(:nth-child(4) a:is(:hover, :focus-visible)),
-.anchor-nav:has(:nth-child(4) [aria-current]) {
-	--target: --item-3;
-}
-
-.anchor-nav li:nth-child(5) { --anchor: --item-4 }
-.anchor-nav:has(:nth-child(5) a:is(:hover, :focus-visible)),
-.anchor-nav:has(:nth-child(5) [aria-current]) {
-	--target: --item-4;
-}
-
-/* Mobile Navigation */
-
+/* ==================== MOBILE ==================== */
 .mobile-nav {
-
-	.mobile-nav-container {
-		position: relative;
-		display: flex;
-		justify-content: space-between;
-	}
-
-	.mobile-nav-menu {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-end;
-		right: 0;
-		top: 100%;
-		z-index: 10;
-		width: 100%;
-		position: absolute;
-		padding-block: .8rem;
-		padding-inline: 5vw;
-		gap: 0;
-		background: var(--brand-color);
-		border-bottom: 2px solid var(--brand-color-alt);
-
-		li:first-child {
-			margin-inline-end: 0;
-		}
-
-		a {
-			line-height: 44px;
-			display: block;
-		}
-	}
+	display: none;
+	position: relative;
 }
 
+.mobile-nav-container {
+	display: flex;
+	align-items: center;
+	padding: 1rem 2rem;
+	justify-content: space-between;
+}
+
+.mobile-nav-container .logo {
+	width: 2.5rem;
+	height: 2.5rem;
+}
+
+/* Hamburger Button */
 .mobile-nav-btn {
-	width: 30px;
-	height: 24px;
-	position: relative;
-	transform: rotate(0deg);
-	transition: .3s ease-in-out;
-	cursor: pointer;
-	background: transparent;
+	padding: 0;
+	width: 2rem;
 	border: none;
-	margin-block-start: 8px;
+	height: 2rem;
+	cursor: pointer;
+	position: relative;
+	background: transparent;
 
-	&:is(:focus, :focus-within) {
-		outline: none;
+	&:is(:focus-visible) {
+		outline-offset: 0.25rem;
+		outline: 0.125rem solid var(--brand-color-contrast);
 	}
 
-	&:is(:focus, :focus-within) span {
-		background: rgba(var(--white), .8);
-	}
-
-	span {
-		display: block;
-		position: absolute;
-		height: 4px;
-		width: 100%;
-		background: rgb(var(--white));
-		opacity: 1;
+	& span {
 		left: 0;
-		transform: rotate(0deg);
-		transition: .25s ease-in-out;
+		width: 100%;
+		display: block;
+		height: 0.1875rem;
+		position: absolute;
+		border-radius: 0.125rem;
+		transition: all 0.3s ease;
+		background-color: var(--text-color);
 
 		&:nth-child(1) {
-			top: 0px;
-			transform-origin: left center;
+			top: 0.1875rem;
 		}
 
 		&:nth-child(2) {
-			top: 10px;
-			transform-origin: left center;
-			width: 80%;
-			right: 0;
-			left: auto;
+			top: 50%;
+			transform: translateY(-50%);
 		}
 
 		&:nth-child(3) {
-			top: 20px;
-			transform-origin: left center;
+			bottom: 0.1875rem;
 		}
 	}
 
-	&.open {
+	/* Hamburger Animation */
+	&.open span {
+		&:nth-child(1) {
+			top: 50%;
+			transform: translateY(-50%) rotate(45deg);
+		}
 
-		span {
+		&:nth-child(2) {
+			opacity: 0;
+		}
 
-			&:nth-child(1) {
-				transform: rotate(45deg);
-				top: -1px;
-				left: 1px;
-			}
-
-			&:nth-child(2) {
-				width: 0%;
-				opacity: 0;
-			}
-
-			&:nth-child(3) {
-				transform: rotate(-45deg);
-				top: 20px;
-				left: 1px;
-			}
+		&:nth-child(3) {
+			bottom: auto;
+			top: 50%;
+			transform: translateY(-50%) rotate(-45deg);
 		}
 	}
 }
 
-@media (prefers-color-scheme: dark) {
+/* Mobile Menu */
+.mobile-nav-menu {
+	left: 0;
+	right: 0;
+	margin: 0;
+	top: 100%;
+	z-index: 5;
+	padding: 0 0 1rem 0;
+	width: 100%;
+	display: none;
+	list-style: none;
+	position: absolute;
+	flex-direction: column;
+	background: var(--background-color-alternate);
+}
 
-	.mobile-nav-btn {
+.mobile-nav-menu::after {
+	left: 0;
+	right: 0;
+	content: '';
+	height: 100px;
+	bottom: -100px;
+	position: absolute;
+	pointer-events: none;
+	backdrop-filter: blur(40px);
+	-webkit-backdrop-filter: blur(40px);
+	mask-image: linear-gradient(to bottom, black, transparent);
+	-webkit-mask-image: linear-gradient(to bottom, black, transparent);
+}
 
-		span {
-			background: var(--text-color-contrast);
-		}
+.mobile-nav-menu.hamburgerMenuVisible {
+	display: flex;
+}
 
-		&:is(:focus, :focus-within) span {
-			background: var(--text-color-contrast);
-		}
+.mobile-nav-menu li {
+	margin: 0;
+	width: 100%;
+}
+
+.mobile-nav-menu a {
+	width: 100%;
+	display: block;
+	padding: 1rem 2rem;
+	text-decoration: none;
+	box-sizing: border-box;
+	color: var(--text-color);
+	text-underline-offset: 0.25rem;
+	transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
+
+	&:is(:hover) {
+		text-decoration: underline;
+		text-underline-offset: 0.25rem;
+		text-decoration-thickness: 0.0625rem;
+	}
+
+	&:is(:focus, :focus-visible) {
+		outline-offset: -0.5rem;
+		outline: 0.125rem solid var(--brand-color-contrast);
+	}
+
+	&:is(.active, [aria-current="true"]) {
+		color: var(--brand-color-alt);
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.anchor-nav {
+		display: none;
+	}
+
+	.mobile-nav {
+		display: block;
+	}
+}
+
+@media screen and (min-width: 769px) {
+	.mobile-nav {
+		display: none;
+	}
+
+	.anchor-nav {
+		display: flex;
 	}
 }

@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // header navigation
-    document.getElementsByTagName('nav-section')[0].outerHTML = `<ul class="anchor-nav">
+    document.getElementsByTagName('nav-section')[0].outerHTML = `<ul class="wrap anchor-nav">
         <li>
             <a href="index.html" class="" ${isActive('index.html') ? 'aria-current="true"' : ''} aria-label="Home">
                 <span class="sr-only">Link to Home Page</span>
@@ -118,6 +118,9 @@ document.addEventListener('DOMContentLoaded', function () {
   </div>
   `;
 
+    // Initialize mobile navigation after DOM manipulation
+    initMobileNav();
+
     // footer
     document.getElementsByTagName('footer-section')[0].outerHTML = `<div class="wrap">
 
@@ -141,10 +144,48 @@ document.addEventListener('DOMContentLoaded', function () {
       </div>
   </div>`;
 
-    const navBtn = document.querySelector('.mobile-nav-btn');
-    navBtn.addEventListener('click', function () {
-        navBtn.classList.toggle('open');
-        // toggle the hamburgerMenuVisible class of ul.mobile-nav-menu
-        document.querySelector('.mobile-nav-menu').classList.toggle('hamburgerMenuVisible');
-    });
+    // Mobile navigation initialization function
+    function initMobileNav() {
+        const navBtn = document.querySelector('.mobile-nav-btn');
+        const navMenu = document.querySelector('.mobile-nav-menu');
+
+        if (navBtn && navMenu) {
+            // Set initial ARIA attributes
+            navBtn.setAttribute('aria-label', 'Open navigation menu');
+            navBtn.setAttribute('aria-expanded', 'false');
+            navBtn.setAttribute('aria-controls', 'mobile-menu');
+            navMenu.setAttribute('id', 'mobile-menu');
+
+            navBtn.addEventListener('click', function () {
+                const isOpen = navBtn.classList.toggle('open');
+                navMenu.classList.toggle('hamburgerMenuVisible');
+
+                // Update ARIA attributes
+                navBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                navBtn.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+            });
+
+            // Close menu when a link is clicked
+            const menuLinks = navMenu.querySelectorAll('a');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    navBtn.classList.remove('open');
+                    navMenu.classList.remove('hamburgerMenuVisible');
+                    navBtn.setAttribute('aria-expanded', 'false');
+                    navBtn.setAttribute('aria-label', 'Open navigation menu');
+                });
+            });
+
+            // Close menu on Escape key
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && navMenu.classList.contains('hamburgerMenuVisible')) {
+                    navBtn.classList.remove('open');
+                    navMenu.classList.remove('hamburgerMenuVisible');
+                    navBtn.setAttribute('aria-expanded', 'false');
+                    navBtn.setAttribute('aria-label', 'Open navigation menu');
+                    navBtn.focus();
+                }
+            });
+        }
+    }
 }, false);
