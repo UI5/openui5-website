@@ -29,8 +29,8 @@ speakers:
 url: 'https://www.youtube.com/watch?v=B4BRUJPwVzo'
 recordingUrl: https://www.youtube.com/watch?v=B4BRUJPwVzo
 id: devtoper26-2
-start: '2026-10-09 14:00 Europe/Berlin'
-end: '2026-10-09 15:15 Europe/Berlin'
+start: '2026-10-09 12:30 Europe/Berlin'
+end: '2026-10-09 13:30 Europe/Berlin'
 ```
 OpenUI5 has long given us two ways to build views: XML views: declarative, but strongly-typed and JS views, which are code (and thus type-checkable) but imperative, hand-wiring controls with `new Button({...})`. What if you didn't have to choose? The JSX/TSX runtime is a hybrid: you write your view **declaratively**, like XML, but in **TypeScript**, so you get full type-checking, autocomplete on control properties, and JS-native loops and conditionals — while every OpenUI5 concept you already know (data binding, aggregations, controllers, i18n) stays exactly the same. In this session we start from an empty EasyUI5 TypeScript app, wire up the community JSX/TSX runtime, and build up a view step by step: controls, bindings, aggregations with templates, events, and the structural directives `For` and `If`. You'll leave knowing exactly how to adopt TSX views in your own app, one view at a time, with XML and TSX coexisting side by side.
 
