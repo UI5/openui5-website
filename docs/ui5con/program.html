@@ -186,7 +186,7 @@
                               {{ trimTime(session.startTime) }} - {{ trimTime(session.endTime) }}
                             </span>
                           </template>
-                          <span class="title" v-html="decodeBioHtml(session.title)"></span>
+                          <span class="title">{{ formatBioText(session.title).join(' ') }}</span>
                         </h3>
                       </li>
                     </ol>
@@ -216,7 +216,7 @@
                       >
                         <h3>
                           <span class="time">{{ trimTime(session.startTime) }} - {{ trimTime(session.endTime) }}</span>
-                          <span class="title" v-html="decodeBioHtml(session.title)"></span>
+                          <span class="title">{{ formatBioText(session.title).join(' ') }}</span>
                         </h3>
                       </li>
                     </ol>
@@ -246,7 +246,7 @@
                       >
                         <h3>
                           <span class="time">{{ trimTime(session.startTime) }} - {{ trimTime(session.endTime) }}</span>
-                          <span class="title" v-html="decodeBioHtml(session.title)"></span>
+                          <span class="title">{{ formatBioText(session.title).join(' ') }}</span>
                         </h3>
                       </li>
                     </ol>
@@ -275,7 +275,7 @@
                       >
                         <h3>
                           <span class="time">{{ trimTime(session.startTime) }} - {{ trimTime(session.endTime) }}</span>
-                          <span class="title" v-html="decodeBioHtml(session.title)"></span>
+                          <span class="title">{{ formatBioText(session.title).join(' ') }}</span>
                         </h3>
                       </li>
                     </ol>
@@ -304,7 +304,7 @@
                       >
                         <h3>
                           <span class="time">{{ trimTime(session.startTime) }} - {{ trimTime(session.endTime) }}</span>
-                          <span class="title" v-html="decodeBioHtml(session.title)"></span>
+                          <span class="title">{{ formatBioText(session.title).join(' ') }}</span>
                         </h3>
                       </li>
                     </ol>
@@ -499,7 +499,7 @@
 
                     <div class="agenda-slot-container">
                       <h2 class="agenda-slot-title">
-                        <span v-html="decodeBioHtml(session.title)"></span>
+                        <span>{{ formatBioText(session.title).join(' ') }}</span>
                         <span
                           v-if="session.proficiencyLevel"
                           class="agenda-level"
@@ -518,7 +518,7 @@
                           v-for="(speaker, index) in session.speakers"
                           :key="`${speaker.firstName} ${speaker.lastName}`"
                         ><span>
-                            {{speaker.firstName}} {{speaker.lastName}} (<span v-html="speaker.company"></span>)</span><span v-if="index != session.speakers.length - 1">, </span>
+                            {{speaker.firstName}} {{speaker.lastName}} (<span>{{ sanitizeText(speaker.company) }}</span>)</span><span v-if="index != session.speakers.length - 1">, </span>
                         </template>
                       </p>
 
@@ -542,7 +542,11 @@
                           </template>
                         </div>
 
-                        <p class="agenda-slot-description" v-html="decodeBioHtml(session.description)"></p>
+                        <div class="agenda-slot-description">
+                          <p v-for="(paragraph, index) in formatBioText(session.description)" :key="index">
+                            {{ paragraph }}
+                          </p>
+                        </div>
                       </div>
 
                       <!-- <div class="calendar-list" v-if="session.calendars && !isBreakSession(session)">
@@ -692,7 +696,11 @@
                   <p class="agenda-modal-type">{{ formatSessionType(activeSession.type) }}</p>
 
                   <!-- Title -->
-                  <h2 class="agenda-modal-title" v-html="decodeBioHtml(activeSession.title)"></h2>
+                  <h2 class="agenda-modal-title" style="display: flex; flex-direction: column;">
+                    <div v-for="(line, index) in formatBioText(activeSession.title)" :key="index" style="display: block;">
+                      {{ line }}
+                    </div>
+                  </h2>
 
                   <!-- Details -->
                   <div class="agenda-modal-details">
@@ -714,12 +722,15 @@
 
                   <!-- Description -->
                   <h3 class="agenda-modal-section-heading">OVERVIEW</h3>
-                  <p
+                  <div
                     v-if="activeSession.description"
                     class="agenda-modal-description"
-                    v-html="decodeBioHtml(activeSession.description)"
-                  ></p>
-                  
+                  >
+                    <p v-for="(paragraph, index) in formatBioText(activeSession.description)" :key="index">
+                      {{ paragraph }}
+                    </p>
+                  </div>
+
                   <!-- Additional Links -->
                   <div
                     v-if="!isBreakSession(activeSession) && (activeSession.attendeeRatingLink || (activeSession.location && activeSession.location.toLowerCase().includes('audimax')) || (activeSession.presentationLinks && activeSession.presentationLinks.length > 0))"
@@ -787,9 +798,13 @@
                       <article>
                         <header>
                           <h3>{{speaker.firstName}} {{speaker.lastName}}</h3>
-                          <p v-if="speaker.company" v-html="speaker.company"></p>
+                          <p v-if="speaker.company">{{ sanitizeText(speaker.company) }}</p>
                         </header>
-                        <p v-if="speaker.bio" v-html="decodeBioHtml(speaker.bio)"></p>
+                        <div v-if="speaker.bio">
+                          <p v-for="(paragraph, index) in formatBioText(speaker.bio)" :key="index">
+                            {{ paragraph }}
+                          </p>
+                        </div>
                         
                         <ul
                           class="speakers-socials"
@@ -1013,10 +1028,14 @@
               <header>
                 <div>
                   <h3 class="">{{speaker.firstName}} {{speaker.lastName}}</h3>
-                  <p v-if="speaker.company" v-html="speaker.company"></p>
+                  <p v-if="speaker.company">{{ sanitizeText(speaker.company) }}</p>
                 </div>
               </header>
-              <p class="" v-if="speaker.bio" v-html="decodeBioHtml(speaker.bio)"></p>
+              <div class="" v-if="speaker.bio">
+                <p v-for="(paragraph, index) in formatBioText(speaker.bio)" :key="index">
+                  {{ paragraph }}
+                </p>
+              </div>
               <ul
                 class="speakers-socials"
                 v-if="speaker.githubUrl || speaker.linkedInUrl || speaker.twitterHandle || speaker.mastodonHandle || speaker.blueskyHandle"

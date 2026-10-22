@@ -148,6 +148,11 @@
 	margin: var(--agenda-modal-spacing);
 }
 
+.agenda-modal-title > div {
+	display: block !important;
+	width: 100%;
+}
+
 .agenda-modal-description {
 	margin: var(--agenda-modal-spacing);
 	font-size: var(--type-0);

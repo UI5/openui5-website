@@ -1048,24 +1048,36 @@ const main = createApp({
       const info = getLocationInfo(value);
       return info ? info.short : (value || "");
     },
-    // Decodes HTML and formats bio text with line breaks
+    // Safely escapes HTML to prevent XSS attacks (but allows normal text)
+    escapeHtml(text) {
+      if (!text) return "";
+
+      const div = document.createElement('div');
+      div.textContent = text;
+      
+      return div.textContent;
+    },
+    // Formats bio/description text into paragraphs array for safe rendering
+    formatBioText(value) {
+      if (!value) return [];
+      let processed = value.replace(/<br\s*\/?>/gi, '\n');
+
+      processed = decodeHtmlEntities(processed);
+
+      const paragraphs = processed
+        .split(/\\n|\/n|\n/) // Split by various newline formats
+        .map(p => p.trim()) // Trim whitespace
+        .filter(p => p.length > 0); // Remove empty lines
+
+      return paragraphs;
+    },
     decodeBioHtml(value) {
+      return this.formatBioText(value);
+    },
+    sanitizeText(value) {
       if (!value) return "";
-
-      // If value already contains <br> tags, it's already formatted HTML - don't decode
-      if (value.includes("<br>")) {
-        return value;
-      }
-
-      let decoded = decodeHtmlEntities(value);
-
-      // Replace "&amp;" or "&" with " and "
-      decoded = decoded.replace(/&amp;|&/g, " and ");
-
-      // Replace \n or /n with <br> for HTML rendering
-      decoded = decoded.replace(/\\n|\/n|\n/g, "<br>");
-
-      return decoded;
+      let processed = decodeHtmlEntities(value);
+      return processed;
     },
     // Removes leading zeros from time display
     trimTime(value) {

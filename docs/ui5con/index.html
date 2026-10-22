@@ -244,7 +244,7 @@
 										speaker.proposals[0].location.toLowerCase().includes('w2'),
 										w3: speaker.proposals[0].location.toLowerCase().includes('w3'),
 										audimax: speaker.proposals[0].location.toLowerCase().includes('audimax')}">
-									<span v-html="decodeBioHtml(speaker.proposals[0].title)"></span>
+									<span>{{ formatBioText(speaker.proposals[0].title).join(' ') }}</span>
 								</h3>
 								<p class="people-name">{{speaker.firstName}} {{speaker.lastName}}</p>
 								<small>{{speaker.company}}</small>

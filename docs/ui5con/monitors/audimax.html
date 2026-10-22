@@ -94,7 +94,7 @@
 						<span v-if="event.speakers && event.speakers.length > 0">
 							<template v-for="(speaker, index) in event.speakers" :key="speaker.id || index">
 								{{ speaker.firstName }} {{ speaker.lastName }}
-								(<span v-html="speaker.company"></span>)<template v-if="index < event.speakers.length - 1">, </template>
+								({{ sanitizeText(speaker.company) }})<template v-if="index < event.speakers.length - 1">, </template>
 							</template>
 						</span>
 						<span v-else>—</span>
