@@ -21,6 +21,30 @@
   }
 
   /***********************
+   * URL Sanitization
+   ***********************/
+  const ALLOWED_HOSTS = [
+    'github.com',
+    'sdk.openui5.org'
+  ];
+
+  function sanitizeUrl(url) {
+    if (!url || typeof url !== 'string') return null;
+    try {
+      const parsed = new URL(url);
+      if (parsed.protocol !== 'https:') return null;
+      const host = parsed.hostname.toLowerCase();
+      if (!ALLOWED_HOSTS.some(h => host === h || host.endsWith('.' + h))) return null;
+      // Allow only safe characters in the path, query and fragment
+      const rest = parsed.href.slice(parsed.origin.length);
+      if (!/^[a-zA-Z0-9\-._~:/?#\[\]@!$&()*+,;=%]+$/.test(rest)) return null;
+      return parsed.href;
+    } catch {
+      return null;
+    }
+  }
+
+  /***********************
    * Data Validation
    ***********************/
   function validateRelease(release) {
@@ -98,20 +122,23 @@
     const runtimeLink = node.querySelector('.release-runtime');
     const mobileLink = node.querySelector('.release-mobile');
 
-    if (sdkLink && release.url_download_sdk) {
-      sdkLink.setAttribute('href', release.url_download_sdk);
+    const sdkUrl = sanitizeUrl(release.url_download_sdk);
+    if (sdkLink && sdkUrl) {
+      sdkLink.setAttribute('href', sdkUrl);
     } else if (sdkLink) {
       sdkLink.style.display = 'none';
     }
 
-    if (runtimeLink && release.url_download_runtime) {
-      runtimeLink.setAttribute('href', release.url_download_runtime);
+    const runtimeUrl = sanitizeUrl(release.url_download_runtime);
+    if (runtimeLink && runtimeUrl) {
+      runtimeLink.setAttribute('href', runtimeUrl);
     } else if (runtimeLink) {
       runtimeLink.style.display = 'none';
     }
 
-    if (mobileLink && release.url_download_mobile) {
-      mobileLink.setAttribute('href', release.url_download_mobile);
+    const mobileUrl = sanitizeUrl(release.url_download_mobile);
+    if (mobileLink && mobileUrl) {
+      mobileLink.setAttribute('href', mobileUrl);
     } else if (mobileLink) {
       mobileLink.style.display = 'none';
     }
@@ -120,14 +147,16 @@
     const demokitLink = node.querySelector('.release-demokit');
     const notesLink = node.querySelector('.release-notes');
 
-    if (demokitLink && release.url_demokit) {
-      demokitLink.setAttribute('href', release.url_demokit);
+    const demokitUrl = sanitizeUrl(release.url_demokit);
+    if (demokitLink && demokitUrl) {
+      demokitLink.setAttribute('href', demokitUrl);
     } else if (demokitLink) {
       demokitLink.style.display = 'none';
     }
 
-    if (notesLink && release.url_releasenotes) {
-      notesLink.setAttribute('href', release.url_releasenotes);
+    const notesUrl = sanitizeUrl(release.url_releasenotes);
+    if (notesLink && notesUrl) {
+      notesLink.setAttribute('href', notesUrl);
     } else if (notesLink) {
       notesLink.style.display = 'none';
     }
@@ -213,10 +242,10 @@
     btn.textContent = `Download Stable Release (${latestRelease.version})`;
     
     // Use the SDK download link if available, otherwise fallback to demokit
-    if (latestRelease.url_download_sdk) {
-      btn.setAttribute('href', latestRelease.url_download_sdk);
-    } else if (latestRelease.url_demokit) {
-      btn.setAttribute('href', latestRelease.url_demokit);
+    const btnUrl = sanitizeUrl(latestRelease.url_download_sdk)
+      || sanitizeUrl(latestRelease.url_demokit);
+    if (btnUrl) {
+      btn.setAttribute('href', btnUrl);
     } else {
       // Fallback to generic SDK URL
       btn.setAttribute('href', 'https://sdk.openui5.org/');
