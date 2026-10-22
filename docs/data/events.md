@@ -1,8 +1,62 @@
 # Events
 ```yaml
+title: UI5ers live (October '26)
+subTitle: 45 minute webcast
+location: Online
+logo: images/events/ui5ers.svg
+speakers:
+  - Florian Vogt
+  - Peter Muessig
+url: 'https://youtube.com/live/tWZc_2jkWl4'
+recordingUrl: https://youtube.com/live/tWZc_2jkWl4
+id: ui5ers-62
+start: '2026-10-08 15:15 Europe/Berlin'
+end: '2026-10-08 16:00 Europe/Berlin'
+```
+Coding agents get smarter about OpenUI5 and SAPUI4. And AI moves into the browser itself.
+
+Florian Vogt walks through the UI5 Plugins for Coding Agents project — what plugins exist, what they enable, and how to install them. The plugins extend both OpenUI5 and SAPUI5 development in agents like Claude and GitHub Copilot with project creation, API documentation lookup, best-practice guidance, modernization workflows, and TypeScript conversion support.
+
+Peter Muessig introduces Chrome's built-in AI: foundation models shipped directly inside the browser. No server, no API key, no round trip. Peter covers the key APIs (Summarizer, Writer, Translator, Prompt) explains why on-device AI matters for latency, cost, and user privacy, and shows how to integrate these capabilities into an OpenUI5 application.
+
+```yaml
+title: UI5 Views, Reimagined – Type-Safe TSX for a Modern Dev Experience
+subTitle: Event by SAP Community
+location: Online
+logo: images/events/sap.svg
+speakers:
+  - Peter Muessig
+url: 'https://www.youtube.com/watch?v=B4BRUJPwVzo'
+recordingUrl: https://www.youtube.com/watch?v=B4BRUJPwVzo
+id: devtoper26-2
+start: '2026-10-09 12:30 Europe/Berlin'
+end: '2026-10-09 13:30 Europe/Berlin'
+```
+OpenUI5 has long given us two ways to build views: XML views: declarative, but strongly-typed and JS views, which are code (and thus type-checkable) but imperative, hand-wiring controls with `new Button({...})`. What if you didn't have to choose? The JSX/TSX runtime is a hybrid: you write your view **declaratively**, like XML, but in **TypeScript**, so you get full type-checking, autocomplete on control properties, and JS-native loops and conditionals — while every OpenUI5 concept you already know (data binding, aggregations, controllers, i18n) stays exactly the same. In this session we start from an empty EasyUI5 TypeScript app, wire up the community JSX/TSX runtime, and build up a view step by step: controls, bindings, aggregations with templates, events, and the structural directives `For` and `If`. You'll leave knowing exactly how to adopt TSX views in your own app, one view at a time, with XML and TSX coexisting side by side.
+
+*Note: The runtime is experimental — this session is also a call for community feedback.*
+
+```yaml
+title: Beyond copilots – Agentic development with SAPUI5
+subTitle: Event by SAP Community
+location: Online
+logo: images/events/sap.svg
+speakers:
+  - Florian Vogt
+url: 'https://www.youtube.com/watch?v=Rt6wxsCOjvY'
+recordingUrl: https://www.youtube.com/watch?v=Rt6wxsCOjvY
+id: devtoper26-1
+start: '2026-09-25 14:00 Europe/Berlin'
+end: '2026-09-25 15:15 Europe/Berlin'
+```
+AI-assisted development is moving beyond code completion. Modern coding agents can understand project context, execute workflows, validate results, and autonomously perform complex development tasks. The UI5 Plugins for Coding Agents project extends OpenUI5/SAPUI5 development with agent-aware capabilities such as project creation, API documentation access, validating, best-practice guidance, modernization workflows, and TypeScript conversion support.
+
+In this session, we will explore what agentic development means in the context of OpenUI5/SAPUI5 and how developers can leverage coding agents to accelerate application delivery while maintaining quality and consistency. Through live demonstrations, attendees will see how agents can scaffold OpenUI5/SAPUI5 applications, navigate framework APIs, identify and fix OpenUI5/SAPUI5-specific issues, apply development best practices, modernize legacy codebases, and support larger transformation initiatives such as TypeScript adoption.
+
+```yaml
 title: UI5ers live (September '26)
-subTitle: 45 minute interactive webcast
-location: via YouTube
+subTitle: 45 minute webcast
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Stefan Blamberg
@@ -21,8 +75,8 @@ Peter Muessig introduces the JSX/TSX runtime for OpenUI5: write your views in Ty
 
 ```yaml
 title: UI5ers live (August '26)
-subTitle: 45 minute interactive webcast
-location: via YouTube
+subTitle: 45 minute webcast
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Mario Kernich
@@ -40,8 +94,8 @@ Manasi Mishra and Komma Rakshitha then show how to take SAPUI5 applications beyo
 
 ```yaml
 title: UI5ers live (June '26)
-subTitle: 45 minute interactive webcast
-location: via YouTube
+subTitle: 45 minute webcast
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Biser Miloshev
@@ -58,8 +112,8 @@ Meanwhile, debugging apps just got a lot more convenient. OpenUI5 1.149 ships ex
 
 ```yaml
 title: UI5ers live (May '26)
-subTitle: 45 minute interactive webcast
-location: via YouTube
+subTitle: 45 minute webcast
+location: Onnline
 logo: images/events/ui5ers.svg
 speakers:
   - Holger Schäfer
@@ -76,8 +130,8 @@ Peter Muessig from the UI5 team walks through the removal of the experimental sa
 
 ```yaml
 title: UI5ers live (Apr '26)
-subTitle: 45 minute interactive webcast
-location: via YouTube
+subTitle: 45 minute webcast
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Patric Ksinsik
@@ -109,8 +163,8 @@ end: '2026-07-14 18:00 Europe/Berlin'
 
 ```yaml
 title: UI5ers live (Feb '26)
-subTitle: 45 minute interactive webcast
-location: YouTube
+subTitle: 45 minute webcast
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Hristo Tsolev
@@ -146,7 +200,7 @@ end: '2026-02-28 18:00 Asia/Kolkata'
 ```yaml
 title: UI5ers live (Dec '25)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Andreas Kunz
@@ -173,7 +227,7 @@ We look forward to a great discussion and hearing directly from you!
 ```yaml
 title: UI5ers live (Nov '25)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Andreas Kunz
@@ -193,7 +247,7 @@ If you want to showcase your UI5-related work or have an idea for a topic, let u
 ```yaml
 title: UI5ers live (Oct '25)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Andreas Kunz
@@ -216,7 +270,7 @@ like `IAsyncContentCreation`.
 ```yaml
 title: UI5ers live (Sep '25)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Mariana Naboka
@@ -234,7 +288,7 @@ Additionally, we'll showcase significant enhancements in the SAP Fiori Tools Ada
 ```yaml
 title: UI5ers live (Aug '25)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Juliane Dombrowski
@@ -268,7 +322,7 @@ end: '2025-07-08 22:00 Europe/Berlin'
 ```yaml
 title: UI5ers live (June '25)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Ilia Klopkov
@@ -291,11 +345,11 @@ Finally, let's discuss the future of this technology; share your ideas for futur
 ```yaml
 title: UI5ers live (May '25)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Peter Muessig
-url: 'https://sap-se.zoom.com/j/94833714827'
+recordingUrl: 'https://youtu.be/2o9tced_NeE'
 id: ui5ers-49
 start: '2025-05-08 15:15 Europe/Berlin'
 end: '2025-05-08 16:00 Europe/Berlin'
@@ -308,13 +362,13 @@ This session is perfect for developers looking to get hands-on with AI in OpenUI
 ```yaml
 title: UI5ers live (Apr '25)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Ludwig Stockbauer-Muhr
   - Florian Vogt
   - Robin van het Hof
-url: 'https://sap-se.zoom.com/j/94833714827'
+recordingUrl: 'https://youtu.be/Y1MCL3gC3RI'
 id: ui5ers-48
 start: '2025-04-10 15:15 Europe/Berlin'
 end: '2025-04-10 16:00 Europe/Berlin'
@@ -334,12 +388,11 @@ the best approach for your specific projects.
 ```yaml
 title: UI5ers live (Mar '25)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Dominik Schreiber
   - Vinay Hospete
-url: 'https://sap-se.zoom.com/j/94833714827'
 recordingUrl: 'https://youtu.be/KjSUuWWD61I'
 id: ui5ers-47
 start: '2025-03-13 15:15 Europe/Berlin'
@@ -359,7 +412,7 @@ development of new SAPUI5 applications.
 ```yaml
 title: UI5ers live (Feb '25)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Peter Muessig
@@ -378,7 +431,7 @@ The second part will focus on recent accessibility advancements in OpenUI5 and U
 ```yaml
 title: UI5ers live (Jan '25)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Dominik Heim
@@ -403,7 +456,7 @@ of a converter designed to help transition existing applications to this new app
 ```yaml
 title: UI5ers live (Dec '24)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Arnaud Buchholz
@@ -422,7 +475,7 @@ In this episode, we discuss why we've made this decision, look at alternative so
 ```yaml
 title: UI5ers live (Nov '24)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Matthias Oßwald
@@ -496,7 +549,7 @@ asynchronous programming model, and streamlined API can boost your app’s perfo
 ```yaml
 title: UI5ers live (Oct '24)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Ilhan Myumyun
@@ -553,7 +606,7 @@ tl;dr: We're going to delete things.
 ```yaml
 title: UI5ers live (Sep '24)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Johannes Gluch
@@ -580,7 +633,7 @@ available CSS Custom Properties, providing developers with a invaluable resource
 ```yaml
 title: UI5ers live (Aug '24)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Andreas Kunz
@@ -606,7 +659,7 @@ If you want to showcase your UI5-related work or have an idea for a topic, let u
 ```yaml
 title: UI5ers live (Jul '24)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Peter Muessig
@@ -640,7 +693,7 @@ end: '2024-06-05 23:00 Europe/Berlin'
 ```yaml
 title: UI5ers live (May '24)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Andreas Kunz
@@ -663,7 +716,7 @@ If you want to showcase your UI5-related work or have an idea for a topic, let u
 ```yaml
 title: UI5ers live (Apr '24)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Andreas Kunz
@@ -683,7 +736,7 @@ If you want to showcase your UI5-related work or have an idea for a topic, let u
 ```yaml
 title: UI5ers live (Mar '24)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Jens Pflüger
@@ -703,7 +756,7 @@ If you want to showcase your UI5-related work or have an idea for a topic, let u
 ```yaml
 title: UI5ers live (Feb '24)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Mikhail Benderskiy
@@ -725,7 +778,7 @@ We will highlight the unique aspects of this offering and discuss key points to 
 ```yaml
 title: UI5ers live (Jan '24)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Volker Buzek
@@ -748,7 +801,7 @@ So, get ready for an enlightening deep-dive into the dynamic world of UI5.
 ```yaml
 title: UI5ers live (Dec '23)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - DJ Adams
@@ -767,7 +820,7 @@ Take a moment to reflect on a decade's worth of OpenUI5 achievements and share y
 ```yaml
 title: UI5ers live (Nov '23)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Pieter Janssens
@@ -789,7 +842,7 @@ If you want to showcase your UI5-related work or have an idea for a topic, let u
 ```yaml
 title: UI5ers live (Oct '23)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Holger Schäfer
@@ -809,7 +862,7 @@ If you want to showcase your UI5-related work or have an idea for a topic, let u
 ```yaml
 title: UI5ers live (Sep '23)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Peter Muessig
@@ -833,7 +886,7 @@ If you want to showcase your UI5-related work or have an idea for a topic, let u
 ```yaml
 title: UI5ers live (July '23)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Jan Mummenthaler
@@ -867,7 +920,7 @@ end: '2023-07-06 22:00 Europe/Berlin'
 ```yaml
 title: UI5ers live (June '23)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Arnaud Buchholz
@@ -885,7 +938,7 @@ If you want to showcase your UI5-related work or have an idea for a topic, let u
 ```yaml
 title: UI5ers live (May '23)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Mike Zaschka
@@ -905,7 +958,7 @@ If you want to showcase your UI5-related work or have an idea for a topic, let u
 ```yaml
 title: UI5ers live (Apr '23)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Ilhan Myumyun
@@ -920,7 +973,7 @@ Let's talk TypeScript! Hubert Drecker will introduce us to odata2ts, a tool that
 ```yaml
 title: UI5ers live (Mar '23)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Dominik Feininger
@@ -942,7 +995,7 @@ If you want to showcase your UI5-related work or have an idea for a topic, let u
 ```yaml
 title: UI5ers live (Feb '23)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Kateryna Sergieieva
@@ -965,7 +1018,7 @@ If you have an idea for a topic, let us know either via [e-mail](mailto:openui5@
 ```yaml
 title: UI5ers live (Jan'23)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Christian Pfisterer
@@ -986,7 +1039,7 @@ If you have an idea for a topic, let us know either via [e-mail](mailto:openui5@
 ```yaml
 title: UI5ers live (Dec'22)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Peter Muessig
@@ -1017,7 +1070,7 @@ end: '2022-11-16 21:55 Europe/Berlin'
 ```yaml
 title: UI5ers live (Nov'22)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Peter Muessig
@@ -1082,7 +1135,7 @@ The book is written with the intention to help developers utilize the concept of
 ```yaml
 title: UI5ers live (Aug '22)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Peter Muessig
@@ -1096,7 +1149,7 @@ Our summer break is just around the corner, but before there are some news to sh
 ```yaml
 title: UI5ers live (July '22)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Marcel Schork
@@ -1127,7 +1180,7 @@ end: '2022-07-08'
 ```yaml
 title: UI5ers live (May '22)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Marian Zeis
@@ -1144,7 +1197,7 @@ As an additional topic, Mathias Uhlmann and Uwe Reeder will demonstrate how data
 ```yaml
 title: UI5ers live (April '22)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Mauricio Lauffer
@@ -1160,7 +1213,7 @@ In this episode, our special panelist is Mauricio Lauffer who is an experienced 
 ```yaml
 title: UI5ers live (March '22)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Volker Buzek
@@ -1179,7 +1232,7 @@ Tobias is in charge of two new features or rather changes in the UI5 framework, 
 ```yaml
 title: UI5ers live (February '22)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Marcel Schork
@@ -1222,7 +1275,7 @@ Host: Rolf Smeds, Vaadin
 ```yaml
 title: UI5ers live (January '22)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Stefan Beck
@@ -1241,7 +1294,7 @@ In addition, Peter Muessig and Andreas Kunz will talk about a tutorial for TypeS
 ```yaml
 title: UI5 Web Components - The Latest Member of SAP’s UI Open Source Products
 subTitle: SAP Open Source Webinar (1h)
-location: via ZOOM
+location: Online
 logo: images/events/sap.svg
 speakers:
   - Stanislava Baltova
@@ -1260,7 +1313,7 @@ In case of any questions or to cancel your registration, please contact ospo@sap
 ```yaml
 title: UI5ers live (December '21)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Volker Buzek
@@ -1277,7 +1330,7 @@ Our second topic is about TypeScript in UI5. Andreas Kunz has been quite busy th
 ```yaml
 title: UI5 Web Components - Build Enterprise Ready UIs with your Technology of Choice
 subTitle: SAP Community Call (1h)
-location: via ZOOM
+location: Online
 logo: images/events/sap.svg
 speakers:
   - Stanislava Baltova
@@ -1293,7 +1346,7 @@ In this session we will explore the UI5 Web Components – the latest SAP UI Ope
 ```yaml
 title: UI5ers live (November '21)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Peter Muessig
@@ -1308,7 +1361,7 @@ This time, we’re starting with news about the UI5 Web Components and the upcom
 ```yaml
 title: UI5ers live (October '21)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - James Zhang
@@ -1325,7 +1378,7 @@ As a further topic, we're going to look at  asychronous loading of XML content. 
 ```yaml
 title: UI5ers live (August '21)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Jiawei Cao
@@ -1342,7 +1395,7 @@ Next up, Peter Muessig will give an update on transitioning the UI controls to u
 ```yaml
 title: UI5ers live (July '21)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Sebastian Bender
@@ -1358,7 +1411,7 @@ In this episode, we focus once again on tables. In addition to Sebastian Bender,
 title: UI5con ON AIR
 subTitle: Community conference around the UI5 framework
 external: true
-location: Broadcast
+location: Online
 logo: images/events/ui5con.svg
 url: 'https://openui5.org/ui5con/onair2021/'
 id: ui5con2021-onair
@@ -1370,7 +1423,7 @@ end: '2021-06-17'
 ```yaml
 title: UI5ers live (May '21)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Stefan Beck
@@ -1387,7 +1440,7 @@ Then with Sebastian Bender it is about tables. He brings some latest features wi
 ```yaml
 title: Latest Developments in UI5
 subTitle: SAP Community Call (60min)
-location: via ZOOM
+location: Online
 logo: images/events/sap.svg
 speakers:
   - Peter Muessig
@@ -1407,7 +1460,7 @@ The UI5 Tooling laid the foundation and now bears fruit in the UI5 community org
 ```yaml
 title: UI5ers live (Apr '21)
 subTitle: 45 minute interactive webcast
-location: via ZOOM
+location: Online
 logo: images/events/ui5ers.svg
 speakers:
   - Geert-Jan Klaps
@@ -1600,7 +1653,7 @@ No registration needed, just join the webcast at the assigned time.
 title: UI5con ON AIR
 subTitle: Community conference around the UI5 framework
 external: true
-location: Broadcast
+location: Online
 logo: images/events/ui5con.svg
 url: 'https://openui5.org/ui5con/onair2020/'
 id: ui5con2020-onair
