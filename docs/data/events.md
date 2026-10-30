@@ -1,5 +1,25 @@
 # Events
 ```yaml
+title: UI5ers live (November '26)
+subTitle: 45 minute webcast
+location: Online
+logo: images/events/ui5ers.svg
+speakers:
+  - Thorsten Hochreuter
+  - Peter Muessig
+url: 'https://youtube.com/live/umT8kajl4w8'
+recordingUrl: https://youtube.com/live/umT8kajl4w8
+id: ui5ers-63
+start: '2026-11-12 15:15 Europe/Berlin'
+end: '2026-11-12 16:00 Europe/Berlin'
+```
+Native HTML lands in XML views. And the JSX runtime takes full advantage of it.
+
+Thorsten Hochreuter walks through the new library shipped with OpenUI5 1.154 that lets you write standard HTML elements directly inside XML views. He covers what sap.html is and why it matters, how to use native elements in your views, what to watch out for (caveats, limitations, security boundaries), and how data binding works right inside your HTML markup.
+
+Peter Muessig shows how the JSX/TSX runtime has been enhanced to take advantage of native HTML support in the OpenUI5 programming model, and demonstrates the new capabilities in a live demo.
+
+```yaml
 title: UI5ers live (October '26)
 subTitle: 45 minute webcast
 location: Online
@@ -211,18 +231,7 @@ id: ui5ers-55
 start: '2025-12-04 15:15 Europe/Berlin'
 end: '2025-12-04 16:00 Europe/Berlin'
 ```
-Join us for a special year-end edition of UI5ers live! Instead of our usual format with set topics, we’re turning the microphone over to you for a community-driven “Ask Us Anything” session.
-
-This is your opportunity to engage directly with us and shape the conversation. We invite you to submit your questions in advance via [e-mail](mailto:openui5@sap.com?subject=UI5ers live question) or any of our social media channels. Of course, you’ll also be able to ask questions live during the session itself.
-
-To make the discussion as valuable as possible for everyone, we’re particularly interested in questions about:
-- The future direction of UI5 and our roadmap.
-- Architectural concepts and the reasoning behind design decisions.
-- Constructive feedback—what you like, what you dislike, and the “why” behind it. We’re ready to listen and discuss.
-
-The goal is to have an open and honest conversation about the framework. Please note that this session isn’t the channel for individual bug reports or specific “how-to” questions, but rather for broader topics that benefit the entire community.
-
-We look forward to a great discussion and hearing directly from you!
+Join Andreas Kunz, Peter Muessig, Stefan Beck, and Margot Wollny for an engaging Ask Us Anything session where they directly address the community’s most pressing questions about SAPUI5. This session covers crucial updates on SAPUI5 2.0 (its status, timeline, and performance), the versatility of Adaptation Projects for standalone apps, and insights into UI5 versions for S/4HANA 2025. Dive into discussions on the Placeholder API, clarify SAP’s stance on Fiori Elements versus Freestyle development, and understand the future of the OData V4 model. The panel also shares updates on TypeScript migration tools, the role of Web Components in the UI5 ecosystem, and the strategic move towards ES Modules. Finally, get a sneak peek into SAPUI5’s key strategic focus areas and anticipated features for the upcoming year, including AI integration and developer experience enhancements.
 
 ```yaml
 title: UI5ers live (Nov '25)
@@ -232,7 +241,6 @@ logo: images/events/ui5ers.svg
 speakers:
   - Andreas Kunz
   - Mario Kernich
-url: 'https://sap-se.zoom.com/j/94833714827'
 id: ui5ers-54
 start: '2025-11-13 15:15 Europe/Berlin'
 end: '2025-11-13 16:00 Europe/Berlin'
@@ -252,7 +260,6 @@ logo: images/events/ui5ers.svg
 speakers:
   - Andreas Kunz
   - Thorsten Hochreuter
-url: 'https://sap-se.zoom.com/j/94833714827'
 id: ui5ers-53
 start: '2025-10-09 15:15 Europe/Berlin'
 end: '2025-10-09 16:00 Europe/Berlin'
@@ -276,7 +283,6 @@ speakers:
   - Mariana Naboka
   - Hristo Tsolev
   - Viktor Sperling
-url: 'https://sap-se.zoom.com/j/94833714827'
 id: ui5ers-52
 start: '2025-09-11 15:15 Europe/Berlin'
 end: '2025-09-11 16:00 Europe/Berlin'
@@ -295,6 +301,7 @@ speakers:
   - Martin Broede
   - Patric Ksinsik
 url: 'https://sap-se.zoom.com/j/94833714827'
+recordingUrl: https://youtu.be/B3ob3SPPxPg
 id: ui5ers-51
 start: '2025-08-14 15:15 Europe/Berlin'
 end: '2025-08-14 16:00 Europe/Berlin'
@@ -328,7 +335,7 @@ speakers:
   - Ilia Klopkov
   - Kevin Edinger
   - Dominik Stork
-url: 'https://sap-se.zoom.com/j/94833714827'
+recordingUrl: https://youtu.be/daRlcy-H71U
 id: ui5ers-50
 start: '2025-06-05 15:15 Europe/Berlin'
 end: '2025-06-05 16:00 Europe/Berlin'
