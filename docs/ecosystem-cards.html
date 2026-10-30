@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenUI5 Ecosystem — Cards Prototype</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #faf8f4;
+      color: #1a1612;
+      padding: 80px 24px;
+    }
+
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #E8A030;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.15;
+      color: #1a1612;
+      margin-bottom: 16px;
+    }
+
+    .subheading {
+      font-size: 17px;
+      color: #5a4f44;
+      max-width: 620px;
+      line-height: 1.6;
+      margin-bottom: 56px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid #e5dfd8;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 1px 3px rgba(26,22,18,0.06);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(26,22,18,0.10);
+      border-color: #E8A030;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .card-header-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .card-icon {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      background: #faf8f4;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #8B6347;
+    }
+
+    .card-icon svg { width: 18px; height: 18px; }
+
+    .card-name {
+      font-size: 15px;
+      font-weight: 600;
+      color: #1a1612;
+      line-height: 1.3;
+    }
+
+    .badge {
+      flex-shrink: 0;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border-radius: 20px;
+      padding: 3px 9px;
+      white-space: nowrap;
+    }
+
+    .badge--core {
+      background: #edf4ff;
+      color: #2060b0;
+      border: 1px solid #b8d4f8;
+    }
+
+    .badge--community {
+      background: #fdf0da;
+      color: #b87800;
+      border: 1px solid #f0d080;
+    }
+
+    .card-desc {
+      font-size: 13.5px;
+      color: #6b5e52;
+      line-height: 1.55;
+      flex: 1;
+    }
+
+    .card-link {
+      font-size: 12px;
+      font-weight: 500;
+      color: #E8A030;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: auto;
+    }
+    .card-link:hover { text-decoration: underline; }
+    .card-link svg { width: 11px; height: 11px; opacity: 0.8; }
+
+    .cta-row {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .cta-link {
+      font-size: 15px;
+      font-weight: 600;
+      color: #E8A030;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.15s ease;
+    }
+    .cta-link:hover { gap: 10px; }
+    .cta-link svg { width: 14px; height: 14px; }
+
+    @media (max-width: 800px) {
+      .cards { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 520px) {
+      h2 { font-size: 30px; }
+      .cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<section class="section">
+  <p class="eyebrow">Ecosystem</p>
+  <h2>Built around OpenUI5</h2>
+  <p class="subheading">A growing set of tools and community projects — everything you need from day one.</p>
+
+  <div class="cards">
+
+    <!-- 1. UI5 CLI — Core, highest relevance -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-left">
+          <div class="card-icon">
+            <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 6l3 3-3 3M9 12h6"/>
+            </svg>
+          </div>
+          <span class="card-name">UI5 CLI</span>
+        </div>
+        <span class="badge badge--core">Core</span>
+      </div>
+      <p class="card-desc">Build and serve any UI5 project from the command line — the primary development toolchain.</p>
+      <a class="card-link" href="https://github.com/UI5/cli" target="_blank" rel="noopener">
+        github.com/UI5/cli
+        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10L10 2M5 2h5v5"/></svg>
+      </a>
+    </div>
+
+    <!-- 2. Easy UI5 Generator — Community, highest relevance -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-left">
+          <div class="card-icon">
+            <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 14V9"/>
+              <path d="M6.5 11.5 Q5 9 6 7 Q9 8.5 9 9"/>
+              <path d="M11.5 10.5 Q13 8 12 6 Q9 7.5 9 9"/>
+              <ellipse cx="9" cy="15" rx="3" ry="1.2" fill="currentColor" opacity="0.2"/>
+            </svg>
+          </div>
+          <span class="card-name">Easy UI5 Generator</span>
+        </div>
+        <span class="badge badge--community">Community</span>
+      </div>
+      <p class="card-desc">The standard way to scaffold a new UI5 project — apps, libraries, Fiori Launchpad plugins, and more with a single command.</p>
+      <a class="card-link" href="https://github.com/UI5-community/generator-easy-ui5" target="_blank" rel="noopener">
+        github.com/UI5-community/generator-easy-ui5
+        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10L10 2M5 2h5v5"/></svg>
+      </a>
+    </div>
+
+    <!-- 3. UI5 Web Components — Core -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-left">
+          <div class="card-icon">
+            <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="5" width="7" height="5" rx="1.5"/>
+              <path d="M8 7.5h2.5a1.5 1.5 0 0 1 0 3H8"/>
+              <path d="M10.5 7.5V5a2 2 0 1 1 0 4"/>
+              <path d="M10.5 10.5V13a2 2 0 1 0 0-4"/>
+            </svg>
+          </div>
+          <span class="card-name">UI5 Web Components</span>
+        </div>
+        <span class="badge badge--core">Core</span>
+      </div>
+      <p class="card-desc">Framework-agnostic SAP Fiori components built on web standards — use with React, Vue, Angular, or plain HTML.</p>
+      <a class="card-link" href="https://github.com/UI5/webcomponents" target="_blank" rel="noopener">
+        github.com/UI5/webcomponents
+        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10L10 2M5 2h5v5"/></svg>
+      </a>
+    </div>
+
+    <!-- 4. wdi5 — Community -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-left">
+          <div class="card-icon">
+            <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 4v8a2 2 0 0 0 4 0V4"/>
+              <path d="M9 4v8a2 2 0 0 0 4 0V4"/>
+              <line x1="3" y1="4" x2="15" y2="4"/>
+              <line x1="3" y1="14" x2="7" y2="14"/>
+              <line x1="11" y1="14" x2="15" y2="14"/>
+            </svg>
+          </div>
+          <span class="card-name">wdi5</span>
+        </div>
+        <span class="badge badge--community">Community</span>
+      </div>
+      <p class="card-desc">End-to-end test framework for UI5 web apps, built on WebdriverIO. The community standard for E2E testing.</p>
+      <a class="card-link" href="https://github.com/UI5-community/wdi5" target="_blank" rel="noopener">
+        github.com/UI5-community/wdi5
+        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10L10 2M5 2h5v5"/></svg>
+      </a>
+    </div>
+
+    <!-- 5. UI5 Inspector — Core -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-left">
+          <div class="card-icon">
+            <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="8" cy="8" r="5"/>
+              <path d="M12 12l4 4"/>
+            </svg>
+          </div>
+          <span class="card-name">UI5 Inspector</span>
+        </div>
+        <span class="badge badge--core">Core</span>
+      </div>
+      <p class="card-desc">Browser DevTools extension for debugging and inspecting OpenUI5 and SAPUI5 applications.</p>
+      <a class="card-link" href="https://github.com/UI5/inspector" target="_blank" rel="noopener">
+        github.com/UI5/inspector
+        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10L10 2M5 2h5v5"/></svg>
+      </a>
+    </div>
+
+    <!-- 6. Best of UI5 — Community -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-left">
+          <div class="card-icon">
+            <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 2l2 4.5H16l-4 3 1.5 4.5L9 11.5 4.5 14 6 9.5l-4-3h5z"/>
+            </svg>
+          </div>
+          <span class="card-name">Best of UI5</span>
+        </div>
+        <span class="badge badge--community">Community</span>
+      </div>
+      <p class="card-desc">Community-curated index of UI5 libraries, tools, and controls — the discovery hub for the UI5 package ecosystem.</p>
+      <a class="card-link" href="https://bestofui5.com" target="_blank" rel="noopener">
+        bestofui5.com
+        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10L10 2M5 2h5v5"/></svg>
+      </a>
+    </div>
+
+    <!-- 7. TypeScript Support — Core -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-left">
+          <div class="card-icon">
+            <svg viewBox="0 0 18 18" fill="currentColor" stroke="none">
+              <rect x="2" y="2" width="14" height="14" rx="2" fill="#3178c6" opacity="0.15"/>
+              <text x="9" y="13.5" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" font-weight="700" fill="#3178c6">TS</text>
+            </svg>
+          </div>
+          <span class="card-name">TypeScript Support</span>
+        </div>
+        <span class="badge badge--core">Core</span>
+      </div>
+      <p class="card-desc">Official type definitions and tooling to develop OpenUI5 applications in TypeScript.</p>
+      <a class="card-link" href="https://github.com/UI5/typescript" target="_blank" rel="noopener">
+        github.com/UI5/typescript
+        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10L10 2M5 2h5v5"/></svg>
+      </a>
+    </div>
+
+    <!-- 8. UI5 Linter — Core -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-left">
+          <div class="card-icon">
+            <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 9l3 3 7-7"/>
+            </svg>
+          </div>
+          <span class="card-name">UI5 Linter</span>
+        </div>
+        <span class="badge badge--core">Core</span>
+      </div>
+      <p class="card-desc">Static analysis for UI5 apps — catch UI5-specific errors and deprecated API usage before they ship.</p>
+      <a class="card-link" href="https://github.com/UI5/linter" target="_blank" rel="noopener">
+        github.com/UI5/linter
+        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10L10 2M5 2h5v5"/></svg>
+      </a>
+    </div>
+
+    <!-- 9. UI5 MCP Server — Core -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-left">
+          <div class="card-icon">
+            <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="4" width="10" height="10" rx="1.5"/>
+              <rect x="6.5" y="6.5" width="5" height="5" rx="0.5"/>
+              <path d="M4 7H2M4 11H2M14 7h2M14 11h2M7 4V2M11 4V2M7 14v2M11 14v2"/>
+            </svg>
+          </div>
+          <span class="card-name">UI5 MCP Server</span>
+        </div>
+        <span class="badge badge--core">Core</span>
+      </div>
+      <p class="card-desc">Gives AI coding agents structured knowledge of the OpenUI5 framework to generate better UI5 code.</p>
+      <a class="card-link" href="https://github.com/UI5/mcp-server" target="_blank" rel="noopener">
+        github.com/UI5/mcp-server
+        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10L10 2M5 2h5v5"/></svg>
+      </a>
+    </div>
+
+  </div>
+
+  <div class="cta-row">
+    <a class="cta-link" href="https://bestofui5.com" target="_blank" rel="noopener">
+      Discover more at bestofui5.com
+      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h10M7 2l5 5-5 5"/></svg>
+    </a>
+  </div>
+</section>
+</body>
+</html>
