@@ -1,95 +1,87 @@
 /* Footer */
-footer {
-	padding-block: 3rem 1.5rem;
-	color: var(--text-color-contrast);
-	background-color: var(--background-color-dark);
-}
 
 .footer-content {
 	gap: 2rem;
 	display: grid;
-	margin: 0 auto;
+	margin: 0 auto 2.5rem;
 	grid-template-columns: 1fr;
 }
 
 .footer-brand {
-    margin: auto;
-}
-
-.footer-brand img {
-    height: auto;
-	max-width: 15rem;
+	margin: auto;
+	
+	img {
+		height: auto;
+		max-width: 15rem;
+	}
 }
 
 .footer-nav {
 	gap: 2rem;
 	display: grid;
-    text-align: center;
-    grid-template-columns: 1fr;
-	/* grid-template-columns: repeat(2, 1fr); */
+	text-align: center;
+	grid-template-columns: 1fr;
 }
 
-.footer-section h2 {
-	margin-block-end: 1rem;
-	font-size: var(--type-0);
-	color: var(--text-color);
-}
-
-.footer-section ul {
-	margin: 0;
-    padding: 0;
-	list-style: none;
-}
-
-.footer-section li {
-	margin-block-end: 0.75rem;
+.footer-section {
+	
+	h2 {
+		margin-block-end: 1rem;
+		font-size: var(--type-0);
+	}
+	
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	
+	li {
+		margin-block-end: 0.75rem;
+	}
 }
 
 .footer-bottom p {
 	margin: 0;
-    text-align: center;
-    font-size: var(--type-0);
+	text-align: center;
+	font-size: var(--type-0);
 }
 
 /* Tablet and up */
 @media (min-width: 768px) {
+	
 	.footer-content {
-		gap: 3rem;
 		grid-template-columns: 1fr 2fr;
 	}
-
-    .footer-brand {
-        margin: 0;
-    }
-
+	
+	.footer-brand {
+		margin: 0;
+	}
+	
 	.footer-nav {
 		gap: 2rem;
-        text-align: start;
+		text-align: start;
 		grid-template-columns: repeat(2, 1fr);
 	}
-
-    .footer-section a {
-        justify-content: start;
-    }
-
-    .footer-bottom p {
-        text-align: start;
-    }
+	
+	.footer-section a {
+		justify-content: start;
+	}
+	
+	.footer-bottom p {
+		text-align: start;
+	}
 }
 
 /* Desktop */
 @media (min-width: 1024px) {
+	
 	.footer-content {
-		gap: 4rem;
 		grid-template-columns: 1fr 3fr;
 	}
-
+	
 	.footer-nav {
 		gap: 2rem;
 		grid-template-columns: repeat(5, 1fr);
-	}
-
-	footer {
-		padding-block: 4rem 2rem;
 	}
 }

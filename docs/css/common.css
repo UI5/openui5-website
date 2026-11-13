@@ -19,7 +19,7 @@
 	--type-2: clamp(1.44rem, 1.2934rem + 0.733vw, 1.9531rem);
 	--type-3: clamp(1.7281rem, 1.5244rem + 1.0188vw, 2.4413rem);
 	--type-4: clamp(2.0738rem, 1.7943rem + 1.3973vw, 3.0519rem);
-	--type-5: clamp(2.5rem, 2.1786rem + 2.6071vw, 6.125rem);
+	--type-5: clamp(2.5rem, 2.1786rem + 4.5vw, 5.5rem);
 
 	/* Brand page */
 	--brand-color-dark-primary: #FF5A37;
@@ -46,6 +46,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+	
 	*:not(svg, path) {
 		animation: none !important;
 		transition: none !important;
@@ -131,8 +132,6 @@
 	font-style: normal;
 	font-display: swap;
 }
-
-
 
 /* Document
  * ========================================================================== */
@@ -270,7 +269,7 @@ button,
 input,
 select {
 	margin: 0;
-	font-family: "72", sans-serif;
+	font-family: "72", Arial, Helvetica, sans-serif
 }
 /**
  * 1. Show the overflow in IE.
@@ -493,24 +492,31 @@ h2 {
 
 .section-heading {
 	text-align: center;
+	
+	&.section-heading--alt {
+		text-align: left;
+	}
 }
 
 .section-subheading {
 	text-align: center;
+	font-family: var(--font-family-syne);
+	font-size: var(--type-1);
+	font-weight: 400;
 }
 
 h3 {
 	font-size: var(--type-1);
 	font-weight: 500;
 	margin-block-start: 0;
-	margin-block-end: 1lh;
+	margin-block-end: .6lh;
 }
 
 h4 {
 	font-size: var(--type-0);
 	font-weight: 400;
 	margin-block-start: 0;
-	margin-block-end: .8lh;
+	margin-block-end: .5lh;
 }
 
 h5 {
@@ -533,7 +539,7 @@ ul {
 a {
 	text-decoration: none;
 	padding-block: 0.25rem;
-	color: var(--text-color);
+	color: inherit;
 	text-underline-offset: 0.25rem;
 	text-decoration-thickness: 0.0625rem;
 	transition: text-decoration 0.3s ease-in-out;
@@ -560,13 +566,13 @@ a {
 
 .btn {
 	cursor: pointer;
-	border-radius: 5rem;
+	border-radius: 10px;
 	display: inline-block;
 	text-decoration: none;
 	padding: 0.8rem 1.4rem;
 	font-size: var(--type-0);
 	transition: all .15s linear;
-	color: var(--text-color-contrast);
+	color: var(--text-color);
 	background: var(--brand-color-btn-primary);
 	border: 0.125rem solid var(--brand-color-btn-primary);
 
@@ -625,6 +631,15 @@ a {
 	&:is(:hover) {
 		background: var(--brand-color);
 		border-color: var(--brand-color);
+		color: var(--text-color-contrast);
+		
+		@container style(--is-dark: 1) {
+			border-color: var(--brand-color-dark-primary);
+		}
+	}
+	
+	@container style(--is-dark: 1) {
+		border-color: var(--brand-color-contrast);
 		color: var(--text-color-contrast);
 	}
 
@@ -760,6 +775,7 @@ article {
 }
 
 @media (width < 780px) {
+	
 	.nav ul.anchor-nav {
 		display: none;
 	}
@@ -779,8 +795,10 @@ article {
 
 /* --------------------------- Main Contents ---------------------------  */
 .head {
+	--is-dark: 1;
+	
 	position: relative;
-	background: var(--background-color-alternate);
+	background: var(--background-color-dark);
 
 	&.head--collapsed {
 		height: auto;
@@ -806,10 +824,24 @@ article {
 		}
 	}
 	
+	h2 {
+		font-size: var(--type-5);
+		font-weight: 700;
+		width: 10ch;
+		color: var(--text-color-contrast);
+		line-height: 1.1;
+		margin-block: 0 1.5rem;
+		
+		span {
+			color: var(--brand-color-alt);
+		}
+	}
+	
 	p {
 		font-size: var(--type-1);
 		align-self: flex-start;
 		margin-block: 0;
+		color: var(--text-color-contrast)
 	}
 }
 
@@ -824,7 +856,7 @@ article {
 
 /* ------------------------------ Teaser -------------------------------  */
 
-.teaser {;
+.teaser {
 	
 	&.teaser--line {
 		border-top: 1px solid var(--brand-color);
@@ -1031,8 +1063,8 @@ article {
 /* ---------------------------- Site Footer ----------------------------  */
 
 footer {
-	background: var(--background-color-alternate);
-	color: var(--text-color);
+	background: var(--background-color-dark);
+	color: var(--text-color-contrast);
 
 	.wrap {
 		padding-block: 3rem;
@@ -1109,15 +1141,31 @@ footer {
 /* UI5con ad */
 
 [role="banner"] {
-	background: linear-gradient(to right, var(--brand-color-dark-primary), var(--brand-color-dark-secondary));
-	text-align: center;
+	background: var(--brand-color-dark-primary);
+	padding: .7rem 0;
+	
+	.wrap {
+		padding-block: 0;
+	}
 
+	.tag {
+		display: inline-block;
+		background: rgba(255,255,255,.4);
+		text-transform: uppercase;
+		padding: .3rem .5rem;
+		font-size: 75%;
+		color: var(--text-color);
+		font-weight: 700;
+		border-radius: 5rem;
+		margin-inline-end: 1rem;
+	}
+	
 	p {
-		font-size: 1.2rem;
+		font-size: var(--type-0);
 		margin: 0;
-		line-height: 3;
-		font-weight: 600;
-		color: #fff;
+		font-weight: 400;
+		color: var(--text-color);
+		line-height: 1;
 	}
 
 	a {
@@ -1132,7 +1180,7 @@ footer {
 }
 
 /* Highlights List */
-.highlights-list {
+/* .highlights-list {
 	margin: 0;
 	padding: 0;
 	list-style: none;
@@ -1180,11 +1228,11 @@ footer {
 		max-width: 100%;
 		max-height: 300px;
 	}
-}
+} */
 
 
 /* Enterprise list */
-.enterprise-container img {
+/* .enterprise-container img {
 	display: none;
 }
 
@@ -1231,13 +1279,13 @@ footer {
 		height: auto;
 		justify-self: end;
 	}
-}
+} */
 
 /* Feature List */
 .feature-list {
 	display: grid;
 	grid-template-columns: 1fr;
-	gap: 4rem;
+	gap: 2rem;
 	list-style: none;
 	padding: 0;
 	margin: 2rem 0;
@@ -1268,24 +1316,14 @@ footer {
 }
 
 @media (min-width: 768px) {
+	
 	.feature-list {
 		grid-template-columns: repeat(2, 1fr);
 	}
 }
 
-/* Statistics */
-.stat {
-	background: var(--background-color-dark);
-	color: var(--text-color-contrast);
-	border-block:  0.0625rem solid var(--text-color-contrast);
-}
-
 .stat-container {
-	gap: 2rem;
-	display: grid;
-	padding-block-start: 2rem;
-	align-items: center;
-	grid-template-columns: 1fr;
+	padding-block: 2rem 1rem;
 }
 
 .stat-grid {
@@ -1307,8 +1345,9 @@ footer {
 .stat-item dt {
 	font-weight: 700;
 	margin-bottom: 1rem;
-	font-size: var(--type-2);
+	font-size: var(--type-4);
 	font-family: var(--font-family-syne);
+	color: var(--brand-color-alt);
 }
 
 .stat-item dd {
@@ -1316,18 +1355,9 @@ footer {
 }
 
 @media (min-width: 768px) {
-	.stat-container {
-		grid-template-columns: 1fr 2fr;
-	}
 
 	.stat-grid {
-		grid-template-columns: repeat(3, 1fr);
-	}
-
-	.stat-item {
-		align-items: start;
-		padding-inline-start: 2rem;
-		border-inline-start: 0.0625rem solid var(--text-color-contrast);
+		grid-template-columns: repeat(4, 1fr);
 	}
 }
 
@@ -1344,9 +1374,9 @@ footer {
 }
 
 @media (min-width: 768px) {
+
 	.community img {
 		width: 10rem;
 		margin-block-end: 2rem;
 	}
 }
-

@@ -3,18 +3,18 @@
 	overflow-x: auto;
 	min-height: 17rem;
 	text-align: center;
-    padding-block: 3rem;
+	padding-block: 3rem;
 	align-items: stretch;
 	scroll-behavior: smooth;
 	scroll-snap-type: x mandatory;
-
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+	cursor: ew-resize;
+	
 	&::-webkit-scrollbar {
 		display: none;
 	}
-
-	-ms-overflow-style: none;
-	scrollbar-width: none;
-
+	
 	li {
 		display: flex;
 		flex: 0 0 var(--carousel-item-width, 85%);
@@ -24,31 +24,31 @@
 		border-radius: 1rem;
 		list-style-type: none;
 		scroll-snap-align: start;
-		color: var(--text-color-contrast);
-		border: 0.0625rem solid var(--text-color-contrast);
-		background-color: var(--background-color-dark);
+		color: var(--text-color);
+		border: 0.0625rem solid transparent;
+		background-color: var(--background-color);
 	}
-
+	
 	li > * {
 		flex: 1;
 		display: flex;
 		flex-direction: column;
 	}
-
+	
 	li:nth-child(even) {
-		color: var(--text-color);
-		border: 0.0625rem solid var(--background-color-alternate);
-		background-color: var(--background-color-alternate);
+		color: var(--text-color-contrast);
+		border: 0.0625rem solid var(--text-color-contrast);
+		background-color: var(--background-color-dark);
 	}
 	
 	blockquote::before {
 		content: open-quote;
 	}
-
+	
 	blockquote::after {
 		content: close-quote;
 	}
-
+	
 	blockquote {
 		margin: 0;
 		flex: 1;
@@ -78,7 +78,7 @@
 		margin-block-start: 1rem;
 		font-weight: 300;
 	}
-
+	
 	&:is(:focus, :focus-visible) {
 		outline: none;
 	}
@@ -108,13 +108,13 @@
 	min-height: 1rem;
 	border-radius: 0.625rem;
 	background-color: var(--text-color);
-
+	
 	&:is(:focus) {
 		text-decoration: none;
 		outline-offset: 0.125rem;
 		outline: 0.125rem solid var(--brand-color-contrast);
 	}
-
+	
 	&:is(:focus-visible) {
 		outline-offset: 0.125rem;
 		outline: 0.125rem solid var(--brand-color-contrast);
@@ -186,7 +186,7 @@
 	color: var(--text-color-contrast);
 	background-color: var(--brand-color-light-bg);
 	border: 0.0625rem solid var(--text-color);
-
+	
 	&::before {
 		content: '';
 		top: 50%;
@@ -202,42 +202,42 @@
 		mask-repeat: no-repeat;
 		transition: background-color .15s linear;
 	}
-
+	
 	&:is(:hover) {
 		background-color: var(--brand-color);
 		border-color: var(--brand-color);
 		color: var(--text-color-contrast);
-
+		
 		&::before {
 			background-color: var(--text-color-contrast);
 		}
 	}
-
+	
 	&:is(:focus) {
 		text-decoration: none;
 		outline-offset: 0.125rem;
 		outline: 0.1875rem solid var(--brand-color-contrast);
 	}
-
+	
 	&:is(:focus-visible) {
 		outline-offset: 0.0625rem;
 		outline: 0.1875rem solid var(--brand-color-contrast);
 	}
-
+	
 	@media (prefers-color-scheme: dark) {
 		background-color: var(--brand-color);
 		color: var(--text-color-contrast);
 		border-color: var(--text-color-contrast);
-
+		
 		&::before {
 			background-color: var(--text-color-contrast);
 		}
-
+		
 		&:is(:hover) {
 			color: var(--brand-color);
 			background-color: var(--text-color-contrast);
 			border-color: var(--text-color-contrast);
-
+			
 			&::before {
 				background-color: var(--brand-color);
 			}

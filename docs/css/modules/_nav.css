@@ -2,7 +2,7 @@
 .nav {
 	top: 0;
 	z-index: 1000;
-	background-color: var(--background-color-alternate);
+	background-color: var(--background-color-dark);
 }
 
 /* ==================== DESKTOP ==================== */
@@ -22,6 +22,10 @@
 	&:first-child {
 		margin-inline-end: auto;
 	}
+	
+	a {
+		color: var(--text-color-contrast)
+	}
 }
 
 .anchor-nav .logo {
@@ -32,11 +36,6 @@
 .anchor-nav .github {
 	width: 1.5rem;
 	height: 1.5rem;
-	transition: transform 0.3s linear;
-
-	&:hover {
-		transform: scale(1.15);
-	}
 }
 
 /* ==================== MOBILE ==================== */
@@ -80,7 +79,7 @@
 		position: absolute;
 		border-radius: 0.125rem;
 		transition: all 0.3s ease;
-		background-color: var(--text-color);
+		background-color: var(--text-color-contrast);
 
 		&:nth-child(1) {
 			top: 0.1875rem;
@@ -128,7 +127,7 @@
 	list-style: none;
 	position: absolute;
 	flex-direction: column;
-	background: var(--background-color-alternate);
+	background: var(--background-color-dark);
 }
 
 .mobile-nav-menu::after {
@@ -140,9 +139,7 @@
 	position: absolute;
 	pointer-events: none;
 	backdrop-filter: blur(40px);
-	-webkit-backdrop-filter: blur(40px);
 	mask-image: linear-gradient(to bottom, black, transparent);
-	-webkit-mask-image: linear-gradient(to bottom, black, transparent);
 }
 
 .mobile-nav-menu.hamburgerMenuVisible {
@@ -160,7 +157,7 @@
 	padding: 1rem 2rem;
 	text-decoration: none;
 	box-sizing: border-box;
-	color: var(--text-color);
+	color: var(--text-color-contrast);
 	text-underline-offset: 0.25rem;
 	transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
 
