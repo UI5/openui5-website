@@ -916,18 +916,19 @@ article {
 }
 
 .head-icon {
-	--icon-size: 55px;
+	--icon-size: 215px;
 	
-	display: inline-block;
+	display: block;
 	aspect-ratio: 1;
 	color: var(--brand-color-alt);
 	height: var(--icon-size);
 	text-align: left;
 	line-height: var(--icon-size);
 	margin-block-end: 1rem;
+	margin-inline: auto;
 
 	svg {
-		height: calc(var(--icon-size) - .3rem);
+		height: var(--icon-size);
 		margin-block-end: 0;
 	}
 }
