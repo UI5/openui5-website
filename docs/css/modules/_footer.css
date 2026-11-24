@@ -10,9 +10,8 @@
 .footer-brand {
 	margin: auto;
 	
-	img {
-		height: auto;
-		max-width: 15rem;
+	svg {
+		height: 2.8rem;
 	}
 }
 

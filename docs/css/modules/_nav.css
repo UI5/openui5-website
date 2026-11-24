@@ -24,13 +24,12 @@
 	}
 	
 	a {
-		color: var(--text-color-contrast)
+		color: var(--text-color-contrast);
 	}
 }
 
 .anchor-nav .logo {
-	width: 2.5rem;
-	height: 2.5rem;
+	height: 2.8rem;
 }
 
 .anchor-nav .github {
@@ -52,7 +51,6 @@
 }
 
 .mobile-nav-container .logo {
-	width: 2.5rem;
 	height: 2.5rem;
 }
 
@@ -97,6 +95,7 @@
 
 	/* Hamburger Animation */
 	&.open span {
+		
 		&:nth-child(1) {
 			top: 50%;
 			transform: translateY(-50%) rotate(45deg);

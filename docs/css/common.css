@@ -537,17 +537,17 @@ ul {
 
 /* ---------------------- Interactive Elements ---------------------------  */
 a {
-	text-decoration: none;
+	text-decoration: underline;
 	padding-block: 0.25rem;
 	color: inherit;
 	text-underline-offset: 0.25rem;
 	text-decoration-thickness: 0.0625rem;
-	transition: text-decoration 0.3s ease-in-out;
+	transition: text-decoration 0.2s ease-in-out;
 
 	&:is(:hover) {
 		text-decoration: underline;
 		text-underline-offset: 0.25rem;
-		text-decoration-thickness: 0.0625rem;
+		text-decoration-thickness: 0.125rem;
 	}
 
 	&:is(:focus) {
@@ -1061,6 +1061,75 @@ article {
 	color: var(--text-color);
 }
 
+/* ---------------------------- Ecosystem List -------------------------  */
+
+.ecosystem-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	gap: .7rem;
+}
+
+.ecosystem-item {
+	display: flex;
+	flex-direction: column;
+	background: var(--background-color-alternate);
+	border-radius: 1rem;
+	padding: 1rem;
+	
+	h3 {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		align-content: space-between;
+	}
+	
+	a {
+		margin-block-start: auto;
+		color: #4A63C8; /* FIX ME */
+	}
+}
+
+.ecosystem-tag {
+	margin-inline-start: auto;
+	display: inline-block;
+	vertical-align: middle;
+	padding: .3rem .5rem;
+	border-radius: .8rem;
+	line-height: 1;
+	font-family: '72', sans-serif;
+	font-size: .85rem;
+	font-weight: 600;
+	border: 1px solid var(--brand-color-contrast);
+	text-transform: uppercase;
+	
+	+ .ecosystem-tag {
+		margin-inline-start: .3rem;
+	}
+	
+	&.tag-core {
+		color: #000;
+		border-color: currentColor;
+		background-color: color-mix(in srgb, currentColor 10%, transparent);
+	}
+	
+	&.tag-community {
+		color: #4A63C8;
+		border-color: currentColor;
+		background-color: color-mix(in srgb, currentColor 10%, transparent);
+	}
+	
+	&.tag-new {
+		color: var(--brand-color-light-secondary);
+		border-color: currentColor;
+		background-color: color-mix(in srgb, currentColor 10%, transparent);
+	}
+}
+
+.ecosystem-item-desc {
+	margin-block-start: 0;
+}
+
 /* ---------------------------- Site Footer ----------------------------  */
 
 footer {
@@ -1147,6 +1216,10 @@ footer {
 	
 	.wrap {
 		padding-block: 0;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
 	}
 
 	.tag {
@@ -1177,6 +1250,12 @@ footer {
 		&:focus, &:hover {
 			text-decoration: underline;
 		}
+	}
+	
+	.btn {
+		padding: 0;
+		height: 30px;
+		aspect-ratio: 1/1;
 	}
 }
 
