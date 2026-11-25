@@ -538,7 +538,6 @@ ul {
 /* ---------------------- Interactive Elements ---------------------------  */
 a {
 	text-decoration: underline;
-	padding-block: 0.25rem;
 	color: inherit;
 	text-underline-offset: 0.25rem;
 	text-decoration-thickness: 0.0625rem;
@@ -710,7 +709,7 @@ article {
 .grid-wrap {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
-	gap: 2rem;
+	gap: 1.5rem;
 
 	&.grid-wrap--sameheight {
 		margin-block-end: 1.5lh;
@@ -726,14 +725,14 @@ article {
 
 .grid-wrap--split {
 	grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
-	gap: 4rem;
+	gap: 3rem;
 }
 
 .flex-wrap {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	gap: 2rem;
+	gap: 1.5rem;
 
 	.flex-wrap-item {
 		flex: 0 0 100%;
@@ -1067,7 +1066,7 @@ article {
 	list-style: none;
 	padding: 0;
 	margin: 0;
-	gap: .7rem;
+	gap: 1.5rem;
 }
 
 .ecosystem-item {
@@ -1082,10 +1081,11 @@ article {
 		flex-direction: row;
 		align-items: flex-start;
 		align-content: space-between;
+		flex: 0 0 2lh;
+		gap: .4rem;
 	}
 	
 	a {
-		margin-block-start: auto;
 		color: #4A63C8; /* FIX ME */
 	}
 }
@@ -1127,7 +1127,8 @@ article {
 }
 
 .ecosystem-item-desc {
-	margin-block-start: 0;
+	margin-block: 0 .5rem;
+	text-wrap: pretty;
 }
 
 /* ---------------------------- Site Footer ----------------------------  */
@@ -1365,7 +1366,7 @@ footer {
 .feature-list {
 	display: grid;
 	grid-template-columns: 1fr;
-	gap: 2rem;
+	gap: 1.5rem;
 	list-style: none;
 	padding: 0;
 	margin: 2rem 0;

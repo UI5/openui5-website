@@ -1,7 +1,8 @@
 /* Community Carousel */
 .community-carousel {
 	overflow: hidden;
-	padding-block: 0 2rem;
+	margin-block-start: -4rem;
+	padding-block: 2.5rem 2.5rem;
 
 	mask-image: linear-gradient(
 		to right,
@@ -46,7 +47,7 @@
 }
 
 .community-carousel-slide:hover {
-	transform: scale(1.5);
+	transform: scale(1.25);
 	z-index: 10;
 }
 

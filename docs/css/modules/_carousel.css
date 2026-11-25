@@ -19,7 +19,7 @@
 		display: flex;
 		flex: 0 0 var(--carousel-item-width, 85%);
 		padding: 1rem;
-		margin: 0 1rem;
+		margin: 0 .75rem;
 		text-align: left;
 		border-radius: 1rem;
 		list-style-type: none;

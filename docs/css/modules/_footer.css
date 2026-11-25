@@ -3,20 +3,31 @@
 .footer-content {
 	gap: 2rem;
 	display: grid;
-	margin: 0 auto 2.5rem;
+	margin: 0 auto 1rem;
+	padding-block-end: 1rem;
+	border-bottom: 1px solid rgba(255,255,255,.3);
 	grid-template-columns: 1fr;
 }
 
 .footer-brand {
 	margin: auto;
 	
-	svg {
+	.logo {
 		height: 2.8rem;
+	}
+	
+	ul {
+		list-style: none;
+		padding: 0;
+	}
+	
+	li {
+		display: inline-block;
 	}
 }
 
 .footer-nav {
-	gap: 2rem;
+	gap: 1.5rem;
 	display: grid;
 	text-align: center;
 	grid-template-columns: 1fr;
@@ -40,10 +51,13 @@
 	}
 }
 
-.footer-bottom p {
+.copy {
 	margin: 0;
-	text-align: center;
-	font-size: var(--type-0);
+	line-height: 2;
+	
+	small {
+		display: block;
+	}
 }
 
 /* Tablet and up */
@@ -81,6 +95,6 @@
 	
 	.footer-nav {
 		gap: 2rem;
-		grid-template-columns: repeat(5, 1fr);
+		grid-template-columns: repeat(4, 1fr);
 	}
 }
