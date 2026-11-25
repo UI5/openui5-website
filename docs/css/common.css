@@ -19,7 +19,7 @@
 	--type-2: clamp(1.44rem, 1.2934rem + 0.733vw, 1.9531rem);
 	--type-3: clamp(1.7281rem, 1.5244rem + 1.0188vw, 2.4413rem);
 	--type-4: clamp(2.0738rem, 1.7943rem + 1.3973vw, 3.0519rem);
-	--type-5: clamp(2.5rem, 2.1786rem + 4.5vw, 5.5rem);
+	--type-5: clamp(2.5rem, 2.1786rem + 4.5vw, 4.5rem);
 
 	/* Brand page */
 	--brand-color-dark-primary: #FF5A37;
@@ -811,6 +811,8 @@ article {
 	flex-direction: column;
 	height: calc(100% - 9rem);
 	padding-inline: 3vw;
+	background: url(../images/header-phoenix.svg) 95% 0% no-repeat;
+	background-size: auto 90%;
 
 	.logo {
 		width: 100%;
@@ -830,6 +832,7 @@ article {
 		color: var(--text-color-contrast);
 		line-height: 1.1;
 		margin-block: 0 1.5rem;
+		padding-block-start: 3rem;
 		
 		span {
 			color: var(--brand-color-alt);
@@ -850,7 +853,7 @@ article {
 }
 
 .head .button-group {
-	margin-block-start: 1.5rem;
+	margin-block: 1.5rem 3rem;
 }
 
 /* ------------------------------ Teaser -------------------------------  */
