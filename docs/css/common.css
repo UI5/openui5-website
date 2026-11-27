@@ -506,6 +506,10 @@ h2 {
 	font-weight: 400;
 }
 
+.section-centered-content {
+	text-align: center;
+}
+
 h3 {
 	font-size: var(--type-1);
 	font-weight: 500;
@@ -1068,7 +1072,7 @@ article {
 .ecosystem-list {
 	list-style: none;
 	padding: 0;
-	margin: 0;
+	margin: 3rem 0;
 	gap: 1.5rem;
 }
 
@@ -1111,7 +1115,7 @@ article {
 	}
 	
 	&.tag-core {
-		color: #000;
+		color: #0070F2;
 		border-color: currentColor;
 		background-color: color-mix(in srgb, currentColor 10%, transparent);
 	}
@@ -1374,7 +1378,7 @@ footer {
 	gap: 1.5rem;
 	list-style: none;
 	padding: 0;
-	margin: 2rem 0;
+	margin: 3rem 0;
 }
 
 .feature-list > li {
