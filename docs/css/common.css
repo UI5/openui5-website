@@ -440,6 +440,7 @@ html {
 body {
 	overflow-x: hidden;
 	font-family: "72", Arial, Helvetica, sans-serif;
+	font-variant-numeric: lining-nums tabular-nums;
 	margin: 0;
 	position: relative;
 	color: var(--text-color);
@@ -1432,6 +1433,7 @@ footer {
 	font-size: var(--type-4);
 	font-family: var(--font-family-syne);
 	color: var(--brand-color-alt);
+	font-variant-numeric: normal;
 }
 
 .stat-item dd {
