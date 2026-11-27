@@ -1,7 +1,7 @@
 /* Community Carousel */
 .community-carousel {
 	overflow: hidden;
-	margin-block-start: -4rem;
+	margin-block: -5rem -4rem;
 	padding-block: 2.5rem 2.5rem;
 
 	mask-image: linear-gradient(

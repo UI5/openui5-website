@@ -677,7 +677,7 @@ main {
 	section:first-of-type {
 
 		.wrap {
-			padding-block: 4rem;
+			padding-block: 5rem;
 		}
 	}
 }
@@ -690,7 +690,7 @@ article {
 	background-color: var(--background-color-alternate);
 
 	.wrap {
-		padding-block: 4rem;
+		padding-block: 5rem;
 	}
 }
 
@@ -703,7 +703,7 @@ article {
 	max-width: 1240px;
 	margin-block: 0;
 	margin-inline: auto;
-	padding-block: 2rem 4rem;
+	padding-block: 5rem;
 	padding-inline: 3vw;
 }
 
@@ -812,17 +812,16 @@ article {
 	flex-direction: column;
 	height: calc(100% - 9rem);
 	padding-inline: 3vw;
+	padding-block: 0;
 	background: url(../images/header-phoenix.svg) 95% 0% no-repeat;
-	background-size: auto 90%;
-
-	.logo {
-		width: 100%;
-		shape-outside: polygon(0 0, 100% 0, 100% 100%,  55% 100%, 40% 50%,0 50%);
-		float: right;
-		shape-margin: 1em;
-
-		.logo-text {
-			fill: var(--text-color);
+	background-size: 100% 90%;
+	background-blend-mode: lighten;
+	
+	@media (width >= 700px) {
+		
+		& {
+			padding-block: 2rem;
+			background-size: auto 90%;
 		}
 	}
 	
@@ -1240,6 +1239,8 @@ footer {
 	}
 	
 	p {
+		display: flex;
+		align-items: center;
 		font-size: var(--type-0);
 		margin: 0;
 		font-weight: 400;
@@ -1408,7 +1409,7 @@ footer {
 }
 
 .stat-container {
-	padding-block: 2rem 1rem;
+	padding-block: 0 1rem;
 }
 
 .stat-grid {

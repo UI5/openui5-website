@@ -3,7 +3,7 @@
 	overflow-x: auto;
 	min-height: 17rem;
 	text-align: center;
-	padding-block: 3rem;
+	padding-block: 2rem;
 	align-items: stretch;
 	scroll-behavior: smooth;
 	scroll-snap-type: x mandatory;
@@ -86,7 +86,6 @@
 
 .carousel-wrap {
 	position: relative;
-	margin-block-end: 3rem;
 }
 
 .carousel-dots {
